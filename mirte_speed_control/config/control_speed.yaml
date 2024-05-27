@@ -1,8 +1,8 @@
 ---
 mirte_speed_control:
   p: 1
-  i: 0
-  d: 0
+  i: 0.1
+  d: 0.1
   i_clamp: 50
   antiwindup: true
 # ekf_localization:

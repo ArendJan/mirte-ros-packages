@@ -57,17 +57,20 @@ public:
 
   double calc_speed_pid(int joint, double target, const ros::Duration &period)
   {
+    
     auto pid = this->pids[joint];
+    // Fix for dynamic reconfigure of all 4 PID controllers:
+      auto g = this->reconfig_pid->getGains();
+      if (!equal_gains(pid->getGains(), g))
+      {
+        // std::cout << "new gains" << g.i_gain_ << std::endl;
+        pid->setGains(g);
+      }
     if (target == 0)
     {
       pid->reset();
 
-      // Fix for dynamic reconfigure of all 4 PID controllers:
-      auto g = this->reconfig_pid->getGains();
-      if (!equal_gains(pid->getGains(), g))
-      {
-        pid->setGains(g);
-      }
+      
       return 0;
     }
     auto curr_speed = vel[joint];
@@ -283,7 +286,7 @@ void MyRobotHWInterface::init_service_clients()
 MyRobotHWInterface::MyRobotHWInterface()
     : private_nh("~"), running_(true)
 {
-  _wheel_diameter = 1.0; // M
+  // _wheel_diameter = 1.0; // M
   this->ticks = 1320; // ticks per rotation
   
   this->NUM_JOINTS = 4;
@@ -328,7 +331,7 @@ MyRobotHWInterface::MyRobotHWInterface()
   {
     // dummy pid for dynamic reconfigure.
     this->reconfig_pid = std::make_shared<control_toolbox::Pid>(1, 0, 0);
-    this->reconfig_pid->initParam("mobile_base_controller/", false);
+    this->reconfig_pid->initParam("mirte_speed_control/", false);
     auto gains = this->reconfig_pid->getGains();
     for (auto i = 0; i < NUM_JOINTS; i++)
     {
