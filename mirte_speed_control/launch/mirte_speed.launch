@@ -1,0 +1,12 @@
+<launch>
+
+    <group>
+      <node name="mirte_speed_control" output="screen"
+          pkg="mirte_speed_control"
+          type="mirte_speed_control_node"/>
+
+       <rosparam command="load" file="$(find mirte_speed_control)/config/control_speed.yaml"/>
+
+   </group>
+
+</launch>
