@@ -13,7 +13,11 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 set(msg_files
-  "msg/Color.msg"
+  "msg/ColorHSL.msg"
+  "msg/ColorHSLStamped.msg"
+  "msg/ColorRGBAStamped.msg"
+  "msg/ColorRGBW.msg"
+  "msg/ColorRGBWStamped.msg"
   "msg/Encoder.msg"
   "msg/Intensity.msg"
   "msg/IntensityDigital.msg"
@@ -23,7 +27,9 @@ set(msg_files
 )
 
 set(srv_files
-  "srv/GetColor.srv"
+  "srv/GetColorHSL.srv"
+  "srv/GetColorRGBA.srv"
+  "srv/GetColorRGBW.srv"
   "srv/GetDistance.srv"
   "srv/GetEncoder.srv"
   "srv/GetImu.srv"
