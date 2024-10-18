@@ -1,0 +1,50 @@
+Format: 1.8
+Date: Fri, 11 Oct 2024 00:00:00 -0000
+Source: ros-humble-web-video-server
+Binary: ros-humble-web-video-server
+Built-For-Profiles: noudeb
+Architecture: arm64
+Version: 2.0.0-1-g48215bb-2024.10.18.15.16
+Distribution: jammy
+Urgency: high
+Maintainer: Błażej Sowa <blazej@fictionlab.pl>
+Changed-By: Błażej Sowa <blazej@fictionlab.pl>
+Description:
+ ros-humble-web-video-server - HTTP Streaming of ROS Image Topics in Multiple Formats
+Changes:
+ ros-humble-web-video-server (2.0.0-1-g48215bb-2024.10.18.15.16) jammy; urgency=high
+ .
+   * Replace boost with std (#164)
+   * Add ament_cpplint test, resolve TODOs (#162)
+   * Add license headers to all C++ source files, update copyrights (#161)
+   * Add support for alpha pngs by adding per stream type decode functions (backport #106) (#163)
+   * Add link to /stream in stream list (backport #118) (#160)
+   * Add support for jpg compression format (backport #142) (#159)
+   * Reformat the code with uncrustify (#158)
+   * Use hpp extension for headers (#157)
+   * Fix request logging, remove global parameters (#156)
+   * Replace nh with node (#155)
+   * Fix declaring and retrieving node parameters (#154)
+   * Fix usage of deprecated libavcodec functions (#150)
+   * Use cv_bridge hpp headers when available (#149)
+   * Use target_link_libraries instead of ament_target_dependencies where applicable
+   * Don't install headers
+   * Add CI workflow and ament_lint tests (#148)
+   * Update package maintainer
+   * allow topic searches to continue past invalid multi-type topics. (#146)
+   * Add QoS profile query parameters (#133)
+   * Fix build for ROS2 Humble (#129)
+   * Fix build for ROS2 Foxy (#111)
+   * Contributors: Błażej Sowa, Domenic Rodriguez, Robert Brothers, Sebastian Castro, Tina Tian, TobinHall, Matthew Bries
+Checksums-Sha1:
+ 382cdce823425d0394a739bf8667c0f6b85804e2 5387122 ros-humble-web-video-server-dbgsym_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.ddeb
+ d6af81761a6179f4ac2b309e6f5bfc63ac143ce7 34662 ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.buildinfo
+ 0ce2c5cbacf9f0df7a0c9d70bfadda9eaa9a071b 147390 ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.deb
+Checksums-Sha256:
+ ac584e1d0440baf383c8bc35e4af68ed9780ea47fe23877859e638804f5e6f4e 5387122 ros-humble-web-video-server-dbgsym_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.ddeb
+ 6d680ef9963803297177565d93ea1ac5b036ab3571991485672765ea5827a7d5 34662 ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.buildinfo
+ c106248526d3c157341120e4e431af7ce1edba5cb2c99a8a64daeb86a17ec814 147390 ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.deb
+Files:
+ 3ec93ed4a4337689bcbe7199df3e02e5 5387122 debug optional ros-humble-web-video-server-dbgsym_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.ddeb
+ 84851659d5fdfe8c4480f97a9f0b0fc1 34662 misc optional ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.buildinfo
+ 8f700cc0a2cefc2ffbed075a03bb62c6 147390 misc optional ros-humble-web-video-server_2.0.0-1-g48215bb-2024.10.18.15.16_arm64.deb
