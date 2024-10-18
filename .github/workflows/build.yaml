@@ -10,12 +10,15 @@ jobs:
 
       - name: self-checkout
         run: |
-             mkdir src
-             mv ./mirte_* ./src
+             mkdir srcO
+             mv ./mirte_* ./srcO
+             touch srcO/COLCON_IGNORE
       - uses: jspricke/ros-deb-builder-action@main
         with:
           ROS_DISTRO: humble
           DEB_DISTRO: jammy
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_CHECKOUT: true
+          REPOS_FILE: ./sources.repos
+        #   SKIP_CHECKOUT: true
+          
 
