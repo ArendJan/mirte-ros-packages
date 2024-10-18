@@ -6,10 +6,16 @@ jobs:
   build_testing:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: self-checkout
+        run: |
+             mkdir src
+             mv ./mirte_* ./src
       - uses: jspricke/ros-deb-builder-action@main
         with:
           ROS_DISTRO: humble
           DEB_DISTRO: jammy
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOS_FILE: ./sources.repos
+          SKIP_CHECKOUT: true
 
