@@ -7,3 +7,7 @@ repositories:
     type: git
     url: https://github.com/arendjan/mirte-telemetrix-cpp.git
     version: no-gpiod
+  web-video-server:
+    type: git
+    url: https://github.com/RobotWebTools/web_video_server.git
+    version: ros2

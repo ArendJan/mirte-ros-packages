@@ -18,7 +18,6 @@ jobs:
 
       - name: self-checkout
         run: |
-             rm -rf ./mirte_bringup # dont want that one as it includes web-video-server, which is not in default rosdep
              mkdir srcO # move all packages to srcO(riginal), as the ros-deb-builder-action wants to create a fresh src folder
              mv ./mirte_* ./srcO
              ls -l ./
