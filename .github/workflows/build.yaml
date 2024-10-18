@@ -12,6 +12,7 @@ jobs:
 
       - name: self-checkout
         run: |
+             rm -rf ./mirte_bringup # dont want that one
              mkdir srcO
              mv ./mirte_* ./srcO
              ls -l ./
