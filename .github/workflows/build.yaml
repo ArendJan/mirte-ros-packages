@@ -7,21 +7,26 @@ permissions:
 jobs:
   build_testing:
     runs-on: ubuntu-latest
+    strategy:
+        matrix:
+                ros_distro: [humble]
+                deb_distro: [jammy]
+                arch: [amd64, arm64]
+
     steps:
       - uses: actions/checkout@v4
 
       - name: self-checkout
         run: |
-             rm -rf ./mirte_bringup # dont want that one
-             mkdir srcO
+             rm -rf ./mirte_bringup # dont want that one as it includes web-video-server, which is not in default rosdep
+             mkdir srcO # move all packages to srcO(riginal), as the ros-deb-builder-action wants to create a fresh src folder
              mv ./mirte_* ./srcO
              ls -l ./
-        #      exit 1
-        #      touch srcO/COLCON_IGNORE
       - uses: jspricke/ros-deb-builder-action@main
         with:
-          ROS_DISTRO: humble
-          DEB_DISTRO: jammy
+          ROS_DISTRO: ${{ matrix.ros_distro }}
+          DEB_DISTRO: ${{ matrix.deb_distro }}
+          DEB_ARCH: ${{ matrix.arch }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOS_FILE: ./sources.repos
           SKIP_CHECKOUT: true
