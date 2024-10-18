@@ -3,3 +3,7 @@ repositories:
   #   type: git
   #   url: https://github.com/arendjan/mirte-ros-packages.git
   #   version: ros2
+  mirte-telemetrix-cpp:
+    type: git
+    url: https://github.com/SuperJappie08/mirte-telemetrix-cpp.git
+    version: mirte-pioneer
