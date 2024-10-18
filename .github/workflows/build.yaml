@@ -12,13 +12,15 @@ jobs:
         run: |
              mkdir srcO
              mv ./mirte_* ./srcO
-             touch srcO/COLCON_IGNORE
+             ls -l ./
+        #      exit 1
+        #      touch srcO/COLCON_IGNORE
       - uses: jspricke/ros-deb-builder-action@main
         with:
           ROS_DISTRO: humble
           DEB_DISTRO: jammy
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOS_FILE: ./sources.repos
-        #   SKIP_CHECKOUT: true
+          SKIP_CHECKOUT: true
           
 
