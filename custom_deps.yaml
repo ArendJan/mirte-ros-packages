@@ -1,0 +1,3 @@
+mirte_msgs:
+  ubuntu:
+    - ros-kinetic-mirte-msgs
