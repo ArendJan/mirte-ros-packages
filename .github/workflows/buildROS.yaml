@@ -12,6 +12,7 @@ jobs:
                 ros_distro: [humble]
                 deb_distro: [jammy]
                 arch: [amd64, armhf]
+        fail-fast: false
 
     steps:
       - uses: actions/checkout@v4
