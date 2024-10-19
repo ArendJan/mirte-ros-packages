@@ -1,0 +1,497 @@
+repositories:
+  ament_cmake/ament_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_auto:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_auto/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_core:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_core/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_definitions:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_definitions/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_dependencies:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_dependencies/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_include_directories:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_include_directories/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_interfaces/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_libraries:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_libraries/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_link_flags:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_link_flags/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_export_targets:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_export_targets/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_gen_version_h:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_gen_version_h/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_gmock:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_gmock/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_google_benchmark:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_google_benchmark/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_gtest:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_gtest/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_include_directories:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_include_directories/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_libraries:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_libraries/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_pytest:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_pytest/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_python:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_python/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_target_dependencies:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_target_dependencies/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_test:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_test/1.3.10-1.tar.gz
+  ament_cmake/ament_cmake_version:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/humble/ament_cmake_version/1.3.10-1.tar.gz
+  ament_cmake_ros/ament_cmake_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake_ros-release/archive/release/humble/ament_cmake_ros/0.10.0-3.tar.gz
+  ament_cmake_ros/domain_coordinator:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake_ros-release/archive/release/humble/domain_coordinator/0.10.0-3.tar.gz
+  ament_index/ament_index_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_index-release/archive/release/humble/ament_index_cpp/1.4.0-2.tar.gz
+  ament_index/ament_index_python:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_index-release/archive/release/humble/ament_index_python/1.4.0-2.tar.gz
+  ament_lint/ament_cmake_copyright:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_copyright/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_cppcheck:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_cppcheck/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_cpplint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_cpplint/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_flake8:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_flake8/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_lint_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_lint_cmake/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_pep257:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_pep257/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_uncrustify:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_uncrustify/0.12.11-1.tar.gz
+  ament_lint/ament_cmake_xmllint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cmake_xmllint/0.12.11-1.tar.gz
+  ament_lint/ament_copyright:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_copyright/0.12.11-1.tar.gz
+  ament_lint/ament_cppcheck:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cppcheck/0.12.11-1.tar.gz
+  ament_lint/ament_cpplint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_cpplint/0.12.11-1.tar.gz
+  ament_lint/ament_flake8:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_flake8/0.12.11-1.tar.gz
+  ament_lint/ament_lint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_lint/0.12.11-1.tar.gz
+  ament_lint/ament_lint_auto:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_lint_auto/0.12.11-1.tar.gz
+  ament_lint/ament_lint_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_lint_cmake/0.12.11-1.tar.gz
+  ament_lint/ament_lint_common:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_lint_common/0.12.11-1.tar.gz
+  ament_lint/ament_pep257:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_pep257/0.12.11-1.tar.gz
+  ament_lint/ament_pycodestyle:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_pycodestyle/0.12.11-1.tar.gz
+  ament_lint/ament_uncrustify:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_uncrustify/0.12.11-1.tar.gz
+  ament_lint/ament_xmllint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/humble/ament_xmllint/0.12.11-1.tar.gz
+  ament_package:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_package-release/archive/release/humble/ament_package/0.14.0-4.tar.gz
+  angles:
+    type: tar
+    url: https://github.com/ros2-gbp/angles-release/archive/release/humble/angles/1.15.0-1.tar.gz
+  async_web_server_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/async_web_server_cpp-release/archive/release/humble/async_web_server_cpp/2.0.0-3.tar.gz
+  backward_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/backward_ros-release/archive/release/humble/backward_ros/1.0.5-1.tar.gz
+  class_loader:
+    type: tar
+    url: https://github.com/ros2-gbp/class_loader-release/archive/release/humble/class_loader/2.2.0-3.tar.gz
+  common_interfaces/diagnostic_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/diagnostic_msgs/4.2.4-1.tar.gz
+  common_interfaces/geometry_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/geometry_msgs/4.2.4-1.tar.gz
+  common_interfaces/nav_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/nav_msgs/4.2.4-1.tar.gz
+  common_interfaces/sensor_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/sensor_msgs/4.2.4-1.tar.gz
+  common_interfaces/std_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/std_msgs/4.2.4-1.tar.gz
+  common_interfaces/std_srvs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/std_srvs/4.2.4-1.tar.gz
+  common_interfaces/trajectory_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/humble/trajectory_msgs/4.2.4-1.tar.gz
+  console_bridge_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/console_bridge_vendor-release/archive/release/humble/console_bridge_vendor/1.4.1-1.tar.gz
+  control_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/control_msgs-release/archive/release/humble/control_msgs/4.6.0-1.tar.gz
+  control_toolbox:
+    type: tar
+    url: https://github.com/ros2-gbp/control_toolbox-release/archive/release/humble/control_toolbox/3.2.0-1.tar.gz
+  cpp_polyfills/tcb_span:
+    type: tar
+    url: https://github.com/ros2-gbp/cpp_polyfills-release/archive/release/humble/tcb_span/1.0.2-2.tar.gz
+  cpp_polyfills/tl_expected:
+    type: tar
+    url: https://github.com/ros2-gbp/cpp_polyfills-release/archive/release/humble/tl_expected/1.0.2-2.tar.gz
+  diagnostics/diagnostic_updater:
+    type: tar
+    url: https://github.com/ros2-gbp/diagnostics-release/archive/release/humble/diagnostic_updater/4.0.0-1.tar.gz
+  fastcdr:
+    type: tar
+    url: https://github.com/ros2-gbp/fastcdr-release/archive/release/humble/fastcdr/1.0.24-2.tar.gz
+  fastrtps:
+    type: tar
+    url: https://github.com/ros2-gbp/fastrtps-release/archive/release/humble/fastrtps/2.6.8-1.tar.gz
+  filters:
+    type: tar
+    url: https://github.com/ros2-gbp/filters-release/archive/release/humble/filters/2.1.0-3.tar.gz
+  foonathan_memory_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/foonathan_memory_vendor-release/archive/release/humble/foonathan_memory_vendor/1.2.0-3.tar.gz
+  generate_parameter_library/generate_parameter_library:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/humble/generate_parameter_library/0.3.8-3.tar.gz
+  generate_parameter_library/generate_parameter_library_py:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/humble/generate_parameter_library_py/0.3.8-3.tar.gz
+  generate_parameter_library/parameter_traits:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/humble/parameter_traits/0.3.8-3.tar.gz
+  geometry2/tf2:
+    type: tar
+    url: https://github.com/ros2-gbp/geometry2-release/archive/release/humble/tf2/0.25.8-1.tar.gz
+  geometry2/tf2_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/geometry2-release/archive/release/humble/tf2_msgs/0.25.8-1.tar.gz
+  image_common/camera_calibration_parsers:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/humble/camera_calibration_parsers/3.1.9-1.tar.gz
+  image_common/camera_info_manager:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/humble/camera_info_manager/3.1.9-1.tar.gz
+  image_common/image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/humble/image_transport/3.1.9-1.tar.gz
+  image_transport_plugins/compressed_depth_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/humble/compressed_depth_image_transport/2.5.2-1.tar.gz
+  image_transport_plugins/compressed_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/humble/compressed_image_transport/2.5.2-1.tar.gz
+  image_transport_plugins/image_transport_plugins:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/humble/image_transport_plugins/2.5.2-1.tar.gz
+  image_transport_plugins/theora_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/humble/theora_image_transport/2.5.2-1.tar.gz
+  launch/launch:
+    type: tar
+    url: https://github.com/ros2-gbp/launch-release/archive/release/humble/launch/1.0.6-1.tar.gz
+  launch_ros/launch_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/launch_ros-release/archive/release/humble/launch_ros/0.19.7-2.tar.gz
+  libstatistics_collector:
+    type: tar
+    url: https://github.com/ros2-gbp/libstatistics_collector-release/archive/release/humble/libstatistics_collector/1.3.2-1.tar.gz
+  libyaml_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/libyaml_vendor-release/archive/release/humble/libyaml_vendor/1.2.2-2.tar.gz
+  message_filters:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_message_filters-release/archive/release/humble/message_filters/4.3.5-1.tar.gz
+  mimick_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/mimick_vendor-release/archive/release/humble/mimick_vendor/0.2.8-2.tar.gz
+  osrf_pycommon:
+    type: tar
+    url: https://github.com/ros2-gbp/osrf_pycommon-release/archive/release/humble/osrf_pycommon/2.0.2-2.tar.gz
+  pluginlib:
+    type: tar
+    url: https://github.com/ros2-gbp/pluginlib-release/archive/release/humble/pluginlib/5.1.0-3.tar.gz
+  pybind11_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/pybind11_vendor-release/archive/release/humble/pybind11_vendor/2.4.2-1.tar.gz
+  python_cmake_module:
+    type: tar
+    url: https://github.com/ros2-gbp/python_cmake_module-release/archive/release/humble/python_cmake_module/0.10.0-2.tar.gz
+  rcl/rcl:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/humble/rcl/5.3.9-1.tar.gz
+  rcl/rcl_action:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/humble/rcl_action/5.3.9-1.tar.gz
+  rcl/rcl_lifecycle:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/humble/rcl_lifecycle/5.3.9-1.tar.gz
+  rcl/rcl_yaml_param_parser:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/humble/rcl_yaml_param_parser/5.3.9-1.tar.gz
+  rcl_interfaces/action_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/action_msgs/1.2.1-1.tar.gz
+  rcl_interfaces/builtin_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/builtin_interfaces/1.2.1-1.tar.gz
+  rcl_interfaces/composition_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/composition_interfaces/1.2.1-1.tar.gz
+  rcl_interfaces/lifecycle_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/lifecycle_msgs/1.2.1-1.tar.gz
+  rcl_interfaces/rcl_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/rcl_interfaces/1.2.1-1.tar.gz
+  rcl_interfaces/rosgraph_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/rosgraph_msgs/1.2.1-1.tar.gz
+  rcl_interfaces/statistics_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/humble/statistics_msgs/1.2.1-1.tar.gz
+  rcl_logging/rcl_logging_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_logging-release/archive/release/humble/rcl_logging_interface/2.3.1-1.tar.gz
+  rcl_logging/rcl_logging_spdlog:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_logging-release/archive/release/humble/rcl_logging_spdlog/2.3.1-1.tar.gz
+  rclcpp/rclcpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/humble/rclcpp/16.0.10-1.tar.gz
+  rclcpp/rclcpp_action:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/humble/rclcpp_action/16.0.10-1.tar.gz
+  rclcpp/rclcpp_components:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/humble/rclcpp_components/16.0.10-1.tar.gz
+  rclcpp/rclcpp_lifecycle:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/humble/rclcpp_lifecycle/16.0.10-1.tar.gz
+  rclpy:
+    type: tar
+    url: https://github.com/ros2-gbp/rclpy-release/archive/release/humble/rclpy/3.3.14-1.tar.gz
+  rcpputils:
+    type: tar
+    url: https://github.com/ros2-gbp/rcpputils-release/archive/release/humble/rcpputils/2.4.3-1.tar.gz
+  rcutils:
+    type: tar
+    url: https://github.com/ros2-gbp/rcutils-release/archive/release/humble/rcutils/5.1.6-1.tar.gz
+  realtime_tools:
+    type: tar
+    url: https://github.com/ros2-gbp/realtime_tools-release/archive/release/humble/realtime_tools/2.6.0-1.tar.gz
+  rmw/rmw:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw-release/archive/release/humble/rmw/6.1.2-1.tar.gz
+  rmw/rmw_implementation_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw-release/archive/release/humble/rmw_implementation_cmake/6.1.2-1.tar.gz
+  rmw_dds_common:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_dds_common-release/archive/release/humble/rmw_dds_common/1.6.0-2.tar.gz
+  rmw_fastrtps/rmw_fastrtps_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/humble/rmw_fastrtps_cpp/6.2.7-1.tar.gz
+  rmw_fastrtps/rmw_fastrtps_dynamic_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/humble/rmw_fastrtps_dynamic_cpp/6.2.7-1.tar.gz
+  rmw_fastrtps/rmw_fastrtps_shared_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/humble/rmw_fastrtps_shared_cpp/6.2.7-1.tar.gz
+  rmw_implementation:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_implementation-release/archive/release/humble/rmw_implementation/2.8.4-1.tar.gz
+  ros2_control/controller_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_interface/2.43.1-1.tar.gz
+  ros2_control/controller_manager:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_manager/2.43.1-1.tar.gz
+  ros2_control/controller_manager_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/controller_manager_msgs/2.43.1-1.tar.gz
+  ros2_control/hardware_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/hardware_interface/2.43.1-1.tar.gz
+  ros2_control/hardware_interface_testing:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/hardware_interface_testing/2.43.1-1.tar.gz
+  ros2_control/ros2controlcli:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/humble/ros2controlcli/2.43.1-1.tar.gz
+  ros2_controllers/diff_drive_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/diff_drive_controller/2.37.3-1.tar.gz
+  ros2_controllers/effort_controllers:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/effort_controllers/2.37.3-1.tar.gz
+  ros2_controllers/forward_command_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/forward_command_controller/2.37.3-1.tar.gz
+  ros2_controllers/joint_state_broadcaster:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/joint_state_broadcaster/2.37.3-1.tar.gz
+  ros2_controllers/joint_trajectory_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/humble/joint_trajectory_controller/2.37.3-1.tar.gz
+  ros2cli/ros2cli:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2cli/0.18.11-1.tar.gz
+  ros2cli/ros2node:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2node/0.18.11-1.tar.gz
+  ros2cli/ros2param:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2param/0.18.11-1.tar.gz
+  ros2cli/ros2pkg:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2pkg/0.18.11-1.tar.gz
+  ros2cli/ros2run:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2run/0.18.11-1.tar.gz
+  ros2cli/ros2service:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/humble/ros2service/0.18.11-1.tar.gz
+  ros_environment:
+    type: tar
+    url: https://github.com/ros2-gbp/ros_environment-release/archive/release/humble/ros_environment/3.2.2-1.tar.gz
+  rosidl/rosidl_adapter:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_adapter/3.1.5-2.tar.gz
+  rosidl/rosidl_cli:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_cli/3.1.5-2.tar.gz
+  rosidl/rosidl_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_cmake/3.1.5-2.tar.gz
+  rosidl/rosidl_generator_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_generator_c/3.1.5-2.tar.gz
+  rosidl/rosidl_generator_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_generator_cpp/3.1.5-2.tar.gz
+  rosidl/rosidl_parser:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_parser/3.1.5-2.tar.gz
+  rosidl/rosidl_runtime_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_runtime_c/3.1.5-2.tar.gz
+  rosidl/rosidl_runtime_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_runtime_cpp/3.1.5-2.tar.gz
+  rosidl/rosidl_typesupport_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_typesupport_interface/3.1.5-2.tar.gz
+  rosidl/rosidl_typesupport_introspection_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_typesupport_introspection_c/3.1.5-2.tar.gz
+  rosidl/rosidl_typesupport_introspection_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/humble/rosidl_typesupport_introspection_cpp/3.1.5-2.tar.gz
+  rosidl_defaults/rosidl_default_generators:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_defaults-release/archive/release/humble/rosidl_default_generators/1.2.0-2.tar.gz
+  rosidl_defaults/rosidl_default_runtime:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_defaults-release/archive/release/humble/rosidl_default_runtime/1.2.0-2.tar.gz
+  rosidl_generator_py:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_python-release/archive/release/humble/rosidl_generator_py/0.14.4-1.tar.gz
+  rosidl_runtime_py:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_runtime_py-release/archive/release/humble/rosidl_runtime_py/0.9.3-1.tar.gz
+  rosidl_typesupport/rosidl_typesupport_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport-release/archive/release/humble/rosidl_typesupport_c/2.0.1-1.tar.gz
+  rosidl_typesupport/rosidl_typesupport_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport-release/archive/release/humble/rosidl_typesupport_cpp/2.0.1-1.tar.gz
+  rosidl_typesupport_fastrtps/fastrtps_cmake_module:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/humble/fastrtps_cmake_module/2.2.2-2.tar.gz
+  rosidl_typesupport_fastrtps/rosidl_typesupport_fastrtps_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/humble/rosidl_typesupport_fastrtps_c/2.2.2-2.tar.gz
+  rosidl_typesupport_fastrtps/rosidl_typesupport_fastrtps_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/humble/rosidl_typesupport_fastrtps_cpp/2.2.2-2.tar.gz
+  rpyutils:
+    type: tar
+    url: https://github.com/ros2-gbp/rpyutils-release/archive/release/humble/rpyutils/0.2.1-2.tar.gz
+  rsl:
+    type: tar
+    url: https://github.com/ros2-gbp/RSL-release/archive/release/humble/rsl/1.1.0-1.tar.gz
+  spdlog_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/spdlog_vendor-release/archive/release/humble/spdlog_vendor/1.3.1-1.tar.gz
+  teleop_twist_keyboard:
+    type: tar
+    url: https://github.com/ros2-gbp/teleop_twist_keyboard-release/archive/release/humble/teleop_twist_keyboard/2.4.0-1.tar.gz
+  tinyxml2_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/tinyxml2_vendor-release/archive/release/humble/tinyxml2_vendor/0.7.6-1.tar.gz
+  unique_identifier_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/unique_identifier_msgs-release/archive/release/humble/unique_identifier_msgs/2.2.1-3.tar.gz
+  usb_cam:
+    type: tar
+    url: https://github.com/ros2-gbp/usb_cam-release/archive/release/humble/usb_cam/0.8.1-1.tar.gz
+  vision_opencv/cv_bridge:
+    type: tar
+    url: https://github.com/ros2-gbp/vision_opencv-release/archive/release/humble/cv_bridge/3.2.1-1.tar.gz
+  xacro:
+    type: tar
+    url: https://github.com/ros2-gbp/xacro-release/archive/release/humble/xacro/2.0.8-1.tar.gz
+  yaml_cpp_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/yaml_cpp_vendor-release/archive/release/humble/yaml_cpp_vendor/8.0.2-1.tar.gz
+
