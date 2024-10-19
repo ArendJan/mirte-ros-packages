@@ -26,7 +26,7 @@ jobs:
           DEB_DISTRO: ${{ matrix.deb_distro }}
           DEB_ARCH: ${{ matrix.arch }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ROSDEP_SOURCE: yaml file:///home/runner/work/mirte-ros-packages/mirte-ros-packages/rosdep.yaml debian
+          # ROSDEP_SOURCE: yaml file:///home/runner/work/mirte-ros-packages/mirte-ros-packages/rosdep.yaml debian
           REPOS_FILE: ./ros2_sources.repos
           SKIP_CHECKOUT: true
           
