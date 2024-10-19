@@ -1,0 +1,934 @@
+actionlib:
+  debian:
+  - libactionlib-dev
+  - python3-actionlib
+actionlib_msgs:
+  debian:
+  - libactionlib-msgs-dev
+  - python3-actionlib-msgs
+  - ros-actionlib-msgs
+actionlib_tools:
+  debian:
+  - python3-actionlib-tools
+ament_cmake:
+  debian:
+  - ament-cmake
+ament_cmake_auto:
+  debian:
+  - ament-cmake
+ament_cmake_copyright:
+  debian:
+  - ament-cmake-copyright
+ament_cmake_core:
+  debian:
+  - ament-cmake-core
+ament_cmake_cppcheck:
+  debian:
+  - ament-cmake-cppcheck
+ament_cmake_cpplint:
+  debian:
+  - ament-cmake-cpplint
+ament_cmake_export_dependencies:
+  debian:
+  - ament-cmake
+ament_cmake_export_targets:
+  debian:
+  - ament-cmake
+ament_cmake_gen_version_h:
+  debian:
+  - ament-cmake
+ament_cmake_clang_format:
+  debian:
+  - ament-cmake-clang-format
+ament_cmake_gmock:
+  debian:
+  - ament-cmake-googletest
+ament_cmake_google_benchmark:
+  debian:
+  - python3-ament-cmake-google-benchmark
+ament_cmake_gtest:
+  debian:
+  - ament-cmake-googletest
+ament_cmake_lint_cmake:
+  debian:
+  - ament-cmake-lint-cmake
+ament_cmake_mypy:
+  debian:
+  - ament-cmake-mypy
+ament_cmake_pytest:
+  debian:
+  - ament-cmake-pytest
+ament_cmake_python:
+  debian:
+  - ament-cmake-python
+ament_cmake_ros:
+  debian:
+  - ament-cmake-ros
+ament_cmake_test:
+  debian:
+  - python3-ament-cmake-test
+ament_cmake_uncrustify:
+  debian:
+  - ament-cmake-uncrustify
+ament_cmake_version:
+  debian:
+  - ament-cmake
+ament_cmake_xmllint:
+  debian:
+  - ament-cmake-xmllint
+ament_copyright:
+  debian:
+  - python3-ament-copyright
+ament_flake8:
+  debian:
+  - python3-ament-flake8
+ament_index_cpp:
+  debian:
+  - libament-index-cpp-dev
+ament_index_python:
+  debian:
+  - python3-ament-index
+ament_lint_auto:
+  debian:
+  - ament-lint
+ament_lint_common:
+  debian:
+  - ament-cmake-copyright
+  - ament-cmake-cppcheck
+  - ament-cmake-cpplint
+  - ament-cmake-flake8
+  - ament-cmake-lint-cmake
+  - ament-cmake-pep257
+  - ament-cmake-uncrustify
+  - ament-cmake-xmllint
+ament_mypy:
+  debian:
+  - python3-ament-mypy
+ament_pep257:
+  debian:
+  - ament-cmake-pep257
+ament_xmllint:
+  debian:
+  - python3-ament-xmllint
+angles:
+  debian:
+  - libangles-dev
+  - python3-angles
+apriltag:
+  debian:
+  - libapriltag-dev
+bond:
+  debian:
+  - libbond-dev
+  - libbondcpp-dev
+  - python3-bond
+bond_core:
+  debian:
+  - libbond-dev
+  - python3-bond
+  - libbondcpp-dev
+bondcpp:
+  debian:
+  - libbondcpp-dev
+bondpy:
+  debian:
+  - python3-bondpy
+camera_calibration:
+  debian:
+  - ros-camera-calibration
+  - python3-camera-calibration
+camera_calibration_parsers:
+  debian:
+  - camera-calibration-parsers-tools
+  - libcamera-calibration-parsers-dev
+  - python3-camera-calibration-parsers
+camera_info_manager:
+  debian:
+  - libcamera-info-manager-dev
+catkin:
+  debian:
+  - catkin
+  - libgtest-dev
+  - libgmock-dev
+class_loader:
+  debian:
+  - libclass-loader-dev
+cmake_modules:
+  debian:
+  - ros-cmake-modules
+collada_parser:
+  debian:
+  - libcollada-parser-dev
+collada_urdf:
+  debian:
+  - libcollada-urdf-dev
+common_msgs:
+  debian:
+  - libactionlib-msgs-dev
+  - python3-actionlib-msgs
+  - ros-actionlib-msgs
+  - libdiagnostic-msgs-dev
+  - python3-diagnostic-msgs
+  - ros-diagnostic-msgs
+  - libgeometry-msgs-dev
+  - python3-geometry-msgs
+  - ros-geometry-msgs
+  - libnav-msgs-dev
+  - python3-nav-msgs
+  - ros-nav-msgs
+  - libsensor-msgs-dev
+  - python3-sensor-msgs
+  - ros-sensor-msgs
+  - libshape-msgs-dev
+  - python3-shape-msgs
+  - ros-shape-msgs
+  - libstereo-msgs-dev
+  - python3-stereo-msgs
+  - ros-stereo-msgs
+  - libtrajectory-msgs-dev
+  - python3-trajectory-msgs
+  - ros-trajectory-msgs
+  - libvisualization-msgs-dev
+  - python3-visualization-msgs
+  - ros-visualization-msgs
+console_bridge_vendor:
+  debian:
+  - librosconsole-bridge-dev
+cpp_common:
+  debian:
+  - libroscpp-core-dev
+cv_bridge:
+  debian:
+  - libcv-bridge-dev
+  - python3-cv-bridge
+cyclonedds:
+  debian:
+  - cyclonedds-dev
+depth_image_proc:
+  debian:
+  - libdepth-image-proc-dev
+desktop:
+  debian:
+  - ros-desktop-dev
+desktop_full:
+  debian:
+  - ros-desktop-full-dev
+diagnostic_aggregator:
+  debian:
+  - libdiagnostic-aggregator-dev
+  - libdiagnostic-aggregator-tools
+diagnostic_analysis:
+  debian:
+  - python3-diagnostic-analysis
+diagnostic_common_diagnostics:
+  debian:
+  - python3-diagnostic-common-diagnostics
+diagnostic_msgs:
+  debian:
+  - libdiagnostic-msgs-dev
+  - python3-diagnostic-msgs
+  - ros-diagnostic-msgs
+diagnostic_updater:
+  debian:
+  - python3-diagnostic-updater
+  - libdiagnostic-updater-dev
+diagnostics:
+  debian:
+  - libdiagnostic-aggregator-dev
+  - libdiagnostic-aggregator-tools
+  - python3-diagnostic-analysis
+  - python3-diagnostic-common-diagnostics
+  - python3-diagnostic-updater
+  - libdiagnostic-updater-dev
+  - libself-test-dev
+  - libself-test-tools
+domain_coordinator:
+  debian:
+  - python3-domain-coordinator
+dynamic_reconfigure:
+  debian:
+  - libdynamic-reconfigure-config-init-mutex-dev
+  - python3-dynamic-reconfigure
+eigen_conversions:
+  debian:
+  - libtf-conversions-dev
+  - python3-tf-conversions
+eigen_stl_containers:
+  debian:
+  - libeigen-stl-containers-dev
+fastcdr:
+  debian:
+  - libfastcdr-dev
+fastrtps:
+  debian:
+  - libfastrtps-dev
+fcl:
+  debian:
+  - libfcl-dev
+gencpp:
+  debian:
+  - python3-gencpp
+genlisp:
+  debian:
+  - python3-genlisp
+genmsg:
+  debian:
+  - python3-genmsg
+genpy:
+  debian:
+  - python3-genpy
+geometric_shapes:
+  debian:
+  - libgeometric-shapes-dev
+geometry:
+  debian:
+  - libangles-dev
+  - python3-angles
+  - libtf-conversions-dev
+  - python3-tf-conversions
+  - libtf-conversions-dev
+  - python3-tf-conversions
+  - libtf-dev
+  - python3-tf
+  - tf-tools
+  - libtf-conversions-dev
+  - python3-tf-conversions
+geometry2:
+  debian:
+  - libtf2-dev
+  - python3-tf2
+  - libtf2-bullet-dev
+  - libtf2-eigen-dev
+  - libtf2-geometry-msgs-dev
+  - python3-tf2-geometry-msgs
+  - libtf2-kdl-dev
+  - python3-tf2-kdl
+  - libtf2-msgs-dev
+  - python3-tf2-msgs
+  - ros-tf2-msgs
+  - python3-tf2
+  - libtf2-ros-dev
+  - python3-tf2-ros
+  - libtf2-sensor-msgs-dev
+  - python3-tf2-sensor-msgs
+  - ros-sensor-msgs
+  - tf2-tools
+geometry_msgs:
+  debian:
+  - libgeometry-msgs-dev
+  - python3-geometry-msgs
+  - ros-geometry-msgs
+google_benchmark_vendor:
+  debian:
+  - libbenchmark-dev
+iceoryx_binding_c:
+  debian:
+  - libiceoryx-binding-c-dev
+ignition_math6_vendor:
+  debian:
+  - libignition-math-dev
+image_common:
+  debian:
+  - libcamera-calibration-parsers-dev
+  - libcamera-info-manager-dev
+  - libimage-transport-dev
+  - libpolled-camera-dev
+image_geometry:
+  debian:
+  - libimage-geometry-dev
+  - python3-image-geometry
+image_pipeline:
+  debian:
+  - ros-camera-calibration
+  - python3-camera-calibration
+  - libdepth-image-proc-dev
+  - libimage-proc-dev
+  - python3-image-proc
+  - ros-image-proc
+  - libimage-publisher-dev
+  - python3-image-publisher
+  - ros-image-publisher
+  - libimage-rotate-dev
+  - python3-image-rotate
+  - ros-image-rotate
+  - libimage-view-dev
+  - python3-image-view
+  - ros-image-view
+  - libstereo-image-proc-dev
+  - python3-stereo-image-proc
+  - ros-stereo-image-proc
+image_proc:
+  debian:
+  - libimage-proc-dev
+  - python3-image-proc
+  - ros-image-proc
+image_publisher:
+  debian:
+  - libimage-publisher-dev
+  - python3-image-publisher
+  - ros-image-publisher
+image_rotate:
+  debian:
+  - libimage-rotate-dev
+  - python3-image-rotate
+  - ros-image-rotate
+image_transport:
+  debian:
+  - image-transport-tools
+  - libimage-transport-dev
+image_view:
+  debian:
+  - libimage-view-dev
+  - python3-image-view
+  - ros-image-view
+interactive_markers:
+  debian:
+  - libinteractive-markers-dev
+  - python3-interactive-markers
+joint_state_publisher:
+  debian:
+  - joint-state-publisher
+joint_state_publisher_gui:
+  debian:
+  - joint-state-publisher-gui
+kdl_conversions:
+  debian:
+  - libtf-conversions-dev
+  - python3-tf-conversions
+kdl_parser:
+  debian:
+  - libkdl-parser-dev
+kdl_parser_py:
+  debian:
+  - libkdl-parser-dev
+laser_geometry:
+  debian:
+  - liblaser-geometry-dev
+  - python3-laser-geometry
+map_msgs:
+  debian:
+  - libmap-msgs-dev
+  - python3-map-msgs
+  - ros-map-msgs
+message_filters:
+  debian:
+  - libmessage-filters-dev
+  - python3-message-filters
+message_generation:
+  debian:
+  - ros-message-generation
+message_runtime:
+  debian:
+  - ros-message-runtime
+mk:
+  debian:
+  - ros-mk
+move_base_msgs:
+  debian:
+  - libmove-base-msgs-dev
+  - python3-move-base-msgs
+  - ros-move-base-msgs
+nav_msgs:
+  debian:
+  - libnav-msgs-dev
+  - python3-nav-msgs
+  - ros-nav-msgs
+nodelet:
+  debian:
+  - libnodelet-dev
+  - libnodeletlib-dev
+  - python3-nodelet
+nodelet_core:
+  debian:
+  - libnodelet-dev
+  - libnodeletlib-dev
+  - python3-nodelet
+  - libnodelet-topic-tools-dev
+  - python3-nodelet-topic-tools
+nodelet_topic_tools:
+  debian:
+  - libnodelet-topic-tools-dev
+  - python3-nodelet-topic-tools
+octomap:
+  debian:
+  - liboctomap-dev
+  - libdynamicedt3d-dev
+octovis:
+  debian:
+  - liboctovis-dev
+ompl:
+  debian:
+  - libompl-dev
+opencv_apps:
+  debian:
+  - libopencv-apps-dev
+  - python3-opencv-apps
+  - ros-opencv-apps
+orocos_kdl:
+  debian:
+  - liborocos-kdl-dev
+orocos_kdl_vendor:
+  debian:
+  - liborocos-kdl-dev
+osrf_pycommon:
+  debian:
+  - python3-osrf-pycommon
+osrf_testing_tools_cpp:
+  debian:
+  - libosrf-testing-tools-cpp-dev
+pcl_conversions:
+  debian:
+  - libpcl-conversions-dev
+pcl_msgs:
+  debian:
+  - libpcl-msgs-dev
+  - python3-pcl-msgs
+  - ros-pcl-msgs
+pcl_ros:
+  debian:
+  - libpcl-ros-dev
+  - pcl-ros-tools
+  - python3-pcl-ros
+perception:
+  debian:
+  - ros-perception-dev
+perception_pcl:
+  debian:
+  - libpcl-conversions-dev
+  - libpcl-msgs-dev
+  - python3-pcl-msgs
+  - ros-pcl-msgs
+  - libpcl-ros-dev
+  - pcl-ros-tools
+  - python3-pcl-ros
+performance_test_fixture:
+  debian:
+  - libperformance-test-fixture-dev
+pluginlib:
+  debian:
+  - pluginlib-dev
+polled_camera:
+  debian:
+  - libpolled-camera-dev
+  - python3-polled-camera
+pybind11_vendor:
+  debian:
+  - pybind11-dev
+python3-catkin-pkg-modules:
+  debian:
+  - python3-catkin-pkg
+python3-empy:
+  debian:
+  - python3-empy
+python3-lark-parser:
+  debian:
+  - python3-lark
+python3-rosdep:
+  debian:
+  - python3-rosdep2
+python3-rosdep-modules:
+  debian:
+  - python3-rosdep2
+python3-rosdistro-modules:
+  debian:
+  - python3-rosdistro
+python3-rospkg-modules:
+  debian:
+  - python3-rospkg
+python_qt_binding:
+  debian:
+  - python3-python-qt-binding
+random_numbers:
+  debian:
+  - librandom-numbers-dev
+rcpputils:
+  debian:
+  - librcpputils-dev
+rcutils:
+  debian:
+  - librcutils-dev
+  - python3-rcutils
+resource_retriever:
+  debian:
+  - libresource-retriever-dev
+  - python3-resource-retriever
+robot:
+  debian:
+  - ros-robot-dev
+robot_state_publisher:
+  debian:
+  - librobot-state-publisher-dev
+  - ros-robot-state-publisher
+ros:
+  debian:
+  - catkin
+  - libgtest-dev
+  - libgmock-dev
+  - ros-mk
+  - rosbuild
+  - roslang
+  - libroslib-dev
+  - python3-roslib
+  - rosbash
+  - python3-rosboost-cfg
+  - python3-rosclean
+  - python3-roscreate
+  - python3-rosmake
+  - python3-rosunit
+ros_base:
+  debian:
+  - ros-base-dev
+ros_comm:
+  debian:
+  - libroscpp-dev
+  - libroscpp-core-dev
+  - python3-rospy
+  - libros-rosgraph-msgs-dev
+  - python3-rosgraph-msgs
+  - ros-rosgraph-msgs
+  - libstd-srvs-dev
+  - python3-std-srvs
+  - ros-std-srvs
+  - catkin
+  - libgtest-dev
+  - libgmock-dev
+  - ros-mk
+  - rosbuild
+  - roslang
+  - libroslib-dev
+  - python3-roslib
+  - rosbash
+  - python3-rosboost-cfg
+  - python3-rosclean
+  - python3-roscreate
+  - python3-rosmake
+  - python3-rosunit
+  - librosbag-dev
+  - python3-rosbag
+  - librosconsole-dev
+  - python3-rosgraph
+  - python3-roslaunch
+  - roslisp
+  - python3-rosmaster
+  - python3-rosmsg
+  - python3-rosnode
+  - rosout
+  - python3-rosparam
+  - python3-rosservice
+  - librostest-dev
+  - python3-rostest
+  - python3-rostopic
+  - libtopic-tools-dev
+  - python3-topic-tools
+  - ros-topic-tools-srvs
+  - topic-tools
+  - libmessage-filters-dev
+  - python3-message-filters
+  - python3-roswtf
+  - libxmlrpcpp-dev
+ros_core:
+  debian:
+  - ros-core-dev
+ros_environment:
+  debian:
+  - ros-environment
+rosbag:
+  debian:
+  - librosbag-dev
+  - python3-rosbag
+rosbag_storage:
+  debian:
+  - librosbag-storage-dev
+rosbash:
+  debian:
+  - rosbash
+rosboost_cfg:
+  debian:
+  - python3-rosboost-cfg
+rosbuild:
+  debian:
+  - rosbuild
+rosclean:
+  debian:
+  - python3-rosclean
+rosconsole:
+  debian:
+  - librosconsole-dev
+rosconsole_bridge:
+  debian:
+  - librosconsole-bridge-dev
+roscpp:
+  debian:
+  - libroscpp-dev
+  - libroscpp-core-dev
+roscpp_core:
+  debian:
+  - libroscpp-core-dev
+roscpp_serialization:
+  debian:
+  - libroscpp-core-dev
+roscpp_traits:
+  debian:
+  - libroscpp-core-dev
+roscreate:
+  debian:
+  - python3-roscreate
+rosdiagnostic:
+  debian:
+  - rosdiagnostic
+rosgraph:
+  debian:
+  - python3-rosgraph
+rosgraph_msgs:
+  debian:
+  - libros-rosgraph-msgs-dev
+  - python3-rosgraph-msgs
+  - ros-rosgraph-msgs
+rosidl_cli:
+  debian:
+  - python3-rosidl
+rosidl_cmake:
+  debian:
+  - rosidl-cmake
+rosidl_generator_c:
+  debian:
+  - rosidl-generator-c-cpp
+rosidl_generator_cpp:
+  debian:
+  - rosidl-generator-c-cpp
+rosidl_parser:
+  debian:
+  - python3-rosidl
+rosidl_pycommon:
+  debian:
+  - python3-rosidl
+rosidl_runtime_c:
+  debian:
+  - librosidl-runtime-c-cpp-dev
+rosidl_runtime_cpp:
+  debian:
+  - librosidl-runtime-c-cpp-dev
+rosidl_typesupport_interface:
+  debian:
+  - librosidl-typesupport-interface-dev
+rosidl_typesupport_introspection_c:
+  debian:
+  - librosidl-typesupport-introspection-c-cpp-dev
+rosidl_typesupport_introspection_cpp:
+  debian:
+  - librosidl-typesupport-introspection-c-cpp-dev
+roslang:
+  debian:
+  - roslang
+roslaunch:
+  debian:
+  - python3-roslaunch
+roslib:
+  debian:
+  - libroslib-dev
+  - python3-roslib
+roslisp:
+  debian:
+  - roslisp
+roslz4:
+  debian:
+  - libroslz4-dev
+  - python3-roslz4
+rosmake:
+  debian:
+  - python3-rosmake
+rosmaster:
+  debian:
+  - python3-rosmaster
+rosmsg:
+  debian:
+  - python3-rosmsg
+rosnode:
+  debian:
+  - python3-rosnode
+rosout:
+  debian:
+  - rosout
+rospack:
+  debian:
+  - librospack-dev
+  - rospack-tools
+rosparam:
+  debian:
+  - python3-rosparam
+rospy:
+  debian:
+  - python3-rospy
+rosservice:
+  debian:
+  - python3-rosservice
+rostest:
+  debian:
+  - librostest-dev
+  - python3-rostest
+rostime:
+  debian:
+  - libroscpp-core-dev
+rostopic:
+  debian:
+  - python3-rostopic
+rosunit:
+  debian:
+  - python3-rosunit
+roswtf:
+  debian:
+  - python3-roswtf
+rviz:
+  debian:
+  - rviz
+  - librviz-dev
+self_test:
+  debian:
+  - libself-test-dev
+  - libself-test-tools
+sensor_msgs:
+  debian:
+  - libsensor-msgs-dev
+  - python3-sensor-msgs
+  - ros-sensor-msgs
+shape_msgs:
+  debian:
+  - libshape-msgs-dev
+  - python3-shape-msgs
+  - ros-shape-msgs
+shared_queues_vendor:
+  debian:
+  - libconcurrentqueue-dev
+  - libreaderwriterqueue-dev
+smclib:
+  debian:
+  - python3-smclib
+spdlog_vendor:
+  debian:
+  - libspdlog-dev
+sqlite3_vendor:
+  debian:
+  - libsqlite3-dev
+std_msgs:
+  debian:
+  - libstd-msgs-dev
+  - python3-std-msgs
+  - ros-std-msgs
+std_srvs:
+  debian:
+  - libstd-srvs-dev
+  - python3-std-srvs
+  - ros-std-srvs
+stereo_image_proc:
+  debian:
+  - libstereo-image-proc-dev
+  - python3-stereo-image-proc
+  - ros-stereo-image-proc
+stereo_msgs:
+  debian:
+  - libstereo-msgs-dev
+  - python3-stereo-msgs
+  - ros-stereo-msgs
+tango_icons_vendor:
+  debian:
+  - tango-icon-theme
+test_interface_files:
+  debian:
+  - ros2-test-interface-files
+tf:
+  debian:
+  - libtf-dev
+  - python3-tf
+  - tf-tools
+tf2:
+  debian:
+  - libtf2-dev
+  - python3-tf2
+tf2_bullet:
+  debian:
+  - libtf2-bullet-dev
+tf2_eigen:
+  debian:
+  - libtf2-eigen-dev
+tf2_geometry_msgs:
+  debian:
+  - libtf2-geometry-msgs-dev
+  - python3-tf2-geometry-msgs
+tf2_kdl:
+  debian:
+  - libtf2-kdl-dev
+  - python3-tf2-kdl
+tf2_msgs:
+  debian:
+  - libtf2-msgs-dev
+  - python3-tf2-msgs
+  - ros-tf2-msgs
+tf2_py:
+  debian:
+  - python3-tf2
+tf2_ros:
+  debian:
+  - libtf2-ros-dev
+  - python3-tf2-ros
+tf2_sensor_msgs:
+  debian:
+  - libtf2-sensor-msgs-dev
+  - python3-tf2-sensor-msgs
+  - ros-sensor-msgs
+tf2_tools:
+  debian:
+  - tf2-tools
+tf_conversions:
+  debian:
+  - libtf-conversions-dev
+  - python3-tf-conversions
+topic_tools:
+  debian:
+  - libtopic-tools-dev
+  - python3-topic-tools
+  - ros-topic-tools-srvs
+  - topic-tools
+trajectory_msgs:
+  debian:
+  - libtrajectory-msgs-dev
+  - python3-trajectory-msgs
+  - ros-trajectory-msgs
+urdf:
+  debian:
+  - liburdf-dev
+urdf_parser_plugin:
+  debian:
+  - liburdf-parser-plugin-dev
+urdfdom:
+  debian:
+  - liburdfdom-dev
+urdfdom_headers:
+  debian:
+  - liburdfdom-headers-dev
+vision_opencv:
+  debian:
+  - libcv-bridge-dev
+  - python3-cv-bridge
+  - libimage-geometry-dev
+  - python3-image-geometry
+visp:
+  debian:
+  - libvisp-dev
+  - python3-vispy
+visualization_msgs:
+  debian:
+  - libvisualization-msgs-dev
+  - python3-visualization-msgs
+  - ros-visualization-msgs
+viz:
+  debian:
+  - ros-viz-dev
+xmlrpcpp:
+  debian:
+  - libxmlrpcpp-dev
+ignition-cmake2:
+  debian:
+  - libignition-cmake-dev
+ignition-math6:
+  debian:
+  - libignition-math-dev
