@@ -19,6 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - run: rm -rf ./mirte*
 
       - uses: arendjan/ros-deb-builder-action@main
         with:
