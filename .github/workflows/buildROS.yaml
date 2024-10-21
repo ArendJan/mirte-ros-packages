@@ -13,7 +13,7 @@ jobs:
                 deb_distro: [jammy]
                 arch: [
                         amd64, 
-                      #  armhf
+                       armhf
                 ]
         fail-fast: false
 
