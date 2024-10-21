@@ -17,12 +17,15 @@
 import argparse
 import os
 import sys
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+sys.path.append(os.path.join(os.path.dirname(SCRIPT_DIR), "ament_package"))
 
-from .ament_package.templates import get_environment_hook_template_path
-from .ament_package.templates import get_package_level_template_names
-from .ament_package.templates import get_package_level_template_path
-from .ament_package.templates import get_prefix_level_template_names
-from .ament_package.templates import get_prefix_level_template_path
+from ament_package.templates import get_environment_hook_template_path
+from ament_package.templates import get_package_level_template_names
+from ament_package.templates import get_package_level_template_path
+from ament_package.templates import get_prefix_level_template_names
+from ament_package.templates import get_prefix_level_template_path
 
 IS_WINDOWS = os.name == 'nt'
 
