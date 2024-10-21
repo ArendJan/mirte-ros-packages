@@ -20,6 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: rm -rf ./mirte*
+      - run: |
+          cd srces/
+          git clone https://github.com/ros-infrastructure/catkin_pkg.git
+          rm -rf catkin_pkg/test/
       # - run: | # ament_cmake_core needs some files from ament_package, but they are included and in a cyclic dependency, so just copy them directly. Not nice, but it works.
       #     set -xe
       #     mkdir -p srces/
