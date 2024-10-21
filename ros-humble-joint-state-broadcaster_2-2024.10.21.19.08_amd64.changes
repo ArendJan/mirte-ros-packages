@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-joint-state-broadcaster
+Binary: ros-humble-joint-state-broadcaster
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.08
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-joint-state-broadcaster - Broadcaster to publish joint state
+Changes:
+ ros-humble-joint-state-broadcaster (2-2024.10.21.19.08) jammy; urgency=high
+Checksums-Sha1:
+ b2f5c3538e0bc3ff978f46c28034b899676b8108 1257756 ros-humble-joint-state-broadcaster-dbgsym_2-2024.10.21.19.08_amd64.ddeb
+ f5117b348cb36926c855dadef9f43f8395e9a31e 17001 ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.buildinfo
+ 9a8d85a2331c90fc9cf87162ef2f490e86d384f9 93180 ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.deb
+Checksums-Sha256:
+ e2c8a0d0efe57806e031b56366c0ef1c891541df1d15d64b8b8ecb609ad07e7b 1257756 ros-humble-joint-state-broadcaster-dbgsym_2-2024.10.21.19.08_amd64.ddeb
+ 29c5dbbcff6a76335edf4c4cb8562a12b1c33f8507dce88418922e419c6c57b2 17001 ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.buildinfo
+ 7fad33164d983ecfba6445bddff898e57eef195bc6326ac5f05f79ee725b2350 93180 ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.deb
+Files:
+ 8d8ebc630d99f49f81359f8195c3a8a8 1257756 debug optional ros-humble-joint-state-broadcaster-dbgsym_2-2024.10.21.19.08_amd64.ddeb
+ fa834bfb817e202d1a31b6da9f0cebbf 17001 misc optional ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.buildinfo
+ 5e50b83ceecf7e4f52a10c3e68d16a46 93180 misc optional ros-humble-joint-state-broadcaster_2-2024.10.21.19.08_amd64.deb

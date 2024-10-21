@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 22 Jul 2024 00:00:00 -0000
+Source: ros-humble-compressed-image-transport
+Binary: ros-humble-compressed-image-transport
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.45
+Distribution: jammy
+Urgency: high
+Maintainer: Kenji Brameld <kenjibrameld@gmail.com>
+Changed-By: Kenji Brameld <kenjibrameld@gmail.com>
+Description:
+ ros-humble-compressed-image-transport - Compressed_image_transport provides a plugin to image_transport f
+Changes:
+ ros-humble-compressed-image-transport (2-2024.10.21.18.45) jammy; urgency=high
+Checksums-Sha1:
+ f88b4892057d0bda630d55929b212e30d671347d 3024274 ros-humble-compressed-image-transport-dbgsym_2-2024.10.21.18.45_amd64.ddeb
+ adf0080157921c28eebb8c1d664fdb673f8d08a3 26647 ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.buildinfo
+ 49fb2e8238b98f653e48968bf8ba17766987a9b3 129726 ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.deb
+Checksums-Sha256:
+ 7ece685fd3fe0ba2e812bcd838c849f4848d22969b76fb44eb0612865738dc4e 3024274 ros-humble-compressed-image-transport-dbgsym_2-2024.10.21.18.45_amd64.ddeb
+ 52eca4e4ebcdbd221e9c38e7968d568b0dedfd229f0e44a75b7a6d65cf5ecba7 26647 ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.buildinfo
+ d5ffb9cacabb4a68cc0c4618c1b9d8d8fa153736def272970e4f092fa7b1ed33 129726 ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.deb
+Files:
+ 2e2e163ff61db0ddd5dafa351dd40087 3024274 debug optional ros-humble-compressed-image-transport-dbgsym_2-2024.10.21.18.45_amd64.ddeb
+ f1df7dfeec496cda9ac3132d29e3ef39 26647 misc optional ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.buildinfo
+ 11f473107300fdaf9acdcdec4adeb432 129726 misc optional ros-humble-compressed-image-transport_2-2024.10.21.18.45_amd64.deb

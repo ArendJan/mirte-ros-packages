@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-interfaces
+Binary: ros-humble-ament-cmake-export-interfaces
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.43
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-interfaces - The ability to export interfaces to downstream packages in the am
+Changes:
+ ros-humble-ament-cmake-export-interfaces (2-2024.10.21.15.43) jammy; urgency=high
+Checksums-Sha1:
+ 685a7d9e62b6883ae33060fc39d95df61288ff2e 8123 ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.buildinfo
+ 706a41e5310ea2b74ca031a88a8a59d5a3c24ba6 7884 ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.deb
+Checksums-Sha256:
+ e57fb845a9f063e0bb002e9549195d49f40a95c711ae80ee2aad8dd0db63064c 8123 ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.buildinfo
+ 21f42328b21131f862ba5ebcab7f4889e7b472362c18f8c3624f329202a633e4 7884 ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.deb
+Files:
+ d045ca435527027dee3328680ea2b3e8 8123 misc optional ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.buildinfo
+ e4db9205e6be646a37ec909a6dfef585 7884 misc optional ros-humble-ament-cmake-export-interfaces_2-2024.10.21.15.43_amd64.deb

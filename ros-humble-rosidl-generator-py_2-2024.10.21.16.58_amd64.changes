@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 08 Nov 2022 00:00:00 -0000
+Source: ros-humble-rosidl-generator-py
+Binary: ros-humble-rosidl-generator-py
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.58
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-generator-py - Generate the ROS interfaces in Python.
+Changes:
+ ros-humble-rosidl-generator-py (2-2024.10.21.16.58) jammy; urgency=high
+ .
+   * Humble: Backport NaN fixes (#188 <https://github.com/ros2/rosidl_python/issues/188>)
+   * Contributors: Chris Lalancette
+Checksums-Sha1:
+ 0176ddc60d42f56ba75b72cbd86adf597ea89813 13254 ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.buildinfo
+ 380e7e937cde3f0c0d503aa28689830de022c8c5 29186 ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.deb
+Checksums-Sha256:
+ e9ea32f72a3c3a2f661184aaa1e6979bbca5749ee45c7f86afaa0bb0c232d3d6 13254 ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.buildinfo
+ bf467e7e1812e4e81b7b4bcc0376364d5495e5c11dd0b5ff77f25e7ed1febde5 29186 ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.deb
+Files:
+ a1f116fa586c762eb71a3e8197919d0b 13254 misc optional ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.buildinfo
+ 27bfb715d16d52692bf837e88df44eeb 29186 misc optional ros-humble-rosidl-generator-py_2-2024.10.21.16.58_amd64.deb

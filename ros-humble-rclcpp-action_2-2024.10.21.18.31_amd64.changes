@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rclcpp-action
+Binary: ros-humble-rclcpp-action
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.31
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rclcpp-action - Adds action APIs for C++.
+Changes:
+ ros-humble-rclcpp-action (2-2024.10.21.18.31) jammy; urgency=high
+Checksums-Sha1:
+ 7ac296d1e011df2673e73e14787a14073a2c7b10 679884 ros-humble-rclcpp-action-dbgsym_2-2024.10.21.18.31_amd64.ddeb
+ 5827b20bc0ef17aa2192bc1bc59ebf34f8c7b46c 16001 ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.buildinfo
+ 1cbc0ff03ef69248ec0628e40a619fe2e91e6109 66162 ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.deb
+Checksums-Sha256:
+ d549df637f45e2290b0193ea6aa6c167b0b21c54a98d854d946dbfa62dee634c 679884 ros-humble-rclcpp-action-dbgsym_2-2024.10.21.18.31_amd64.ddeb
+ a4ba0e8f90b0a082153635cda10a27d0ecc69ca36b4c1284ac1277f7cd164088 16001 ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.buildinfo
+ 917ad0d4ee1bc9c83b4246374c66b3ee98dedc37e065e1c852910ced75fa1c67 66162 ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.deb
+Files:
+ c498d3d1bb7423a528aeb31d29b021ce 679884 debug optional ros-humble-rclcpp-action-dbgsym_2-2024.10.21.18.31_amd64.ddeb
+ 2cd5526d0c59aeb1120d8504f4e598f6 16001 misc optional ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.buildinfo
+ 474d96d6fba4454ae176264ced497405 66162 misc optional ros-humble-rclcpp-action_2-2024.10.21.18.31_amd64.deb

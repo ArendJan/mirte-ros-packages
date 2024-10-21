@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Tue, 01 Mar 2022 00:00:00 -0000
+Source: ros-humble-python-cmake-module
+Binary: ros-humble-python-cmake-module
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.26
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-python-cmake-module - Provide CMake module with extra functionality for Python.
+Changes:
+ ros-humble-python-cmake-module (2-2024.10.21.16.26) jammy; urgency=high
+ .
+   * require Python 3.6 as we use format strings in various places (#10 <https://github.com/ros2/python_cmake_module/issues/10>)
+   * Document all variables set by this module (#5 <https://github.com/ros2/python_cmake_module/issues/5>)
+   * Add changelog (#4 <https://github.com/ros2/python_cmake_module/issues/4>)
+   * Contributors: Ivan Santiago Paunovic, Shane Loretz, William Woodall
+Checksums-Sha1:
+ 803faa1d55a05c7db4ade202474a039898c0d286 10564 ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.buildinfo
+ 2311afe75f8a32db76f485c0b349adf808532163 7708 ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.deb
+Checksums-Sha256:
+ d2bbc058889500296e7131b920e45ad926d9c61f3e926f8d578cb4ca789b0973 10564 ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.buildinfo
+ 74c9aa4f9d42de4f2584f95b94e1cceee2dd9616526aa7fe4904f9c0d76ca835 7708 ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.deb
+Files:
+ fb52d53b50eb096317acb77b4608ffcb 10564 misc optional ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.buildinfo
+ fa46d5f25e061a1adc083b88297f5bec 7708 misc optional ros-humble-python-cmake-module_2-2024.10.21.16.26_amd64.deb

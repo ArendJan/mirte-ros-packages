@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-diff-drive-controller
+Binary: ros-humble-diff-drive-controller
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.17
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-diff-drive-controller - Controller for a differential drive mobile base.
+Changes:
+ ros-humble-diff-drive-controller (2-2024.10.21.19.17) jammy; urgency=high
+Checksums-Sha1:
+ b86b0d0bc87f566440ba8d2739c568ac35f580cb 3613058 ros-humble-diff-drive-controller-dbgsym_2-2024.10.21.19.17_amd64.ddeb
+ 0840c36b047da31b02406eb2aaa755df9c7d7ec5 17126 ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.buildinfo
+ d160ab28c43b115eafecbe4d57bad7930401bc8b 210386 ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.deb
+Checksums-Sha256:
+ 46e17c70f17b93e82b2a2b4fd1043a7e2156ffe2b6d51f377a0acf2998418c1e 3613058 ros-humble-diff-drive-controller-dbgsym_2-2024.10.21.19.17_amd64.ddeb
+ 98b91da524bebb6550c334a1fb72a7607167a16695f5b6eb16f17755b6bc3d9f 17126 ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.buildinfo
+ 41b978486f267bdecc48c66cdbe011285729e0a21b215296864567d6a688efd8 210386 ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.deb
+Files:
+ 42771cf1c727171c269a0e7ac13b089c 3613058 debug optional ros-humble-diff-drive-controller-dbgsym_2-2024.10.21.19.17_amd64.ddeb
+ c1d189c8bf82f32935b72f2b9739659c 17126 misc optional ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.buildinfo
+ 0bfb59c381efb0dbec35529462c56f1e 210386 misc optional ros-humble-diff-drive-controller_2-2024.10.21.19.17_amd64.deb

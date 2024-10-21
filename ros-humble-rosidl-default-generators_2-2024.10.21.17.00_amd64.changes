@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Thu, 31 Mar 2022 00:00:00 -0000
+Source: ros-humble-rosidl-default-generators
+Binary: ros-humble-rosidl-default-generators
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.00
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-rosidl-default-generators - A configuration package defining the default ROS interface genera
+Changes:
+ ros-humble-rosidl-default-generators (2-2024.10.21.17.00) jammy; urgency=high
+ .
+   * Unroll group dependencies (#20 <https://github.com/ros2/rosidl_defaults/issues/20>)
+   * Contributors: Shane Loretz
+Checksums-Sha1:
+ 187979d942d34f2d29ee7ecfba1a33cb7637b265 10594 ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.buildinfo
+ 1b209f117b3cdc235423efed8ed886a046a5199a 6716 ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.deb
+Checksums-Sha256:
+ 9e84d72578f4b988080ab5d5e44f581bf466fded1e7dc0bef577321a1eece1b6 10594 ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.buildinfo
+ b3e0c99f9409b5fc9dbd8e9c200264f9ebc02dbf50ada95f724b2c06f099dea3 6716 ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.deb
+Files:
+ 9a9acdc93f3aea26487919d46edb27aa 10594 misc optional ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.buildinfo
+ 5f74bf93130c72e3d9a604fedb3d6477 6716 misc optional ros-humble-rosidl-default-generators_2-2024.10.21.17.00_amd64.deb

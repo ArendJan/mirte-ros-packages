@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rclpy
+Binary: ros-humble-rclpy
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.34
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-rclpy - Package containing the Python client.
+Changes:
+ ros-humble-rclpy (2-2024.10.21.18.34) jammy; urgency=high
+ .
+   * Fix a bad bug in fetching the lifecycle transitions. (#1321 <https://github.com/ros2/rclpy/issues/1321>) (#1324 <https://github.com/ros2/rclpy/issues/1324>)
+   * add missing Optionals to function declarations (#1306 <https://github.com/ros2/rclpy/issues/1306>)
+   * Support wait for message backport humble (#1272 <https://github.com/ros2/rclpy/issues/1272>)
+   * [Humble] Fix AttributeError _logger in Action Server (#1299 <https://github.com/ros2/rclpy/issues/1299>)
+   * Fix incorrect comparsion on whether parameter type is NOT_SET (#1032 <https://github.com/ros2/rclpy/issues/1032>) (#1283 <https://github.com/ros2/rclpy/issues/1283>)
+   * Contributors: Shane Loretz, Tomoya Fujita, alberthli, mergify[bot], xueying
+Checksums-Sha1:
+ b1c4092ed7f03b76a46ec96864157fab09d30445 15117 ros-humble-rclpy_2-2024.10.21.18.34_amd64.buildinfo
+ c8e8e8919d4be07bf5b2060b453253382bbe09ed 356884 ros-humble-rclpy_2-2024.10.21.18.34_amd64.deb
+Checksums-Sha256:
+ 0fa95f4086e8c63807b9cd51eeee69e7c567ac7ee9ed36bf9e075a2df137ea37 15117 ros-humble-rclpy_2-2024.10.21.18.34_amd64.buildinfo
+ 8463fee28d35373ed63bb3c00372469e480d3666842fdace760d25686cfe9050 356884 ros-humble-rclpy_2-2024.10.21.18.34_amd64.deb
+Files:
+ 525e001a205b29804babaf4b0b57941f 15117 misc optional ros-humble-rclpy_2-2024.10.21.18.34_amd64.buildinfo
+ 6a97a75a16f0a18b8ed4bf3c1af1f10f 356884 misc optional ros-humble-rclpy_2-2024.10.21.18.34_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-interface
+Binary: ros-humble-rosidl-typesupport-interface
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.40
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-typesupport-interface - The interface for rosidl typesupport packages.
+Changes:
+ ros-humble-rosidl-typesupport-interface (2-2024.10.21.16.40) jammy; urgency=high
+Checksums-Sha1:
+ 126b0e0e57b2c745f4a47cd73dda2b05ac9eeec3 10780 ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.buildinfo
+ 0e64e81f318d6c69b28cc4423a6d4a275bd2f536 8548 ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.deb
+Checksums-Sha256:
+ 7281aa0be74f0aa2278fc5e51d364dce600aed689436de726d70a1d31ee3b99a 10780 ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.buildinfo
+ 7c9c9c629492165fe1404fbed644f12470584eb93df89e46e2e6f1b9a391b375 8548 ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.deb
+Files:
+ 38f055e9ebd229abcaf127082c391a90 10780 misc optional ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.buildinfo
+ 1425f35bd047ab4fe51d1efed9b3f8fc 8548 misc optional ros-humble-rosidl-typesupport-interface_2-2024.10.21.16.40_amd64.deb

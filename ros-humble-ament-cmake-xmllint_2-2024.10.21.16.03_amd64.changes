@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-xmllint
+Binary: ros-humble-ament-cmake-xmllint
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.03
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-xmllint - The CMake API for ament_xmllint to check XML file using xmmlint.
+Changes:
+ ros-humble-ament-cmake-xmllint (2-2024.10.21.16.03) jammy; urgency=high
+Checksums-Sha1:
+ bfe9f0f0e0b5ab84c19bb56b281fb555a34014cb 8395 ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.buildinfo
+ 3d7b1833d1e333cc9da06661108e770179abed3b 6956 ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.deb
+Checksums-Sha256:
+ 705301d7489a6ef6de5c14bc64b676d164163ef6aa71b68b2899c9f5111ff4ad 8395 ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.buildinfo
+ 09dae9cc231701b534107e03c014bcdf8dfc36ad516a84fa483105607fa6c7b9 6956 ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.deb
+Files:
+ 9ff93bf607a0905ff4335ef7668603c8 8395 misc optional ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.buildinfo
+ 25aacad22fe542fd5576c0dcb3aa642f 6956 misc optional ros-humble-ament-cmake-xmllint_2-2024.10.21.16.03_amd64.deb

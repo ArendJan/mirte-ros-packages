@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 13 Nov 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-fastrtps-c
+Binary: ros-humble-rosidl-typesupport-fastrtps-c
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.51
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <shane@openrobotics.org>
+Changed-By: Shane Loretz <shane@openrobotics.org>
+Description:
+ ros-humble-rosidl-typesupport-fastrtps-c - Generate the C interfaces for eProsima FastRTPS.
+Changes:
+ ros-humble-rosidl-typesupport-fastrtps-c (2-2024.10.21.16.51) jammy; urgency=high
+ .
+   * Account for alignment on is_plain calculations (#108 <https://github.com/ros2/rosidl_typesupport_fastrtps/issues/108>) (#110 <https://github.com/ros2/rosidl_typesupport_fastrtps/issues/110>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 774c6dc711bb76ab008db6106b01f9a0e1d10d36 17374 ros-humble-rosidl-typesupport-fastrtps-c-dbgsym_2-2024.10.21.16.51_amd64.ddeb
+ fcc5cdf0d850a6429f6b67c6fb70159e29c1aef8 13483 ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.buildinfo
+ 0b1a4d3933ae2f76d05196841fce02ef8ceca032 23660 ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.deb
+Checksums-Sha256:
+ 13e4cebe083bd6d447a8bc6dab602e3560675c6b7a16cea90f332012b2b183ba 17374 ros-humble-rosidl-typesupport-fastrtps-c-dbgsym_2-2024.10.21.16.51_amd64.ddeb
+ aa700705763a79be35505aacd44f143a411fa66a8bf89ad01601c8dd4f1e2061 13483 ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.buildinfo
+ 35fad87039bfffbeabeb3e7d795b30bde69674c69d432c091dce64210ecace64 23660 ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.deb
+Files:
+ b27cc648f7eb19b2b5007f4b525cd80d 17374 debug optional ros-humble-rosidl-typesupport-fastrtps-c-dbgsym_2-2024.10.21.16.51_amd64.ddeb
+ 509ed4274182fb160caba79461cd2e7b 13483 misc optional ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.buildinfo
+ fe2ff9d8b420745ed810f108f2a3ca13 23660 misc optional ros-humble-rosidl-typesupport-fastrtps-c_2-2024.10.21.16.51_amd64.deb

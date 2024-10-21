@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-runtime-c
+Binary: ros-humble-rosidl-runtime-c
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.41
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-runtime-c - Provides definitions, initialization and finalization functions,
+Changes:
+ ros-humble-rosidl-runtime-c (2-2024.10.21.16.41) jammy; urgency=high
+Checksums-Sha1:
+ 7597606135f72654ac9c84a894a1093137e33e80 29280 ros-humble-rosidl-runtime-c-dbgsym_2-2024.10.21.16.41_amd64.ddeb
+ 0e22bbd5799b06e66ec3b361b7d6eb18c55a64cc 12095 ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.buildinfo
+ e1ffac6420a4a2b15f5f68fc0523b23eb080f833 26200 ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.deb
+Checksums-Sha256:
+ 4b5e7281401745fac51673c531529b9193204e347b4eda8d877e62efa1d3d52e 29280 ros-humble-rosidl-runtime-c-dbgsym_2-2024.10.21.16.41_amd64.ddeb
+ ddabab03dd6d628ac8c271fb4001b47b152595cd0443a5327fab365255b16e05 12095 ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.buildinfo
+ b97c204b0ea61409d1b66c024c4c63226a45f08b108645564760eb48c6697496 26200 ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.deb
+Files:
+ 5ac9593f1cacd5fbc0fa4b1d067cde31 29280 debug optional ros-humble-rosidl-runtime-c-dbgsym_2-2024.10.21.16.41_amd64.ddeb
+ c8b03ec16ad93df22bd740ac5850fd97 12095 misc optional ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.buildinfo
+ f4fd1e86a56ec04d8fbefd5fe33afb4c 26200 misc optional ros-humble-rosidl-runtime-c_2-2024.10.21.16.41_amd64.deb

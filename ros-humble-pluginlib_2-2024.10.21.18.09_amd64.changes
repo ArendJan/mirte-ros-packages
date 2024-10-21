@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Fri, 14 Jan 2022 00:00:00 -0000
+Source: ros-humble-pluginlib
+Binary: ros-humble-pluginlib
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.09
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-pluginlib - The pluginlib package provides tools for writing and dynamically
+Changes:
+ ros-humble-pluginlib (2-2024.10.21.18.09) jammy; urgency=high
+ .
+   * Install includes to include/${PROJECT_NAME} and remove ament_target_dependencies calls (#226 <https://github.com/ros/pluginlib/issues/226>)
+   * Require <memory> (#225 <https://github.com/ros/pluginlib/issues/225>)
+   * Move LibraryLoadExceptions down a level for more accurate error messages (#221 <https://github.com/ros/pluginlib/issues/221>)
+   * Update maintainers to Chris Lalancette (#223 <https://github.com/ros/pluginlib/issues/223>)
+   * extend termination condition to avoid infinite loop if package.xml is not found (#220 <https://github.com/ros/pluginlib/issues/220>)
+   * Remove deprecated headers. (#217 <https://github.com/ros/pluginlib/issues/217>)
+   * Contributors: Alberto Soragna, Audrow Nash, Chris Lalancette, David V. Lu!!, Shane Loretz
+Checksums-Sha1:
+ a73b6fe407351d93cb149fb97763dcd43ed5f53d 9677 ros-humble-pluginlib_2-2024.10.21.18.09_amd64.buildinfo
+ affe1ed6248d19a1f3115d5ce57329e060fa5fd3 27880 ros-humble-pluginlib_2-2024.10.21.18.09_amd64.deb
+Checksums-Sha256:
+ 011f0baa1e0103dc1fc48ed61e31c1fa35b00309aeaeecc38620b5f428a36952 9677 ros-humble-pluginlib_2-2024.10.21.18.09_amd64.buildinfo
+ 7bef2c45820444a864814b2aa03293d75c4ab343ca40f6c4ad085de51d4dbfc0 27880 ros-humble-pluginlib_2-2024.10.21.18.09_amd64.deb
+Files:
+ 97047d1dba0b0768d7d669c6cd9cc82f 9677 misc optional ros-humble-pluginlib_2-2024.10.21.18.09_amd64.buildinfo
+ ed0d3ff8b0f8f9a14ef63244aba68fce 27880 misc optional ros-humble-pluginlib_2-2024.10.21.18.09_amd64.deb

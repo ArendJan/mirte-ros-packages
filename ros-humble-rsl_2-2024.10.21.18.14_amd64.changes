@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Wed, 20 Dec 2023 00:00:00 -0000
+Source: ros-humble-rsl
+Binary: ros-humble-rsl
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.14
+Distribution: jammy
+Urgency: high
+Maintainer: Tyler Weaver <maybe@tylerjw.dev>
+Changed-By: Tyler Weaver <maybe@tylerjw.dev>
+Description:
+ ros-humble-rsl - ROS Support Library
+Changes:
+ ros-humble-rsl (2-2024.10.21.18.14) jammy; urgency=high
+ .
+   * Fix ament_target_dependencies integration
+   * Add rsl::maybe_error
+   * Disable tests by default
+   * Stop using non-standard M_PI
+   * Contributors: Chris Thrasher
+Checksums-Sha1:
+ 8d58d7033d6f0a384370d6830c3182b14e181da4 150160 ros-humble-rsl-dbgsym_2-2024.10.21.18.14_amd64.ddeb
+ 60f8eaf89ea8efb9a61ed0f453ac05465a8faec1 14954 ros-humble-rsl_2-2024.10.21.18.14_amd64.buildinfo
+ 03031b69d5a4fb4671841951ce79bd1fcea61e16 17014 ros-humble-rsl_2-2024.10.21.18.14_amd64.deb
+Checksums-Sha256:
+ 0e017a9b7da113980c90c187dbad6f05fe1377d66e91434c9d5b66b430cc9761 150160 ros-humble-rsl-dbgsym_2-2024.10.21.18.14_amd64.ddeb
+ 131c72fb440bc86e9ef0a874e9b11743a36c3077edc8765c2a73094f89774ee3 14954 ros-humble-rsl_2-2024.10.21.18.14_amd64.buildinfo
+ 22c5d80e3f125f1636cf38d8852f025cdc4f8bbc1db238269c9637721a3226bf 17014 ros-humble-rsl_2-2024.10.21.18.14_amd64.deb
+Files:
+ f72d6504a4c08b53e5f27653dc39018b 150160 debug optional ros-humble-rsl-dbgsym_2-2024.10.21.18.14_amd64.ddeb
+ 1d25e041ff8cd66c5a025d829a29b3b0 14954 misc optional ros-humble-rsl_2-2024.10.21.18.14_amd64.buildinfo
+ 838447fc20a6fb2689f61cee600b95ef 17014 misc optional ros-humble-rsl_2-2024.10.21.18.14_amd64.deb

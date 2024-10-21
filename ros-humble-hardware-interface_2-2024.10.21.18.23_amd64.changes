@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-hardware-interface
+Binary: ros-humble-hardware-interface
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.23
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-hardware-interface - ros2_control hardware interface
+Changes:
+ ros-humble-hardware-interface (2-2024.10.21.18.23) jammy; urgency=high
+Checksums-Sha1:
+ 20be906eff66b2d9bf6f8bee10ebf47c8d21ca88 3827714 ros-humble-hardware-interface-dbgsym_2-2024.10.21.18.23_amd64.ddeb
+ 52cbaad07beb14fd4a37884115c6f0ae722449eb 14880 ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.buildinfo
+ 84a851210752bf783645c62e18ecaf92b986a09a 225248 ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.deb
+Checksums-Sha256:
+ 27e8c337126ec12beb382d2f2306d2dca9ddf81f90f4989acf5648ef197aed2c 3827714 ros-humble-hardware-interface-dbgsym_2-2024.10.21.18.23_amd64.ddeb
+ dc3be44a297229eff5357e3feafc3f2eef9570c46a82d0593397fbec45d45753 14880 ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.buildinfo
+ 9d7916cb4a291c3fb559e3a05c13f2b99635ae06effa6eb36741ae10223d0886 225248 ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.deb
+Files:
+ 632548aceea8c78d70f1f326af39ebf9 3827714 debug optional ros-humble-hardware-interface-dbgsym_2-2024.10.21.18.23_amd64.ddeb
+ 4da3004863d3727dd25bf7f08e7879a0 14880 misc optional ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.buildinfo
+ 90f70e48e0d8b8db4065a866ad2220a8 225248 misc optional ros-humble-hardware-interface_2-2024.10.21.18.23_amd64.deb

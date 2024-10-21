@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rcl-action
+Binary: ros-humble-rcl-action
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.29
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rcl-action - Package containing a C-based ROS action implementation
+Changes:
+ ros-humble-rcl-action (2-2024.10.21.18.29) jammy; urgency=high
+ .
+   * Generate version header using ament_generate_version_header(..) (backport #1141 <https://github.com/ros2/rcl/issues/1141>) (#1145 <https://github.com/ros2/rcl/issues/1145>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 998b2315f2688c4982028db707c5e60d007667b5 57116 ros-humble-rcl-action-dbgsym_2-2024.10.21.18.29_amd64.ddeb
+ 9f2af2fd1ee2af8dfcc4592fcb4906bb2f1efd37 15317 ros-humble-rcl-action_2-2024.10.21.18.29_amd64.buildinfo
+ b89d96eed6acf5c3c1efae120f9f746fffe2324c 47870 ros-humble-rcl-action_2-2024.10.21.18.29_amd64.deb
+Checksums-Sha256:
+ 5a9539504f3b2f828d1fc66dfed4945e45685f128e2644e2df0e9512cf5fe87e 57116 ros-humble-rcl-action-dbgsym_2-2024.10.21.18.29_amd64.ddeb
+ 72c40da898f985902ed607485fa326f83f7560c529a17ca55d037fd7fb0bf300 15317 ros-humble-rcl-action_2-2024.10.21.18.29_amd64.buildinfo
+ 2bdace1a520fc417e998d966a54561ac7b13a855a06f3b38d7585d4d631145a0 47870 ros-humble-rcl-action_2-2024.10.21.18.29_amd64.deb
+Files:
+ 382fb33eebe26a85f69ca6524d5bda13 57116 debug optional ros-humble-rcl-action-dbgsym_2-2024.10.21.18.29_amd64.ddeb
+ 7bded65b389f1f9f5c8cfadb1d9680c7 15317 misc optional ros-humble-rcl-action_2-2024.10.21.18.29_amd64.buildinfo
+ 720716fe777f24c3ca69c187aa56c1dd 47870 misc optional ros-humble-rcl-action_2-2024.10.21.18.29_amd64.deb

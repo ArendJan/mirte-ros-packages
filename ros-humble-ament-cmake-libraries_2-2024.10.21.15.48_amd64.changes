@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-libraries
+Binary: ros-humble-ament-cmake-libraries
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.48
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-libraries - The functionality to deduplicate libraries in the ament buildsyst
+Changes:
+ ros-humble-ament-cmake-libraries (2-2024.10.21.15.48) jammy; urgency=high
+ .
+   * perf: faster ament_libraries_deduplicate implementation (#530 <https://github.com/ament/ament_cmake/issues/530>)
+   * Contributors: Yutaka Kondo
+Checksums-Sha1:
+ 62dcef067db6273ee7258b578ac03989bad5f74e 8083 ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.buildinfo
+ 789ff5fed073747912b08690f71bf76c654b625c 6820 ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.deb
+Checksums-Sha256:
+ 189b08d4907273ba4b86e23c944c15222ae4dc5cd06f27a67a20634386ff2ec1 8083 ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.buildinfo
+ 782c16d3dfa7d68032bbfab71c3568f15dc4989579ab328e9d6171d020ae5f50 6820 ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.deb
+Files:
+ cd9934ca96ede35603289c6e1e75fde8 8083 misc optional ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.buildinfo
+ c30e71f35e0aeb2d981fcb673e9fbfb9 6820 misc optional ros-humble-ament-cmake-libraries_2-2024.10.21.15.48_amd64.deb

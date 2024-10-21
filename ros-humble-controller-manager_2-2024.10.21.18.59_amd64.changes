@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-controller-manager
+Binary: ros-humble-controller-manager
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.59
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-controller-manager - Description of controller_manager
+Changes:
+ ros-humble-controller-manager (2-2024.10.21.18.59) jammy; urgency=high
+ .
+   * controller_manager: Add space to string literal concatenation (#1245 <https://github.com/ros-controls/ros2_control/issues/1245>) (#1747 <https://github.com/ros-controls/ros2_control/issues/1747>)
+   * fix: the print of the information in control node was in wrong order (#1726 <https://github.com/ros-controls/ros2_control/issues/1726>)
+   * Contributors: Manuel Muth, roscan-tech
+Checksums-Sha1:
+ 77d61a1b13718bcd84ba9152e3367f7d10fd10f7 8577908 ros-humble-controller-manager-dbgsym_2-2024.10.21.18.59_amd64.ddeb
+ b2113484860eaadeef0d7f59ef24a00222c74e57 16282 ros-humble-controller-manager_2-2024.10.21.18.59_amd64.buildinfo
+ 445e6eab0a5dd44e3f718f4e933679cce6ad763a 416370 ros-humble-controller-manager_2-2024.10.21.18.59_amd64.deb
+Checksums-Sha256:
+ d6d802eb5c1935e943d90e41f5411884db0c0fe1fd4a8ae25e0e515a7b9ea673 8577908 ros-humble-controller-manager-dbgsym_2-2024.10.21.18.59_amd64.ddeb
+ 09c7986bd5c5ecd0b9e952a3efbfc7b057697660fc7f2bd924346a76a5c80206 16282 ros-humble-controller-manager_2-2024.10.21.18.59_amd64.buildinfo
+ 64ea8646e6c2c520af2749e7a5776ea66943f41994954be5f66a5abd054e60c5 416370 ros-humble-controller-manager_2-2024.10.21.18.59_amd64.deb
+Files:
+ 3bd39374d4ae1c88026c2977bbe246d4 8577908 debug optional ros-humble-controller-manager-dbgsym_2-2024.10.21.18.59_amd64.ddeb
+ 5a07ad339de6801d63fd01a492b9947b 16282 misc optional ros-humble-controller-manager_2-2024.10.21.18.59_amd64.buildinfo
+ e52d7bb96fcd48551cd58c7da0ade39c 416370 misc optional ros-humble-controller-manager_2-2024.10.21.18.59_amd64.deb

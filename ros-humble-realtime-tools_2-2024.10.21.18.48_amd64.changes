@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Wed, 14 Aug 2024 00:00:00 -0000
+Source: ros-humble-realtime-tools
+Binary: ros-humble-realtime-tools
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.48
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-realtime-tools - Contains a set of tools that can be used from a hard realtime thr
+Changes:
+ ros-humble-realtime-tools (2-2024.10.21.18.48) jammy; urgency=high
+ .
+   * Add Async Function Handler  (#168 <https://github.com/ros-controls/realtime_tools/issues/168>)
+   * Bump version of pre-commit hooks (#167 <https://github.com/ros-controls/realtime_tools/issues/167>)
+   * [CI] Add jazzy :rocket:  (#165 <https://github.com/ros-controls/realtime_tools/issues/165>)
+   * [CI] Specify runner/container images (#163 <https://github.com/ros-controls/realtime_tools/issues/163>)
+   * Add custom rosdoc2 config (#161 <https://github.com/ros-controls/realtime_tools/issues/161>)
+   * Added a new implementation of the RealtimeBox with added best effort behaviour (#139 <https://github.com/ros-controls/realtime_tools/issues/139>)
+   * [CI] Code coverage and pre-commit (#154 <https://github.com/ros-controls/realtime_tools/issues/154>)
+   * [CI] Use reusable workflows and matrix strategy (#151 <https://github.com/ros-controls/realtime_tools/issues/151>)
+   * Bump ros-tooling/action-ros-ci from 0.3.5 to 0.3.6 (#148 <https://github.com/ros-controls/realtime_tools/issues/148>)
+   * Fix RHEL workflows (#144 <https://github.com/ros-controls/realtime_tools/issues/144>)
+   * update unlock method to also include the part of the NON_POLLING (#142 <https://github.com/ros-controls/realtime_tools/issues/142>)
+   * Bump actions/upload-artifact from 4.1.0 to 4.2.0 (#143 <https://github.com/ros-controls/realtime_tools/issues/143>)
+   * [CI] Add debian workflows (#145 <https://github.com/ros-controls/realtime_tools/issues/145>)
+   * Test fix: initialize the global context to avoid runtime_error upon destruction (#128 <https://github.com/ros-controls/realtime_tools/issues/128>)
+   * Contributors: Christoph Fröhlich, Felix Exner (fexner), Lennart Nachtigall, Sai Kishor Kothakota, dependabot[bot], github-actions[bot]
+Checksums-Sha1:
+ adab9843530f7d40497d3ee2244f528e41b47ce7 103432 ros-humble-realtime-tools-dbgsym_2-2024.10.21.18.48_amd64.ddeb
+ 5f927f27312767d9ff5af5b7e91ded4cdee65020 14394 ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.buildinfo
+ 0e895b4c8f88efdb40921e692f5288aa7c64f087 28444 ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.deb
+Checksums-Sha256:
+ 3866397f4c1baefcc994500cc763a3cf3b3a40ec7e8286353d3872ed100598c5 103432 ros-humble-realtime-tools-dbgsym_2-2024.10.21.18.48_amd64.ddeb
+ 94d2b210b28dd2bc924372478a42908f4358910edd4e7bf8cbb643b622e6d86f 14394 ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.buildinfo
+ eb0fa5fb417f36afb3c0e02d5fd76b96ba53b750c09f25c1a144c606967b75e0 28444 ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.deb
+Files:
+ 515eb3fe55ea58bdea532ee7e2400b21 103432 debug optional ros-humble-realtime-tools-dbgsym_2-2024.10.21.18.48_amd64.ddeb
+ 1a0b8fc4774034112ae74c818db14efa 14394 misc optional ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.buildinfo
+ 04ea824780edfe945acdfc9e48d4d5c7 28444 misc optional ros-humble-realtime-tools_2-2024.10.21.18.48_amd64.deb

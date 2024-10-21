@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 08 Apr 2022 00:00:00 -0000
+Source: ros-humble-osrf-pycommon
+Binary: ros-humble-osrf-pycommon
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.23
+Distribution: jammy
+Urgency: high
+Maintainer: William Woodall <william@osrfoundation.org>
+Changed-By: William Woodall <william@osrfoundation.org>
+Description:
+ ros-humble-osrf-pycommon - Commonly needed Python modules, used by Python software developed
+Changes:
+ ros-humble-osrf-pycommon (2-2024.10.21.16.23) jammy; urgency=high
+ .
+   * Fix an importlib_metadata warning with Python 3.10. (#84 <https://github.com/osrf/osrf_pycommon/issues/84>)
+   * Contributors: Chris Lalancette
+Checksums-Sha1:
+ 0bdf8778ebd0322559742f0cfbeda1697f8f317b 6651 ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.buildinfo
+ 10da8ec84814c4c58c2bce39e62082fef06fcbe3 40230 ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.deb
+Checksums-Sha256:
+ e5f68d9841f5cd54eb013c3465f4eceee9dbe80fe91c515cf1cb3887b906d493 6651 ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.buildinfo
+ aba3fbdc3f2ea26acf0f81ff911e26538d192f63f6b6fac212b46f29ef090749 40230 ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.deb
+Files:
+ 2d720ed4bab03655b1d02d27cded78d7 6651 misc optional ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.buildinfo
+ c8a0e062f164478eb76a4ce546d5d43c 40230 misc optional ros-humble-osrf-pycommon_2-2024.10.21.16.23_amd64.deb

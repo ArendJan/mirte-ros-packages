@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-lint-cmake
+Binary: ros-humble-ament-cmake-lint-cmake
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.58
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-lint-cmake - The CMake API for ament_lint_cmake to lint CMake code using cmake
+Changes:
+ ros-humble-ament-cmake-lint-cmake (2-2024.10.21.15.58) jammy; urgency=high
+Checksums-Sha1:
+ e76a5f565586f147c632047dc72782ce079324df 8194 ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.buildinfo
+ 54529d71261083a2a3a26bff9ee5be42e3cdd1c7 7550 ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.deb
+Checksums-Sha256:
+ c18fa7ada708f74309dc8762a45ddbca6548386dadfdd23f72ab7144b48e58bc 8194 ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.buildinfo
+ 5a43bcef1521b68fabf6bf5c863e5b25eb0a9291ad9ae25969a9cf32dca959c2 7550 ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.deb
+Files:
+ 411746d651cb980a105798c0240fc466 8194 misc optional ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.buildinfo
+ a89e036063f1015403b6d73c34c29c68 7550 misc optional ros-humble-ament-cmake-lint-cmake_2-2024.10.21.15.58_amd64.deb

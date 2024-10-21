@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rclcpp-components
+Binary: ros-humble-rclcpp-components
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.50
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rclcpp-components - Package containing tools for dynamically loadable components
+Changes:
+ ros-humble-rclcpp-components (2-2024.10.21.17.50) jammy; urgency=high
+Checksums-Sha1:
+ f44813849f3ba18b14f4084f15ae537c65c8bcb4 1784176 ros-humble-rclcpp-components-dbgsym_2-2024.10.21.17.50_amd64.ddeb
+ 1ef1c8825f159e542fbafbacaec0612afa74c789 16182 ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.buildinfo
+ 84ce2f90c600bf2b0cdadf671de06c7d15bc83fe 85450 ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.deb
+Checksums-Sha256:
+ 40d7471c90d19a79f8b0433984ce604234bdf73116e46e401f2f6b4926e91c54 1784176 ros-humble-rclcpp-components-dbgsym_2-2024.10.21.17.50_amd64.ddeb
+ 2cc49df5d4ebcdd11b01158c6c2e2d9df39e200df53419436671e76b21bb6a40 16182 ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.buildinfo
+ bfbf1f38d92ca9633066459201509feef9d27afa7ef4a0149578e3328c889ef5 85450 ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.deb
+Files:
+ d793121319b9bcaa6aa1d0ee2b31fd9d 1784176 debug optional ros-humble-rclcpp-components-dbgsym_2-2024.10.21.17.50_amd64.ddeb
+ 71c5ebc3d6216b719a3287d5dca6962e 16182 misc optional ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.buildinfo
+ 4b0364b690043971522239be72ef9732 85450 misc optional ros-humble-rclcpp-components_2-2024.10.21.17.50_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-python
+Binary: ros-humble-ament-cmake-python
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.49
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-python - The ability to use Python in the ament buildsystem in CMake.
+Changes:
+ ros-humble-ament-cmake-python (2-2024.10.21.15.49) jammy; urgency=high
+Checksums-Sha1:
+ c8d4a421a083aea84308a82ab4b52fd023d7ba14 8071 ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.buildinfo
+ 62952d45dcbee71f2d258d4312bffd32f07103c6 10238 ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.deb
+Checksums-Sha256:
+ 9925f1368c5b37e4bb4bd91e41c7d4cea71f67420c4ac66e1e679ed2c0c1ec20 8071 ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.buildinfo
+ d7ff913675496f9e65f66489b9f41687b2810420f906e80742cb12ec4b3bd7ab 10238 ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.deb
+Files:
+ 0f69b9c332a5ed305443a46bd4644745 8071 misc optional ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.buildinfo
+ 7edcc0742744d4917a1a6d2f3aae2772 10238 misc optional ros-humble-ament-cmake-python_2-2024.10.21.15.49_amd64.deb

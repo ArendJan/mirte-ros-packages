@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rmw-fastrtps-dynamic-cpp
+Binary: ros-humble-rmw-fastrtps-dynamic-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.14
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rmw-fastrtps-dynamic-cpp - Implement the ROS middleware interface using introspection type s
+Changes:
+ ros-humble-rmw-fastrtps-dynamic-cpp (2-2024.10.21.17.14) jammy; urgency=high
+Checksums-Sha1:
+ 2a9d290543a0298e2692c624e7e85abdf89966f2 3507750 ros-humble-rmw-fastrtps-dynamic-cpp-dbgsym_2-2024.10.21.17.14_amd64.ddeb
+ df7a4de28225b329aee7bbf2666d8a6221277b85 14590 ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.buildinfo
+ 9e4fb873cc6094a797dc1c907b989b9578ab3f85 115834 ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.deb
+Checksums-Sha256:
+ a6f29185b9ed6ce20ffdf1e513400c06cc8a80b025e41041b0cb82cd444d3d7d 3507750 ros-humble-rmw-fastrtps-dynamic-cpp-dbgsym_2-2024.10.21.17.14_amd64.ddeb
+ 77bac66974b979bd050016040a6d97db0f24e20c5fdbe5184f35b1e47e51cff0 14590 ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.buildinfo
+ e7b1201a08eb3d2ad776eedcca072f05a488bcaca9f2b585729937f5af6d8d37 115834 ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.deb
+Files:
+ 3d8e75dca7d641d3adc269c48902eceb 3507750 debug optional ros-humble-rmw-fastrtps-dynamic-cpp-dbgsym_2-2024.10.21.17.14_amd64.ddeb
+ 2fc73189b5693225cb70ad7e4407f11c 14590 misc optional ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.buildinfo
+ f635930db3e6e5b7b42252f6a00961e9 115834 misc optional ros-humble-rmw-fastrtps-dynamic-cpp_2-2024.10.21.17.14_amd64.deb

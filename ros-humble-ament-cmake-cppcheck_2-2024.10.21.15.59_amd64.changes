@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-cppcheck
+Binary: ros-humble-ament-cmake-cppcheck
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.59
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-cppcheck - The CMake API for ament_cppcheck to perform static code analysis
+Changes:
+ ros-humble-ament-cmake-cppcheck (2-2024.10.21.15.59) jammy; urgency=high
+Checksums-Sha1:
+ 77449cb23c869844aae3549129f68a0ad3171546 8403 ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.buildinfo
+ adffbc23bacc805b1c21e42e521469a2b4bc9375 10186 ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.deb
+Checksums-Sha256:
+ 9df6d9a9d4f8b90490fcb84661987ba37d1943e5bdd80c5212b3ebef0703aef6 8403 ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.buildinfo
+ 9b90756e6bd1e514afc8045df07c85283210663153c3f017a865ace53d46477e 10186 ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.deb
+Files:
+ f76db47b018c677f091825d19306286c 8403 misc optional ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.buildinfo
+ 9255ca2fa171d5b90285f3ccd80e9667 10186 misc optional ros-humble-ament-cmake-cppcheck_2-2024.10.21.15.59_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-dependencies
+Binary: ros-humble-ament-cmake-export-dependencies
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.42
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-dependencies - The ability to export dependencies to downstream packages in the
+Changes:
+ ros-humble-ament-cmake-export-dependencies (2-2024.10.21.15.42) jammy; urgency=high
+Checksums-Sha1:
+ 0effc8d5d36b933c3fcdeb741c96567c4ce0b906 8133 ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.buildinfo
+ 64223207208661ffbf6d7c3fbc0c3d351609650a 8664 ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.deb
+Checksums-Sha256:
+ 57d4563d3efefde43f8d9748914d5f07827a5fb97efbe5167ea4102c0695cbb4 8133 ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.buildinfo
+ dee2172c097dc210268e9f7832964abcb72bb7b41363185c6fd53c54cf48f19c 8664 ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.deb
+Files:
+ 3448614e0e173bc378aae34678dec5bf 8133 misc optional ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.buildinfo
+ c8ed34a4276e02abdbcb94f16b28dff3 8664 misc optional ros-humble-ament-cmake-export-dependencies_2-2024.10.21.15.42_amd64.deb

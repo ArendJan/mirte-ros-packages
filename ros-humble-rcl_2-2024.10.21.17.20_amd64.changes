@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rcl
+Binary: ros-humble-rcl
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.20
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rcl - The ROS client library common implementation.
+Changes:
+ ros-humble-rcl (2-2024.10.21.17.20) jammy; urgency=high
+ .
+   * Generate version header using ament_generate_version_header(..) (backport #1141 <https://github.com/ros2/rcl/issues/1141>) (#1145 <https://github.com/ros2/rcl/issues/1145>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 839091a57c531ef9fa4b1eff2f43a503842f72c3 216920 ros-humble-rcl-dbgsym_2-2024.10.21.17.20_amd64.ddeb
+ 0b136b19c60efb7583d35aa242ab4a506ad36e1a 15666 ros-humble-rcl_2-2024.10.21.17.20_amd64.buildinfo
+ 80e737f9ca68a21997a66f73cc62a1e711466865 145414 ros-humble-rcl_2-2024.10.21.17.20_amd64.deb
+Checksums-Sha256:
+ 7103c4cdc05c8e9d3fb27831717202131b8e10aec8351f982509a46ffc5e6c9a 216920 ros-humble-rcl-dbgsym_2-2024.10.21.17.20_amd64.ddeb
+ daeb49a2a89198d612df4a74b24680ddedc4e1dfd102b6c5e9e1f278aa2d737d 15666 ros-humble-rcl_2-2024.10.21.17.20_amd64.buildinfo
+ 26c902d3cedb97eecb527c7979c0f3b4ae974c2907e02f23ff2b004aee6592fc 145414 ros-humble-rcl_2-2024.10.21.17.20_amd64.deb
+Files:
+ 2b808a60e7fd474d99fe6a6efa3ccd94 216920 debug optional ros-humble-rcl-dbgsym_2-2024.10.21.17.20_amd64.ddeb
+ 64105d91302378b53974ef10f3fadb67 15666 misc optional ros-humble-rcl_2-2024.10.21.17.20_amd64.buildinfo
+ 61e2bf05edabca626e0f60e97310087d 145414 misc optional ros-humble-rcl_2-2024.10.21.17.20_amd64.deb

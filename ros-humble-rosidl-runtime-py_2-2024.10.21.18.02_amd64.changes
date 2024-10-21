@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-rosidl-runtime-py
+Binary: ros-humble-rosidl-runtime-py
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.02
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-rosidl-runtime-py - Runtime utilities for working with generated ROS interfaces in Py
+Changes:
+ ros-humble-rosidl-runtime-py (2-2024.10.21.18.02) jammy; urgency=high
+ .
+   * [humble] Backport. Expand timestamps for std_msgs.msg.Header and builtin_interfaces.msg.Time if 'auto' and 'now' are passed as values (#20 <https://github.com/ros2/rosidl_runtime_py/issues/20>)
+   * Contributors: Esteve Fernandez
+Checksums-Sha1:
+ da83684e20b611e1357a1300cca1dea578443c7e 12876 ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.buildinfo
+ 8b212b9a1be77a18788c28a697eda93e56a50d96 16402 ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.deb
+Checksums-Sha256:
+ e3891cd693d433db0ad7decdae8024c01af90e6aaf1799835bed46a3effbb2e1 12876 ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.buildinfo
+ fe300038961efd9f48e4782eef1e41ee6c9836b0d82e00210c46b994934f0404 16402 ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.deb
+Files:
+ 8decd6be8eacaf2684ceb5ad6c8324bd 12876 misc optional ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.buildinfo
+ ea3d695b576844bfe77e30aed372aba5 16402 misc optional ros-humble-rosidl-runtime-py_2-2024.10.21.18.02_amd64.deb

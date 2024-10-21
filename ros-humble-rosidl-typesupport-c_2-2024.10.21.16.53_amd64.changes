@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-c
+Binary: ros-humble-rosidl-typesupport-c
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.53
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rosidl-typesupport-c - Generate the type support for C messages.
+Changes:
+ ros-humble-rosidl-typesupport-c (2-2024.10.21.16.53) jammy; urgency=high
+Checksums-Sha1:
+ 0b5c35daa4424702d32447468bd2efd7c001545d 33336 ros-humble-rosidl-typesupport-c-dbgsym_2-2024.10.21.16.53_amd64.ddeb
+ 2b4f6554c6710ae1aab1348c354b4841ea139cb0 13151 ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.buildinfo
+ 7712ec13032101926fdb8ef5dcf4f7e39d133edd 24026 ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.deb
+Checksums-Sha256:
+ 7d8fe1eff8cd1df4844fa69739b012b0ac37913f085c8aa04a58ec797b3ee996 33336 ros-humble-rosidl-typesupport-c-dbgsym_2-2024.10.21.16.53_amd64.ddeb
+ b42332679cf0a409ec6ddcbaa18bfa8374eed64244a3043ae52ec2578cd19582 13151 ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.buildinfo
+ 9b4df93e2bc87980d4da7b2f077c03e2ca4fed4efe9547f462f918d91c70dc14 24026 ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.deb
+Files:
+ ba12b099894c7e87493f585f4160ab36 33336 debug optional ros-humble-rosidl-typesupport-c-dbgsym_2-2024.10.21.16.53_amd64.ddeb
+ 3ba30ff4a795895b9c0ee716e5ccedc4 13151 misc optional ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.buildinfo
+ 8621a57d37161b2b497ca66e4585ae0a 24026 misc optional ros-humble-rosidl-typesupport-c_2-2024.10.21.16.53_amd64.deb

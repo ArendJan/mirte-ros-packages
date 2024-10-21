@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-cpplint
+Binary: ros-humble-ament-cmake-cpplint
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.00
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-cpplint - The CMake API for ament_cpplint to lint C / C++ code using cpplin
+Changes:
+ ros-humble-ament-cmake-cpplint (2-2024.10.21.16.00) jammy; urgency=high
+Checksums-Sha1:
+ b883f39d938f9bca977614634ae7c3fe9be7b3ec 8395 ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.buildinfo
+ a1f334987e380f36bed9b7ed5234633ab125630a 8000 ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.deb
+Checksums-Sha256:
+ 01d843b9335b9ff648fa12a0d9f94efcdc8e5695fe18b59bd1edb6a8fa092e6f 8395 ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.buildinfo
+ 50cf1fc8a0913bbd404307aceb54adc8774c90a84e3ada4d3f54262fbd44a3a8 8000 ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.deb
+Files:
+ 8942a8d35678594569aef04b120b0093 8395 misc optional ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.buildinfo
+ e33eea4230861a0c2f230dd986adcb77 8000 misc optional ros-humble-ament-cmake-cpplint_2-2024.10.21.16.00_amd64.deb

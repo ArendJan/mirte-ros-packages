@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Thu, 29 Aug 2024 00:00:00 -0000
+Source: ros-humble-tf2
+Binary: ros-humble-tf2
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.06
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-tf2 - tf2 is the second generation of the transform library, which lets
+Changes:
+ ros-humble-tf2 (2-2024.10.21.18.06) jammy; urgency=high
+ .
+   * Enable Twist interpolator (backport #646 <https://github.com/ros2/geometry2/issues/646>) (#684 <https://github.com/ros2/geometry2/issues/684>)
+     * Enable Twist interpolator (#646 <https://github.com/ros2/geometry2/issues/646>)
+     Co-authored-by: Tully Foote <mailto:tullyfoote@intrinsic.ai>
+     (cherry picked from commit 62322b8fa74c90d144dfe32294f6670bf6cfe786)
+     # Conflicts:
+     #     tf2/include/tf2/buffer_core.h
+     #     tf2_ros/test/test_buffer.cpp
+     Co-authored-by: Alejandro Hernández Cordero <mailto:ahcorde@gmail.com>
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 4ee708d83926013ea9f5ae1adbe67effdd3b7e50 532214 ros-humble-tf2-dbgsym_2-2024.10.21.18.06_amd64.ddeb
+ bdc2848bb4f6ca463c9bf43e79939ccf532484ef 13681 ros-humble-tf2_2-2024.10.21.18.06_amd64.buildinfo
+ 154a5d6ecc4d548599c5f4cc012b2c83eee7fb24 92352 ros-humble-tf2_2-2024.10.21.18.06_amd64.deb
+Checksums-Sha256:
+ c40db5d671667f50239065bc4c555ab0a93f6dd467c76e36ee40393288aebd88 532214 ros-humble-tf2-dbgsym_2-2024.10.21.18.06_amd64.ddeb
+ d1f2de73953bedfc4f2a8f514f69b51155395fe670b856ee59e524fb285937b8 13681 ros-humble-tf2_2-2024.10.21.18.06_amd64.buildinfo
+ 53f400fe33f52102aef17d713f662ee945a5f44a66fc3ba692fc7e187087fecf 92352 ros-humble-tf2_2-2024.10.21.18.06_amd64.deb
+Files:
+ 2cbd30d7ac95fa357eaad4bc0d3e9f70 532214 debug optional ros-humble-tf2-dbgsym_2-2024.10.21.18.06_amd64.ddeb
+ 044cffb0ebf1109c39878fe37b698b32 13681 misc optional ros-humble-tf2_2-2024.10.21.18.06_amd64.buildinfo
+ d156718a5abd4a0204dd976f51f8b796 92352 misc optional ros-humble-tf2_2-2024.10.21.18.06_amd64.deb

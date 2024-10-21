@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-google-benchmark
+Binary: ros-humble-ament-cmake-google-benchmark
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.49
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-google-benchmark - The ability to add Google Benchmark tests in the ament buildsyste
+Changes:
+ ros-humble-ament-cmake-google-benchmark (2-2024.10.21.15.49) jammy; urgency=high
+Checksums-Sha1:
+ 3a8488cbc14129114e2e225111bbcac318e9bde7 8302 ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.buildinfo
+ 951a0951144e039f93baf55ccf25dfd472312257 12924 ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.deb
+Checksums-Sha256:
+ e26d14bb8caf9782d9ed0878fc4ba5121ed956fdc2868f90bb19366e94d80a5e 8302 ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.buildinfo
+ 4f6d9697198bcee038762b0bcdc25b18ac8d3c6dcdd330e92d3e91609bd2c753 12924 ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.deb
+Files:
+ 49fe6d98d9eb2afc352c3d4224fc852c 8302 misc optional ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.buildinfo
+ a05bdbbd4533a5e5c43ae32a310bb8c2 12924 misc optional ros-humble-ament-cmake-google-benchmark_2-2024.10.21.15.49_amd64.deb

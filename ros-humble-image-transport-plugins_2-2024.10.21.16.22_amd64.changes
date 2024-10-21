@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Mon, 22 Jul 2024 00:00:00 -0000
+Source: ros-humble-image-transport-plugins
+Binary: ros-humble-image-transport-plugins
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.22
+Distribution: jammy
+Urgency: high
+Maintainer: Kenji Brameld <kenjibrameld@gmail.com>
+Changed-By: Kenji Brameld <kenjibrameld@gmail.com>
+Description:
+ ros-humble-image-transport-plugins - A set of plugins for publishing and subscribing to sensor_msgs/Im
+Changes:
+ ros-humble-image-transport-plugins (2-2024.10.21.16.22) jammy; urgency=high
+Checksums-Sha1:
+ f8c9ba05492fb684e8165df2524ac81c2c7ffb41 9031 ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.buildinfo
+ 01a473a7718c4f82ffcf4c912b62718b0c9bf4f2 6276 ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.deb
+Checksums-Sha256:
+ 5cf525d90059fd96ff6cf0ddbd3c686948422c4c40fa8f253c8c8dacbf7e05c1 9031 ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.buildinfo
+ ae9f903a91e683875043e90e9e2effda57d1f34e04fd57f0d1e3d935f7871c43 6276 ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.deb
+Files:
+ 5e1fa5fb7105f558818e7b389550dfcd 9031 misc optional ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.buildinfo
+ 828a831a329457238db945cd2942c440 6276 misc optional ros-humble-image-transport-plugins_2-2024.10.21.16.22_amd64.deb

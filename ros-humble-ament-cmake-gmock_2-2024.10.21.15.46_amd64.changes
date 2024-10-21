@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-gmock
+Binary: ros-humble-ament-cmake-gmock
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.46
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-gmock - The ability to add Google mock-based tests in the ament buildsyst
+Changes:
+ ros-humble-ament-cmake-gmock (2-2024.10.21.15.46) jammy; urgency=high
+Checksums-Sha1:
+ a9f3a8b56e47a4a0c217d701c0efc5a90929d80f 8066 ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.buildinfo
+ 01235484e897749cfb2179dff6b5946c1c8beed8 10132 ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.deb
+Checksums-Sha256:
+ 05165ebdb1fe84f14c739d076a89c7c8399ee10264d8f4dcd425619ee97de85d 8066 ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.buildinfo
+ 661173b03994da4378700cd5b7c8eba6fc481dd19d60fa0399072d64ca5aa673 10132 ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.deb
+Files:
+ 83db8d175c2861b2231466d4b3b0bcb8 8066 misc optional ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.buildinfo
+ de3c4c9e3e4bc203784348d212f0e3b3 10132 misc optional ros-humble-ament-cmake-gmock_2-2024.10.21.15.46_amd64.deb

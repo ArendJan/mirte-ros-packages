@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Sat, 22 Oct 2022 00:00:00 -0000
+Source: ros-humble-xacro
+Binary: ros-humble-xacro
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.22
+Distribution: jammy
+Urgency: high
+Maintainer: Robert Haschke <rhaschke@techfak.uni-bielefeld.de>
+Changed-By: Robert Haschke <rhaschke@techfak.uni-bielefeld.de>
+Description:
+ ros-humble-xacro - Xacro (XML Macros) Xacro is an XML macro language.
+Changes:
+ ros-humble-xacro (2-2024.10.21.19.22) jammy; urgency=high
+ .
+   * Install xacro using console_script entrypoint (#304 <https://github.com/ros/xacro/issues/304>)
+   * Provide xacro.process() returning the processed file (#229 <https://github.com/ros/xacro/issues/229>)
+   * Dotted YAML access from list iterator (#318 <https://github.com/ros/xacro/issues/318>)
+   * Optionally allow comment evaluation (#310 <https://github.com/ros/xacro/issues/310>)Comment evaluation can be enabled with a special comment:
+ .
+       * ``<!-- xacro:eval-comments -->`` or
+       * ``<!-- xacro:eval-comments:on -->``
+     It remains active for the following comments until:
+ .
+       * the current XML tag's scope is left (or a new tag entered)
+       * another tag or non-whitespace text is processed
+       * it becomes explicitly disabled via: ``<!-- xacro:eval-comments:off -->``
+ .
+   * Fix property resolution with namespace usage (#308 <https://github.com/ros/xacro/issues/308>)
+ .
+       * Allow access to properties in parent scopes again (fixes #305 <https://github.com/ros/xacro/issues/305#issuecomment-1016811150>)
+       * Pick correct scope when defining a property into the parent (fixes #307 <https://github.com/ros/xacro/issues/307>)Setting a property within the parent scope may occur in two contexts:From within a macro. In that case, one wants to set the property in the caller's scope.
+ .
+         From within the included file. In that case, one wants to set the property in the includer's scope.
+ .
+   * Contributors: Chen Bainian, Gonzalo de Pedro, Gonzo, Jacob Perron, Melvin Wang, Robert Haschke, vandanamandlik
+Checksums-Sha1:
+ 26b4ce3a965cb22a6bcf03a9b352623ab951d86d 9385 ros-humble-xacro_2-2024.10.21.19.22_amd64.buildinfo
+ 6e7361cf1b46913c6f30203eb8caadb598716394 36514 ros-humble-xacro_2-2024.10.21.19.22_amd64.deb
+Checksums-Sha256:
+ b59fb00594778b8b3577b228e5a82901f10b81545b5ff2c94af097fd282cd544 9385 ros-humble-xacro_2-2024.10.21.19.22_amd64.buildinfo
+ 87c3574b49ecbb8d1b0dfa67eded105cbe0788152fa2af541fa8ce81d11c93f0 36514 ros-humble-xacro_2-2024.10.21.19.22_amd64.deb
+Files:
+ 450cda996d6b14291d62fcf97229d736 9385 misc optional ros-humble-xacro_2-2024.10.21.19.22_amd64.buildinfo
+ f8854fdf612ac0cd591969c90b4b2369 36514 misc optional ros-humble-xacro_2-2024.10.21.19.22_amd64.deb

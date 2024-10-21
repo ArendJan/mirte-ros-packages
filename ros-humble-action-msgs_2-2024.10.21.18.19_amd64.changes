@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-action-msgs
+Binary: ros-humble-action-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.19
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-action-msgs - Messages and service definitions common among all ROS actions.
+Changes:
+ ros-humble-action-msgs (2-2024.10.21.18.19) jammy; urgency=high
+Checksums-Sha1:
+ 565b44f45a1d8832d8dd448380a9e38e42574b71 359588 ros-humble-action-msgs-dbgsym_2-2024.10.21.18.19_amd64.ddeb
+ 689d00297593436047cd2554671049869884a008 13973 ros-humble-action-msgs_2-2024.10.21.18.19_amd64.buildinfo
+ 677f534c5d533238f0ebb58fa8e1ab0541a1b9d9 68536 ros-humble-action-msgs_2-2024.10.21.18.19_amd64.deb
+Checksums-Sha256:
+ cb112e2fef7278214c97ef8d732d186fdf0228ee3fb06540c305084c7063ebcf 359588 ros-humble-action-msgs-dbgsym_2-2024.10.21.18.19_amd64.ddeb
+ 355750c91872db40730e088eba9d9c021e970520c801746fff181ac88a811833 13973 ros-humble-action-msgs_2-2024.10.21.18.19_amd64.buildinfo
+ 06c41b645880f4747effb31662948fb0b79653a2e9dff0a1237a1376325ab96c 68536 ros-humble-action-msgs_2-2024.10.21.18.19_amd64.deb
+Files:
+ 023d78cd62931f1fa89866b9300993bb 359588 debug optional ros-humble-action-msgs-dbgsym_2-2024.10.21.18.19_amd64.ddeb
+ aef4261a569030c6f71d06fa7d2eedd0 13973 misc optional ros-humble-action-msgs_2-2024.10.21.18.19_amd64.buildinfo
+ a5c7b5167b6a0156cc7055b056f94cac 68536 misc optional ros-humble-action-msgs_2-2024.10.21.18.19_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-xmllint
+Binary: ros-humble-ament-xmllint
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.06
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-xmllint - The ability to check XML files like the package manifest using xm
+Changes:
+ ros-humble-ament-xmllint (2-2024.10.21.16.06) jammy; urgency=high
+Checksums-Sha1:
+ a1037c0471074c380b05ed1e0f0e3c0cfdecb10f 7433 ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.buildinfo
+ 1ab49c2a5f2969edeee7226b7a7ed9b9de5102c2 11028 ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.deb
+Checksums-Sha256:
+ 04b9fd2fb7b40ec0f096b4e4ae004fd58085fb1bf71d57b2ce2530fa3e24bd22 7433 ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.buildinfo
+ 1888b620c9d32fc96b651c8ed852f5d05bcef4d113042376e0daa6e6fa6532fb 11028 ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.deb
+Files:
+ aa803c6c31bb4fc45f1568fc243c0ede 7433 misc optional ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.buildinfo
+ a81a578ae99986f01e12785949fbcc03 11028 misc optional ros-humble-ament-xmllint_2-2024.10.21.16.06_amd64.deb

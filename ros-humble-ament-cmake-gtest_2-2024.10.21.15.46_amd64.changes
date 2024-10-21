@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-gtest
+Binary: ros-humble-ament-cmake-gtest
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.46
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-gtest - The ability to add gtest-based tests in the ament buildsystem in
+Changes:
+ ros-humble-ament-cmake-gtest (2-2024.10.21.15.46) jammy; urgency=high
+Checksums-Sha1:
+ 3e083a0a1745f97f06ec78e294c2a98cccd7e0e0 8066 ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.buildinfo
+ 4d5e9b5da94b48410e5b4d0bff9219f69f3aafd5 11202 ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.deb
+Checksums-Sha256:
+ d8fe1d844d65403f465eb80996ef76444ef6e934fc8e282a34401acd331d516e 8066 ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.buildinfo
+ 9c27dc83895aa1a0fc0f6af9e48ab9a59f66682e186604cc1307545a715499cb 11202 ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.deb
+Files:
+ adf6de02baaec7cb744d0bde65d31c29 8066 misc optional ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.buildinfo
+ 7d6b815df2782419bf61ab9d333cd5fe 11202 misc optional ros-humble-ament-cmake-gtest_2-2024.10.21.15.46_amd64.deb

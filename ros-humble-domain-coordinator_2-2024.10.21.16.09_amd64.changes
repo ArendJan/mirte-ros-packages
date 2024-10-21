@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 13 Jan 2022 00:00:00 -0000
+Source: ros-humble-domain-coordinator
+Binary: ros-humble-domain-coordinator
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.09
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-domain-coordinator - A tool to coordinate unique ROS_DOMAIN_IDs across multiple proces
+Changes:
+ ros-humble-domain-coordinator (2-2024.10.21.16.09) jammy; urgency=high
+ .
+   * Update maintainers to Michel Hidalgo (#13 <https://github.com/ros2/ament_cmake_ros/issues/13>)
+   * Refactor domain_coordinator API to use a context manager (#12 <https://github.com/ros2/ament_cmake_ros/issues/12>)
+   * Contributors: Audrow Nash, Timo Röhling
+Checksums-Sha1:
+ 4445dc9107acc53745132b32932e573d242fff0b 7455 ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.buildinfo
+ f2352857a9db96811d2ef4231c1b4f6c60f939bc 5130 ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.deb
+Checksums-Sha256:
+ 9a1b8fda5c8529c43e06e7c2d1062eea26445229cc2983f6ae613b7c127ab656 7455 ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.buildinfo
+ 777312857ba4fe370c3d137f21f04af28a9d9b4ae68abdac4e783a745ff5f820 5130 ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.deb
+Files:
+ 8b414b6412de4796486c0f973e3b76ca 7455 misc optional ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.buildinfo
+ 04681e626e0a05e10aa372abb796c9e7 5130 misc optional ros-humble-domain-coordinator_2-2024.10.21.16.09_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-runtime-cpp
+Binary: ros-humble-rosidl-runtime-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.47
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-runtime-cpp - Provides definitions and templated functions for getting and work
+Changes:
+ ros-humble-rosidl-runtime-cpp (2-2024.10.21.16.47) jammy; urgency=high
+Checksums-Sha1:
+ 5710c0ae363c56f6e4f534b3bd0e2131495dd9a7 11259 ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.buildinfo
+ 502dc8f5e5cdc197480e79e5708fba52c4bd2945 15146 ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.deb
+Checksums-Sha256:
+ a563e5dae2110719716137338055e93dea857c9f1da835c817bb168ecd2febdb 11259 ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.buildinfo
+ d4635068576eb2f8a2f5716e3217661c8cd656df289c37d778eaee7e2c8f4890 15146 ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.deb
+Files:
+ 06f33d943d63466fd57e6e20dbfcb53c 11259 misc optional ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.buildinfo
+ 9dc789988962d2dafea584b1e667e609 15146 misc optional ros-humble-rosidl-runtime-cpp_2-2024.10.21.16.47_amd64.deb

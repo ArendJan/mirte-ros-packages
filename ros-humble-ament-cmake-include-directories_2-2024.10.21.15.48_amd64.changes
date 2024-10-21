@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-include-directories
+Binary: ros-humble-ament-cmake-include-directories
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.48
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-include-directories - The functionality to order include directories according to a cha
+Changes:
+ ros-humble-ament-cmake-include-directories (2-2024.10.21.15.48) jammy; urgency=high
+Checksums-Sha1:
+ 5d6cdfc214bb74486dedf628a7dadbc8185a546e 8133 ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.buildinfo
+ 0dbff57e9e0c86737453e4331e1f80b406156f13 7192 ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.deb
+Checksums-Sha256:
+ 52a9539d1f5bd3d71f1b963dd98203bd6bfe81f4dba04e48bd24229d298905ff 8133 ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.buildinfo
+ 8cbf048f78f51b24b3dfc8841762e8c11ecf379e4ff914ddc41329363537237b 7192 ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.deb
+Files:
+ 9f9339775c8cc7dc610554c1b4e1c467 8133 misc optional ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.buildinfo
+ 964b47485558f849d87ce2dadd2358c1 7192 misc optional ros-humble-ament-cmake-include-directories_2-2024.10.21.15.48_amd64.deb

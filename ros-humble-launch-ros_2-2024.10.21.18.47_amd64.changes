@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 24 Jan 2024 00:00:00 -0000
+Source: ros-humble-launch-ros
+Binary: ros-humble-launch-ros
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.47
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@osrfoundation.org>
+Changed-By: Aditya Pande <aditya.pande@osrfoundation.org>
+Description:
+ ros-humble-launch-ros - ROS specific extensions to the launch tool.
+Changes:
+ ros-humble-launch-ros (2-2024.10.21.18.47) jammy; urgency=high
+Checksums-Sha1:
+ 37cdd27a47b439aed054f700aab5f8b8f756ef25 14317 ros-humble-launch-ros_2-2024.10.21.18.47_amd64.buildinfo
+ ed45d5a799681568110375b40e268e0e3aa6771f 65612 ros-humble-launch-ros_2-2024.10.21.18.47_amd64.deb
+Checksums-Sha256:
+ ec7efdb23066684983e648288e4d794c4b68e17c1e471030a138bf1975ae6bd3 14317 ros-humble-launch-ros_2-2024.10.21.18.47_amd64.buildinfo
+ 9a58e543a8e9d54a18c8035d09d32265df375a4519937f4843cdef19c35d4bc2 65612 ros-humble-launch-ros_2-2024.10.21.18.47_amd64.deb
+Files:
+ 7606b8cd5418c23ab12b933d5899f4fd 14317 misc optional ros-humble-launch-ros_2-2024.10.21.18.47_amd64.buildinfo
+ 33820814b936a283061c2c9dad879a09 65612 misc optional ros-humble-launch-ros_2-2024.10.21.18.47_amd64.deb

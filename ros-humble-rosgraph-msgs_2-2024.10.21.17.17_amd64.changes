@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-rosgraph-msgs
+Binary: ros-humble-rosgraph-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.17
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rosgraph-msgs - Messages relating to the ROS Computation Graph.
+Changes:
+ ros-humble-rosgraph-msgs (2-2024.10.21.17.17) jammy; urgency=high
+Checksums-Sha1:
+ 3d684107e59cc88ff00582640be608431bfb5a80 120276 ros-humble-rosgraph-msgs-dbgsym_2-2024.10.21.17.17_amd64.ddeb
+ 5bcc38d837c4318ef270562efe8d9f712107255f 13870 ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.buildinfo
+ 96f54e79644ae9e1907d33e0f81ee7c4ff0e6078 35564 ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.deb
+Checksums-Sha256:
+ 00b7e1a29679f39927c2996acf4067e1423cd160b370ee81a07cdb5ed9f80445 120276 ros-humble-rosgraph-msgs-dbgsym_2-2024.10.21.17.17_amd64.ddeb
+ 3a3bf41d426745b8924b58b21bbd6831cadf6e3120ea8a906289dcad61694880 13870 ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.buildinfo
+ f0e5a575865cd0c84d27178581b5d27af256e1518af82d83ad9bbb50ff973bf6 35564 ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.deb
+Files:
+ b99723b51dd12dddee35475cdfefb05a 120276 debug optional ros-humble-rosgraph-msgs-dbgsym_2-2024.10.21.17.17_amd64.ddeb
+ e0acb9ea1d8630cad2f6c06d96da9760 13870 misc optional ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.buildinfo
+ 9c39f99d5111a924325a28e00bc90ab0 35564 misc optional ros-humble-rosgraph-msgs_2-2024.10.21.17.17_amd64.deb

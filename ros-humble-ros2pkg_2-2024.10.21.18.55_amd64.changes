@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2pkg
+Binary: ros-humble-ros2pkg
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.55
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2pkg - The pkg command for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2pkg (2-2024.10.21.18.55) jammy; urgency=high
+Checksums-Sha1:
+ 44b009e5b141de02c29c7ae4a4328eb60581eecd 14752 ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.buildinfo
+ fa20a050097fd3b864fa3c17fa946026b319bfdd 25396 ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.deb
+Checksums-Sha256:
+ e81b9e1cfaf0a1ff97522c2b048617861022219ea228eb32a921470e20adf742 14752 ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.buildinfo
+ 669a9eb521daf4d7cc74561b0a2432b61b1b364b977ed3c1d61bfc68d84e05d3 25396 ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.deb
+Files:
+ 06d6a75293cd54ad05bd54b3fc1fcaea 14752 misc optional ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.buildinfo
+ c7b6a1700c9885cff5be87183b5246f6 25396 misc optional ros-humble-ros2pkg_2-2024.10.21.18.55_amd64.deb

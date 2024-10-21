@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-flake8
+Binary: ros-humble-ament-flake8
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.39
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-flake8 - The ability to check code for style and syntax conventions with f
+Changes:
+ ros-humble-ament-flake8 (2-2024.10.21.15.39) jammy; urgency=high
+Checksums-Sha1:
+ e56ff9f375f425b878196437b5cdbc9a4fe83cef 6646 ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.buildinfo
+ 41d00340a676ffe07622088f4f5fbc603de92828 15504 ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.deb
+Checksums-Sha256:
+ 99eb55504a44ee8197c88645adb72f0f1fe3ea2c88db6f5f7cab3c8f5579be40 6646 ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.buildinfo
+ 24880487fefc3838cea73e453e3d310720f9bed96085376de7eac1bcbb66ea60 15504 ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.deb
+Files:
+ e18ec73f17d77a21035d147724c9a568 6646 misc optional ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.buildinfo
+ f931f872dcb06dd469c4484f809766dc 15504 misc optional ros-humble-ament-flake8_2-2024.10.21.15.39_amd64.deb

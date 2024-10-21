@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 17 May 2024 00:00:00 -0000
+Source: ros-humble-launch
+Binary: ros-humble-launch
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.24
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-launch - The ROS launch tool.
+Changes:
+ ros-humble-launch (2-2024.10.21.16.24) jammy; urgency=high
+Checksums-Sha1:
+ 04d186111a47b74a0c89e2b992d9617a3945e886 7521 ros-humble-launch_2-2024.10.21.16.24_amd64.buildinfo
+ a9d9234b4267eabd1fe7c710588eb95e47dc4c80 151060 ros-humble-launch_2-2024.10.21.16.24_amd64.deb
+Checksums-Sha256:
+ 7756d7a34a84af002ef7d5290ad54ce5b5d196fee7c9d39f0e7f031939e1b8eb 7521 ros-humble-launch_2-2024.10.21.16.24_amd64.buildinfo
+ 9fb63731caaf793ca3d7ec05e41f9a8bd42cf6b8a6e0cfd76dd74aa59cbcb870 151060 ros-humble-launch_2-2024.10.21.16.24_amd64.deb
+Files:
+ 2e4f3b785cc54e2c908d61e8096fcccf 7521 misc optional ros-humble-launch_2-2024.10.21.16.24_amd64.buildinfo
+ 460c1d15b9932d57e50ffb19542f3316 151060 misc optional ros-humble-launch_2-2024.10.21.16.24_amd64.deb

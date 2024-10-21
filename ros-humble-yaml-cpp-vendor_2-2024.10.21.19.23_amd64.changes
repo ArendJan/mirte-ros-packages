@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 10 Jan 2023 00:00:00 -0000
+Source: ros-humble-yaml-cpp-vendor
+Binary: ros-humble-yaml-cpp-vendor
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.23
+Distribution: jammy
+Urgency: high
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Changed-By: Audrow Nash <audrow@openrobotics.org>
+Description:
+ ros-humble-yaml-cpp-vendor - Wrapper around yaml-cpp, it provides a fixed CMake module and an
+Changes:
+ ros-humble-yaml-cpp-vendor (2-2024.10.21.19.23) jammy; urgency=high
+ .
+   * Fixes policy CMP0135 warning for CMake >= 3.24 (#35 <https://github.com/ros2/yaml_cpp_vendor/issues/35>) (#41 <https://github.com/ros2/yaml_cpp_vendor/issues/41>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ b6b1a8535afa228cc27b7b4818922a76eef372f9 9072 ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.buildinfo
+ 64ba5567596ebf34e07ffa5579c05dcc7de24bc3 6992 ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.deb
+Checksums-Sha256:
+ 6adc645b0c07039004109259ac9f5229a049f0965258c79712b129ef3d6ce6f5 9072 ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.buildinfo
+ a6c7d7ca849cb081782d1e1fb540dd5fbad2e8e646ca42690aed5e9b21489d16 6992 ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.deb
+Files:
+ 073ba0fd0e516fe0e115a0b59a428ac1 9072 misc optional ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.buildinfo
+ b66f0788999a1e0273fb5e6936b26d9c 6992 misc optional ros-humble-yaml-cpp-vendor_2-2024.10.21.19.23_amd64.deb

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 08 Mar 2024 00:00:00 -0000
+Source: ros-humble-teleop-twist-keyboard
+Binary: ros-humble-teleop-twist-keyboard
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.05
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-teleop-twist-keyboard - A robot-agnostic teleoperation node to convert keyboard commands
+Changes:
+ ros-humble-teleop-twist-keyboard (2-2024.10.21.18.05) jammy; urgency=high
+ .
+   * Fixes for flake8. (#29 <https://github.com/ros2/teleop_twist_keyboard/issues/29>)
+   * Show command to change topic name on readme (#27 <https://github.com/ros2/teleop_twist_keyboard/issues/27>)
+   * Remove url for ros1 on package.xml (#28 <https://github.com/ros2/teleop_twist_keyboard/issues/28>)
+   * Added TwistStamped option (#26 <https://github.com/ros2/teleop_twist_keyboard/issues/26>)
+   * Switch to underscores for setup.cfg. (#25 <https://github.com/ros2/teleop_twist_keyboard/issues/25>)
+   * Contributors: Asuki Kono, Chris Lalancette, agyoungs
+Checksums-Sha1:
+ 43a0807c3c2c0fed39c627c0eaf42b4fe28dd70f 7225 ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.buildinfo
+ 724a4d372adfafc2963f555cea2ce12fcec66a49 8276 ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.deb
+Checksums-Sha256:
+ 054dbe4d8aa6d8e5f57c8e222145c755f8c5d4e238401109b216212bcfbbd519 7225 ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.buildinfo
+ 65fac22da92b7666f86e6568becbff7939c57cc8605e88e392786159eea3963a 8276 ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.deb
+Files:
+ a21159d21b29f767dd555bee57e1737e 7225 misc optional ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.buildinfo
+ b0647a929a45728e2befe437f1eac333 8276 misc optional ros-humble-teleop-twist-keyboard_2-2024.10.21.18.05_amd64.deb

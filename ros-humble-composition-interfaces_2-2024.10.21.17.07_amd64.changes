@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-composition-interfaces
+Binary: ros-humble-composition-interfaces
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.07
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-composition-interfaces - A package containing message and service definitions for managing
+Changes:
+ ros-humble-composition-interfaces (2-2024.10.21.17.07) jammy; urgency=high
+Checksums-Sha1:
+ 0f6a876f54a93a3bd5f427e14ead25edf07d64d2 568264 ros-humble-composition-interfaces-dbgsym_2-2024.10.21.17.07_amd64.ddeb
+ 9b5ed23a131f1b3674fc93d8823412ffdfa00df4 14002 ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.buildinfo
+ 6d241e06682fda9d173c1fc2459cd3fd403baf14 89992 ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.deb
+Checksums-Sha256:
+ fd9f45ed05a5e3fd61785b2af94bb46fa14d3606f6b87c24e83024c0c0ef9300 568264 ros-humble-composition-interfaces-dbgsym_2-2024.10.21.17.07_amd64.ddeb
+ 7c0c45eedceb52b054d1c65880ceb3b5da1e0845f168ce6ef82e227893f41902 14002 ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.buildinfo
+ cf629d83e09883c605fff5142c7ac3551e1f18580b98e7b12a98c039ad150093 89992 ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.deb
+Files:
+ 75b57d31f84397493b14df7617abfe0e 568264 debug optional ros-humble-composition-interfaces-dbgsym_2-2024.10.21.17.07_amd64.ddeb
+ 01bf7a194882befbbef9d56df02b5ec8 14002 misc optional ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.buildinfo
+ 8dbfd3a97f3ba158ae96d31625ef3f3e 89992 misc optional ros-humble-composition-interfaces_2-2024.10.21.17.07_amd64.deb

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 01 Mar 2022 00:00:00 -0000
+Source: ros-humble-ament-index-cpp
+Binary: ros-humble-ament-index-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.03
+Distribution: jammy
+Urgency: high
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Changed-By: Audrow Nash <audrow@openrobotics.org>
+Description:
+ ros-humble-ament-index-cpp - C++ API to access the ament resource index.
+Changes:
+ ros-humble-ament-index-cpp (2-2024.10.21.16.03) jammy; urgency=high
+ .
+   * Install includes to include/ (#83 <https://github.com/ament/ament_index/issues/83>)
+   * Remove ament_export_include_directories and ament_export_libraries (#81 <https://github.com/ament/ament_index/issues/81>)
+   * Contributors: Shane Loretz
+Checksums-Sha1:
+ f67823a3e36b03795a7f16e4f6016bedd0dc023f 219004 ros-humble-ament-index-cpp-dbgsym_2-2024.10.21.16.03_amd64.ddeb
+ e7c2e882a1b0ecf97f5f35d74261c1e7cd431d80 11131 ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.buildinfo
+ 531ca7b1a23aba2bebef725d3b8fe34683abb23e 22668 ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.deb
+Checksums-Sha256:
+ 2a52387c62027bcd816b1d548874074da57ecdcb06e0df530013fdc18b570951 219004 ros-humble-ament-index-cpp-dbgsym_2-2024.10.21.16.03_amd64.ddeb
+ 86b9df0418e4aa245b009d4f02c0022b12d0d8238e130549c106248f3a199b0e 11131 ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.buildinfo
+ e2b009ebf9ef47e986746ebda52918d36d2cb420fdcb0c681be4f91aa959cf50 22668 ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.deb
+Files:
+ 737a1100afbf81dc10a5ac437700bda1 219004 debug optional ros-humble-ament-index-cpp-dbgsym_2-2024.10.21.16.03_amd64.ddeb
+ 5c0d7f2faa5bc387a95fc79e9c806b2a 11131 misc optional ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.buildinfo
+ d66bb9d80a7110d4867ef62a363ebc75 22668 misc optional ros-humble-ament-index-cpp_2-2024.10.21.16.03_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-controller-manager-msgs
+Binary: ros-humble-controller-manager-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.03
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-controller-manager-msgs - Messages and services for the controller manager.
+Changes:
+ ros-humble-controller-manager-msgs (2-2024.10.21.17.03) jammy; urgency=high
+Checksums-Sha1:
+ 2b3c6b4d07daded22ffada84c7e986f500441a62 1535084 ros-humble-controller-manager-msgs-dbgsym_2-2024.10.21.17.03_amd64.ddeb
+ 694ac80e788a4fa8f7e2298474560f4024e6a152 14017 ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.buildinfo
+ 80cadf0643fc865cf8f0f17290fff3bc403ce34b 199848 ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.deb
+Checksums-Sha256:
+ ec7d76812527658029da0915621814e5d952009354aea1a31cc31af4d0ff6b67 1535084 ros-humble-controller-manager-msgs-dbgsym_2-2024.10.21.17.03_amd64.ddeb
+ 0d0d85f0b605a1c0ddb3afbc1bea315a3367a5cef1287b47296728fd3c9e4629 14017 ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.buildinfo
+ 5d429b426682a1b2ad398d48bb22dbbbbee0e7987ed6d58dbc02acfd544fb106 199848 ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.deb
+Files:
+ ce78b22b1c9783723fe0de54339e9463 1535084 debug optional ros-humble-controller-manager-msgs-dbgsym_2-2024.10.21.17.03_amd64.ddeb
+ e938e06110d0546e4c25a7597088b246 14017 misc optional ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.buildinfo
+ 7cb0ae0be0df8d2ac08552015e069e05 199848 misc optional ros-humble-controller-manager-msgs_2-2024.10.21.17.03_amd64.deb

@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Tue, 12 Dec 2023 00:00:00 -0000
+Source: ros-humble-control-toolbox
+Binary: ros-humble-control-toolbox
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.50
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-control-toolbox - The control toolbox contains modules that are useful across all c
+Changes:
+ ros-humble-control-toolbox (2-2024.10.21.18.50) jammy; urgency=high
+ .
+   * [CI] fix source build (#168 <https://github.com/ros-controls/control_toolbox/issues/168>)
+   * Bump actions/setup-python from 4 to 5 (#167 <https://github.com/ros-controls/control_toolbox/issues/167>)
+   * [CI] Touchups (#166 <https://github.com/ros-controls/control_toolbox/issues/166>)
+   * [PID] Update documentation to reflect ROS 2 usage of time (#165 <https://github.com/ros-controls/control_toolbox/issues/165>)
+   * Bump actions/checkout from 3 to 4 (#163 <https://github.com/ros-controls/control_toolbox/issues/163>)
+   * Bump ros-tooling/setup-ros from 0.6 to 0.7 (#161 <https://github.com/ros-controls/control_toolbox/issues/161>)
+   * Add filters structure and lowpass filter (#152 <https://github.com/ros-controls/control_toolbox/issues/152>)
+   * Bump codecov/codecov-action from 3.1.2 to 3.1.4 (#160 <https://github.com/ros-controls/control_toolbox/issues/160>)
+   * Contributors: Christoph Fröhlich, GuiHome, Patrick Roncagliolo
+Checksums-Sha1:
+ 74e92b74fd4418ba8b3f26502791de6cfaf94d0f 1307454 ros-humble-control-toolbox-dbgsym_2-2024.10.21.18.50_amd64.ddeb
+ 669c4d99549fb3f34bf13405155e7565fa539e53 15826 ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.buildinfo
+ 6bf0c6e6012626a70edd6b08b806a070f28e295a 95828 ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.deb
+Checksums-Sha256:
+ 64b9b2030891967a15a2f89350c1aefaf1873aac28f17a5f1cfad65185ac7dcf 1307454 ros-humble-control-toolbox-dbgsym_2-2024.10.21.18.50_amd64.ddeb
+ 6519547f6fac5818dc55f93d51ca8a049f34f59e3eadda31185225c540b028bf 15826 ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.buildinfo
+ aab4e373b9bbb71eecceff8e48868fe688822854fa4ccd13dd9bf9bddea8535e 95828 ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.deb
+Files:
+ 2b1bd0b97a363a936ccb0e2868610276 1307454 debug optional ros-humble-control-toolbox-dbgsym_2-2024.10.21.18.50_amd64.ddeb
+ 17857bbb01a1b781c1f1fbe9d3a25fd8 15826 misc optional ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.buildinfo
+ 93969433bd95afb647d1e8101c49bf8c 95828 misc optional ros-humble-control-toolbox_2-2024.10.21.18.50_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jan 2022 00:00:00 -0000
+Source: ros-humble-ament-package
+Binary: ros-humble-ament-package
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.40
+Distribution: jammy
+Urgency: high
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Changed-By: Audrow Nash <audrow@openrobotics.org>
+Description:
+ ros-humble-ament-package - The parser for the manifest files in the ament buildsystem.
+Changes:
+ ros-humble-ament-package (2-2024.10.21.15.40) jammy; urgency=high
+Checksums-Sha1:
+ 523f98d2bfb3de995bab15728c0d5eb8350cf00f 7134 ros-humble-ament-package_2-2024.10.21.15.40_amd64.buildinfo
+ 66adb670785713eb41fd781d363c0f627d9de9d7 23348 ros-humble-ament-package_2-2024.10.21.15.40_amd64.deb
+Checksums-Sha256:
+ a30933cac102e7dfce90c7f65a049ddefdd17e49750a0c9bea71cecbdfbe5af3 7134 ros-humble-ament-package_2-2024.10.21.15.40_amd64.buildinfo
+ e3df663f986e32f9aee487cc134fafef7514a5529d7fac8fd0a6755e492aafe1 23348 ros-humble-ament-package_2-2024.10.21.15.40_amd64.deb
+Files:
+ e01d1298ce0cf165b84b80244c8eac35 7134 misc optional ros-humble-ament-package_2-2024.10.21.15.40_amd64.buildinfo
+ 34ce306679922f9313026cdae4324baf 23348 misc optional ros-humble-ament-package_2-2024.10.21.15.40_amd64.deb

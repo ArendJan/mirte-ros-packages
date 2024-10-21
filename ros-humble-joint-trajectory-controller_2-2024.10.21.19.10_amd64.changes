@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-joint-trajectory-controller
+Binary: ros-humble-joint-trajectory-controller
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.10
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-joint-trajectory-controller - Controller for executing joint-space trajectories on a group of j
+Changes:
+ ros-humble-joint-trajectory-controller (2-2024.10.21.19.10) jammy; urgency=high
+Checksums-Sha1:
+ 881b74c5713cec38b8e3ec962cd9228e83c51847 3937094 ros-humble-joint-trajectory-controller-dbgsym_2-2024.10.21.19.10_amd64.ddeb
+ b5e257bc0e32fb91ca2cef9a9172f7cc6880bba8 17274 ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.buildinfo
+ e1c0a8207031f55b783a10abf2cea0df0b5905f6 258272 ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.deb
+Checksums-Sha256:
+ fe745b840de30a91cd01d7f04b09348c88fab43b390f29a8324b97e7535ee21d 3937094 ros-humble-joint-trajectory-controller-dbgsym_2-2024.10.21.19.10_amd64.ddeb
+ 56b775803f3de26986a67817bfd22ee3344d8b5d7198656327994d1dd30e85a1 17274 ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.buildinfo
+ e869e05708c6b0ec5487799ea4cb7ab2ee80ee735df0cc2fd90aedd84f70226e 258272 ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.deb
+Files:
+ 531d8b6a4527a3a42bd2c98d431874a3 3937094 debug optional ros-humble-joint-trajectory-controller-dbgsym_2-2024.10.21.19.10_amd64.ddeb
+ d58370135e2cc1ceeff1c0efc07ad9f4 17274 misc optional ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.buildinfo
+ 8e0e72a1cf25e9436fa61e08ee9f539e 258272 misc optional ros-humble-joint-trajectory-controller_2-2024.10.21.19.10_amd64.deb

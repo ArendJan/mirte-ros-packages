@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-nav-msgs
+Binary: ros-humble-nav-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.34
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-nav-msgs - A package containing some navigation related message and service
+Changes:
+ ros-humble-nav-msgs (2-2024.10.21.17.34) jammy; urgency=high
+Checksums-Sha1:
+ ee350d49ad9d88f309aae168036ba9a9fdfe7822 901818 ros-humble-nav-msgs-dbgsym_2-2024.10.21.17.34_amd64.ddeb
+ 9c4d6744fec25ff67572a4b1f52ff23daad5f821 13943 ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.buildinfo
+ 693eed2d9fcff5a973a07b1953cb13724c5f5db6 124768 ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.deb
+Checksums-Sha256:
+ 8a8d439d241c4a9b5ceb54ac22b14f1f089eae2ab2174006a13c780e93377a94 901818 ros-humble-nav-msgs-dbgsym_2-2024.10.21.17.34_amd64.ddeb
+ c34d8f97bf69f9e263bb618a4725a8fe127968ad83ef02d93315ab089f6da362 13943 ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.buildinfo
+ 826a334b68837f3b8e2abf421a4a7cd9ea93e839348f81c4f4699b3eec7d77f0 124768 ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.deb
+Files:
+ bc3bff16c6ea62844e91c89076461db5 901818 debug optional ros-humble-nav-msgs-dbgsym_2-2024.10.21.17.34_amd64.ddeb
+ 8ae60fc808174bb9e875a029634ca38e 13943 misc optional ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.buildinfo
+ 8d7e8685976f490ea3ed9b080d329cbd 124768 misc optional ros-humble-nav-msgs_2-2024.10.21.17.34_amd64.deb

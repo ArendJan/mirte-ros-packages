@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-pep257
+Binary: ros-humble-ament-cmake-pep257
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.01
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-pep257 - The CMake API for ament_pep257 to check code against the docstrin
+Changes:
+ ros-humble-ament-cmake-pep257 (2-2024.10.21.16.01) jammy; urgency=high
+Checksums-Sha1:
+ 81f72af56fcd20fffd3947516857ab636cb00a58 8390 ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.buildinfo
+ 7f62dbbc52a2d4f7214d517ea094ec61c121b1e4 7234 ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.deb
+Checksums-Sha256:
+ 17fa540a42138e534f4614a4e91139e82b8a590a331dcd836c780edde603bd39 8390 ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.buildinfo
+ 66966c5f47211bae0473fcb1a5664cf59b517748aa40d76f50d294da6254d0e2 7234 ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.deb
+Files:
+ 76fd8f9d6739de0253d125d57d7d263c 8390 misc optional ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.buildinfo
+ 097488781cbd51d76318a39be6e453d5 7234 misc optional ros-humble-ament-cmake-pep257_2-2024.10.21.16.01_amd64.deb

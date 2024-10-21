@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-rcpputils
+Binary: ros-humble-rcpputils
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.29
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rcpputils - Package containing utility code for C++.
+Changes:
+ ros-humble-rcpputils (2-2024.10.21.16.29) jammy; urgency=high
+ .
+   * Generate version header with ament_generate_version_header function (#190 <https://github.com/ros2/rcpputils/issues/190>) (#191 <https://github.com/ros2/rcpputils/issues/191>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 51297d14d4fd91e7b9b36d7fd438e8994ec41833 201996 ros-humble-rcpputils-dbgsym_2-2024.10.21.16.29_amd64.ddeb
+ df65cbce2c07fa95417459c0b79544cb60a2be7f 11520 ros-humble-rcpputils_2-2024.10.21.16.29_amd64.buildinfo
+ febc2e9ffeaa2020a349157d5195c09a24cf3560 53144 ros-humble-rcpputils_2-2024.10.21.16.29_amd64.deb
+Checksums-Sha256:
+ 32e3d2398b6e9ffc2335faa9592cffdf7f0d5dd0e04ff0d1a3bd86d1331317b3 201996 ros-humble-rcpputils-dbgsym_2-2024.10.21.16.29_amd64.ddeb
+ c8be1f7748bca167fd6113355a967c3273656d5c851bf6ce46523dee52593a55 11520 ros-humble-rcpputils_2-2024.10.21.16.29_amd64.buildinfo
+ c5c4ecd6374d5a3e43e8883f9a01c442117c5f4902c2cacfabd20f5f40b5f9e2 53144 ros-humble-rcpputils_2-2024.10.21.16.29_amd64.deb
+Files:
+ ca29787ca132149b0c6280095b300701 201996 debug optional ros-humble-rcpputils-dbgsym_2-2024.10.21.16.29_amd64.ddeb
+ e3d4d8c66f6554377b8ba31d085dffcf 11520 misc optional ros-humble-rcpputils_2-2024.10.21.16.29_amd64.buildinfo
+ 71e2cab37dda0dd6ddb0bd874f7fc54b 53144 misc optional ros-humble-rcpputils_2-2024.10.21.16.29_amd64.deb

@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 10 Jun 2024 00:00:00 -0000
+Source: ros-humble-control-msgs
+Binary: ros-humble-control-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.21
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-control-msgs - control_msgs contains base messages and actions useful for contro
+Changes:
+ ros-humble-control-msgs (2-2024.10.21.18.21) jammy; urgency=high
+ .
+   * Propose generic messages for commanding and getting states from controllers. (backport #69 <https://github.com/ros-controls/control_msgs/issues/69>) (#133 <https://github.com/ros-controls/control_msgs/issues/133>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 410c94a4487d975c8235fa5278391bb725609566 2905656 ros-humble-control-msgs-dbgsym_2-2024.10.21.18.21_amd64.ddeb
+ 49f8d3fb47ffdd7ba53161522392c4bf1a4c5758 14271 ros-humble-control-msgs_2-2024.10.21.18.21_amd64.buildinfo
+ c19f764f33595be2cd5e7a4ea526619e1b060015 432050 ros-humble-control-msgs_2-2024.10.21.18.21_amd64.deb
+Checksums-Sha256:
+ ba80615d33d86bd2445b80ec1d9b3f1d0f8913dfc53e0a5d3e1052e5b37668d0 2905656 ros-humble-control-msgs-dbgsym_2-2024.10.21.18.21_amd64.ddeb
+ 3ec50ad12123710c2db09bc564de9e5b40e13aabcccf15c70c046da74f49d197 14271 ros-humble-control-msgs_2-2024.10.21.18.21_amd64.buildinfo
+ 923118b643b228b4b47612f5c0716d54551399443c79d277447830f136684c7f 432050 ros-humble-control-msgs_2-2024.10.21.18.21_amd64.deb
+Files:
+ 447e7599ff158e978d4e5839f978809a 2905656 debug optional ros-humble-control-msgs-dbgsym_2-2024.10.21.18.21_amd64.ddeb
+ ad383b5063401a541feedc45d2cd6347 14271 misc optional ros-humble-control-msgs_2-2024.10.21.18.21_amd64.buildinfo
+ f2999f11457cf743b30aca053a939e11 432050 misc optional ros-humble-control-msgs_2-2024.10.21.18.21_amd64.deb

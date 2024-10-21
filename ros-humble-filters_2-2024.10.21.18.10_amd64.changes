@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 14 Jul 2021 00:00:00 -0000
+Source: ros-humble-filters
+Binary: ros-humble-filters
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.10
+Distribution: jammy
+Urgency: high
+Maintainer: Tully Foote <tfoote@openrobotics.org>
+Changed-By: Tully Foote <tfoote@openrobotics.org>
+Description:
+ ros-humble-filters - This library provides a standardized interface for processing dat
+Changes:
+ ros-humble-filters (2-2024.10.21.18.10) jammy; urgency=high
+ .
+   * Fix compiler warnings+test failures on CI (#56 <https://github.com/ros/filters/issues/56>)
+   * Solve statically parameter error (#48 <https://github.com/ros/filters/issues/48>)
+   * Contributors: Jon Binney, Patrick Lascombz
+Checksums-Sha1:
+ 0dff5c8ffa28403be2ee270c5e5c2309ced90484 1163820 ros-humble-filters-dbgsym_2-2024.10.21.18.10_amd64.ddeb
+ 3c53638549aaae98b04d935043b841dfd34d966b 14948 ros-humble-filters_2-2024.10.21.18.10_amd64.buildinfo
+ fad4ae75afa4e33f1f5587569c436628e7021ea7 59944 ros-humble-filters_2-2024.10.21.18.10_amd64.deb
+Checksums-Sha256:
+ 5622b500faf3ef5b1fbd3405aa787d102aaf4f0fe1ddb278c07590f96eb92b6d 1163820 ros-humble-filters-dbgsym_2-2024.10.21.18.10_amd64.ddeb
+ f941437d594b838695999a4b3cbee8e7714c20510b6530060a5088dd8e19ebba 14948 ros-humble-filters_2-2024.10.21.18.10_amd64.buildinfo
+ bfcae4a3872795bbf4cf183191cffda7d45db2048f0155c2ff0eaa9e280d15ab 59944 ros-humble-filters_2-2024.10.21.18.10_amd64.deb
+Files:
+ 48fb3284bffeb44c8930cb1d8a796055 1163820 debug optional ros-humble-filters-dbgsym_2-2024.10.21.18.10_amd64.ddeb
+ 4eb3d940de267c660ee895f084f732fb 14948 misc optional ros-humble-filters_2-2024.10.21.18.10_amd64.buildinfo
+ c6b07715e6441e4a62bce42eb25a39a4 59944 misc optional ros-humble-filters_2-2024.10.21.18.10_amd64.deb

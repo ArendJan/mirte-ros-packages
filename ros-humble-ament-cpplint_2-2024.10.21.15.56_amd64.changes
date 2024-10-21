@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cpplint
+Binary: ros-humble-ament-cpplint
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.56
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cpplint - The ability to check code against the Google style conventions us
+Changes:
+ ros-humble-ament-cpplint (2-2024.10.21.15.56) jammy; urgency=high
+Checksums-Sha1:
+ ab976f2c269c4cf350430bc7a8b17e3bc838c373 7436 ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.buildinfo
+ 2525cb39f3ebfe53121cdbbee708a5affbfc8fbc 119252 ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.deb
+Checksums-Sha256:
+ d89af1e2da0a046eaaaef275af7313eba3f42122c723f5d20176f2ee3a36000c 7436 ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.buildinfo
+ 87c8b5f724f06aff35164ab25b6b2f186a9cafd10b7303ac76eb04e5d294e645 119252 ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.deb
+Files:
+ 197fe90515a7b9eea40132733d8129d8 7436 misc optional ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.buildinfo
+ d26e9e0e9919bdca5b92359515ceeb18 119252 misc optional ros-humble-ament-cpplint_2-2024.10.21.15.56_amd64.deb

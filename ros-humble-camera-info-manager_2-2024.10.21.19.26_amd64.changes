@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 26 Mar 2024 00:00:00 -0000
+Source: ros-humble-camera-info-manager
+Binary: ros-humble-camera-info-manager
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.26
+Distribution: jammy
+Urgency: high
+Maintainer: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Changed-By: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Description:
+ ros-humble-camera-info-manager - This package provides a C++ interface for camera calibration info
+Changes:
+ ros-humble-camera-info-manager (2-2024.10.21.19.26) jammy; urgency=high
+Checksums-Sha1:
+ a9571ca329cd6509d0da3e44eeed9fc93e1a407e 398058 ros-humble-camera-info-manager-dbgsym_2-2024.10.21.19.26_amd64.ddeb
+ 71cfd8ca1e756b190d3ba19b7fa1c70d9399f09e 15765 ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.buildinfo
+ d247c163e98931d4aa45eb988c678305298877c5 41924 ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.deb
+Checksums-Sha256:
+ 52588c594aacd0e624a4efe4964cac68816ca0fe21005892bd5f6fdfb9e11fde 398058 ros-humble-camera-info-manager-dbgsym_2-2024.10.21.19.26_amd64.ddeb
+ c34e532bc1a6ff2f9e27dbc047394c89bfa7937d4bf91e18afe76c99aef74e21 15765 ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.buildinfo
+ ab3f1ce38b62ea166358706eaa006f8b783f0787c91ac35d29283aee16ab1796 41924 ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.deb
+Files:
+ 8d7c2849b5f90534407280c7363fede9 398058 debug optional ros-humble-camera-info-manager-dbgsym_2-2024.10.21.19.26_amd64.ddeb
+ 0f89fc44a2b44b07367246cc54face01 15765 misc optional ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.buildinfo
+ 3d94fee3ff7f15d15ad07ad024254a47 41924 misc optional ros-humble-camera-info-manager_2-2024.10.21.19.26_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Thu, 31 Mar 2022 00:00:00 -0000
+Source: ros-humble-rosidl-default-runtime
+Binary: ros-humble-rosidl-default-runtime
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.57
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-rosidl-default-runtime - A configuration package defining the runtime for the ROS interfac
+Changes:
+ ros-humble-rosidl-default-runtime (2-2024.10.21.16.57) jammy; urgency=high
+ .
+   * Unroll group dependencies (#20 <https://github.com/ros2/rosidl_defaults/issues/20>)
+   * Contributors: Shane Loretz
+Checksums-Sha1:
+ 4bfac95270131e1a027e8b1a06b59dbf60febac9 10579 ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.buildinfo
+ 398f918e180177f93918a6c49f8a0e994673895e 6182 ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.deb
+Checksums-Sha256:
+ 07f9c2b4df089e1bb0d2ae5e049e49c9f0525ce9483e29d6b63bc870cd7512b7 10579 ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.buildinfo
+ d30f5a28c267d41ca0244be14f5823c5a16d3858f215bd997a6ff4b38a8cc3d1 6182 ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.deb
+Files:
+ 9d734f127507cbb0f50a457cfe3e41ee 10579 misc optional ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.buildinfo
+ 29ec97f606338ba7b80dcf746ef1b257 6182 misc optional ros-humble-rosidl-default-runtime_2-2024.10.21.16.57_amd64.deb

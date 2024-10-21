@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rclcpp-lifecycle
+Binary: ros-humble-rclcpp-lifecycle
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.52
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rclcpp-lifecycle - Package containing a prototype for lifecycle implementation
+Changes:
+ ros-humble-rclcpp-lifecycle (2-2024.10.21.17.52) jammy; urgency=high
+ .
+   * revert call shutdown in LifecycleNode destructor (Humble) (#2560 <https://github.com/ros2/rclcpp/issues/2560>)
+   * lifecycle node dtor shutdown should be called only in primary state. (#2544 <https://github.com/ros2/rclcpp/issues/2544>)
+   * rclcpp::shutdown should not be called before LifecycleNode dtor. (backport #2527 <https://github.com/ros2/rclcpp/issues/2527>) (#2538 <https://github.com/ros2/rclcpp/issues/2538>)
+   * Contributors: Tomoya Fujita, mergify[bot]
+Checksums-Sha1:
+ 983721ecb6fca2bcb9e13ad09fc705ee0281573f 1181056 ros-humble-rclcpp-lifecycle-dbgsym_2-2024.10.21.17.52_amd64.ddeb
+ 10fffebab596ce50b6aaf79b7840513458e4652b 16095 ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.buildinfo
+ e68102a09128cda9c5244c3e1f667f03b2046266 84080 ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.deb
+Checksums-Sha256:
+ 07703b355728f83454b9f83b12075e32fe8da8db56a6f76c4231cc822148963e 1181056 ros-humble-rclcpp-lifecycle-dbgsym_2-2024.10.21.17.52_amd64.ddeb
+ 64076008c23927c11f8a05ef0d41d93980cc16e112baaed4bd57e24636e4840a 16095 ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.buildinfo
+ aea928e87eb61ca9ca48610c1d385ef289dde44ef9d15baec425569effda1d66 84080 ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.deb
+Files:
+ 387b37d3282da47f178af5536bd7f7ca 1181056 debug optional ros-humble-rclcpp-lifecycle-dbgsym_2-2024.10.21.17.52_amd64.ddeb
+ 34806b595be92ec9568251325d164a7c 16095 misc optional ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.buildinfo
+ 2e238d7efd9f0f5fb4a63d28d175c41e 84080 misc optional ros-humble-rclcpp-lifecycle_2-2024.10.21.17.52_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-std-msgs
+Binary: ros-humble-std-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.27
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-std-msgs - A package containing some standard message definitions.
+Changes:
+ ros-humble-std-msgs (2-2024.10.21.17.27) jammy; urgency=high
+Checksums-Sha1:
+ 44333998486940fec26b7bd91c7b7e0b3c9b6532 2095268 ros-humble-std-msgs-dbgsym_2-2024.10.21.17.27_amd64.ddeb
+ 7524fe67413eed428d8bb906f7605d3aab0f6462 13831 ros-humble-std-msgs_2-2024.10.21.17.27_amd64.buildinfo
+ ff7296d1cc5c8319a9909b02b3eaee19ae8f4367 191178 ros-humble-std-msgs_2-2024.10.21.17.27_amd64.deb
+Checksums-Sha256:
+ d0c62f2016452eba5f3f33c43031e69fd99ea8576c613a4a4208cd3284e54634 2095268 ros-humble-std-msgs-dbgsym_2-2024.10.21.17.27_amd64.ddeb
+ 696e7c9aaddc0b7b0277832a658a9a8c0260b55c38bf4b4e48a069537b8b66ed 13831 ros-humble-std-msgs_2-2024.10.21.17.27_amd64.buildinfo
+ c3198638862c8d3b67ec640db375f41b2bb401c641a274d81feb3b9e49d65b8a 191178 ros-humble-std-msgs_2-2024.10.21.17.27_amd64.deb
+Files:
+ 966e5a1189c8b7cf478a661269e643f2 2095268 debug optional ros-humble-std-msgs-dbgsym_2-2024.10.21.17.27_amd64.ddeb
+ c78a34be6f33a9610c1465d2d273c977 13831 misc optional ros-humble-std-msgs_2-2024.10.21.17.27_amd64.buildinfo
+ 4585a3caa9222dd9802333861156aac6 191178 misc optional ros-humble-std-msgs_2-2024.10.21.17.27_amd64.deb

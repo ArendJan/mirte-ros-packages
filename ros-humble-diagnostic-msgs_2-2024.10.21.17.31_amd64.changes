@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-diagnostic-msgs
+Binary: ros-humble-diagnostic-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.31
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-diagnostic-msgs - A package containing some diagnostics related message and service
+Changes:
+ ros-humble-diagnostic-msgs (2-2024.10.21.17.31) jammy; urgency=high
+Checksums-Sha1:
+ 2a69220a3360d685967ab115e736043e6f0cd3f3 597386 ros-humble-diagnostic-msgs-dbgsym_2-2024.10.21.17.31_amd64.ddeb
+ e4f8ea3a20350f4aa2047ac6d6d2f3396c78ba81 14003 ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.buildinfo
+ 64005497b8c792c2a9ea135f9e4ec795bf8fbf28 89288 ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.deb
+Checksums-Sha256:
+ c2097a21a2196279d4a3ebbc9d78921b0f02eef38c5d65b247f9eb41732f68fb 597386 ros-humble-diagnostic-msgs-dbgsym_2-2024.10.21.17.31_amd64.ddeb
+ 33135678fb66743e3f1cb7f382cc550985a98f1910f5b457538fc20827410c78 14003 ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.buildinfo
+ f68e12c236f5b414c09e216436af723e673fe39bf5db2da5d9a8824e93fb16fb 89288 ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.deb
+Files:
+ f4417f420743890b05979f5bd7beec30 597386 debug optional ros-humble-diagnostic-msgs-dbgsym_2-2024.10.21.17.31_amd64.ddeb
+ f20564581c6a7a9a2f1b5b551f7f07ca 14003 misc optional ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.buildinfo
+ d96f840fb5eea0baa3ef39d7f7b06069 89288 misc optional ros-humble-diagnostic-msgs_2-2024.10.21.17.31_amd64.deb

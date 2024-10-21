@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-sensor-msgs
+Binary: ros-humble-sensor-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.54
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-sensor-msgs - A package containing some sensor data related message and service
+Changes:
+ ros-humble-sensor-msgs (2-2024.10.21.17.54) jammy; urgency=high
+Checksums-Sha1:
+ 778f70d9aabd3f46349636d98586af99eb9b8ebe 2517814 ros-humble-sensor-msgs-dbgsym_2-2024.10.21.17.54_amd64.ddeb
+ 00c07e27f50ebbed8babe16aea492a7b6684cd94 14025 ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.buildinfo
+ e72356159e79e415ddea661b22c669fc48b05cf8 302142 ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.deb
+Checksums-Sha256:
+ bee0efbade3898f2d4223b396c6ca907047ebb27fda4efe626f02c8fbf624af0 2517814 ros-humble-sensor-msgs-dbgsym_2-2024.10.21.17.54_amd64.ddeb
+ 9d6bf487a50df1c1428d378db1432d7c1b865af82fe5fd0ccd978271f0b3f4ed 14025 ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.buildinfo
+ 2845d7ccf050a2ba532448caac93ddeab91dd277955801518f694dc2df7ced5d 302142 ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.deb
+Files:
+ 620b762920bc7c54ba7fd816c6544084 2517814 debug optional ros-humble-sensor-msgs-dbgsym_2-2024.10.21.17.54_amd64.ddeb
+ d8cd1ccf11ed213effaff55a84c6149d 14025 misc optional ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.buildinfo
+ 010de3dfc3388e1a9afe748079602ee2 302142 misc optional ros-humble-sensor-msgs_2-2024.10.21.17.54_amd64.deb

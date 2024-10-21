@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Thu, 29 Aug 2024 00:00:00 -0000
+Source: ros-humble-tf2-msgs
+Binary: ros-humble-tf2-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.15
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-tf2-msgs - tf2_msgs
+Changes:
+ ros-humble-tf2-msgs (2-2024.10.21.19.15) jammy; urgency=high
+Checksums-Sha1:
+ a27c64a072cd482cfeed18f877e69915b490d4fb 545446 ros-humble-tf2-msgs-dbgsym_2-2024.10.21.19.15_amd64.ddeb
+ 37ecf3a36dec7e82f783a7292736581094d643c0 14060 ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.buildinfo
+ 5432a065822030f953527712049d3d12c7cad5d9 107258 ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.deb
+Checksums-Sha256:
+ 331bc0f7a5571485c709e82f8d44662f465fb98c6fc63f21c5d1a7197511712e 545446 ros-humble-tf2-msgs-dbgsym_2-2024.10.21.19.15_amd64.ddeb
+ 8a32b3ea37b4d2bce13dd34e09e03b6b1c35f941089bef7f005d0ff328044300 14060 ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.buildinfo
+ ef6fb7a6d979328dc6233649960bce8fe960f6b0f5e30909cd74337bcf73bb04 107258 ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.deb
+Files:
+ 0421d39f2f1a66d6db1caee2e3e181ba 545446 debug optional ros-humble-tf2-msgs-dbgsym_2-2024.10.21.19.15_amd64.ddeb
+ 55915bf2f6d8ecaeb7aa73e594cd396b 14060 misc optional ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.buildinfo
+ 7e367f497fbdaf82bf7e85db8683c75d 107258 misc optional ros-humble-tf2-msgs_2-2024.10.21.19.15_amd64.deb

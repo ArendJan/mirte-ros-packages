@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 22 Jul 2024 00:00:00 -0000
+Source: ros-humble-compressed-depth-image-transport
+Binary: ros-humble-compressed-depth-image-transport
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.42
+Distribution: jammy
+Urgency: high
+Maintainer: Kenji Brameld <kenjibrameld@gmail.com>
+Changed-By: Kenji Brameld <kenjibrameld@gmail.com>
+Description:
+ ros-humble-compressed-depth-image-transport - Compressed_depth_image_transport provides a plugin to image_trans
+Changes:
+ ros-humble-compressed-depth-image-transport (2-2024.10.21.18.42) jammy; urgency=high
+ .
+   * Update config param to use correct config value. Use default png level of 3. (#165 <https://github.com/ros-perception/image_transport_plugins/issues/165>)
+   * Contributors: Jonathan Selling
+Checksums-Sha1:
+ 8932ff867b50032de3761c8172e374fb7f3a4677 2940726 ros-humble-compressed-depth-image-transport-dbgsym_2-2024.10.21.18.42_amd64.ddeb
+ ee4f9b40a46143f3307da42f42da62342e61fe98 26701 ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.buildinfo
+ 6a40496f6df5125fcdce2b54d76d7ff30fcc402e 120594 ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.deb
+Checksums-Sha256:
+ 1d27efdec0c35084f44ee7f0990933445a266dd293518185d75026e3b44f77b2 2940726 ros-humble-compressed-depth-image-transport-dbgsym_2-2024.10.21.18.42_amd64.ddeb
+ 344597be462d99c982a7c6350baaa9061f59c243618f3889a279d7042a2f7b58 26701 ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.buildinfo
+ 4f579c0e35412828fe463dc927f746c5e8eb18da555d89933e7372a20b18a2ba 120594 ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.deb
+Files:
+ 152c1e71cdc106c973b9f346cae4dc25 2940726 debug optional ros-humble-compressed-depth-image-transport-dbgsym_2-2024.10.21.18.42_amd64.ddeb
+ 0267f8f230c427fedadb77049fbf2f8d 26701 misc optional ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.buildinfo
+ f3284320f73c53369b787e9cafbb6c98 120594 misc optional ros-humble-compressed-depth-image-transport_2-2024.10.21.18.42_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-hardware-interface-testing
+Binary: ros-humble-hardware-interface-testing
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.27
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-hardware-interface-testing - ros2_control hardware interface testing
+Changes:
+ ros-humble-hardware-interface-testing (2-2024.10.21.18.27) jammy; urgency=high
+Checksums-Sha1:
+ 7c36318e2f604021f3aef41052bd93a186388c29 466976 ros-humble-hardware-interface-testing-dbgsym_2-2024.10.21.18.27_amd64.ddeb
+ 7fd6c637f57ec5f3f7f144ad5050ffda69ae19c2 15012 ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.buildinfo
+ ab49bf477a15f7e1436cf3ce3fd09ead92419ae4 30804 ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.deb
+Checksums-Sha256:
+ 59b386eac71912104404f5b7a21978b3cb66a45bdd0bcde0f6813465f6ea8dcf 466976 ros-humble-hardware-interface-testing-dbgsym_2-2024.10.21.18.27_amd64.ddeb
+ ccc261f9f2816203b4579ca4e9be210200f879dbc77f2d87c19281c44d60acbf 15012 ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.buildinfo
+ 164db45e0e374428914845a7598b1b75e8bff376a7ff0a19476753af0edbdf06 30804 ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.deb
+Files:
+ 289cd5cad13e96a7929505056f0e76d6 466976 debug optional ros-humble-hardware-interface-testing-dbgsym_2-2024.10.21.18.27_amd64.ddeb
+ 164d1d9236446e573ab7d275b7157462 15012 misc optional ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.buildinfo
+ 844c17d3cbb80fdbb6c19f22616d6d24 30804 misc optional ros-humble-hardware-interface-testing_2-2024.10.21.18.27_amd64.deb

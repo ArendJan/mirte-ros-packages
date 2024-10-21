@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 13 Nov 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-fastrtps-cpp
+Binary: ros-humble-rosidl-typesupport-fastrtps-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.50
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <shane@openrobotics.org>
+Changed-By: Shane Loretz <shane@openrobotics.org>
+Description:
+ ros-humble-rosidl-typesupport-fastrtps-cpp - Generate the C++ interfaces for eProsima FastRTPS.
+Changes:
+ ros-humble-rosidl-typesupport-fastrtps-cpp (2-2024.10.21.16.50) jammy; urgency=high
+ .
+   * Account for alignment on is_plain calculations (#108 <https://github.com/ros2/rosidl_typesupport_fastrtps/issues/108>) (#110 <https://github.com/ros2/rosidl_typesupport_fastrtps/issues/110>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 74004dec4ca2101d5d6d966d8e9013314708f60c 27476 ros-humble-rosidl-typesupport-fastrtps-cpp-dbgsym_2-2024.10.21.16.50_amd64.ddeb
+ 0d84cbe53ff02755aa54121b70e0c8dd99347ac8 12975 ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.buildinfo
+ 2bf61da0e1691f8a69e319e14559e00eccac06b3 25452 ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.deb
+Checksums-Sha256:
+ c4f373ff4dfec365ef058a3ff0b3cbf4de5d10ab95e969069425fa5072bc1166 27476 ros-humble-rosidl-typesupport-fastrtps-cpp-dbgsym_2-2024.10.21.16.50_amd64.ddeb
+ 2ab707ee060f92ec4831cbf070df4d5f3cca02242ce9d46504ff9b81e1125449 12975 ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.buildinfo
+ 5a232d4bb0ff2bd60032b96eacba668015b2b857be9945e64b4ec209366d6b6c 25452 ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.deb
+Files:
+ 689a12b8a7a7575035f583cb8263b9cf 27476 debug optional ros-humble-rosidl-typesupport-fastrtps-cpp-dbgsym_2-2024.10.21.16.50_amd64.ddeb
+ d1a6506a96a41e19250377067e8c2ece 12975 misc optional ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.buildinfo
+ ac97176383e314dc12f20a2174740650 25452 misc optional ros-humble-rosidl-typesupport-fastrtps-cpp_2-2024.10.21.16.50_amd64.deb

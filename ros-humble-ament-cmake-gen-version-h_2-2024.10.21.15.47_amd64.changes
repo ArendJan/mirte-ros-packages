@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-gen-version-h
+Binary: ros-humble-ament-cmake-gen-version-h
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.47
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-gen-version-h - Generate a C header containing the version number of the package
+Changes:
+ ros-humble-ament-cmake-gen-version-h (2-2024.10.21.15.47) jammy; urgency=high
+Checksums-Sha1:
+ 556efd872cd347a30200812b6ff94fadaa1c2850 8398 ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.buildinfo
+ b996fce5ef4d67ca8966abb01ea235de13ff3575 8880 ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.deb
+Checksums-Sha256:
+ 7cfa514f860ba0aa7b04cc4e0c5236cc9f3ae1cecc6bdbe79ca59b7ec798c429 8398 ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.buildinfo
+ ac8b382d4f9bc6d5df19d953913010fc3f765969949236cdf84050dd15b38240 8880 ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.deb
+Files:
+ 6f2a340106fad8764c250b3b843ed6b3 8398 misc optional ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.buildinfo
+ 2da3392eeff132ec25b53c27f9a434f6 8880 misc optional ros-humble-ament-cmake-gen-version-h_2-2024.10.21.15.47_amd64.deb

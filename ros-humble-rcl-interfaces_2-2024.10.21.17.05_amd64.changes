@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-rcl-interfaces
+Binary: ros-humble-rcl-interfaces
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.05
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rcl-interfaces - The ROS client library common interfaces.
+Changes:
+ ros-humble-rcl-interfaces (2-2024.10.21.17.05) jammy; urgency=high
+Checksums-Sha1:
+ b5d0a9e9f0efa9ba2f4fd5a4e3a0456533fbddc9 2103200 ros-humble-rcl-interfaces-dbgsym_2-2024.10.21.17.05_amd64.ddeb
+ b6817a3a0bf7f57092c2082ac3d00f7744e80416 13937 ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.buildinfo
+ 30fee3820716ded67441787693ce35e4d72b5f5c 221846 ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.deb
+Checksums-Sha256:
+ 27e345768b56f5ce4d6407d6d5ed12a2b1008e9133704edd3cb17322a8c39d0f 2103200 ros-humble-rcl-interfaces-dbgsym_2-2024.10.21.17.05_amd64.ddeb
+ e824180dff419a4a40c9bc02e31dcfdad6ca20c5712ca659adc9fe5dfd23085f 13937 ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.buildinfo
+ debdc5d624db880b506f2471cb4b2c8d76e3218cadea8a9e3e206082bcb41279 221846 ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.deb
+Files:
+ 546675a6d862e6e5a2f9b2830135bfa0 2103200 debug optional ros-humble-rcl-interfaces-dbgsym_2-2024.10.21.17.05_amd64.ddeb
+ 0c25d5412e9bcf5b55df75d9202ac762 13937 misc optional ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.buildinfo
+ 2541eca291329325b7339754fccb6b36 221846 misc optional ros-humble-rcl-interfaces_2-2024.10.21.17.05_amd64.deb

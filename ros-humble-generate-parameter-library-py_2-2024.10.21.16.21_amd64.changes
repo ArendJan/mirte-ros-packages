@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 27 Mar 2024 00:00:00 -0000
+Source: ros-humble-generate-parameter-library-py
+Binary: ros-humble-generate-parameter-library-py
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.21
+Distribution: jammy
+Urgency: high
+Maintainer: Paul Gesel <paul.gesel@picknik.ai>
+Changed-By: Paul Gesel <paul.gesel@picknik.ai>
+Description:
+ ros-humble-generate-parameter-library-py - Python to generate ROS parameter library.
+Changes:
+ ros-humble-generate-parameter-library-py (2-2024.10.21.16.21) jammy; urgency=high
+ .
+   * Restore functionality for mapped params with no struct name (#185 <https://github.com/PickNikRobotics/generate_parameter_library/issues/185>_)
+   * add # flake8: noqa to template (#177 <https://github.com/PickNikRobotics/generate_parameter_library/issues/177>)
+   * Fix newline issue (#176 <https://github.com/PickNikRobotics/generate_parameter_library/issues/176>)
+     * fix new line rendering for Python
+   * Support nested mapped parameters (#166 <https://github.com/PickNikRobotics/generate_parameter_library/issues/166>)
+   * Contributors: Paul Gesel, Sebastian Castro
+Checksums-Sha1:
+ 36b923b02845498645a67948ccd6074e11bc1fd0 7902 ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.buildinfo
+ 101dac19dc766d3bad1f5bfa5babf67fb0c5e061 41412 ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.deb
+Checksums-Sha256:
+ 8fc2a69e3d33a4460f4b6de52c62167415205ea2508ddff97098fdb226092131 7902 ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.buildinfo
+ 3f6ba2dffc01b868fd413ca36663fa9156cc334b916e69ad60de03fcc0f12564 41412 ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.deb
+Files:
+ d33843b29e6c4c43ef077ce1a5a1f7e3 7902 misc optional ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.buildinfo
+ 9cd356bd869cd5e8d956cb533895a48d 41412 misc optional ros-humble-generate-parameter-library-py_2-2024.10.21.16.21_amd64.deb

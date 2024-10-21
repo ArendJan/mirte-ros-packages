@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-ros2controlcli
+Binary: ros-humble-ros2controlcli
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.14
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-ros2controlcli - The ROS 2 command line tools for ROS2 Control.
+Changes:
+ ros-humble-ros2controlcli (2-2024.10.21.19.14) jammy; urgency=high
+ .
+   * [ros2controlcli] fix list_controllers when no controllers are loaded (#1721 <https://github.com/ros-controls/ros2_control/issues/1721>) (#1722 <https://github.com/ros-controls/ros2_control/issues/1722>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ c6b1271571d533e7899d90e95b78fdbbbcf4626a 16284 ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.buildinfo
+ 6da6a71dcc889c5a035f35fb5261e609cd7a1b8c 22264 ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.deb
+Checksums-Sha256:
+ c95ed037a1d4c5c6f84f524be1c3b199b16df5eb6309c5db972c3bb5e9117229 16284 ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.buildinfo
+ 1af707d2275ff53fa4edaf1185d9905be8fa73744ee32cda9a0e54b51417b84a 22264 ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.deb
+Files:
+ 2ff93b29afda639b5f9cc5619056fc05 16284 misc optional ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.buildinfo
+ 3cfd83e38c97f5a8492c1c8d501b0648 22264 misc optional ros-humble-ros2controlcli_2-2024.10.21.19.14_amd64.deb

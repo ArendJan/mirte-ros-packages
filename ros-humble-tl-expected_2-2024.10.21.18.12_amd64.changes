@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 02 Oct 2022 00:00:00 -0000
+Source: ros-humble-tl-expected
+Binary: ros-humble-tl-expected
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.12
+Distribution: jammy
+Urgency: high
+Maintainer: Tyler Weaver <maybe@tylerjw.dev>
+Changed-By: Tyler Weaver <maybe@tylerjw.dev>
+Description:
+ ros-humble-tl-expected - C++11/14/17 std::expected with functional-style extensions
+Changes:
+ ros-humble-tl-expected (2-2024.10.21.18.12) jammy; urgency=high
+ .
+   * HAS_LIBRARY_TARGET
+   * Remove superfluous call in cmake
+   * Contributors: Tyler Weaver
+Checksums-Sha1:
+ 6896151c74e6c310617ec061301a95f1cbd39624 8974 ros-humble-tl-expected_2-2024.10.21.18.12_amd64.buildinfo
+ 92de4336d0374a8af5ad7c475818ecfc44b99eb2 16006 ros-humble-tl-expected_2-2024.10.21.18.12_amd64.deb
+Checksums-Sha256:
+ 8fe34adc07c8f98810d395dd3db036311752cb59961e4eb3c6bb0d07d5451b41 8974 ros-humble-tl-expected_2-2024.10.21.18.12_amd64.buildinfo
+ 8ec299da85d8e7d5da182f8aa50a58c397acb7025b0daffafe71f9393f87c8ab 16006 ros-humble-tl-expected_2-2024.10.21.18.12_amd64.deb
+Files:
+ 8b06f41106f3a86e3ae9b714f522074f 8974 misc optional ros-humble-tl-expected_2-2024.10.21.18.12_amd64.buildinfo
+ 2392db7cc4048b08f25f27cbb5bb50b3 16006 misc optional ros-humble-tl-expected_2-2024.10.21.18.12_amd64.deb

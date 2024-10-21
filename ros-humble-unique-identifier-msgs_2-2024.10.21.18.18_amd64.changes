@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Tue, 06 Apr 2021 00:00:00 -0000
+Source: ros-humble-unique-identifier-msgs
+Binary: ros-humble-unique-identifier-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.18
+Distribution: jammy
+Urgency: high
+Maintainer: Jacob Perron <jacob@openrobotics.org>
+Changed-By: Jacob Perron <jacob@openrobotics.org>
+Description:
+ ros-humble-unique-identifier-msgs - ROS messages for universally unique identifiers.
+Changes:
+ ros-humble-unique-identifier-msgs (2-2024.10.21.18.18) jammy; urgency=high
+ .
+   * Change index.ros.org -> docs.ros.org (#21 <https://github.com/ros2/unique_identifier_msgs/issues/21>)
+   * Contributors: Chris Lalancette
+Checksums-Sha1:
+ ab8ecfdf3663861ad1823038382c8ab83e6b8f91 126632 ros-humble-unique-identifier-msgs-dbgsym_2-2024.10.21.18.18_amd64.ddeb
+ 0f52eb9a02e96a4cd2153885661a8dbb01d4f211 13889 ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.buildinfo
+ b5124f61a9a3599f0ea18e12c44ed5759820a6d9 37110 ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.deb
+Checksums-Sha256:
+ a7ba1da643186322fb56760dbeaf97ee9026a13e29c24c9d445cb020ec0ca2b2 126632 ros-humble-unique-identifier-msgs-dbgsym_2-2024.10.21.18.18_amd64.ddeb
+ 3773e50183ff08c3a6a26a44b4cb3975ebe3026f869db5cafd5877fd940b0e95 13889 ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.buildinfo
+ ca749cb2798c7821f67a5b063e9e9339e60e6257c55ac96d473ac74ac2dae3c6 37110 ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.deb
+Files:
+ c65e5924d5c7f9cd41de015fc7e2a1c2 126632 debug optional ros-humble-unique-identifier-msgs-dbgsym_2-2024.10.21.18.18_amd64.ddeb
+ fa55f14490de2177c7f5b134705d8a2c 13889 misc optional ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.buildinfo
+ 410ac2c3d0cf5d901a8b88861365a0b0 37110 misc optional ros-humble-unique-identifier-msgs_2-2024.10.21.18.18_amd64.deb

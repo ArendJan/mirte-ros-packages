@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-lifecycle-msgs
+Binary: ros-humble-lifecycle-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.02
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-lifecycle-msgs - A package containing some lifecycle related message and service d
+Changes:
+ ros-humble-lifecycle-msgs (2-2024.10.21.17.02) jammy; urgency=high
+ .
+   * lifecycle_msgs: remove non-ASCII chars from field comments (#147 <https://github.com/ros2/rcl_interfaces/issues/147>) (#148 <https://github.com/ros2/rcl_interfaces/issues/148>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 8350ff070b30da854f0c3b6452b76c49a9122ef9 681000 ros-humble-lifecycle-msgs-dbgsym_2-2024.10.21.17.02_amd64.ddeb
+ 7664243d4f7a035ce217bfb10570c07695378c80 13820 ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.buildinfo
+ cd06848cab55835641d8cdff27dbd6c2ee9ff424 109404 ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.deb
+Checksums-Sha256:
+ ecd3cdb5ab717584b69ff17062056971ee96f4745d299c9396fef46f19e0f624 681000 ros-humble-lifecycle-msgs-dbgsym_2-2024.10.21.17.02_amd64.ddeb
+ b403428ec1b8fc923230b38e529823b37d44136896b839659db46281ab35bf02 13820 ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.buildinfo
+ 74b1e5b59d31621b2fc2421c20d490326dad56559e1df14446f8497d28b01a30 109404 ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.deb
+Files:
+ 4ac069b6c80e181ce367a6d6af3507f2 681000 debug optional ros-humble-lifecycle-msgs-dbgsym_2-2024.10.21.17.02_amd64.ddeb
+ b7dbed4931122100a2aa617e92b698ac 13820 misc optional ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.buildinfo
+ cb35307fe8be102346fb043bcd70dfc5 109404 misc optional ros-humble-lifecycle-msgs_2-2024.10.21.17.02_amd64.deb

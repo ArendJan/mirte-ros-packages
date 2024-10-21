@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-builtin-interfaces
+Binary: ros-humble-builtin-interfaces
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.01
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-builtin-interfaces - A package containing message and service definitions for types de
+Changes:
+ ros-humble-builtin-interfaces (2-2024.10.21.17.01) jammy; urgency=high
+Checksums-Sha1:
+ 9b0bbf87b9032838c6cdad6a2f8eaaa7d7102d38 164678 ros-humble-builtin-interfaces-dbgsym_2-2024.10.21.17.01_amd64.ddeb
+ 5a178cc52ca4edb2672e3c26c5f7aff4012b4120 13801 ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.buildinfo
+ 18ed78dd1cad78ba79c6f74ae407373e18bd02d9 40642 ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.deb
+Checksums-Sha256:
+ 34e0f973184becd78dac9b8430235a2fd999297fefdb5eb5f14f8a2310398ba0 164678 ros-humble-builtin-interfaces-dbgsym_2-2024.10.21.17.01_amd64.ddeb
+ 8124d5d33e8482beded32726b6210e2f26e9fb4bfe3b336233c428b638b9d858 13801 ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.buildinfo
+ 05b2653dd66326fb0b4fc44e5cc149feb9c4e6a8c7ab44bae4ec78942f4cac1d 40642 ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.deb
+Files:
+ 2f3ded273328d4324b05fc50bc0f9489 164678 debug optional ros-humble-builtin-interfaces-dbgsym_2-2024.10.21.17.01_amd64.ddeb
+ 86d7d2a2a7804bed14d2bfca9bfaf1b6 13801 misc optional ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.buildinfo
+ 27e3701798f2bc27df5479c65426f8ce 40642 misc optional ros-humble-builtin-interfaces_2-2024.10.21.17.01_amd64.deb

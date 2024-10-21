@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-generator-c
+Binary: ros-humble-rosidl-generator-c
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.46
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-generator-c - Generate the ROS interfaces in C.
+Changes:
+ ros-humble-rosidl-generator-c (2-2024.10.21.16.46) jammy; urgency=high
+Checksums-Sha1:
+ fa67264f1331f89378f7d704f9a1259b6322a2d9 12216 ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.buildinfo
+ 4af546ee5b8d61ec130c70a280ec897c8d3f8b1d 19764 ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.deb
+Checksums-Sha256:
+ 678820559ab9a9d61e55bcd98b277175b99ae49907b14aecddcef29ef277b307 12216 ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.buildinfo
+ 5d78c127acf791654e0794c314be1c345d728062d62b7f106549114f7f7bf976 19764 ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.deb
+Files:
+ 6763b310c796e86cdca423d12dc21835 12216 misc optional ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.buildinfo
+ b924885fb1d620a72bb6be0858fe037d 19764 misc optional ros-humble-rosidl-generator-c_2-2024.10.21.16.46_amd64.deb

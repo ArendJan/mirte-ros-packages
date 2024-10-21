@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 02 Oct 2022 00:00:00 -0000
+Source: ros-humble-tcb-span
+Binary: ros-humble-tcb-span
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.04
+Distribution: jammy
+Urgency: high
+Maintainer: Tyler Weaver <maybe@tylerjw.dev>
+Changed-By: Tyler Weaver <maybe@tylerjw.dev>
+Description:
+ ros-humble-tcb-span - Implementation of C++20's std::span
+Changes:
+ ros-humble-tcb-span (2-2024.10.21.18.04) jammy; urgency=high
+ .
+   * HAS_LIBRARY_TARGET
+   * Remove superfluous call in cmake
+   * Contributors: Tyler Weaver
+Checksums-Sha1:
+ 4b846c0cbe032d3e4f60f1525e9bc5041f0aee7d 9190 ros-humble-tcb-span_2-2024.10.21.18.04_amd64.buildinfo
+ 2ed8a3be8ec01124cffb12789f0ec6e717e25b01 10132 ros-humble-tcb-span_2-2024.10.21.18.04_amd64.deb
+Checksums-Sha256:
+ e910db1cc160cbf820d8e8d721681c0e4b59cf364feebb1a17da5b5b79f8bdb8 9190 ros-humble-tcb-span_2-2024.10.21.18.04_amd64.buildinfo
+ 6b7406bb164cfb4839fa27c4d1d761ac088d668f5dcbee918c71b6deb177ee95 10132 ros-humble-tcb-span_2-2024.10.21.18.04_amd64.deb
+Files:
+ 831ad6ae12cdd7a852d408c1305f7218 9190 misc optional ros-humble-tcb-span_2-2024.10.21.18.04_amd64.buildinfo
+ 9f94fd4d73172558136205cc1383edca 10132 misc optional ros-humble-tcb-span_2-2024.10.21.18.04_amd64.deb

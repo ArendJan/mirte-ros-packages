@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-trajectory-msgs
+Binary: ros-humble-trajectory-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.16
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-trajectory-msgs - A package containing some robot trajectory message definitions.
+Changes:
+ ros-humble-trajectory-msgs (2-2024.10.21.18.16) jammy; urgency=high
+Checksums-Sha1:
+ e4f5bb8f125186607aeaef3301b37d10eef74333 586854 ros-humble-trajectory-msgs-dbgsym_2-2024.10.21.18.16_amd64.ddeb
+ 7218959a35c682e5f8088cb16647db3f53712777 14003 ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.buildinfo
+ 143e85ea4b7331433721d6ad48b16eb8fa79bb1b 84270 ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.deb
+Checksums-Sha256:
+ b460de571ba0dbc5b12b17e377486910d04cae7698934bf7c57338781f998885 586854 ros-humble-trajectory-msgs-dbgsym_2-2024.10.21.18.16_amd64.ddeb
+ cd4bd2f17b4f46e6cec4fcb2cf7c1f0ae0e079a999d57fac312c05e235af9153 14003 ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.buildinfo
+ 0363f142e938c9ae9de3a46baddbb52cf13aa0314765e39f2315fa63ed1154ef 84270 ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.deb
+Files:
+ 3da179d1b9c4705df55875991fbe06ef 586854 debug optional ros-humble-trajectory-msgs-dbgsym_2-2024.10.21.18.16_amd64.ddeb
+ 339a495ecb6199034402d1aeb5f66693 14003 misc optional ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.buildinfo
+ 7d86903196632206ecdea7b2ef3ad8b7 84270 misc optional ros-humble-trajectory-msgs_2-2024.10.21.18.16_amd64.deb

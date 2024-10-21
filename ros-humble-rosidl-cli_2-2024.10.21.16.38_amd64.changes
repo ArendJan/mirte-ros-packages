@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-cli
+Binary: ros-humble-rosidl-cli
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.38
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-cli - Command line tools for ROS interface generation.
+Changes:
+ ros-humble-rosidl-cli (2-2024.10.21.16.38) jammy; urgency=high
+Checksums-Sha1:
+ 51c1ab67c67611170449e1c65f510fd5895243e7 7511 ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.buildinfo
+ ba419e1660bbf1bec1b6736f63f33b9e523598b1 18518 ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.deb
+Checksums-Sha256:
+ 1cf099d9586b84bf02c4f542ebd6370477c6bae548494160a85725b28573b485 7511 ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.buildinfo
+ d9056f876d09d2d0c7698ebd3d750f85817eab709a687e00a9c6554dfbc613a6 18518 ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.deb
+Files:
+ 7f78e14f7b005e8ec8f6d213daf62e6e 7511 misc optional ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.buildinfo
+ 62df295350da6060b6b330e90ca12f6c 18518 misc optional ros-humble-rosidl-cli_2-2024.10.21.16.38_amd64.deb

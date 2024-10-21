@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cppcheck
+Binary: ros-humble-ament-cppcheck
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.38
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cppcheck - The ability to perform static code analysis on C/C++ code using C
+Changes:
+ ros-humble-ament-cppcheck (2-2024.10.21.15.38) jammy; urgency=high
+Checksums-Sha1:
+ c16e0ff0858382e460c2798cc0f7a55ac5725ab4 6656 ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.buildinfo
+ ca8fdf10bf2ff0f68ecd3f0e78c751492b039418 14780 ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.deb
+Checksums-Sha256:
+ d1859e4b8c4c3e3847467ac81860a1e1b9110b5ca55c56abb995f70fd911045a 6656 ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.buildinfo
+ a86f890fd8c7d68a6172cf753516ca8bc6177baef3c673d73119d1b523aa0c1d 14780 ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.deb
+Files:
+ ef554c84b7dee9e3755d2bea2c5fe5e5 6656 misc optional ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.buildinfo
+ ee4a15086daeb03bdcc55106c8942946 14780 misc optional ros-humble-ament-cppcheck_2-2024.10.21.15.38_amd64.deb

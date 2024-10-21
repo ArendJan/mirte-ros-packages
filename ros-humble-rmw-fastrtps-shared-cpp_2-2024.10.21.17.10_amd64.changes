@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rmw-fastrtps-shared-cpp
+Binary: ros-humble-rmw-fastrtps-shared-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.10
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rmw-fastrtps-shared-cpp - Code shared on static and dynamic type support of rmw_fastrtps_cp
+Changes:
+ ros-humble-rmw-fastrtps-shared-cpp (2-2024.10.21.17.10) jammy; urgency=high
+ .
+   * Use unique mangled names when creating Content Filter Topics (#762 <https://github.com/ros2/rmw_fastrtps/issues/762>) (#768 <https://github.com/ros2/rmw_fastrtps/issues/768>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ d8a0703f62e854d94255688508611714826c0c13 5279610 ros-humble-rmw-fastrtps-shared-cpp-dbgsym_2-2024.10.21.17.10_amd64.ddeb
+ 21e1afc919416ceacac930fccbc2ac1697e931b6 14273 ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.buildinfo
+ 0786bb437076de649944198d7731d711bf958435 161414 ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.deb
+Checksums-Sha256:
+ 39b0c00cb5f9bb14eb60ab8285557841a3d55d46b0c06e95cccab79239943a04 5279610 ros-humble-rmw-fastrtps-shared-cpp-dbgsym_2-2024.10.21.17.10_amd64.ddeb
+ 1bff8db2f1755f818c72258a43051bed38be8197746caf999cfff4afebf90a61 14273 ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.buildinfo
+ 3797559dfa2a2ab4785c527342ffc437dfb8d431ef7d334a31dc6ee4d5e13123 161414 ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.deb
+Files:
+ ea71dce02a287ea637339a257f14878d 5279610 debug optional ros-humble-rmw-fastrtps-shared-cpp-dbgsym_2-2024.10.21.17.10_amd64.ddeb
+ e5658ba330b4fe938e9884645f1d6864 14273 misc optional ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.buildinfo
+ 4c942b3fe40726a2c02556accb83c560 161414 misc optional ros-humble-rmw-fastrtps-shared-cpp_2-2024.10.21.17.10_amd64.deb

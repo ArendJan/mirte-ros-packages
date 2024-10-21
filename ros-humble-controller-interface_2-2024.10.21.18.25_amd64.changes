@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-controller-interface
+Binary: ros-humble-controller-interface
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.25
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-controller-interface - Description of controller_interface
+Changes:
+ ros-humble-controller-interface (2-2024.10.21.18.25) jammy; urgency=high
+Checksums-Sha1:
+ 39ac0ec2b438460413e86d80fc5cb5d64470eb5c 478520 ros-humble-controller-interface-dbgsym_2-2024.10.21.18.25_amd64.ddeb
+ bbf8a0f1155d065925c7b71662bfe555f89c1900 14886 ros-humble-controller-interface_2-2024.10.21.18.25_amd64.buildinfo
+ 8633e3a1e59767aedaa9875e5324a0e8d9df0223 32080 ros-humble-controller-interface_2-2024.10.21.18.25_amd64.deb
+Checksums-Sha256:
+ 0ba52adb68700f61cb4ee5b6c4cd22463c989ba09326f7b0ed363b2de157ae9e 478520 ros-humble-controller-interface-dbgsym_2-2024.10.21.18.25_amd64.ddeb
+ af00dd9d48b6d53ececd49fda8666b2cc2292d1f6c3e287c6fab5170bdb30f28 14886 ros-humble-controller-interface_2-2024.10.21.18.25_amd64.buildinfo
+ 9b2466587ba2b613058454dc2bd45962cfd45ebf87fbf23bbfaba4726c22ad89 32080 ros-humble-controller-interface_2-2024.10.21.18.25_amd64.deb
+Files:
+ 26ae2382ce35279640db343b4225cfd8 478520 debug optional ros-humble-controller-interface-dbgsym_2-2024.10.21.18.25_amd64.ddeb
+ 1bc7cc4d0810b06384a37ec87cc165e2 14886 misc optional ros-humble-controller-interface_2-2024.10.21.18.25_amd64.buildinfo
+ 84318aa23cc225d894498a4f815c6c9c 32080 misc optional ros-humble-controller-interface_2-2024.10.21.18.25_amd64.deb

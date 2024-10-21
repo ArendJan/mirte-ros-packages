@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 26 Mar 2024 00:00:00 -0000
+Source: ros-humble-camera-calibration-parsers
+Binary: ros-humble-camera-calibration-parsers
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.24
+Distribution: jammy
+Urgency: high
+Maintainer: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Changed-By: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Description:
+ ros-humble-camera-calibration-parsers - camera_calibration_parsers contains routines for reading and writ
+Changes:
+ ros-humble-camera-calibration-parsers (2-2024.10.21.19.24) jammy; urgency=high
+Checksums-Sha1:
+ bed65b2d02d9bad46ba32719ef165dfc878fb660 607332 ros-humble-camera-calibration-parsers-dbgsym_2-2024.10.21.19.24_amd64.ddeb
+ 177ea1352e3e0e97b336ea34bf4e48eaa80a725c 15755 ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.buildinfo
+ 3d83f32fb852b21a352c533efed3f25cd7de6f75 54176 ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.deb
+Checksums-Sha256:
+ f9d6c0ee876242db9f3161e193768dea745eeabaa1043bfe7c4eef97b30bd6ae 607332 ros-humble-camera-calibration-parsers-dbgsym_2-2024.10.21.19.24_amd64.ddeb
+ 3cf0d5a68beaf21c4c6e305ac6069a4a35c29886101d2ecbba5a3b24d8663c30 15755 ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.buildinfo
+ e55183267ba7a89fb6a2f2c0e6c3afbee3947ab96ce6c79315db51600f0c1a8e 54176 ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.deb
+Files:
+ a56f3db92cbc57d7552433492b963fd2 607332 debug optional ros-humble-camera-calibration-parsers-dbgsym_2-2024.10.21.19.24_amd64.ddeb
+ 30eaf47f472c8c8a8de29984dbd53ec3 15755 misc optional ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.buildinfo
+ 24a1a3425bbe9438ed8e96168a1d3b42 54176 misc optional ros-humble-camera-calibration-parsers_2-2024.10.21.19.24_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 10 Jan 2023 00:00:00 -0000
+Source: ros-humble-spdlog-vendor
+Binary: ros-humble-spdlog-vendor
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.18
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-spdlog-vendor - Wrapper around spdlog, providing nothing but a dependency on spdl
+Changes:
+ ros-humble-spdlog-vendor (2-2024.10.21.17.18) jammy; urgency=high
+ .
+   * Fixes policy CMP0135 warning for CMake >= 3.24 (#30 <https://github.com/ros2/spdlog_vendor/issues/30>) (#32 <https://github.com/ros2/spdlog_vendor/issues/32>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ b6197f2be62650d0bf9b1def364691790456bfab 10678 ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.buildinfo
+ 6359bb2e38da5dabd3fa3a599388175cbdb55ac4 5910 ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.deb
+Checksums-Sha256:
+ 09b63b0f05024a1055ecd64058d463bade29b0015686647a1c6074e7efba31fa 10678 ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.buildinfo
+ 69ccc719808b54c34efa08657b03a4d8dc2c079ac3f05d0c4a20c453d645e577 5910 ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.deb
+Files:
+ 42059acbc996629395c7693e95402d4b 10678 misc optional ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.buildinfo
+ 7bfd74eaabc77e1bb46015da37b65a76 5910 misc optional ros-humble-spdlog-vendor_2-2024.10.21.17.18_amd64.deb

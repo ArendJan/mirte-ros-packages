@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Wed, 27 Mar 2024 00:00:00 -0000
+Source: ros-humble-generate-parameter-library
+Binary: ros-humble-generate-parameter-library
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.38
+Distribution: jammy
+Urgency: high
+Maintainer: Paul Gesel <paul.gesel@picknik.ai>
+Changed-By: Paul Gesel <paul.gesel@picknik.ai>
+Description:
+ ros-humble-generate-parameter-library - CMake to generate ROS parameter library.
+Changes:
+ ros-humble-generate-parameter-library (2-2024.10.21.18.38) jammy; urgency=high
+ .
+   * use python_install_dir (#178 <https://github.com/PickNikRobotics/generate_parameter_library/issues/178>)
+   * Update CMakeLists.txt (#173 <https://github.com/PickNikRobotics/generate_parameter_library/issues/173>)
+   * Contributors: Christoph Fröhlich, Paul Gesel
+Checksums-Sha1:
+ 71075c0d85aa4945e57e20ac80c6e6ff580e6857 15752 ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.buildinfo
+ c351743d7b22882dde1a3be25bd392df94a216e9 8028 ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.deb
+Checksums-Sha256:
+ b1e781680c893506b09709a540fda4b51d45106d7b4f843697c8bd0c60231972 15752 ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.buildinfo
+ b7b6e70bdfaf96fbc00a2a6f2f3268306eae68435ffde4e57ed75d4176adc6ed 8028 ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.deb
+Files:
+ a5ed102123bc78ff6480995bd27953fa 15752 misc optional ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.buildinfo
+ 59d1c131fa5d5cd3694a4a17fedcf934 8028 misc optional ros-humble-generate-parameter-library_2-2024.10.21.18.38_amd64.deb

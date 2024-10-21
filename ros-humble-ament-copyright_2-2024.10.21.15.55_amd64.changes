@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-copyright
+Binary: ros-humble-ament-copyright
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.55
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-copyright - The ability to check source files for copyright and license infor
+Changes:
+ ros-humble-ament-copyright (2-2024.10.21.15.55) jammy; urgency=high
+Checksums-Sha1:
+ edf8a2baa226349541bac14068c5f2dd8be9a1dc 7391 ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.buildinfo
+ edf6aacb5170a1a9126773a575bc9ad5e4f144da 45258 ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.deb
+Checksums-Sha256:
+ b4749acd528493a5b445af7f19cbb030fe3e93242eabcd8cb62a934fc9d4c10e 7391 ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.buildinfo
+ 641a4f3d02c9e4d5acae08bf80859acacbec743fe7329919abbe9347e3b8384a 45258 ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.deb
+Files:
+ 5d085f7de8d223e5ce577e2bc15c13e9 7391 misc optional ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.buildinfo
+ cbb0ffc09143ed5f289e51cc82430051 45258 misc optional ros-humble-ament-copyright_2-2024.10.21.15.55_amd64.deb

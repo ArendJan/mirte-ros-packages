@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Tue, 01 Mar 2022 00:00:00 -0000
+Source: ros-humble-rpyutils
+Binary: ros-humble-rpyutils
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.57
+Distribution: jammy
+Urgency: high
+Maintainer: Jacob Perron <jacob@openrobotics.org>
+Changed-By: Jacob Perron <jacob@openrobotics.org>
+Description:
+ ros-humble-rpyutils - Package containing various utility types and functions for Python
+Changes:
+ ros-humble-rpyutils (2-2024.10.21.16.57) jammy; urgency=high
+ .
+   * Make sure to call abspath when adding Windows DLL directories. (#8 <https://github.com/ros2/rpyutils/issues/8>)
+   * Update troubleshooting links to docs.ros.org (#6 <https://github.com/ros2/rpyutils/issues/6>)
+   * Contributors: Chris Lalancette, Christophe Bedard
+Checksums-Sha1:
+ 1693d197e1bf554edc21ffdb05041471af96f89e 7498 ros-humble-rpyutils_2-2024.10.21.16.57_amd64.buildinfo
+ 07d8d2148428d03bb485f0268b0c2d264feaef09 5810 ros-humble-rpyutils_2-2024.10.21.16.57_amd64.deb
+Checksums-Sha256:
+ 111ac5379b1ce623c993c312cb6ecf152cb992fbca71b5598f0d18a3b99d131f 7498 ros-humble-rpyutils_2-2024.10.21.16.57_amd64.buildinfo
+ 83f65a15a6c11a9581cf49785fc59c5d2429a15d179c97fd642b25e9c67285b4 5810 ros-humble-rpyutils_2-2024.10.21.16.57_amd64.deb
+Files:
+ a628d7b7aeb14d44fc3b2f52d7008147 7498 misc optional ros-humble-rpyutils_2-2024.10.21.16.57_amd64.buildinfo
+ fa88beb5f715ac771c8f774ebe06b186 5810 misc optional ros-humble-rpyutils_2-2024.10.21.16.57_amd64.deb

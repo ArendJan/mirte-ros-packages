@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 22 Jul 2024 00:00:00 -0000
+Source: ros-humble-theora-image-transport
+Binary: ros-humble-theora-image-transport
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.19
+Distribution: jammy
+Urgency: high
+Maintainer: Kenji Brameld <kenjibrameld@gmail.com>
+Changed-By: Kenji Brameld <kenjibrameld@gmail.com>
+Description:
+ ros-humble-theora-image-transport - Theora_image_transport provides a plugin to image_transport for t
+Changes:
+ ros-humble-theora-image-transport (2-2024.10.21.19.19) jammy; urgency=high
+Checksums-Sha1:
+ 11a3b181239f2f03dbaac638beba73e28198f4ce 4371954 ros-humble-theora-image-transport-dbgsym_2-2024.10.21.19.19_amd64.ddeb
+ 9f93a61e9dbaa444ebc5fc34e019b899b70c1b90 28156 ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.buildinfo
+ c97f2f116de2b9146e4cbe9ab1eb5a4b4ea6843d 211754 ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.deb
+Checksums-Sha256:
+ 83bfd40e5745c78aa02a6124460380517624783a5be5d4744ac6703c2ffc76af 4371954 ros-humble-theora-image-transport-dbgsym_2-2024.10.21.19.19_amd64.ddeb
+ 967810ec600d3ffe16cda4909977aff57e8c52882797b8b9c6adb66767076ead 28156 ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.buildinfo
+ 81945aaaa5477e40b65ec1aed99c63bbcf91a977af3b1705bf4b4ea834d8a294 211754 ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.deb
+Files:
+ 82103d4ea4e14c2ac95d140e6a763b44 4371954 debug optional ros-humble-theora-image-transport-dbgsym_2-2024.10.21.19.19_amd64.ddeb
+ 86754b3743a0b64f937336bf9aeceeed 28156 misc optional ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.buildinfo
+ cd1c440e1ef48bd8c754de24628ca792 211754 misc optional ros-humble-theora-image-transport_2-2024.10.21.19.19_amd64.deb

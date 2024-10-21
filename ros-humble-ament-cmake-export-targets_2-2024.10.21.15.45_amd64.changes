@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-targets
+Binary: ros-humble-ament-cmake-export-targets
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.45
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-targets - The ability to export targets to downstream packages in the ament
+Changes:
+ ros-humble-ament-cmake-export-targets (2-2024.10.21.15.45) jammy; urgency=high
+Checksums-Sha1:
+ fd0f44f203b89d94235f5ff2901f1e580d0613bc 8108 ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.buildinfo
+ 768abce5291cfcc753e94996cff27b174764c9f7 7704 ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.deb
+Checksums-Sha256:
+ fd2e0bb0112f0050f470146df6538a763f869a02cc8215267a411bc9ce6f32a0 8108 ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.buildinfo
+ 3e92361474f6fa216e3be49dd34a507def43a8cff673463e8e9c7f6242b71097 7704 ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.deb
+Files:
+ 074eaa73e04add9ea2a57fcf0fd40653 8108 misc optional ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.buildinfo
+ 689b8178709da1de704322c276b6a0c2 7704 misc optional ros-humble-ament-cmake-export-targets_2-2024.10.21.15.45_amd64.deb

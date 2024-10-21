@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-pytest
+Binary: ros-humble-ament-cmake-pytest
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.51
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-pytest - The ability to run Python tests using pytest in the ament buildsy
+Changes:
+ ros-humble-ament-cmake-pytest (2-2024.10.21.15.51) jammy; urgency=high
+Checksums-Sha1:
+ e3c0ac76539a1336b5d0e39b9393e76ae83cb6a9 8334 ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.buildinfo
+ 8575bbc09f43bef1b22383318cefc9501b001dac 9586 ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.deb
+Checksums-Sha256:
+ 67b1710cf20ecd1c93972855f1a70efda3b043128c787acb8b614852d266833c 8334 ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.buildinfo
+ 5b1425080a8b629199c0cf0c6723f603230f844159acd152091e4014fcc4c5a2 9586 ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.deb
+Files:
+ efbfad3a46dec7b095bf069a2ec57ee4 8334 misc optional ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.buildinfo
+ c671e5a2be267c7f62f4b4ab2bf6ce18 9586 misc optional ros-humble-ament-cmake-pytest_2-2024.10.21.15.51_amd64.deb

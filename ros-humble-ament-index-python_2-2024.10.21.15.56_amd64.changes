@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Tue, 01 Mar 2022 00:00:00 -0000
+Source: ros-humble-ament-index-python
+Binary: ros-humble-ament-index-python
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.56
+Distribution: jammy
+Urgency: high
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Changed-By: Audrow Nash <audrow@openrobotics.org>
+Description:
+ ros-humble-ament-index-python - Python API to access the ament resource index.
+Changes:
+ ros-humble-ament-index-python (2-2024.10.21.15.56) jammy; urgency=high
+ .
+   * Print warning when get_package_share_directory() does not exist (Fix #74 <https://github.com/ament/ament_index/issues/74>) (#77 <https://github.com/ament/ament_index/issues/77>)
+   * Fail lookups on invalid resource names (#69 <https://github.com/ament/ament_index/issues/69>)
+   * Add get_package_share_path method (#73 <https://github.com/ament/ament_index/issues/73>)
+   * Contributors: David V. Lu, rob-clarke
+Checksums-Sha1:
+ d708846db438c9a6378974904f68cdbd9209105e 7458 ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.buildinfo
+ e99eecf79fed3ef787213e50e206dc48c2f1b398 12000 ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.deb
+Checksums-Sha256:
+ b1e0fd90d6fa553357ecbeaf91136d498747a286825d094ee8986c7e54e4910d 7458 ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.buildinfo
+ 22908d7d606934b496bcf88bbf7e9a75f6329e29f86b4debe62b7bed3ecfb9c7 12000 ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.deb
+Files:
+ 63fd895ae3602694fb4e86d2ec16f4c0 7458 misc optional ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.buildinfo
+ d35f7ce4150c07e5c27f9e0b21efce32 12000 misc optional ros-humble-ament-index-python_2-2024.10.21.15.56_amd64.deb

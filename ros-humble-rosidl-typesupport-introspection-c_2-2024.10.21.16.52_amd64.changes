@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-introspection-c
+Binary: ros-humble-rosidl-typesupport-introspection-c
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.52
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-typesupport-introspection-c - Generate the message type support for dynamic message constructio
+Changes:
+ ros-humble-rosidl-typesupport-introspection-c (2-2024.10.21.16.52) jammy; urgency=high
+Checksums-Sha1:
+ 36b2e113a37ff931044c0bcf5a15791d50aeb809 2540 ros-humble-rosidl-typesupport-introspection-c-dbgsym_2-2024.10.21.16.52_amd64.ddeb
+ d64540f7ced667312628d962695bf7cdf1e30742 11791 ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.buildinfo
+ 9e22f762ba18716cd8a9c1096882efcfd0846654 22236 ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.deb
+Checksums-Sha256:
+ b9113de52e9345eaa71b68025db47b912b4552e2fe1e39c8fbdadd3d71d5f48f 2540 ros-humble-rosidl-typesupport-introspection-c-dbgsym_2-2024.10.21.16.52_amd64.ddeb
+ a08814ac66cc283c446d10c328a6ae58541203dba7a6c86902f329a10233a1ee 11791 ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.buildinfo
+ 208ddc43f826bf189d3d2aa45d0a0522edacfe1d306152dd4f2f9e9f9d622db2 22236 ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.deb
+Files:
+ b7749a9a9053ad41f1e2391eb2282b55 2540 debug optional ros-humble-rosidl-typesupport-introspection-c-dbgsym_2-2024.10.21.16.52_amd64.ddeb
+ a02b271be5c0ce5843691f0b9ebebafe 11791 misc optional ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.buildinfo
+ 22f4b7bf7ca8b5c5599ef8fdcad4b4cf 22236 misc optional ros-humble-rosidl-typesupport-introspection-c_2-2024.10.21.16.52_amd64.deb

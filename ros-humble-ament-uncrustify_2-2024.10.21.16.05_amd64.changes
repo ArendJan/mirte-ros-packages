@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-uncrustify
+Binary: ros-humble-ament-uncrustify
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.05
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-uncrustify - The ability to check code against style conventions using uncrust
+Changes:
+ ros-humble-ament-uncrustify (2-2024.10.21.16.05) jammy; urgency=high
+Checksums-Sha1:
+ e9ea67a4990aae9cf4ae7b1fe46b98eb94981b58 7502 ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.buildinfo
+ b33cc2054797f63005c768b866159e4b13ba15bc 33286 ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.deb
+Checksums-Sha256:
+ 28a5ec9a71224f2bbac468e75e55a6c765292be585553833a3b73196f1bf045a 7502 ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.buildinfo
+ 885efd233d76d2919f808544616e80e4dfbd0584cfe0559ebd318c0216bd93d4 33286 ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.deb
+Files:
+ e76d829744a74c224c7db8112c5205e4 7502 misc optional ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.buildinfo
+ 5792ab8997cd965d5d4a188535406bde 33286 misc optional ros-humble-ament-uncrustify_2-2024.10.21.16.05_amd64.deb

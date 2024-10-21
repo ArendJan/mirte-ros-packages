@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-version
+Binary: ros-humble-ament-cmake-version
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.52
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-version - The ability to override the exported package version in the ament
+Changes:
+ ros-humble-ament-cmake-version (2-2024.10.21.15.52) jammy; urgency=high
+Checksums-Sha1:
+ ce5355a28ee3f818faa6eedfe348606bb33b23db 8073 ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.buildinfo
+ 3f52a93b3541f2752c1cce3e3690f0a899483f2b 6960 ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.deb
+Checksums-Sha256:
+ 7a601c4067973ab539e48534df35c0a81403155c5bfdda0e104402881e7498c1 8073 ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.buildinfo
+ b4305e222ed14a9b980a827f7ac1c02dba23c406a9daa244f5f63e1ccb23ed7d 6960 ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.deb
+Files:
+ ca1a3da27e291fd3a96114e447bdeaac 8073 misc optional ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.buildinfo
+ cc1540a8491af07a4485fa2e34315236 6960 misc optional ros-humble-ament-cmake-version_2-2024.10.21.15.52_amd64.deb

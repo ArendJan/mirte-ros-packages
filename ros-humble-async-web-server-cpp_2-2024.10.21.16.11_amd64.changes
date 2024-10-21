@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Thu, 14 Jan 2021 00:00:00 -0000
+Source: ros-humble-async-web-server-cpp
+Binary: ros-humble-async-web-server-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.11
+Distribution: jammy
+Urgency: high
+Maintainer: Timo Röhling <timo.roehling@fkie.fraunhofer.de>
+Changed-By: Timo Röhling <timo.roehling@fkie.fraunhofer.de>
+Description:
+ ros-humble-async-web-server-cpp - Asynchronous Web/WebSocket Server in C++
+Changes:
+ ros-humble-async-web-server-cpp (2-2024.10.21.16.11) jammy; urgency=high
+ .
+   * New ROS 2 port
+     - ROS 2 releases will have version numbers 2.x
+     - ROS 1 releases will continue with version numbers 1.x
+Checksums-Sha1:
+ 6b3bc2a851f4763736c058b2188c5b5748a62754 2238980 ros-humble-async-web-server-cpp-dbgsym_2-2024.10.21.16.11_amd64.ddeb
+ d9f5bf9190d9b38f5a055de9ac9bd9797b9ce1da 17510 ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.buildinfo
+ 201536e09a68f4f82c6d8bc4b5fd86d5ab13d89c 134820 ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.deb
+Checksums-Sha256:
+ 8e67bbf037f0b4d30e4a15ee47d0ee887d5d5710c051c7c99f6e907685e02b51 2238980 ros-humble-async-web-server-cpp-dbgsym_2-2024.10.21.16.11_amd64.ddeb
+ 754eaac6ec38cc14c90e8fe485ed65247a1fbfba436fad11ff57b113e8184c3c 17510 ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.buildinfo
+ 074614745b6511907ae205e6931ad1bcf7c8b652c497ea96dcae537a2b0f119d 134820 ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.deb
+Files:
+ 25d6b52051676095d734f747afcb81ff 2238980 debug optional ros-humble-async-web-server-cpp-dbgsym_2-2024.10.21.16.11_amd64.ddeb
+ d58e9694f55cf3f31fe1c66e9c2ee30a 17510 misc optional ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.buildinfo
+ 5cdc54fa07a74d21dda7f5da35869727 134820 misc optional ros-humble-async-web-server-cpp_2-2024.10.21.16.11_amd64.deb

@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-pep257
+Binary: ros-humble-ament-pep257
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.55
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-pep257 - The ability to check code against the docstring style conventions
+Changes:
+ ros-humble-ament-pep257 (2-2024.10.21.15.55) jammy; urgency=high
+Checksums-Sha1:
+ d69a51d03b0ea5f1ae3c43f3c6f9c17c1db47da9 7225 ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.buildinfo
+ 04c209310637f78673bda2078eaf70da829798e8 11848 ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.deb
+Checksums-Sha256:
+ 37fa97fb9469f5d0d19ffd1f2b63db509a823d5289060751d7c4e06575f5c3a5 7225 ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.buildinfo
+ b4f309a985248e6ce225f5ba8fc7485a2d6f3c59bc37fc000f05660178dd7a0d 11848 ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.deb
+Files:
+ 965c717df5ff8a4b2f94162af3ce6665 7225 misc optional ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.buildinfo
+ dbab4bd3b3e284ad2519c895561eff41 11848 misc optional ros-humble-ament-pep257_2-2024.10.21.15.55_amd64.deb

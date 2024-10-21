@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-cmake
+Binary: ros-humble-rosidl-cmake
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.38
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-cmake - The CMake functionality to invoke code generation for ROS interfa
+Changes:
+ ros-humble-rosidl-cmake (2-2024.10.21.16.38) jammy; urgency=high
+Checksums-Sha1:
+ cfc4e158fc18ce3522faf402fd4c200f93379c3b 10532 ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.buildinfo
+ 22c7b21c41faa8de8c13b50fb7f4cf883e0f2459 15376 ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.deb
+Checksums-Sha256:
+ ff0dd19822210fda32d899da1ab92ef3b55a06beeeb14cd7c27320db5552770f 10532 ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.buildinfo
+ f8c4344d957b22017e69e1f4a531a084f035fa7099ba963187a8e163f0aa1ed6 15376 ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.deb
+Files:
+ a7d0065219818d43d86a658b48a4c717 10532 misc optional ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.buildinfo
+ 0b9fdfa8333ff2eb7f9498d6ec0c76fa 15376 misc optional ros-humble-rosidl-cmake_2-2024.10.21.16.38_amd64.deb

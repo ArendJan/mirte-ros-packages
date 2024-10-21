@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-statistics-msgs
+Binary: ros-humble-statistics-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.25
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-statistics-msgs - Message definitions for reporting statistics for topics and syste
+Changes:
+ ros-humble-statistics-msgs (2-2024.10.21.17.25) jammy; urgency=high
+Checksums-Sha1:
+ f1d7a08e1c65b4a5c935cedf4fc86276b15b1395 289920 ros-humble-statistics-msgs-dbgsym_2-2024.10.21.17.25_amd64.ddeb
+ bdac727c966ea36743ee0baa7523d2f2a7323010 13888 ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.buildinfo
+ e8b9661f48a913fb2c84cab1c700f418de4a7639 58044 ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.deb
+Checksums-Sha256:
+ 3bc0d60d6442d7f7f41bbe955bca0fe96b29ffa92492433109216d5c5b3c2b45 289920 ros-humble-statistics-msgs-dbgsym_2-2024.10.21.17.25_amd64.ddeb
+ 2962ed165b7b01fc3ce9f750150e051e5f77be6cc24be4ea3fae419778e999d4 13888 ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.buildinfo
+ 34dd30e18eb46ea5b09176129dadfd7f8554b9dd424ee3f8c714babafb99c4df 58044 ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.deb
+Files:
+ 189c0b96850e81bbd923e075d2cfaf37 289920 debug optional ros-humble-statistics-msgs-dbgsym_2-2024.10.21.17.25_amd64.ddeb
+ 7a792be6aa3d70f3d724c04f858a12cc 13888 misc optional ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.buildinfo
+ ece72474a510c7142fc4b616064849c2 58044 misc optional ros-humble-statistics-msgs_2-2024.10.21.17.25_amd64.deb

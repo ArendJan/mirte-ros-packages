@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2param
+Binary: ros-humble-ros2param
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.54
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2param - The param command for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2param (2-2024.10.21.18.54) jammy; urgency=high
+Checksums-Sha1:
+ d571c18e13d790a63abe37d750fa227960efc9b9 14814 ros-humble-ros2param_2-2024.10.21.18.54_amd64.buildinfo
+ af9a89bb43ff7581ba8010071dbeddd18fa740c6 21640 ros-humble-ros2param_2-2024.10.21.18.54_amd64.deb
+Checksums-Sha256:
+ d0707a0a40aad2b121a3f39dc33fb9a4b3b80ffbdadf953d2243e71e626208d3 14814 ros-humble-ros2param_2-2024.10.21.18.54_amd64.buildinfo
+ de32d872835c4b46be6f5be25dda3bcdd6e72a840318b271959025c46cf0667f 21640 ros-humble-ros2param_2-2024.10.21.18.54_amd64.deb
+Files:
+ d7f1b3750b85d28d7f2bf3b19a3a2c9d 14814 misc optional ros-humble-ros2param_2-2024.10.21.18.54_amd64.buildinfo
+ 2c38899298d2b709390d05d9a8222234 21640 misc optional ros-humble-ros2param_2-2024.10.21.18.54_amd64.deb

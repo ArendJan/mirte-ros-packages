@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 31 Jul 2024 00:00:00 -0000
+Source: ros-humble-message-filters
+Binary: ros-humble-message-filters
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.58
+Distribution: jammy
+Urgency: high
+Maintainer: Ethan Gao <ethan.gao@linux.intel.com>
+Changed-By: Ethan Gao <ethan.gao@linux.intel.com>
+Description:
+ ros-humble-message-filters - A set of ROS2 message filters which take in messages and may outp
+Changes:
+ ros-humble-message-filters (2-2024.10.21.17.58) jammy; urgency=high
+ .
+   * [LatestTimeSync] Fix crash when Synchronizer is started before the messges are available. (#136 <https://github.com/ros2/message_filters/issues/136>)
+   * Contributors: Dr. Denis
+Checksums-Sha1:
+ e8a419f43f9798f502ad8210c5cf303713955c6d 11040 ros-humble-message-filters-dbgsym_2-2024.10.21.17.58_amd64.ddeb
+ e7c6a941c1a746525192970eb4ddb4c1bf4a5957 14278 ros-humble-message-filters_2-2024.10.21.17.58_amd64.buildinfo
+ e6fcdf1b4e2526d6f3a9905dad92c4b7b44be25a 40356 ros-humble-message-filters_2-2024.10.21.17.58_amd64.deb
+Checksums-Sha256:
+ f21f872514d8b3f9a7f0e1eabb8b0b6c848bc3a702cd6de3cfb0e462b1a831f8 11040 ros-humble-message-filters-dbgsym_2-2024.10.21.17.58_amd64.ddeb
+ 382c720555774c76069a49f9eeaef08020b872252085c81e5ab3185d35c68587 14278 ros-humble-message-filters_2-2024.10.21.17.58_amd64.buildinfo
+ 376154274417d13345d6ede4b47880e38268de120cb02b9dd476c6eb74227e34 40356 ros-humble-message-filters_2-2024.10.21.17.58_amd64.deb
+Files:
+ 01d4a4c89fd9843c7105ee2943781ba4 11040 debug optional ros-humble-message-filters-dbgsym_2-2024.10.21.17.58_amd64.ddeb
+ cb75dfbc6e493ba666233c0546091bc4 14278 misc optional ros-humble-message-filters_2-2024.10.21.17.58_amd64.buildinfo
+ 27f026a769ab18eae4b363acc303ee1d 40356 misc optional ros-humble-message-filters_2-2024.10.21.17.58_amd64.deb

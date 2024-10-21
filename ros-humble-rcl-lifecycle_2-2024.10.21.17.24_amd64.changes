@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rcl-lifecycle
+Binary: ros-humble-rcl-lifecycle
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.24
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rcl-lifecycle - Package containing a C-based lifecycle implementation
+Changes:
+ ros-humble-rcl-lifecycle (2-2024.10.21.17.24) jammy; urgency=high
+ .
+   * Generate version header using ament_generate_version_header(..) (backport #1141 <https://github.com/ros2/rcl/issues/1141>) (#1145 <https://github.com/ros2/rcl/issues/1145>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 16833d8300568bf558db506942b1f1b2ab63366e 31948 ros-humble-rcl-lifecycle-dbgsym_2-2024.10.21.17.24_amd64.ddeb
+ a3ff2b0345adfda1fe25b21738b220936988243c 15222 ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.buildinfo
+ 1621d36c53e4fc3b69bd77ee7e9d3b8a9a3c2aef 28122 ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.deb
+Checksums-Sha256:
+ 91185728aa9e3e451f2bfb818bf34220ccf9e46678780b66d9fe1dffa6742000 31948 ros-humble-rcl-lifecycle-dbgsym_2-2024.10.21.17.24_amd64.ddeb
+ 373f2d7211e8892e3dcea9c23869daff6f37f701f99ea2a731cb6e7d22887980 15222 ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.buildinfo
+ 5ce22650d824b9801e971bcb6908499baefc730e9b28a6063040ce6f600f9682 28122 ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.deb
+Files:
+ 6f43fc525f45328f8e6d06295e4d6443 31948 debug optional ros-humble-rcl-lifecycle-dbgsym_2-2024.10.21.17.24_amd64.ddeb
+ 4c910a84fceab925a8feddaa048d7f7c 15222 misc optional ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.buildinfo
+ 388bb3089f9484d335d2eb6c0b28c2ff 28122 misc optional ros-humble-rcl-lifecycle_2-2024.10.21.17.24_amd64.deb

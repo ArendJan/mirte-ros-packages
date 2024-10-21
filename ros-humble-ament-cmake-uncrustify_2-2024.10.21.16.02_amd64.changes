@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-uncrustify
+Binary: ros-humble-ament-cmake-uncrustify
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.02
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-uncrustify - The CMake API for ament_uncrustify to check code against stylecon
+Changes:
+ ros-humble-ament-cmake-uncrustify (2-2024.10.21.16.02) jammy; urgency=high
+Checksums-Sha1:
+ 9d73236e8f62d9d3237b6fc39f20d801a3628887 8410 ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.buildinfo
+ b0027a2adc6c5193eedc69df0f0aac088acb3a23 8750 ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.deb
+Checksums-Sha256:
+ 6ba82b7f1003492b85c866598ef96e5c9b5bebe81bc8af3c5c4d55a60439341c 8410 ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.buildinfo
+ da0f65b618a3eb55ac21eeb75a95daeb89e727c7fce2b7b8030d24f99d76fdb4 8750 ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.deb
+Files:
+ a85ae975e3a39891b0bbfbfea8a253b7 8410 misc optional ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.buildinfo
+ 4a1ba162d2509efc127492b22acddf34 8750 misc optional ros-humble-ament-cmake-uncrustify_2-2024.10.21.16.02_amd64.deb

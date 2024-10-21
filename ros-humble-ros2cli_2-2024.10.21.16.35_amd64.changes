@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2cli
+Binary: ros-humble-ros2cli
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.35
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2cli - Framework for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2cli (2-2024.10.21.16.35) jammy; urgency=high
+ .
+   * Update daemon.py for Python 3.8 compatibility (#912 <https://github.com/ros2/ros2cli/issues/912>)
+   * ros2cli.node.daemon : try getting fdsize from /proc for open fd limit (#888 <https://github.com/ros2/ros2cli/issues/888>) (#908 <https://github.com/ros2/ros2cli/issues/908>)
+   * Contributors: AhmedMoaz, mergify[bot]
+Checksums-Sha1:
+ b1ca3a406c1496cde2ee09670806cbba265e4773 12794 ros-humble-ros2cli_2-2024.10.21.16.35_amd64.buildinfo
+ c7dd12630439f7caf074ca650ff09301915c939e 41944 ros-humble-ros2cli_2-2024.10.21.16.35_amd64.deb
+Checksums-Sha256:
+ 20e124318e0052b42ce930c880eb2f4a4522d341589e66b75ee2ac5b38bc63fe 12794 ros-humble-ros2cli_2-2024.10.21.16.35_amd64.buildinfo
+ 6c73f4549d4f5eae74a6c80c98490450cc61f431d4dccfd04dd3880029094350 41944 ros-humble-ros2cli_2-2024.10.21.16.35_amd64.deb
+Files:
+ 82fa43d066c39df756b291ca63c6b878 12794 misc optional ros-humble-ros2cli_2-2024.10.21.16.35_amd64.buildinfo
+ a88553b3252ea8fd4730f598621753bb 41944 misc optional ros-humble-ros2cli_2-2024.10.21.16.35_amd64.deb

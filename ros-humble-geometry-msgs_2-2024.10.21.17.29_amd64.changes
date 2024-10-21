@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-geometry-msgs
+Binary: ros-humble-geometry-msgs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.29
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-geometry-msgs - A package containing some geometry related message definitions.
+Changes:
+ ros-humble-geometry-msgs (2-2024.10.21.17.29) jammy; urgency=high
+ .
+   * Create new messages with all fields needed to define a velocity and transform it  (#240 <https://github.com/ros2/common_interfaces/issues/240>) (#249 <https://github.com/ros2/common_interfaces/issues/249>)
+     Co-authored-by: Dr. Denis <mailto:denis@stoglrobotics.de>
+     Co-authored-by: Addisu Z. Taddese <mailto:addisuzt@intrinsic.ai>
+     Co-authored-by: Tully Foote <mailto:tullyfoote@intrinsic.ai>
+     (cherry picked from commit 74137fc6971ac7d6420248b4394cca977fb5a887)
+     Co-authored-by: Alejandro Hernández Cordero <mailto:alejandro@openrobotics.org>
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ b174899c6d12981e9e77f8acff0fb1723c606300 1883126 ros-humble-geometry-msgs-dbgsym_2-2024.10.21.17.29_amd64.ddeb
+ 7e795d29d9c3bd12a9c64ebfd99bf1126e86963e 13931 ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.buildinfo
+ 7148574af9040ecc03fca68f81fa37f5fb5dd3fd 197720 ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.deb
+Checksums-Sha256:
+ 7b0d5c51b9d0fc1b9ffd25a1f600f6ee94d5cbcfc8a7f5756df149fca0e83a3f 1883126 ros-humble-geometry-msgs-dbgsym_2-2024.10.21.17.29_amd64.ddeb
+ a9da5cf13bd468b6e1e130361d1a30c7463f9e1b2e926809585ab8ca07fe202c 13931 ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.buildinfo
+ 5fff87b07d493734291ba04560fabbeebbab6bc29b50b89e3651419039f085db 197720 ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.deb
+Files:
+ 7f18710240f86f4a1082634d10e66e16 1883126 debug optional ros-humble-geometry-msgs-dbgsym_2-2024.10.21.17.29_amd64.ddeb
+ bc219362b3a28c7b30f53339a5c49d0c 13931 misc optional ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.buildinfo
+ b89a67a6ac44af1c71b0edf4f3a71059 197720 misc optional ros-humble-geometry-msgs_2-2024.10.21.17.29_amd64.deb

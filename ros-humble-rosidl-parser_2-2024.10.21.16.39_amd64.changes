@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-parser
+Binary: ros-humble-rosidl-parser
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.39
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-parser - The parser for `.idl` ROS interface files.
+Changes:
+ ros-humble-rosidl-parser (2-2024.10.21.16.39) jammy; urgency=high
+Checksums-Sha1:
+ dd22804401adf36345a5e955d8ed70615bbcdfb3 10805 ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.buildinfo
+ 0900dae35879ea33f6b6741a76ae69587ba85cc0 19112 ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.deb
+Checksums-Sha256:
+ d2df24a991543c7928f789e717fb28e638e52173a7267b883dd6e05b01d9f835 10805 ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.buildinfo
+ 71821f86c97165c9917604eab32da36397c5b23eb28e77b9c62f24f4e1fc2085 19112 ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.deb
+Files:
+ 6f52eb799714d4ee88687b63c8272964 10805 misc optional ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.buildinfo
+ 15f647ea7dbac3b622b2328e0791a595 19112 misc optional ros-humble-rosidl-parser_2-2024.10.21.16.39_amd64.deb

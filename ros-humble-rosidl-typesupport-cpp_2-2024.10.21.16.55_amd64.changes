@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-cpp
+Binary: ros-humble-rosidl-typesupport-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.55
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rosidl-typesupport-cpp - Generate the type support for C++ messages.
+Changes:
+ ros-humble-rosidl-typesupport-cpp (2-2024.10.21.16.55) jammy; urgency=high
+ .
+   * Don't override user provided compile definitions (backport #145 <https://github.com/ros2/rosidl_typesupport/issues/145>) (#147 <https://github.com/ros2/rosidl_typesupport/issues/147>)
+   * Contributors: mergify[bot]
+   * Use target_link_libraries(... PRIVATE ...) in single typesupport case (#124 <https://github.com/ros2/rosidl_typesupport/issues/124>)
+   * rosidl CMake cleanup in rosidl_typesupport_cpp (#123 <https://github.com/ros2/rosidl_typesupport/issues/123>)
+   * Contributors: Shane Loretz
+Checksums-Sha1:
+ eedf2af5ac4469379a9397e7c5e52d0dc21dd9cb 33204 ros-humble-rosidl-typesupport-cpp-dbgsym_2-2024.10.21.16.55_amd64.ddeb
+ 2cfe389c79bf00259454d38f9c2a3787440cfbfb 13324 ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.buildinfo
+ dbdb90a1915b163f3f1ffc1a51b0d6591a0b56b6 23200 ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.deb
+Checksums-Sha256:
+ 863d225f2014fc01523e6e56c4940c83011f9be7dde60f9f77315e569171fb9f 33204 ros-humble-rosidl-typesupport-cpp-dbgsym_2-2024.10.21.16.55_amd64.ddeb
+ e89312ab679e10b7e166cde18068d7d9006140a76d64e1a5975358f9ead8d9bd 13324 ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.buildinfo
+ 7036412a6462e2be300b41d2f6f92ba98058b04d06bd7f79ce6841735a101328 23200 ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.deb
+Files:
+ 2d190cf31311216306b7a5e5d386a865 33204 debug optional ros-humble-rosidl-typesupport-cpp-dbgsym_2-2024.10.21.16.55_amd64.ddeb
+ 83fe218676d78f67a154e66c0276c683 13324 misc optional ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.buildinfo
+ 775fc2cb19d46c4183aed13f5be11231 23200 misc optional ros-humble-rosidl-typesupport-cpp_2-2024.10.21.16.55_amd64.deb

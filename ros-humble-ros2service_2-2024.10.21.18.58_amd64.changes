@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2service
+Binary: ros-humble-ros2service
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.58
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2service - The service command for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2service (2-2024.10.21.18.58) jammy; urgency=high
+Checksums-Sha1:
+ cf2a22e03f8e75149243f9f64b6039cf9cd5b702 14880 ros-humble-ros2service_2-2024.10.21.18.58_amd64.buildinfo
+ 5b76569b1d378d9e68fa2b9976cd7f9108fb743a 14946 ros-humble-ros2service_2-2024.10.21.18.58_amd64.deb
+Checksums-Sha256:
+ eec4b8671f7d14c8be92ba15afd0a70c3bae326236f33702f2afffbb1b6625fb 14880 ros-humble-ros2service_2-2024.10.21.18.58_amd64.buildinfo
+ 54c454cad6b67815f447fc0618d49b0c11ee61a2345ddddc0575611c00b72b86 14946 ros-humble-ros2service_2-2024.10.21.18.58_amd64.deb
+Files:
+ 07f740ca7a756c3ba317bf167b9d1cb9 14880 misc optional ros-humble-ros2service_2-2024.10.21.18.58_amd64.buildinfo
+ 4f162d0e26ceb35cc9cd6129a34a91dd 14946 misc optional ros-humble-ros2service_2-2024.10.21.18.58_amd64.deb

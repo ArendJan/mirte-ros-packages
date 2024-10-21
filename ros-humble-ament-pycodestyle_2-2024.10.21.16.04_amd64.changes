@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-pycodestyle
+Binary: ros-humble-ament-pycodestyle
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.04
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-pycodestyle - The ability to check code against the style conventions in PEP 8
+Changes:
+ ros-humble-ament-pycodestyle (2-2024.10.21.16.04) jammy; urgency=high
+Checksums-Sha1:
+ 247e9aeda24b93cc57fbca2fab8e0fc289d24eb3 6668 ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.buildinfo
+ fca3fe1020247a5926271c9452a31459d9246faa 9196 ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.deb
+Checksums-Sha256:
+ b9f5c790efd893a49b9777d0a5394be8c6c4b7115b359bf76fb76859be10ae27 6668 ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.buildinfo
+ 0633b038af9987fac83b0bb052acb4564ad9df099e5209cfd855fc9cfe7ed385 9196 ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.deb
+Files:
+ 7bf7433b0fe9d7185ad8e83923863142 6668 misc optional ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.buildinfo
+ 4fce3b0b8b3d7485638804dce794b2e7 9196 misc optional ros-humble-ament-pycodestyle_2-2024.10.21.16.04_amd64.deb

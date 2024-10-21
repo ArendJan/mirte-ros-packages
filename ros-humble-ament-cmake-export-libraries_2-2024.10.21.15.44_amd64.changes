@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-libraries
+Binary: ros-humble-ament-cmake-export-libraries
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.44
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-libraries - The ability to export libraries to downstream packages in the ame
+Changes:
+ ros-humble-ament-cmake-export-libraries (2-2024.10.21.15.44) jammy; urgency=high
+Checksums-Sha1:
+ de71f328871f7e64246655caa58322af1faa2fc0 8121 ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.buildinfo
+ fb7f749891ee7e8e8f9b1f00f573194028cb0944 10206 ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.deb
+Checksums-Sha256:
+ 824ba2710aa82a159051f1f1923b248961f9645c125657802a9a0dd0db6a7f7c 8121 ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.buildinfo
+ 429819c74b7d32dae480cdf1a129741e4f9e0b8d61ff3d90b3acf86b7042950d 10206 ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.deb
+Files:
+ d5dd91368b29d4beef2fe40bdf385bcb 8121 misc optional ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.buildinfo
+ c9b9b87173f55ae7c94f3cab6b9f175a 10206 misc optional ros-humble-ament-cmake-export-libraries_2-2024.10.21.15.44_amd64.deb

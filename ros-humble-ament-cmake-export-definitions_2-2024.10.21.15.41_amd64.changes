@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-definitions
+Binary: ros-humble-ament-cmake-export-definitions
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.41
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-definitions - The ability to export definitions to downstream packages in the a
+Changes:
+ ros-humble-ament-cmake-export-definitions (2-2024.10.21.15.41) jammy; urgency=high
+Checksums-Sha1:
+ fcd06bae6d0f7fa4a6990b5134a316065e5fe79a 8128 ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.buildinfo
+ 55b4d89bc3fd59f784fc4da33c4ac775addb758e 7154 ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.deb
+Checksums-Sha256:
+ 81f5e35f5d1e7aaf92623b5bab2e32a4331183305c7f893778267db9e0cd6527 8128 ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.buildinfo
+ 23da56f7ce166506a03811108d1c6a6ef07225e1582a59fbb262ed2acb20fff0 7154 ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.deb
+Files:
+ fd094fcab3219ba1f2a566d3d4ce9e4e 8128 misc optional ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.buildinfo
+ 1437285bbfe0e08db99d1d57be4b173b 7154 misc optional ros-humble-ament-cmake-export-definitions_2-2024.10.21.15.41_amd64.deb

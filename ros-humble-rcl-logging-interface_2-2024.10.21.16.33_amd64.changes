@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-rcl-logging-interface
+Binary: ros-humble-rcl-logging-interface
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.33
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rcl-logging-interface - Interface that rcl_logging backends needs to implement.
+Changes:
+ ros-humble-rcl-logging-interface (2-2024.10.21.16.33) jammy; urgency=high
+Checksums-Sha1:
+ 3af4e7ab3e8b67bafec0f8412f0d664c72cc0cf7 4618 ros-humble-rcl-logging-interface-dbgsym_2-2024.10.21.16.33_amd64.ddeb
+ 29c3ce2996ac0cd9dbf3c94791f6ee591648154b 11784 ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.buildinfo
+ 9888d1a7905fbdb2c6d03ccae306f78ba0bfa00a 12442 ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.deb
+Checksums-Sha256:
+ fe84a3eaa2b6a26414b988193ee9dd8b7dc2e95e544528a266d828f1eac0db29 4618 ros-humble-rcl-logging-interface-dbgsym_2-2024.10.21.16.33_amd64.ddeb
+ 5929c667f1dfe93976a7b1bf35daa21adf6fe6edaf72dbab59e26a63f0f45eec 11784 ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.buildinfo
+ c13ab8ecf0c96b9ffcd75da747494927fe6f89b6bff6dc9e52fd4725f70cbdb4 12442 ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.deb
+Files:
+ 843061c3591f787193af943b1e3f3f37 4618 debug optional ros-humble-rcl-logging-interface-dbgsym_2-2024.10.21.16.33_amd64.ddeb
+ d0495f11ea54e401e4deb04f5e0e362a 11784 misc optional ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.buildinfo
+ f9bd507f584680c4553d7a1e88773e3e 12442 misc optional ros-humble-rcl-logging-interface_2-2024.10.21.16.33_amd64.deb

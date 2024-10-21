@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-target-dependencies
+Binary: ros-humble-ament-cmake-target-dependencies
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.50
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-target-dependencies - The ability to add definitions, include directories and libraries
+Changes:
+ ros-humble-ament-cmake-target-dependencies (2-2024.10.21.15.50) jammy; urgency=high
+Checksums-Sha1:
+ 78ae7d42a90062931250def8c417a5d7e7bac7eb 8133 ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.buildinfo
+ fcacd8e69b8d439a1c6d950b1c6aca142a695b59 9398 ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.deb
+Checksums-Sha256:
+ b07aedd515baea58b2eade49b81e407006e0222421d9f825cda1e8c8c3e3708d 8133 ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.buildinfo
+ 00375012125472dcd488c618b00dceee441821b2e4e4bc7ffdaa8caa36e1d419 9398 ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.deb
+Files:
+ 3ad41764afb37cc18c3cefac87b2b658 8133 misc optional ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.buildinfo
+ eb54dd4a759882baa1eb0e61f25586f2 9398 misc optional ros-humble-ament-cmake-target-dependencies_2-2024.10.21.15.50_amd64.deb

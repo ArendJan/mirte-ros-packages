@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-lint-auto
+Binary: ros-humble-ament-lint-auto
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.53
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-lint-auto - The auto-magic functions for ease to use of the ament linters in
+Changes:
+ ros-humble-ament-lint-auto (2-2024.10.21.15.53) jammy; urgency=high
+Checksums-Sha1:
+ 62f1b83fe2338360409bc23ff5a4929d03d8b805 8106 ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.buildinfo
+ 443da9b270551ccc06da3ead2ff5fef8b9da169d 7538 ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.deb
+Checksums-Sha256:
+ 04b41265c8617300badcc189c13bff45563171248ebec66f15217001a9733542 8106 ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.buildinfo
+ a2448a38a06f9a22279b0c8ecad04c9ded8d0c1d80e1d533c6a0311240b7671b 7538 ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.deb
+Files:
+ b143fe1c56c4c8fe356c588d5b272498 8106 misc optional ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.buildinfo
+ 202861df59d8ade8afe22ab605875263 7538 misc optional ros-humble-ament-lint-auto_2-2024.10.21.15.53_amd64.deb

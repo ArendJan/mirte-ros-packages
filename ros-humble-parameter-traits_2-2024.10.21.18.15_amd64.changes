@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 27 Mar 2024 00:00:00 -0000
+Source: ros-humble-parameter-traits
+Binary: ros-humble-parameter-traits
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.15
+Distribution: jammy
+Urgency: high
+Maintainer: Tyler Weaver <maybe@tylerjw.dev>
+Changed-By: Tyler Weaver <maybe@tylerjw.dev>
+Description:
+ ros-humble-parameter-traits - Functions and types for rclcpp::Parameter
+Changes:
+ ros-humble-parameter-traits (2-2024.10.21.18.15) jammy; urgency=high
+Checksums-Sha1:
+ b03db77d7dd3f1b7774d373c5da9ad723cbbd150 15246 ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.buildinfo
+ 9b9ca0dc56227cba4444e14aece197d722f23047 9414 ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.deb
+Checksums-Sha256:
+ 5c3f5bff3b3d79ad1ce7b008f66a6a50e3be973acaf5b785f24db8bb454f1a3b 15246 ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.buildinfo
+ 6714e9a89f867b4b2ba8fe72cf362ded96256589f8cee0a0604d439a5a585ca6 9414 ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.deb
+Files:
+ e4e4fb23f3b4159d586bbc9db9217e44 15246 misc optional ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.buildinfo
+ f3b02e9914479e1597da79f3e6a2b0f0 9414 misc optional ros-humble-parameter-traits_2-2024.10.21.18.15_amd64.deb

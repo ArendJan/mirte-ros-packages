@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-lint
+Binary: ros-humble-ament-lint
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.39
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-lint - Providing common API for ament linter packages.
+Changes:
+ ros-humble-ament-lint (2-2024.10.21.15.39) jammy; urgency=high
+Checksums-Sha1:
+ ba053060f1889b54b9045ad02f66ebc6848b6150 6633 ros-humble-ament-lint_2-2024.10.21.15.39_amd64.buildinfo
+ fedbd1ce62ec5657254d4687f556375148053567 4232 ros-humble-ament-lint_2-2024.10.21.15.39_amd64.deb
+Checksums-Sha256:
+ 00ba7c28356b170fc04981147d5870912a134899b3648343aca5b68696fc9065 6633 ros-humble-ament-lint_2-2024.10.21.15.39_amd64.buildinfo
+ 97141d677c9a20c80856d657c2888e39d0f4af171d48ac3a2d9df36ed4e0a035 4232 ros-humble-ament-lint_2-2024.10.21.15.39_amd64.deb
+Files:
+ 4c8fde997fa1334bb8f1d76d0567b80a 6633 misc optional ros-humble-ament-lint_2-2024.10.21.15.39_amd64.buildinfo
+ 83773f72f97f2570745e3dd57bd2b844 4232 misc optional ros-humble-ament-lint_2-2024.10.21.15.39_amd64.deb

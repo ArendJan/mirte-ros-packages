@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rclcpp
+Binary: ros-humble-rclcpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.35
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rclcpp - The ROS client library in C++.
+Changes:
+ ros-humble-rclcpp (2-2024.10.21.17.35) jammy; urgency=high
+ .
+   * Add test creating two content filter topics with the same topic name (#2546 <https://github.com/ros2/rclcpp/issues/2546>) (#2549 <https://github.com/ros2/rclcpp/issues/2549>) (#2551 <https://github.com/ros2/rclcpp/issues/2551>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 405ad3f615b60c4b87aac02a6b19ca2a42d0b3c4 11211074 ros-humble-rclcpp-dbgsym_2-2024.10.21.17.35_amd64.ddeb
+ 0ccc8286aa2ed686ea8cabd049bc6e17bcfded65 15907 ros-humble-rclcpp_2-2024.10.21.17.35_amd64.buildinfo
+ 63545677ba66155bfec418db5ad7f929a0f73bae 641420 ros-humble-rclcpp_2-2024.10.21.17.35_amd64.deb
+Checksums-Sha256:
+ 8528615887702ea2dd7f0871e8aada26395c8dafc9f28a8df8fe22ff27b9107c 11211074 ros-humble-rclcpp-dbgsym_2-2024.10.21.17.35_amd64.ddeb
+ 352a5fd0ceaa84fe26fcc580bed1c8d9d696b6642e02bea729dbf984de6bcbfa 15907 ros-humble-rclcpp_2-2024.10.21.17.35_amd64.buildinfo
+ c740d5c04e4749ce1897998fc7b30ce31f01281ed04bb15504ec8d938c1f60f7 641420 ros-humble-rclcpp_2-2024.10.21.17.35_amd64.deb
+Files:
+ 57f553d16ad28298c62c77fff6b70007 11211074 debug optional ros-humble-rclcpp-dbgsym_2-2024.10.21.17.35_amd64.ddeb
+ 7f655fd8db638313d855ee5feb4fa17e 15907 misc optional ros-humble-rclcpp_2-2024.10.21.17.35_amd64.buildinfo
+ 5489f5b6ea6e92f74f26689912f55e42 641420 misc optional ros-humble-rclcpp_2-2024.10.21.17.35_amd64.deb

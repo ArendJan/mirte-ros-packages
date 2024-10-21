@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 12 Jul 2022 00:00:00 -0000
+Source: ros-humble-angles
+Binary: ros-humble-angles
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.07
+Distribution: jammy
+Urgency: high
+Maintainer: Tully Foote <tfoote@osrfoundation.org>
+Changed-By: Tully Foote <tfoote@osrfoundation.org>
+Description:
+ ros-humble-angles - This package provides a set of simple math utilities to work with
+Changes:
+ ros-humble-angles (2-2024.10.21.16.07) jammy; urgency=high
+ .
+   * Correct versions
+   * Contributors: Geoffrey Biggs
+Checksums-Sha1:
+ 28c32b309b436b3a1fa7394408fe4e9f414db0be 8949 ros-humble-angles_2-2024.10.21.16.07_amd64.buildinfo
+ 6c4f3045413a257d473284ba8ccbceb33356458e 14148 ros-humble-angles_2-2024.10.21.16.07_amd64.deb
+Checksums-Sha256:
+ 10bc8fc46a38eeb99765565011276e29b1802c9fec9c83fdda92699bc2b11663 8949 ros-humble-angles_2-2024.10.21.16.07_amd64.buildinfo
+ 8a9f5b88ed6d1fdde9bdd79c7e79d7736bc536074cf7ff52e3a92c9f35d76e68 14148 ros-humble-angles_2-2024.10.21.16.07_amd64.deb
+Files:
+ f70d600ec011d99e94d7be05ff24bf1c 8949 misc optional ros-humble-angles_2-2024.10.21.16.07_amd64.buildinfo
+ 94861938830bc3bd4fe30b3b0e18f9b7 14148 misc optional ros-humble-angles_2-2024.10.21.16.07_amd64.deb

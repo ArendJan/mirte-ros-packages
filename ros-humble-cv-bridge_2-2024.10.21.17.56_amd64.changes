@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 21 Sep 2022 00:00:00 -0000
+Source: ros-humble-cv-bridge
+Binary: ros-humble-cv-bridge
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.56
+Distribution: jammy
+Urgency: high
+Maintainer: Kenji Brameld <kenjibrameld@gmail.com>
+Changed-By: Kenji Brameld <kenjibrameld@gmail.com>
+Description:
+ ros-humble-cv-bridge - This contains CvBridge, which converts between ROS2 Image message
+Changes:
+ ros-humble-cv-bridge (2-2024.10.21.17.56) jammy; urgency=high
+ .
+   * silence dperecation warnings using boost macros (#492 <https://github.com/ros-perception/vision_opencv/issues/492>)
+   * Contributors: Kenji Brameld
+Checksums-Sha1:
+ a8603b7a41d5d50fbd421fccab1d6dc70a196a9c 1271584 ros-humble-cv-bridge-dbgsym_2-2024.10.21.17.56_amd64.ddeb
+ 232083f805dab1fa3097280523350c776c9089a3 25830 ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.buildinfo
+ 5a786b59a2d1a6ba6be4405d320d7467559200b5 109598 ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.deb
+Checksums-Sha256:
+ c8ff54f5db33b9dd80bb28bdbf0a73ac495ce7b190d1c55ba211b1b3bc2ebdab 1271584 ros-humble-cv-bridge-dbgsym_2-2024.10.21.17.56_amd64.ddeb
+ dbe0fe558ff77ced7a5eb69e9a2a2d09b195ded3310f47f67d7356980741a779 25830 ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.buildinfo
+ 30910310a39e0dde4c6f19fcdaeca5e5366a5ea937861f2efdbd53786404229e 109598 ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.deb
+Files:
+ 4f7e2e6b228e11588bf8bce64779624c 1271584 debug optional ros-humble-cv-bridge-dbgsym_2-2024.10.21.17.56_amd64.ddeb
+ 0a150f60614556e8d18294c46e0ce825 25830 misc optional ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.buildinfo
+ 9f6451964c640f516c4ef793cf7ee1b8 109598 misc optional ros-humble-cv-bridge_2-2024.10.21.17.56_amd64.deb

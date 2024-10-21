@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-include-directories
+Binary: ros-humble-ament-cmake-export-include-directories
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.43
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-include-directories - The ability to export include directories to downstream packages
+Changes:
+ ros-humble-ament-cmake-export-include-directories (2-2024.10.21.15.43) jammy; urgency=high
+Checksums-Sha1:
+ f4a0ac9226a80ae66455fb8d681abae53a8a9332 8168 ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.buildinfo
+ caa93b72ffb3fe026e7b1a48308bd39e221726ba 7470 ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.deb
+Checksums-Sha256:
+ 5e90c5f56c67ae0ce07befb1ffc6e30d1ba49f1749ad39630600e5db30d243e3 8168 ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.buildinfo
+ c0884bc39ddf94a4d1e4592dbdc06ce50a988c69afd6ef56249f5240110b180f 7470 ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.deb
+Files:
+ 894edc014a8b820ed635a2bf03dd1345 8168 misc optional ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.buildinfo
+ 9b6a9371aac64c13df7c256e3bbf8052 7470 misc optional ros-humble-ament-cmake-export-include-directories_2-2024.10.21.15.43_amd64.deb

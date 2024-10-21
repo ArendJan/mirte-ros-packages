@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-rcutils
+Binary: ros-humble-rcutils
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.26
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rcutils - Package containing various utility types and functions for C
+Changes:
+ ros-humble-rcutils (2-2024.10.21.16.26) jammy; urgency=high
+ .
+   * update cast to modern style (#418 <https://github.com/ros2/rcutils/issues/418>) (#462 <https://github.com/ros2/rcutils/issues/462>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 4eb9e257fe4e3f8c4f2750fc5ca8fc84531be602 84320 ros-humble-rcutils-dbgsym_2-2024.10.21.16.26_amd64.ddeb
+ 7c522a5aee6412bc1803ba75ecf8c60d82f97338 12906 ros-humble-rcutils_2-2024.10.21.16.26_amd64.buildinfo
+ 0a6e887cf46ffd95ff05febade4900b2b3ecb2f0 87496 ros-humble-rcutils_2-2024.10.21.16.26_amd64.deb
+Checksums-Sha256:
+ 21f500f398509a6e0997c1b09cc9c717e0acaaa493d10c8b9ef9c8b5c79f2798 84320 ros-humble-rcutils-dbgsym_2-2024.10.21.16.26_amd64.ddeb
+ 3985bf7897f181a3e2998eb035c30c600b3632564ce2e5ca6d9c2dc20c7cef14 12906 ros-humble-rcutils_2-2024.10.21.16.26_amd64.buildinfo
+ ed9545c255621707b1a76f2a483cb3c64c61c84b149418c9cc6a941363519706 87496 ros-humble-rcutils_2-2024.10.21.16.26_amd64.deb
+Files:
+ f896f66b5cf8f2a4bf906c6f212b04cc 84320 debug optional ros-humble-rcutils-dbgsym_2-2024.10.21.16.26_amd64.ddeb
+ 949f94cc0dbdd08e4758c4a6f455779a 12906 misc optional ros-humble-rcutils_2-2024.10.21.16.26_amd64.buildinfo
+ cb12451c7dd9c45a499639f3e8065ea9 87496 misc optional ros-humble-rcutils_2-2024.10.21.16.26_amd64.deb

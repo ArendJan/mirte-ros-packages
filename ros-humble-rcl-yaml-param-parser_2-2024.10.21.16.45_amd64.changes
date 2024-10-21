@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rcl-yaml-param-parser
+Binary: ros-humble-rcl-yaml-param-parser
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.45
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rcl-yaml-param-parser - Parse a YAML parameter file and populate the C data structure.
+Changes:
+ ros-humble-rcl-yaml-param-parser (2-2024.10.21.16.45) jammy; urgency=high
+ .
+   * Generate version header using ament_generate_version_header(..) (backport #1141 <https://github.com/ros2/rcl/issues/1141>) (#1145 <https://github.com/ros2/rcl/issues/1145>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ d1ff0b40810db28e09c574c4ac6c3be94c2a73ef 43594 ros-humble-rcl-yaml-param-parser-dbgsym_2-2024.10.21.16.45_amd64.ddeb
+ cdcb4910a3aab7f22a8cd342636cd2d75ccf3041 12494 ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.buildinfo
+ 750b4e99a0a97c6275c8aa17486df53be2ba66b2 29616 ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.deb
+Checksums-Sha256:
+ 4ca4cd1cbd755bc31c48a9fead6eeb3c3345da24875e680bc2682b75b75ebd37 43594 ros-humble-rcl-yaml-param-parser-dbgsym_2-2024.10.21.16.45_amd64.ddeb
+ 4aee64131eecd21f91856c8b04fa4095621fd4df83943a0151d9035fcde928fe 12494 ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.buildinfo
+ 1231e70c7f46e35cef502df8733c914fe3846465b83dce8d77296307d4436c7d 29616 ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.deb
+Files:
+ f55068f741f813900ab2f2d097659558 43594 debug optional ros-humble-rcl-yaml-param-parser-dbgsym_2-2024.10.21.16.45_amd64.ddeb
+ 72918d6068e1dde07ed6837e6e32d888 12494 misc optional ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.buildinfo
+ 42ecddfbb246ad82c9ccdf7e5a035ba1 29616 misc optional ros-humble-rcl-yaml-param-parser_2-2024.10.21.16.45_amd64.deb

@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 11 Sep 2024 00:00:00 -0000
+Source: ros-humble-effort-controllers
+Binary: ros-humble-effort-controllers
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.19.06
+Distribution: jammy
+Urgency: high
+Maintainer: Bence Magyar <bence.magyar.robotics@gmail.com>
+Changed-By: Bence Magyar <bence.magyar.robotics@gmail.com>
+Description:
+ ros-humble-effort-controllers - Generic controller for forwarding commands.
+Changes:
+ ros-humble-effort-controllers (2-2024.10.21.19.06) jammy; urgency=high
+Checksums-Sha1:
+ 30b4bbac85d73056df56f4e79cec01af9c4001b5 258390 ros-humble-effort-controllers-dbgsym_2-2024.10.21.19.06_amd64.ddeb
+ 0df775405671aaa3e0447ef4753a8000ea2fb037 17027 ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.buildinfo
+ 5916d3cba7d0648ea1cb4f7260c3e274db05fe03 21086 ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.deb
+Checksums-Sha256:
+ 8d2bd7bcecb750e9aa0fc13206b3a0b8d68481593432c370c49968e6fb1e74e7 258390 ros-humble-effort-controllers-dbgsym_2-2024.10.21.19.06_amd64.ddeb
+ f86619145c9e855434c03f6e66db3e5b0b18cd879ac12fe318584e6d819db4b8 17027 ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.buildinfo
+ 9dcd45107a691f4354322ad8364f7f2165f6f37ac51efaef5078ea3a1657071c 21086 ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.deb
+Files:
+ 787d30bf896234de5e5790578c73d44b 258390 debug optional ros-humble-effort-controllers-dbgsym_2-2024.10.21.19.06_amd64.ddeb
+ c39b65b93f5f8a3b7b62683930795a18 17027 misc optional ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.buildinfo
+ 73cba975fe3447d5c73a0f36a6490006 21086 misc optional ros-humble-effort-controllers_2-2024.10.21.19.06_amd64.deb

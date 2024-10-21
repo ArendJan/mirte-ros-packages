@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 21 May 2024 00:00:00 -0000
+Source: ros-humble-std-srvs
+Binary: ros-humble-std-srvs
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.01
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-std-srvs - A package containing some standard service definitions.
+Changes:
+ ros-humble-std-srvs (2-2024.10.21.18.01) jammy; urgency=high
+Checksums-Sha1:
+ 7a61d01379d2edfc14a735d40b23d34f5a3b0837 297710 ros-humble-std-srvs-dbgsym_2-2024.10.21.18.01_amd64.ddeb
+ 1dc0c2d8cc5e65d85c73dc2235d10c100f70f84b 13711 ros-humble-std-srvs_2-2024.10.21.18.01_amd64.buildinfo
+ 3e678bb686aeff35b0bd810d0036e7aaabc781e7 61522 ros-humble-std-srvs_2-2024.10.21.18.01_amd64.deb
+Checksums-Sha256:
+ 58a5780dd73b73ed4ac5ed96f12937935e888f793be0427198646b1948087f8e 297710 ros-humble-std-srvs-dbgsym_2-2024.10.21.18.01_amd64.ddeb
+ 88d91d5befd2af5b528f5c9ef21630e92aeec9a2ce3c3fde4102880c2533e929 13711 ros-humble-std-srvs_2-2024.10.21.18.01_amd64.buildinfo
+ 0822f53c5893c2896acb0a4f8ac649be66ac8155c79dcbfc09cc6317e173faa8 61522 ros-humble-std-srvs_2-2024.10.21.18.01_amd64.deb
+Files:
+ a2d92b52a62e65000d934ede2409c1a1 297710 debug optional ros-humble-std-srvs-dbgsym_2-2024.10.21.18.01_amd64.ddeb
+ f606931b008ff758bc4af743bb86721b 13711 misc optional ros-humble-std-srvs_2-2024.10.21.18.01_amd64.buildinfo
+ f309e62449e74f23ce59d70610a61c7f 61522 misc optional ros-humble-std-srvs_2-2024.10.21.18.01_amd64.deb

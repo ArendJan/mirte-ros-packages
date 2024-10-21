@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2node
+Binary: ros-humble-ros2node
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.53
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2node - The node command for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2node (2-2024.10.21.18.53) jammy; urgency=high
+Checksums-Sha1:
+ c32e0134bb9ed09fb54cee4487298580eb4cf9e6 14865 ros-humble-ros2node_2-2024.10.21.18.53_amd64.buildinfo
+ 62287b43198b1fcfe04ce24949aac2639bbb0842 13550 ros-humble-ros2node_2-2024.10.21.18.53_amd64.deb
+Checksums-Sha256:
+ c03d0a02eb8e90bb19863e0a782ddd29839c6c5193c535f08e3cfb6ccce973fd 14865 ros-humble-ros2node_2-2024.10.21.18.53_amd64.buildinfo
+ 046bb18680c47dcbd2a725cd8aaa71d9283452591c5c0f8d91261510add751b7 13550 ros-humble-ros2node_2-2024.10.21.18.53_amd64.deb
+Files:
+ cd0e5bd8438825a72b87d55f1dfc2b59 14865 misc optional ros-humble-ros2node_2-2024.10.21.18.53_amd64.buildinfo
+ 0149697f8e140211559a0eeac243bd0b 13550 misc optional ros-humble-ros2node_2-2024.10.21.18.53_amd64.deb

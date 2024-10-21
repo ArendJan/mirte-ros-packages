@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-lint-common
+Binary: ros-humble-ament-lint-common
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.54
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-lint-common - The list of commonly used linters in the ament build system in CM
+Changes:
+ ros-humble-ament-lint-common (2-2024.10.21.15.54) jammy; urgency=high
+Checksums-Sha1:
+ f805c062b1b30371364786644d41c64e23666707 8189 ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.buildinfo
+ 44fd7d1cb3f5372d5bcaf1589988668f810f2332 8090 ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.deb
+Checksums-Sha256:
+ 298b45d47789d98761ed08b0acbabc48836fe26dff8de201e07cc4798f0db73a 8189 ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.buildinfo
+ 0b69815e3f2d99d75dc73b6bf1551c6307fb5fe240804728e771449394f3a2c2 8090 ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.deb
+Files:
+ 88c8fe98b5c1c50f82e6cb053c3d9bbb 8189 misc optional ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.buildinfo
+ d88d2aa932cb33deb8ff00fe72d40665 8090 misc optional ros-humble-ament-lint-common_2-2024.10.21.15.54_amd64.deb

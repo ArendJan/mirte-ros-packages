@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-adapter
+Binary: ros-humble-rosidl-adapter
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.37
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-adapter - API and scripts to parse .msg/.srv/.action files and convert them
+Changes:
+ ros-humble-rosidl-adapter (2-2024.10.21.16.37) jammy; urgency=high
+Checksums-Sha1:
+ 068061b78d32ad7ff510849342d09edee2c3f28d 10810 ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.buildinfo
+ a3bc939dc005c1c5b13f3f0496e5848f798c7d5a 19036 ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.deb
+Checksums-Sha256:
+ 2f2fe5d8cc705797d4299ca411b450a2fc90a599e066a5c0808ead8e143761a1 10810 ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.buildinfo
+ d598b1d7dba2826a7f2132b6108bea3bfd942255e5b487b0e97bfb1cdc2c2e72 19036 ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.deb
+Files:
+ 2203576e8cfef5ec76951af04f7fb796 10810 misc optional ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.buildinfo
+ 3793abe78530077271701ecf1973e4fe 19036 misc optional ros-humble-rosidl-adapter_2-2024.10.21.16.37_amd64.deb

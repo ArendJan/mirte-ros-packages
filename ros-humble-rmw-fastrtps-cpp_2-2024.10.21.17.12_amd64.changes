@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-rmw-fastrtps-cpp
+Binary: ros-humble-rmw-fastrtps-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.12
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rmw-fastrtps-cpp - Implement the ROS middleware interface using eProsima FastRTPS st
+Changes:
+ ros-humble-rmw-fastrtps-cpp (2-2024.10.21.17.12) jammy; urgency=high
+Checksums-Sha1:
+ d014b4420ee2a1553a42931ad8f307e406facd1e 2880284 ros-humble-rmw-fastrtps-cpp-dbgsym_2-2024.10.21.17.12_amd64.ddeb
+ 7645766f3dc53db5aeb62c760fc63652d46a5907 14515 ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.buildinfo
+ 0aabfa1cb31d97eea4cfa712f8929d5ae4c87e03 90572 ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.deb
+Checksums-Sha256:
+ f65d9dba3f7377c0c7cfae500347086395b68e491f69b35dfe6dc21995fbfdfc 2880284 ros-humble-rmw-fastrtps-cpp-dbgsym_2-2024.10.21.17.12_amd64.ddeb
+ 235ec333f1dd27bd60b27e6d15400ec07779c758c8063d80cb11e096a58df557 14515 ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.buildinfo
+ 26a8d57e8b19c4c61c72e36dafa979eb337c4ceb60b52e7ff7854c1371d09499 90572 ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.deb
+Files:
+ ec7434f0b5fe68bf6b8e902b5de2bc89 2880284 debug optional ros-humble-rmw-fastrtps-cpp-dbgsym_2-2024.10.21.17.12_amd64.ddeb
+ 53710e56a059d7e0a7c1b25348707a54 14515 misc optional ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.buildinfo
+ 49afac0d49a42daa56a3e2fa2b684aa9 90572 misc optional ros-humble-rmw-fastrtps-cpp_2-2024.10.21.17.12_amd64.deb

@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Mon, 07 Nov 2022 00:00:00 -0000
+Source: ros-humble-rcl-logging-spdlog
+Binary: ros-humble-rcl-logging-spdlog
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.19
+Distribution: jammy
+Urgency: high
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Changed-By: Chris Lalancette <clalancette@openrobotics.org>
+Description:
+ ros-humble-rcl-logging-spdlog - Implementation of rcl_logging API for an spdlog backend.
+Changes:
+ ros-humble-rcl-logging-spdlog (2-2024.10.21.17.19) jammy; urgency=high
+ .
+   * ament_export_dependencies any package with targets we linked against (#89 <https://github.com/ros2/rcl_logging/issues/89>) (#90 <https://github.com/ros2/rcl_logging/issues/90>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 84e8e63dda39452ca5afd42a543eb2a4dad07353 100782 ros-humble-rcl-logging-spdlog-dbgsym_2-2024.10.21.17.19_amd64.ddeb
+ fec3d2aa00630e87cab398455ed731f4df10f087 12359 ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.buildinfo
+ 2f0a9a3a4a0d59b8074bd12a8cfab830a431603c 17402 ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.deb
+Checksums-Sha256:
+ edc867a1661ae1702e103269b70790665dedf978a4f5f884e4bd982f9afddedc 100782 ros-humble-rcl-logging-spdlog-dbgsym_2-2024.10.21.17.19_amd64.ddeb
+ 36eb6c691fbb24eb80b204bee83520237d38e790b7827555e885c71ac1450b59 12359 ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.buildinfo
+ f0e7a9b7b561d5451a73b93867b6a4ba6a09e6df94c3aa75aec37f31b9a09097 17402 ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.deb
+Files:
+ 1657075a9da4625461d1901208ce5dbe 100782 debug optional ros-humble-rcl-logging-spdlog-dbgsym_2-2024.10.21.17.19_amd64.ddeb
+ 8afbbc0fd1fa810e78cd379818cdb129 12359 misc optional ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.buildinfo
+ 803cdb9d938bf47a752e3509ded8aea0 17402 misc optional ros-humble-rcl-logging-spdlog_2-2024.10.21.17.19_amd64.deb

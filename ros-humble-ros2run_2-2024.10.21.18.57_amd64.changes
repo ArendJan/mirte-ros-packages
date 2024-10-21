@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ros2run
+Binary: ros-humble-ros2run
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.57
+Distribution: jammy
+Urgency: high
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Changed-By: Aditya Pande <aditya.pande@openrobotics.org>
+Description:
+ ros-humble-ros2run - The run command for ROS 2 command line tools.
+Changes:
+ ros-humble-ros2run (2-2024.10.21.18.57) jammy; urgency=high
+Checksums-Sha1:
+ 05315d2aa0a07ecd8a7921bf7b10cf2c710abdc5 14316 ros-humble-ros2run_2-2024.10.21.18.57_amd64.buildinfo
+ 473d3629498e3c82028de1f5c93c71ee164d4e98 9138 ros-humble-ros2run_2-2024.10.21.18.57_amd64.deb
+Checksums-Sha256:
+ c51f48f13942b4ba60addadb778a0b14217985bab6bc093db378bb09cd44c1ec 14316 ros-humble-ros2run_2-2024.10.21.18.57_amd64.buildinfo
+ 7ae43940a2322b80eb09f768ee828014cdc5b2c6422190d103eb1bbabb485d92 9138 ros-humble-ros2run_2-2024.10.21.18.57_amd64.deb
+Files:
+ 44f9a2452a8362ce973acf9859ce15ca 14316 misc optional ros-humble-ros2run_2-2024.10.21.18.57_amd64.buildinfo
+ 1a3347b7005c6ac3f263cf2149cbd96e 9138 misc optional ros-humble-ros2run_2-2024.10.21.18.57_amd64.deb

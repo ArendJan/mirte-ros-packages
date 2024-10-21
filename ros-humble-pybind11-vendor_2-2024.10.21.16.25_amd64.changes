@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 06 Dec 2022 00:00:00 -0000
+Source: ros-humble-pybind11-vendor
+Binary: ros-humble-pybind11-vendor
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.25
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Changed-By: Shane Loretz <sloretz@openrobotics.org>
+Description:
+ ros-humble-pybind11-vendor - Wrapper around pybind11.
+Changes:
+ ros-humble-pybind11-vendor (2-2024.10.21.16.25) jammy; urgency=high
+ .
+   * Add missing buildtool dependency on git (#20 <https://github.com/ros2/pybind11_vendor/issues/20>)
+   * Contributors: Scott K Logan
+Checksums-Sha1:
+ e20d2a8278951b2b5f238c6f5e433a05378fcf03 9155 ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.buildinfo
+ c53958f7b3e4e7b57e335cde132551a533d2f9e3 5458 ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.deb
+Checksums-Sha256:
+ e6dace4533e0352774a793b290d1c7b63664ffc538b7acb4a002b560c3f00178 9155 ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.buildinfo
+ eb8c3c9954719a16d1ee3ee343bcd6997c6a57ef24403f3bd14dfc73db8e0984 5458 ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.deb
+Files:
+ f5b9b4b8355125d8d639e0b6396548fd 9155 misc optional ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.buildinfo
+ 762f97ae3173c42fe6d0f71e498133a7 5458 misc optional ros-humble-pybind11-vendor_2-2024.10.21.16.25_amd64.deb

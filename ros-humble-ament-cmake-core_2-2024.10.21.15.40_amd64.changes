@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Thu, 26 Sep 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-core
+Binary: ros-humble-ament-cmake-core
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.40
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-core - The core of the ament buildsystem in CMake.
+Changes:
+ ros-humble-ament-cmake-core (2-2024.10.21.15.40) jammy; urgency=high
+ .
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ ce55959c6237559f4c9af4ff118ac891d655ba16 8008 ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.buildinfo
+ 281ca0225ba2256d411cbf85147e1d04b24867c1 38842 ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.deb
+Checksums-Sha256:
+ 4df66256ead3d504e6b92b390a9c6bfe5513e93fcbb6a1d8a1759758b008c090 8008 ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.buildinfo
+ 17f20b8caa19b8f00c938c3bdbed62436552a2f94f89405b60d789ed30899f5e 38842 ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.deb
+Files:
+ 26954c3109f821573264dc2b8a4a993d 8008 misc optional ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.buildinfo
+ 03bbf7d292316682679705fe0d3f3cc7 38842 misc optional ros-humble-ament-cmake-core_2-2024.10.21.15.40_amd64.deb

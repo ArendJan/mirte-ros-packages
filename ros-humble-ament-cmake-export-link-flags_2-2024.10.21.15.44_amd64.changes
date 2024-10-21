@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-export-link-flags
+Binary: ros-humble-ament-cmake-export-link-flags
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.44
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-export-link-flags - The ability to export link flags to downstream packages in the am
+Changes:
+ ros-humble-ament-cmake-export-link-flags (2-2024.10.21.15.44) jammy; urgency=high
+Checksums-Sha1:
+ 6f8d7111b2e86efcc3c5e0927370ca16c9f9d7eb 8123 ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.buildinfo
+ b3a640dea74610f17933f77c89b48a64298ae633 6752 ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.deb
+Checksums-Sha256:
+ fdc38c634df0f7a6ce2613d10c84e5288c93b2f26c6a8733b08d0fea3112bfe0 8123 ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.buildinfo
+ b178dc3e0d85c31488a9ba3a54428aafe0731f143890868aeb3dc56f40681399 6752 ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.deb
+Files:
+ 32a1bc7f7d22caaad26e5cd2fb411e64 8123 misc optional ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.buildinfo
+ 08ca5b6d7e5f59ab75c8f89586b31733 6752 misc optional ros-humble-ament-cmake-export-link-flags_2-2024.10.21.15.44_amd64.deb

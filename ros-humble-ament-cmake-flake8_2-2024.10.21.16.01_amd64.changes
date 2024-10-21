@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-flake8
+Binary: ros-humble-ament-cmake-flake8
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.01
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-flake8 - The CMake API for ament_flake8 to check code syntax and style con
+Changes:
+ ros-humble-ament-cmake-flake8 (2-2024.10.21.16.01) jammy; urgency=high
+Checksums-Sha1:
+ 7f2d684e47e2c4849c34f5b2f1225fea9a69e90a 8390 ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.buildinfo
+ 459c109c074f55d33b013dcd2c71f4d87b85fb23 7746 ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.deb
+Checksums-Sha256:
+ 0668fba822b96e3eaad0aac252426e0aebf27a12da230cd74e2bfd8e372b8cdf 8390 ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.buildinfo
+ cb75a99fc2db4c916c85f1620b5d3c7e30f5eb37af35b90455aa85f9ed13d0a2 7746 ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.deb
+Files:
+ 4b9ee8d3b352bf9d83198e28b0ed247d 8390 misc optional ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.buildinfo
+ 73f6d44af896694303544dba4326e8b6 7746 misc optional ros-humble-ament-cmake-flake8_2-2024.10.21.16.01_amd64.deb

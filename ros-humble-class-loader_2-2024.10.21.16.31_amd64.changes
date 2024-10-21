@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Fri, 14 Jan 2022 00:00:00 -0000
+Source: ros-humble-class-loader
+Binary: ros-humble-class-loader
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.31
+Distribution: jammy
+Urgency: high
+Maintainer: Geoffrey Biggs <geoff@openrobotics.org>
+Changed-By: Geoffrey Biggs <geoff@openrobotics.org>
+Description:
+ ros-humble-class-loader - The class_loader package is a ROS-independent package for loading
+Changes:
+ ros-humble-class-loader (2-2024.10.21.16.31) jammy; urgency=high
+ .
+   * Install includes to include/ (#191 <https://github.com/ros/class_loader/issues/191>)
+   * Fix include order for cpplint (#192 <https://github.com/ros/class_loader/issues/192>)
+   * Update maintainers to Geoffrey Biggs and Michael Carroll (#190 <https://github.com/ros/class_loader/issues/190>)
+   * Fix spelling mistake (#184 <https://github.com/ros/class_loader/issues/184>)
+   * Contributors: Audrow Nash, David V. Lu!!, Jacob Perron, Shane Loretz
+Checksums-Sha1:
+ 1988e616ee9836842ca9b529cf3f55376b113a93 293186 ros-humble-class-loader-dbgsym_2-2024.10.21.16.31_amd64.ddeb
+ 7e22afcdb3a2c028ffa8b030909bdab8b86902cf 11850 ros-humble-class-loader_2-2024.10.21.16.31_amd64.buildinfo
+ 21e1b7884a1353cc4ae6799e2c852d31d93db1d8 47156 ros-humble-class-loader_2-2024.10.21.16.31_amd64.deb
+Checksums-Sha256:
+ 66af8b48fefbb7228cc16c12a0fa1f58c0259287698a268fdf439a353f4fe0a4 293186 ros-humble-class-loader-dbgsym_2-2024.10.21.16.31_amd64.ddeb
+ 9c2a032f50e55d5dd61d5444ee2cfb60040eddd1352c469efb9750aa9f55cc9f 11850 ros-humble-class-loader_2-2024.10.21.16.31_amd64.buildinfo
+ 9937528105c172a1351e8b8620f4a3cbeb8df69cb32b42a29199e4636767402c 47156 ros-humble-class-loader_2-2024.10.21.16.31_amd64.deb
+Files:
+ aaca83cf75effcbeb4056a22d14ab1da 293186 debug optional ros-humble-class-loader-dbgsym_2-2024.10.21.16.31_amd64.ddeb
+ ff591b1b89bbf8f06445aa9300238f1b 11850 misc optional ros-humble-class-loader_2-2024.10.21.16.31_amd64.buildinfo
+ f3b4bb8dfd0163018bfdbc703d4d01ec 47156 misc optional ros-humble-class-loader_2-2024.10.21.16.31_amd64.deb

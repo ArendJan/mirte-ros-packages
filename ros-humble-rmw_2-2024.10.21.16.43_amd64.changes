@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-rmw
+Binary: ros-humble-rmw
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.43
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rmw - Contains the ROS middleware API.
+Changes:
+ ros-humble-rmw (2-2024.10.21.16.43) jammy; urgency=high
+ .
+   * rmw_send_reqponse returns RMW_RET_TIMEOUT. (#350 <https://github.com/ros2/rmw/issues/350>) (#367 <https://github.com/ros2/rmw/issues/367>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ f1dee74206088280dcbb73a4f838521fbab3f90b 34018 ros-humble-rmw-dbgsym_2-2024.10.21.16.43_amd64.ddeb
+ 17464a1d7f4fef32c3972285a21eff98abbe8ac7 11776 ros-humble-rmw_2-2024.10.21.16.43_amd64.buildinfo
+ 7ee44fe39e3652bde97cda61542c77b7442432bf 67204 ros-humble-rmw_2-2024.10.21.16.43_amd64.deb
+Checksums-Sha256:
+ 43e1d57f0d848f265c700fdd6d4e4b97b3284687cfe20231ff056f3ba17b486d 34018 ros-humble-rmw-dbgsym_2-2024.10.21.16.43_amd64.ddeb
+ 895e7afa0db86ae2144f7cfbd74c8726a88e6ecce481828c08661fef8acf4fbe 11776 ros-humble-rmw_2-2024.10.21.16.43_amd64.buildinfo
+ a08df9185c8482a78e58a4f41baf77700f47b5300fb655c07253eccce12aa50e 67204 ros-humble-rmw_2-2024.10.21.16.43_amd64.deb
+Files:
+ 62ec889d45f83600bd8594b7c4097c06 34018 debug optional ros-humble-rmw-dbgsym_2-2024.10.21.16.43_amd64.ddeb
+ de78c9c7b850b2615ccdaf7ee158e643 11776 misc optional ros-humble-rmw_2-2024.10.21.16.43_amd64.buildinfo
+ 59ac320e06cf5714c3b2445e76d65b74 67204 misc optional ros-humble-rmw_2-2024.10.21.16.43_amd64.deb

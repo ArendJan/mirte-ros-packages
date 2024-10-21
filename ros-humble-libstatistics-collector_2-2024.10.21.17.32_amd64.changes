@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-libstatistics-collector
+Binary: ros-humble-libstatistics-collector
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.17.32
+Distribution: jammy
+Urgency: high
+Maintainer: ROS Tooling Working Group <ros-tooling@googlegroups.com>
+Changed-By: ROS Tooling Working Group <ros-tooling@googlegroups.com>
+Description:
+ ros-humble-libstatistics-collector - Lightweight aggregation utilities to collect statistics and measu
+Changes:
+ ros-humble-libstatistics-collector (2-2024.10.21.17.32) jammy; urgency=high
+ .
+   * Add in missing cstdint include. (#165 <https://github.com/ros-tooling/libstatistics_collector/issues/165>) (#197 <https://github.com/ros-tooling/libstatistics_collector/issues/197>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 5c8b103d5100ac2d64e00ac0980d869e0750cced 96510 ros-humble-libstatistics-collector-dbgsym_2-2024.10.21.17.32_amd64.ddeb
+ 30c0c5dd87ed98a3686040a2769254ad375f235a 15695 ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.buildinfo
+ c90293fb889532503777d81db7eeb0ad99616260 25280 ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.deb
+Checksums-Sha256:
+ 1bef425b4e6b1138363ae5e7b4dbe7b1b326c16ca48feb13184cae76309eae4b 96510 ros-humble-libstatistics-collector-dbgsym_2-2024.10.21.17.32_amd64.ddeb
+ caed815376cf9cbf779035cd1ed66b47c87913e632194d75fee2328090c18329 15695 ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.buildinfo
+ e884bcbae303f0f753e2788c28b238f38150a21889051e18ea8f4c08d32208af 25280 ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.deb
+Files:
+ c963d1045b4a4a0a55aaee3df16426ab 96510 debug optional ros-humble-libstatistics-collector-dbgsym_2-2024.10.21.17.32_amd64.ddeb
+ 1ca3bcfcda783da68bda7dc9116d7c6a 15695 misc optional ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.buildinfo
+ 8bfce91e6d2494bbce57bd5ead5f8597 25280 misc optional ros-humble-libstatistics-collector_2-2024.10.21.17.32_amd64.deb

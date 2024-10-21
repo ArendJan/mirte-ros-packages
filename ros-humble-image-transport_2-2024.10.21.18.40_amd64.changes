@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Tue, 26 Mar 2024 00:00:00 -0000
+Source: ros-humble-image-transport
+Binary: ros-humble-image-transport
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.18.40
+Distribution: jammy
+Urgency: high
+Maintainer: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Changed-By: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Description:
+ ros-humble-image-transport - image_transport should always be used to subscribe to and publish
+Changes:
+ ros-humble-image-transport (2-2024.10.21.18.40) jammy; urgency=high
+ .
+   * backport whitelist feature to humble (#302 <https://github.com/ros-perception/image_common/issues/302>)
+   * Contributors: Kenji Brameld
+Checksums-Sha1:
+ 5d46ca880437ea9def2e3809db5877af0b7ae7d3 8462932 ros-humble-image-transport-dbgsym_2-2024.10.21.18.40_amd64.ddeb
+ ca1d6d7eea5bc4495e7f6a8b5255af91e30a4445 16227 ros-humble-image-transport_2-2024.10.21.18.40_amd64.buildinfo
+ 3228f78828fee47acab4ab72704ec90014d1834d 401594 ros-humble-image-transport_2-2024.10.21.18.40_amd64.deb
+Checksums-Sha256:
+ b454de6c3b3bc907d27b5ba679cccf46913f53b0a6cf0e254cf200181421dfb0 8462932 ros-humble-image-transport-dbgsym_2-2024.10.21.18.40_amd64.ddeb
+ 63a7662f40e2f93a4da060bc5cc4a77d2da0377f4652fdb6ffd540e346b7fc79 16227 ros-humble-image-transport_2-2024.10.21.18.40_amd64.buildinfo
+ 12af0ef6e82bfe1a293c2ea633476235fa9407d1b916490a97a965e4c3c68614 401594 ros-humble-image-transport_2-2024.10.21.18.40_amd64.deb
+Files:
+ 353b97ea9341a607787ebe72cf3b8f76 8462932 debug optional ros-humble-image-transport-dbgsym_2-2024.10.21.18.40_amd64.ddeb
+ 796ab3a5e8cc4196a3188b7cfb4b7f2a 16227 misc optional ros-humble-image-transport_2-2024.10.21.18.40_amd64.buildinfo
+ 2bbb8919ee93b9148d2e6ece364aafd2 401594 misc optional ros-humble-image-transport_2-2024.10.21.18.40_amd64.deb

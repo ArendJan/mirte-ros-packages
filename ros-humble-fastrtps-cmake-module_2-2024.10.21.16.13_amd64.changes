@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Mon, 13 Nov 2023 00:00:00 -0000
+Source: ros-humble-fastrtps-cmake-module
+Binary: ros-humble-fastrtps-cmake-module
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.13
+Distribution: jammy
+Urgency: high
+Maintainer: Shane Loretz <shane@openrobotics.org>
+Changed-By: Shane Loretz <shane@openrobotics.org>
+Description:
+ ros-humble-fastrtps-cmake-module - Provide CMake module to find eProsima FastRTPS.
+Changes:
+ ros-humble-fastrtps-cmake-module (2-2024.10.21.16.13) jammy; urgency=high
+Checksums-Sha1:
+ 51901478f486498e2ea1d2c3f13e8fb3f919c092 10574 ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.buildinfo
+ 201c7c3801121877a06640536bdfc18d2fae2099 6848 ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.deb
+Checksums-Sha256:
+ 9ed6edfc1821189efc88050be60c3bfed01f1f0dd37fd2d21158fa8a99b5c9a5 10574 ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.buildinfo
+ ef04fe6363d0332e4750ce0fffd7abdfb9221cff7a9bda6499bae5e7e977c5f4 6848 ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.deb
+Files:
+ 472052d1a31d687da0bac0bef664e6b9 10574 misc optional ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.buildinfo
+ 7b8a345c45022234d8689fd636dcd791 6848 misc optional ros-humble-fastrtps-cmake-module_2-2024.10.21.16.13_amd64.deb

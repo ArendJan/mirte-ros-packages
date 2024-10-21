@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-test
+Binary: ros-humble-ament-cmake-test
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.51
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-test - The ability to add tests in the ament buildsystem in CMake.
+Changes:
+ ros-humble-ament-cmake-test (2-2024.10.21.15.51) jammy; urgency=high
+Checksums-Sha1:
+ 6591428b8b11ddf804c400a74e61dc0b0f239549 8116 ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.buildinfo
+ 23bfbce386d2a2ffe724fde66e51c3143f6d130d 16548 ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.deb
+Checksums-Sha256:
+ e56c2c97cbe712a26b3844ea2b42e37e73d3a174d4df38f2ac90707e3a22011b 8116 ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.buildinfo
+ 37dd0c39c29769f8ebc81b88e5cbe1712043135f99a3055e04571f621f81addb 16548 ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.deb
+Files:
+ eecb76ae6283c3bdc42377306632214e 8116 misc optional ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.buildinfo
+ a1733c48aef4b75f75901e39c3268dc1 16548 misc optional ros-humble-ament-cmake-test_2-2024.10.21.15.51_amd64.deb

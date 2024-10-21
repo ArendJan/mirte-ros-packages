@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Thu, 13 Jan 2022 00:00:00 -0000
+Source: ros-humble-ament-cmake-ros
+Binary: ros-humble-ament-cmake-ros
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.10
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-ament-cmake-ros - The ROS specific CMake bits in the ament buildsystem.
+Changes:
+ ros-humble-ament-cmake-ros (2-2024.10.21.16.10) jammy; urgency=high
+ .
+   * Refactor domain_coordinator API to use a context manager (#12 <https://github.com/ros2/ament_cmake_ros/issues/12>)
+   * Contributors: Timo Röhling
+Checksums-Sha1:
+ b35d83c4e9d512282b7f2b59d07f2f2dace0b26a 10599 ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.buildinfo
+ 1bdbf81712fcd639e43098c5f9a27666883a6afa 7840 ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.deb
+Checksums-Sha256:
+ 33717354ba89c1f3f359cc724ecba627377095a656fb21f454c7fda702bb9742 10599 ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.buildinfo
+ 783652174ac08b7140cb1dfa850e72641280e4423d24da59270711c513e96f6b 7840 ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.deb
+Files:
+ be43bc644e2af2a13cdf6f03f7cadc59 10599 misc optional ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.buildinfo
+ ad9c4114aefc3bbe9b6189466d5ba01a 7840 misc optional ros-humble-ament-cmake-ros_2-2024.10.21.16.10_amd64.deb

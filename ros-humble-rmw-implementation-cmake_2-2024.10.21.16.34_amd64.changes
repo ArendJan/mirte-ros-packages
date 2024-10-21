@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-rmw-implementation-cmake
+Binary: ros-humble-rmw-implementation-cmake
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.34
+Distribution: jammy
+Urgency: high
+Maintainer: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Changed-By: Ivan Paunovic <ivanpauno@ekumenlabs.com>
+Description:
+ ros-humble-rmw-implementation-cmake - CMake functions which can discover and enumerate available implem
+Changes:
+ ros-humble-rmw-implementation-cmake (2-2024.10.21.16.34) jammy; urgency=high
+Checksums-Sha1:
+ 5e00ce64f15e9cd3eddafe61b648b037a3229bd2 10589 ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.buildinfo
+ b6db3f1aaccc76dd1b27e4a1c74d38e56683b064 8526 ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.deb
+Checksums-Sha256:
+ 84fc6e3625cf626335528aefe3500b07de9bfa99384ef6ecc8b8d69cc133e623 10589 ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.buildinfo
+ 4928a4b7f2059de037878e34d69f34a016dbab522f357acd3e5c10d84cfd3e59 8526 ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.deb
+Files:
+ f7463c734a40355f9f0f96c0ac601b18 10589 misc optional ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.buildinfo
+ 705639603bea348222128f8b5f31c217 8526 misc optional ros-humble-rmw-implementation-cmake_2-2024.10.21.16.34_amd64.deb

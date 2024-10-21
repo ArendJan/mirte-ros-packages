@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-copyright
+Binary: ros-humble-ament-cmake-copyright
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.59
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-copyright - The CMake API for ament_copyright to check every source file cont
+Changes:
+ ros-humble-ament-cmake-copyright (2-2024.10.21.15.59) jammy; urgency=high
+Checksums-Sha1:
+ 0f5778796eebdf95d9b087d944c94006cdd2e2c2 8347 ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.buildinfo
+ 1419c39f89318b28548f5f1b49ffb0078e6a3bb3 7932 ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.deb
+Checksums-Sha256:
+ 9587f07626b9fcf7aa13084800dd1f3d2546f8023b5d3bd4f5d37e54812cf66a 8347 ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.buildinfo
+ 4057992f527d623f27ce6f98430c37a6ffd755ed14d027cbc49f5880e4925104 7932 ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.deb
+Files:
+ eb83923869b019ce693df7a111dd6029 8347 misc optional ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.buildinfo
+ 20568adfd419e8746bdb3dd6d138c358 7932 misc optional ros-humble-ament-cmake-copyright_2-2024.10.21.15.59_amd64.deb

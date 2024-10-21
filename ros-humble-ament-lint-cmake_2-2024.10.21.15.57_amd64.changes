@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Wed, 15 May 2024 00:00:00 -0000
+Source: ros-humble-ament-lint-cmake
+Binary: ros-humble-ament-lint-cmake
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.15.57
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-lint-cmake - The ability to lint CMake code using cmakelint and generate xUnit
+Changes:
+ ros-humble-ament-lint-cmake (2-2024.10.21.15.57) jammy; urgency=high
+Checksums-Sha1:
+ e951bdfd42c64a3c422a5baecdda42b3c64540a5 7448 ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.buildinfo
+ 80329fb09c50523763868ad648a892945c3e2c61 21728 ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.deb
+Checksums-Sha256:
+ 2fbdbd69730d8df640c0c92840e8129b301def700c8293f82f2a231b8f1cc77b 7448 ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.buildinfo
+ 04a3d103e6b6882338959d96c60b318b5a2eb9ad074b8453f7b0d25338697531 21728 ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.deb
+Files:
+ 509b54b4382fa7ffe90ba883b949a979 7448 misc optional ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.buildinfo
+ 8878e40f6b2782021457286e81bcec1c 21728 misc optional ros-humble-ament-lint-cmake_2-2024.10.21.15.57_amd64.deb

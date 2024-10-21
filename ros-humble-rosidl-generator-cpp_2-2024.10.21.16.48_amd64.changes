@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-generator-cpp
+Binary: ros-humble-rosidl-generator-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.48
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-generator-cpp - Generate the ROS interfaces in C++.
+Changes:
+ ros-humble-rosidl-generator-cpp (2-2024.10.21.16.48) jammy; urgency=high
+ .
+   * Merge pull request #752 <https://github.com/ros2/rosidl/issues/752> from ros2/mergify/bp/humble/pr-750
+   * Fix deprecation warnings for message constants (#750 <https://github.com/ros2/rosidl/issues/750>)
+   * Contributors: Emerson Knapp
+Checksums-Sha1:
+ 15f2c3363e5a28cf3be4e125d16edf4d2144914a 11772 ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.buildinfo
+ 7771107485955211c998b2243b59053528e28a53 20998 ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.deb
+Checksums-Sha256:
+ 8f07f0bae79c3ae6d12ead03dd3f273026f4c1ac8f190dc58eaa77a91c6c7390 11772 ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.buildinfo
+ 465659f97df1ed7980084a65f9304f88fab6ee9e22057d507f1c429a236ddccf 20998 ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.deb
+Files:
+ ecc99c1fc2df9e787a10e713caae6451 11772 misc optional ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.buildinfo
+ 9f13707b77aec49157d440d927116931 20998 misc optional ros-humble-rosidl-generator-cpp_2-2024.10.21.16.48_amd64.deb

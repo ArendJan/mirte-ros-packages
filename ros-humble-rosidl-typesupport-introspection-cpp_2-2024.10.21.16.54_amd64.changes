@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 18 Jul 2023 00:00:00 -0000
+Source: ros-humble-rosidl-typesupport-introspection-cpp
+Binary: ros-humble-rosidl-typesupport-introspection-cpp
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2-2024.10.21.16.54
+Distribution: jammy
+Urgency: high
+Maintainer: Michel Hidalgo <michel@ekumenlabs.com>
+Changed-By: Michel Hidalgo <michel@ekumenlabs.com>
+Description:
+ ros-humble-rosidl-typesupport-introspection-cpp - Generate the message type support for dynamic message constructio
+Changes:
+ ros-humble-rosidl-typesupport-introspection-cpp (2-2024.10.21.16.54) jammy; urgency=high
+ .
+   * Merge pull request #752 <https://github.com/ros2/rosidl/issues/752> from ros2/mergify/bp/humble/pr-750
+   * Fix deprecation warnings for message constants (#750 <https://github.com/ros2/rosidl/issues/750>)
+   * Contributors: Emerson Knapp
+Checksums-Sha1:
+ f53d4be2a3ecb8328534503a875f3b01e12a0a3b 2604 ros-humble-rosidl-typesupport-introspection-cpp-dbgsym_2-2024.10.21.16.54_amd64.ddeb
+ d304d13a45d4b00f632dca1a9a218ab46febd183 12907 ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.buildinfo
+ 336c0de8547ecc95c02026b8974e4e3ad8f52eb2 22394 ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.deb
+Checksums-Sha256:
+ 055fd2c61ce9713460a3fae6f4dc75f2fb8c91e5838508f29c095562cc35de33 2604 ros-humble-rosidl-typesupport-introspection-cpp-dbgsym_2-2024.10.21.16.54_amd64.ddeb
+ 266da6de138526b86f2235f039ffcb6edea2ace251bcd3e5399e1e6d9cdaf135 12907 ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.buildinfo
+ aa144ac4aecbd0ea3b44e053ffd6da7e9a6a2b56db89ad067e093b82db3268d6 22394 ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.deb
+Files:
+ 2c7342c89a099653f78b4b4ecb2f0e45 2604 debug optional ros-humble-rosidl-typesupport-introspection-cpp-dbgsym_2-2024.10.21.16.54_amd64.ddeb
+ f22a2526676bdad7bbac0c7c06c6d585 12907 misc optional ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.buildinfo
+ 20b22acc91c39c83875831e20c3898d8 22394 misc optional ros-humble-rosidl-typesupport-introspection-cpp_2-2024.10.21.16.54_amd64.deb
