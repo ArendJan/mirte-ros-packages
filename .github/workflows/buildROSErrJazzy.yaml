@@ -1,0 +1,31 @@
+on: [push]
+permissions:
+  contents: write
+jobs:
+  build_testing_jazzy:
+    runs-on: ubuntu-22.04
+    strategy:
+        matrix:
+                ros_distro: [jazzy]
+                deb_distro: [noble]
+                arch: [
+                        amd64, 
+                      #  armhf
+                ]
+        fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: rm -rf ./mirte* # don't want our packages to be in the way
+
+      - uses: jspricke/ros-deb-builder-action@main
+        with:
+          ROS_DISTRO: ${{ matrix.ros_distro }}
+          DEB_DISTRO: ${{ matrix.deb_distro }}
+          DEB_ARCH: ${{ matrix.arch }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOS_FILE: ./ros2_jazzy_sources.repos
+          SKIP_CHECKOUT: true
+          PACKAGES_BRANCH: ros_err_jazzy_amd64
+          
+

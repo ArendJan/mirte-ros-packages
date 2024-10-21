@@ -1,0 +1,545 @@
+repositories:
+  ament_cmake/ament_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_auto:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_auto/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_core:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_core/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_definitions:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_definitions/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_dependencies:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_dependencies/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_include_directories:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_include_directories/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_interfaces/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_libraries:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_libraries/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_link_flags:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_link_flags/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_export_targets:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_export_targets/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_gen_version_h:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_gen_version_h/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_gmock:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_gmock/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_google_benchmark:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_google_benchmark/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_gtest:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_gtest/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_include_directories:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_include_directories/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_libraries:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_libraries/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_pytest:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_pytest/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_python:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_python/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_target_dependencies:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_target_dependencies/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_test:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_test/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_vendor_package:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_vendor_package/2.5.2-1.tar.gz
+  ament_cmake/ament_cmake_version:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake-release/archive/release/jazzy/ament_cmake_version/2.5.2-1.tar.gz
+  ament_cmake_ros/ament_cmake_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake_ros-release/archive/release/jazzy/ament_cmake_ros/0.12.0-3.tar.gz
+  ament_cmake_ros/domain_coordinator:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_cmake_ros-release/archive/release/jazzy/domain_coordinator/0.12.0-3.tar.gz
+  ament_index/ament_index_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_index-release/archive/release/jazzy/ament_index_cpp/1.8.1-1.tar.gz
+  ament_index/ament_index_python:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_index-release/archive/release/jazzy/ament_index_python/1.8.1-1.tar.gz
+  ament_lint/ament_cmake_copyright:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_copyright/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_cppcheck:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_cppcheck/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_cpplint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_cpplint/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_flake8:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_flake8/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_lint_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_lint_cmake/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_pep257:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_pep257/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_uncrustify:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_uncrustify/0.17.1-1.tar.gz
+  ament_lint/ament_cmake_xmllint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cmake_xmllint/0.17.1-1.tar.gz
+  ament_lint/ament_copyright:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_copyright/0.17.1-1.tar.gz
+  ament_lint/ament_cppcheck:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cppcheck/0.17.1-1.tar.gz
+  ament_lint/ament_cpplint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_cpplint/0.17.1-1.tar.gz
+  ament_lint/ament_flake8:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_flake8/0.17.1-1.tar.gz
+  ament_lint/ament_lint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_lint/0.17.1-1.tar.gz
+  ament_lint/ament_lint_auto:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_lint_auto/0.17.1-1.tar.gz
+  ament_lint/ament_lint_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_lint_cmake/0.17.1-1.tar.gz
+  ament_lint/ament_lint_common:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_lint_common/0.17.1-1.tar.gz
+  ament_lint/ament_mypy:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_mypy/0.17.1-1.tar.gz
+  ament_lint/ament_pep257:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_pep257/0.17.1-1.tar.gz
+  ament_lint/ament_pycodestyle:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_pycodestyle/0.17.1-1.tar.gz
+  ament_lint/ament_uncrustify:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_uncrustify/0.17.1-1.tar.gz
+  ament_lint/ament_xmllint:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_lint-release/archive/release/jazzy/ament_xmllint/0.17.1-1.tar.gz
+  ament_package:
+    type: tar
+    url: https://github.com/ros2-gbp/ament_package-release/archive/release/jazzy/ament_package/0.16.3-3.tar.gz
+  angles:
+    type: tar
+    url: https://github.com/ros2-gbp/angles-release/archive/release/jazzy/angles/1.16.0-5.tar.gz
+  async_web_server_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/async_web_server_cpp-release/archive/release/jazzy/async_web_server_cpp/2.0.0-6.tar.gz
+  backward_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/backward_ros-release/archive/release/jazzy/backward_ros/1.0.5-1.tar.gz
+  class_loader:
+    type: tar
+    url: https://github.com/ros2-gbp/class_loader-release/archive/release/jazzy/class_loader/2.7.0-3.tar.gz
+  common_interfaces/diagnostic_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/diagnostic_msgs/5.3.5-1.tar.gz
+  common_interfaces/geometry_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/geometry_msgs/5.3.5-1.tar.gz
+  common_interfaces/nav_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/nav_msgs/5.3.5-1.tar.gz
+  common_interfaces/sensor_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/sensor_msgs/5.3.5-1.tar.gz
+  common_interfaces/std_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/std_msgs/5.3.5-1.tar.gz
+  common_interfaces/std_srvs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/std_srvs/5.3.5-1.tar.gz
+  common_interfaces/trajectory_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/common_interfaces-release/archive/release/jazzy/trajectory_msgs/5.3.5-1.tar.gz
+  console_bridge_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/console_bridge_vendor-release/archive/release/jazzy/console_bridge_vendor/1.7.1-3.tar.gz
+  control_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/control_msgs-release/archive/release/jazzy/control_msgs/5.2.0-1.tar.gz
+  control_toolbox:
+    type: tar
+    url: https://github.com/ros2-gbp/control_toolbox-release/archive/release/jazzy/control_toolbox/3.2.0-3.tar.gz
+  cpp_polyfills/tcb_span:
+    type: tar
+    url: https://github.com/ros2-gbp/cpp_polyfills-release/archive/release/jazzy/tcb_span/1.0.2-5.tar.gz
+  cpp_polyfills/tl_expected:
+    type: tar
+    url: https://github.com/ros2-gbp/cpp_polyfills-release/archive/release/jazzy/tl_expected/1.0.2-5.tar.gz
+  diagnostics/diagnostic_updater:
+    type: tar
+    url: https://github.com/ros2-gbp/diagnostics-release/archive/release/jazzy/diagnostic_updater/4.2.1-1.tar.gz
+  fastcdr:
+    type: tar
+    url: https://github.com/ros2-gbp/fastcdr-release/archive/release/jazzy/fastcdr/2.2.4-1.tar.gz
+  fastrtps:
+    type: tar
+    url: https://github.com/ros2-gbp/fastrtps-release/archive/release/jazzy/fastrtps/2.14.3-1.tar.gz
+  filters:
+    type: tar
+    url: https://github.com/ros2-gbp/filters-release/archive/release/jazzy/filters/2.1.2-2.tar.gz
+  foonathan_memory_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/foonathan_memory_vendor-release/archive/release/jazzy/foonathan_memory_vendor/1.3.1-3.tar.gz
+  generate_parameter_library/generate_parameter_library:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/jazzy/generate_parameter_library/0.3.8-4.tar.gz
+  generate_parameter_library/generate_parameter_library_py:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/jazzy/generate_parameter_library_py/0.3.8-4.tar.gz
+  generate_parameter_library/parameter_traits:
+    type: tar
+    url: https://github.com/ros2-gbp/generate_parameter_library-release/archive/release/jazzy/parameter_traits/0.3.8-4.tar.gz
+  geometry2/tf2:
+    type: tar
+    url: https://github.com/ros2-gbp/geometry2-release/archive/release/jazzy/tf2/0.36.4-1.tar.gz
+  geometry2/tf2_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/geometry2-release/archive/release/jazzy/tf2_msgs/0.36.4-1.tar.gz
+  image_common/camera_calibration_parsers:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/jazzy/camera_calibration_parsers/5.1.4-1.tar.gz
+  image_common/camera_info_manager:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/jazzy/camera_info_manager/5.1.4-1.tar.gz
+  image_common/image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_common-release/archive/release/jazzy/image_transport/5.1.4-1.tar.gz
+  image_transport_plugins/compressed_depth_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/compressed_depth_image_transport/4.0.2-1.tar.gz
+  image_transport_plugins/compressed_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/compressed_image_transport/4.0.2-1.tar.gz
+  image_transport_plugins/image_transport_plugins:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/image_transport_plugins/4.0.2-1.tar.gz
+  image_transport_plugins/theora_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/theora_image_transport/4.0.2-1.tar.gz
+  image_transport_plugins/zstd_image_transport:
+    type: tar
+    url: https://github.com/ros2-gbp/image_transport_plugins-release/archive/release/jazzy/zstd_image_transport/4.0.2-1.tar.gz
+  launch/launch:
+    type: tar
+    url: https://github.com/ros2-gbp/launch-release/archive/release/jazzy/launch/3.4.2-2.tar.gz
+  launch_ros/launch_ros:
+    type: tar
+    url: https://github.com/ros2-gbp/launch_ros-release/archive/release/jazzy/launch_ros/0.26.5-2.tar.gz
+  libstatistics_collector:
+    type: tar
+    url: https://github.com/ros2-gbp/libstatistics_collector-release/archive/release/jazzy/libstatistics_collector/1.7.3-1.tar.gz
+  libyaml_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/libyaml_vendor-release/archive/release/jazzy/libyaml_vendor/1.6.3-2.tar.gz
+  message_filters:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_message_filters-release/archive/release/jazzy/message_filters/4.11.2-1.tar.gz
+  mimick_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/mimick_vendor-release/archive/release/jazzy/mimick_vendor/0.6.2-1.tar.gz
+  osrf_pycommon:
+    type: tar
+    url: https://github.com/ros2-gbp/osrf_pycommon-release/archive/release/jazzy/osrf_pycommon/2.1.4-3.tar.gz
+  pluginlib:
+    type: tar
+    url: https://github.com/ros2-gbp/pluginlib-release/archive/release/jazzy/pluginlib/5.4.2-2.tar.gz
+  pybind11_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/pybind11_vendor-release/archive/release/jazzy/pybind11_vendor/3.1.2-2.tar.gz
+  python_cmake_module:
+    type: tar
+    url: https://github.com/ros2-gbp/python_cmake_module-release/archive/release/jazzy/python_cmake_module/0.11.1-2.tar.gz
+  rcl/rcl:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/jazzy/rcl/9.2.4-1.tar.gz
+  rcl/rcl_action:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/jazzy/rcl_action/9.2.4-1.tar.gz
+  rcl/rcl_lifecycle:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/jazzy/rcl_lifecycle/9.2.4-1.tar.gz
+  rcl/rcl_yaml_param_parser:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl-release/archive/release/jazzy/rcl_yaml_param_parser/9.2.4-1.tar.gz
+  rcl_interfaces/action_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/action_msgs/2.0.2-2.tar.gz
+  rcl_interfaces/builtin_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/builtin_interfaces/2.0.2-2.tar.gz
+  rcl_interfaces/composition_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/composition_interfaces/2.0.2-2.tar.gz
+  rcl_interfaces/lifecycle_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/lifecycle_msgs/2.0.2-2.tar.gz
+  rcl_interfaces/rcl_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/rcl_interfaces/2.0.2-2.tar.gz
+  rcl_interfaces/rosgraph_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/rosgraph_msgs/2.0.2-2.tar.gz
+  rcl_interfaces/service_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/service_msgs/2.0.2-2.tar.gz
+  rcl_interfaces/statistics_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/statistics_msgs/2.0.2-2.tar.gz
+  rcl_interfaces/type_description_interfaces:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_interfaces-release/archive/release/jazzy/type_description_interfaces/2.0.2-2.tar.gz
+  rcl_logging/rcl_logging_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_logging-release/archive/release/jazzy/rcl_logging_interface/3.1.0-2.tar.gz
+  rcl_logging/rcl_logging_spdlog:
+    type: tar
+    url: https://github.com/ros2-gbp/rcl_logging-release/archive/release/jazzy/rcl_logging_spdlog/3.1.0-2.tar.gz
+  rclcpp/rclcpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/jazzy/rclcpp/28.1.5-1.tar.gz
+  rclcpp/rclcpp_action:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/jazzy/rclcpp_action/28.1.5-1.tar.gz
+  rclcpp/rclcpp_components:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/jazzy/rclcpp_components/28.1.5-1.tar.gz
+  rclcpp/rclcpp_lifecycle:
+    type: tar
+    url: https://github.com/ros2-gbp/rclcpp-release/archive/release/jazzy/rclcpp_lifecycle/28.1.5-1.tar.gz
+  rclpy:
+    type: tar
+    url: https://github.com/ros2-gbp/rclpy-release/archive/release/jazzy/rclpy/7.1.2-1.tar.gz
+  rcpputils:
+    type: tar
+    url: https://github.com/ros2-gbp/rcpputils-release/archive/release/jazzy/rcpputils/2.11.0-2.tar.gz
+  rcutils:
+    type: tar
+    url: https://github.com/ros2-gbp/rcutils-release/archive/release/jazzy/rcutils/6.7.2-1.tar.gz
+  realtime_tools:
+    type: tar
+    url: https://github.com/ros2-gbp/realtime_tools-release/archive/release/jazzy/realtime_tools/2.6.0-1.tar.gz
+  rmw/rmw:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw-release/archive/release/jazzy/rmw/7.3.1-1.tar.gz
+  rmw/rmw_implementation_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw-release/archive/release/jazzy/rmw_implementation_cmake/7.3.1-1.tar.gz
+  rmw_dds_common:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_dds_common-release/archive/release/jazzy/rmw_dds_common/3.1.0-2.tar.gz
+  rmw_fastrtps/rmw_fastrtps_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/jazzy/rmw_fastrtps_cpp/8.4.1-1.tar.gz
+  rmw_fastrtps/rmw_fastrtps_dynamic_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/jazzy/rmw_fastrtps_dynamic_cpp/8.4.1-1.tar.gz
+  rmw_fastrtps/rmw_fastrtps_shared_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_fastrtps-release/archive/release/jazzy/rmw_fastrtps_shared_cpp/8.4.1-1.tar.gz
+  rmw_implementation:
+    type: tar
+    url: https://github.com/ros2-gbp/rmw_implementation-release/archive/release/jazzy/rmw_implementation/2.15.3-1.tar.gz
+  ros2_control/controller_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/controller_interface/4.18.0-1.tar.gz
+  ros2_control/controller_manager:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/controller_manager/4.18.0-1.tar.gz
+  ros2_control/controller_manager_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/controller_manager_msgs/4.18.0-1.tar.gz
+  ros2_control/hardware_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/hardware_interface/4.18.0-1.tar.gz
+  ros2_control/hardware_interface_testing:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/hardware_interface_testing/4.18.0-1.tar.gz
+  ros2_control/joint_limits:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/joint_limits/4.18.0-1.tar.gz
+  ros2_control/ros2controlcli:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_control-release/archive/release/jazzy/ros2controlcli/4.18.0-1.tar.gz
+  ros2_controllers/diff_drive_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/diff_drive_controller/4.15.0-1.tar.gz
+  ros2_controllers/effort_controllers:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/effort_controllers/4.15.0-1.tar.gz
+  ros2_controllers/forward_command_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/forward_command_controller/4.15.0-1.tar.gz
+  ros2_controllers/joint_state_broadcaster:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/joint_state_broadcaster/4.15.0-1.tar.gz
+  ros2_controllers/joint_trajectory_controller:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2_controllers-release/archive/release/jazzy/joint_trajectory_controller/4.15.0-1.tar.gz
+  ros2cli/ros2cli:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2cli/0.32.1-1.tar.gz
+  ros2cli/ros2node:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2node/0.32.1-1.tar.gz
+  ros2cli/ros2param:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2param/0.32.1-1.tar.gz
+  ros2cli/ros2pkg:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2pkg/0.32.1-1.tar.gz
+  ros2cli/ros2run:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2run/0.32.1-1.tar.gz
+  ros2cli/ros2service:
+    type: tar
+    url: https://github.com/ros2-gbp/ros2cli-release/archive/release/jazzy/ros2service/0.32.1-1.tar.gz
+  ros_environment:
+    type: tar
+    url: https://github.com/ros2-gbp/ros_environment-release/archive/release/jazzy/ros_environment/4.2.1-1.tar.gz
+  rosidl/rosidl_adapter:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_adapter/4.6.4-1.tar.gz
+  rosidl/rosidl_cli:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_cli/4.6.4-1.tar.gz
+  rosidl/rosidl_cmake:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_cmake/4.6.4-1.tar.gz
+  rosidl/rosidl_generator_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_generator_c/4.6.4-1.tar.gz
+  rosidl/rosidl_generator_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_generator_cpp/4.6.4-1.tar.gz
+  rosidl/rosidl_generator_type_description:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_generator_type_description/4.6.4-1.tar.gz
+  rosidl/rosidl_parser:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_parser/4.6.4-1.tar.gz
+  rosidl/rosidl_pycommon:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_pycommon/4.6.4-1.tar.gz
+  rosidl/rosidl_runtime_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_runtime_c/4.6.4-1.tar.gz
+  rosidl/rosidl_runtime_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_runtime_cpp/4.6.4-1.tar.gz
+  rosidl/rosidl_typesupport_interface:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_typesupport_interface/4.6.4-1.tar.gz
+  rosidl/rosidl_typesupport_introspection_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_typesupport_introspection_c/4.6.4-1.tar.gz
+  rosidl/rosidl_typesupport_introspection_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl-release/archive/release/jazzy/rosidl_typesupport_introspection_cpp/4.6.4-1.tar.gz
+  rosidl_core/rosidl_core_generators:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_core-release/archive/release/jazzy/rosidl_core_generators/0.2.0-3.tar.gz
+  rosidl_core/rosidl_core_runtime:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_core-release/archive/release/jazzy/rosidl_core_runtime/0.2.0-3.tar.gz
+  rosidl_defaults/rosidl_default_generators:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_defaults-release/archive/release/jazzy/rosidl_default_generators/1.6.0-3.tar.gz
+  rosidl_defaults/rosidl_default_runtime:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_defaults-release/archive/release/jazzy/rosidl_default_runtime/1.6.0-3.tar.gz
+  rosidl_dynamic_typesupport:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_dynamic_typesupport-release/archive/release/jazzy/rosidl_dynamic_typesupport/0.1.2-3.tar.gz
+  rosidl_dynamic_typesupport_fastrtps:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_dynamic_typesupport_fastrtps-release/archive/release/jazzy/rosidl_dynamic_typesupport_fastrtps/0.1.0-3.tar.gz
+  rosidl_generator_py:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_python-release/archive/release/jazzy/rosidl_generator_py/0.22.0-2.tar.gz
+  rosidl_runtime_py:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_runtime_py-release/archive/release/jazzy/rosidl_runtime_py/0.13.1-2.tar.gz
+  rosidl_typesupport/rosidl_typesupport_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport-release/archive/release/jazzy/rosidl_typesupport_c/3.2.2-1.tar.gz
+  rosidl_typesupport/rosidl_typesupport_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport-release/archive/release/jazzy/rosidl_typesupport_cpp/3.2.2-1.tar.gz
+  rosidl_typesupport_fastrtps/fastrtps_cmake_module:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/jazzy/fastrtps_cmake_module/3.6.0-2.tar.gz
+  rosidl_typesupport_fastrtps/rosidl_typesupport_fastrtps_c:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/jazzy/rosidl_typesupport_fastrtps_c/3.6.0-2.tar.gz
+  rosidl_typesupport_fastrtps/rosidl_typesupport_fastrtps_cpp:
+    type: tar
+    url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release/archive/release/jazzy/rosidl_typesupport_fastrtps_cpp/3.6.0-2.tar.gz
+  rpyutils:
+    type: tar
+    url: https://github.com/ros2-gbp/rpyutils-release/archive/release/jazzy/rpyutils/0.4.1-3.tar.gz
+  rsl:
+    type: tar
+    url: https://github.com/ros2-gbp/RSL-release/archive/release/jazzy/rsl/1.1.0-3.tar.gz
+  spdlog_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/spdlog_vendor-release/archive/release/jazzy/spdlog_vendor/1.6.1-1.tar.gz
+  teleop_twist_keyboard:
+    type: tar
+    url: https://github.com/ros2-gbp/teleop_twist_keyboard-release/archive/release/jazzy/teleop_twist_keyboard/2.4.0-2.tar.gz
+  tinyxml2_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/tinyxml2_vendor-release/archive/release/jazzy/tinyxml2_vendor/0.9.1-3.tar.gz
+  unique_identifier_msgs:
+    type: tar
+    url: https://github.com/ros2-gbp/unique_identifier_msgs-release/archive/release/jazzy/unique_identifier_msgs/2.5.0-3.tar.gz
+  urdf/urdf:
+    type: tar
+    url: https://github.com/ros2-gbp/urdf-release/archive/release/jazzy/urdf/2.10.0-3.tar.gz
+  urdf/urdf_parser_plugin:
+    type: tar
+    url: https://github.com/ros2-gbp/urdf-release/archive/release/jazzy/urdf_parser_plugin/2.10.0-3.tar.gz
+  urdfdom:
+    type: tar
+    url: https://github.com/ros2-gbp/urdfdom-release/archive/release/jazzy/urdfdom/4.0.1-1.tar.gz
+  urdfdom_headers:
+    type: tar
+    url: https://github.com/ros2-gbp/urdfdom_headers-release/archive/release/jazzy/urdfdom_headers/1.1.2-1.tar.gz
+  usb_cam:
+    type: tar
+    url: https://github.com/ros2-gbp/usb_cam-release/archive/release/jazzy/usb_cam/0.8.1-1.tar.gz
+  vision_opencv/cv_bridge:
+    type: tar
+    url: https://github.com/ros2-gbp/vision_opencv-release/archive/release/jazzy/cv_bridge/4.1.0-1.tar.gz
+  xacro:
+    type: tar
+    url: https://github.com/ros2-gbp/xacro-release/archive/release/jazzy/xacro/2.0.11-2.tar.gz
+  yaml_cpp_vendor:
+    type: tar
+    url: https://github.com/ros2-gbp/yaml_cpp_vendor-release/archive/release/jazzy/yaml_cpp_vendor/9.0.0-2.tar.gz
+
