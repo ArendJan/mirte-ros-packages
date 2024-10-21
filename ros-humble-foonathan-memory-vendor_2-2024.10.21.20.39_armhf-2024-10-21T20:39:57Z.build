@@ -1,0 +1,43 @@
+sbuild (Debian sbuild) 0.84.2~ubuntu2204+3 (28 December 2022) on fv-az1391-672
+
++===============================================================================================+
+| ros-humble-foonathan-memory-vendor 2-2024.10.21.20.39 (armhf) Mon, 21 Oct 2024 20:39:57 +0000 |
++===============================================================================================+
+
+Package: ros-humble-foonathan-memory-vendor
+Version: 2-2024.10.21.20.39
+Source Version: 2-2024.10.21.20.39
+Distribution: jammy
+Machine Architecture: amd64
+Host Architecture: armhf
+Build Architecture: amd64
+Build Profiles: cross nocheck
+Build Type: any
+
+E: Chroot for distribution jammy, architecture amd64 not found
+E: Error creating chroot
+
++------------------------------------------------------------------------------+
+| Summary                                                                      |
++------------------------------------------------------------------------------+
+
+Build Architecture: amd64
+Build Profiles: cross nocheck
+Build Type: any
+Build-Space: 0
+Build-Time: 0
+Distribution: jammy
+Fail-Stage: create-session
+Host Architecture: armhf
+Install-Time: 0
+Job: /home/runner/work/mirte-ros-packages/mirte-ros-packages/src/foonathan_memory_vendor/ros-humble-foonathan-memory-vendor_2-2024.10.21.20.39.dsc
+Machine Architecture: amd64
+Package: ros-humble-foonathan-memory-vendor
+Package-Time: 0
+Source-Version: 2-2024.10.21.20.39
+Space: 0
+Status: failed
+Version: 2-2024.10.21.20.39
+--------------------------------------------------------------------------------
+Finished at 2024-10-21T20:39:57Z
+Build needed 00:00:00, 0k disk space
