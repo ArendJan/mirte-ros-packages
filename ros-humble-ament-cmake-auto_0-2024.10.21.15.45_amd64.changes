@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake-auto
+Binary: ros-humble-ament-cmake-auto
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 0-2024.10.21.15.45
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake-auto - The auto-magic functions for ease to use of the ament buildsystem
+Changes:
+ ros-humble-ament-cmake-auto (0-2024.10.21.15.45) jammy; urgency=high
+ .
+   * More specific prefix in some cmake_parse_argument calls (#523 <https://github.com/ament/ament_cmake/issues/523>) (#538 <https://github.com/ament/ament_cmake/issues/538>)
+   * Contributors: mergify[bot]
+Checksums-Sha1:
+ 6aa094d5ff44d32ba51abb40d9b4bc60812a374d 9583 ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.buildinfo
+ 8d7246f59376d6a2e98d580a8e709203376fe10b 10572 ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.deb
+Checksums-Sha256:
+ c1b565223707b96d94579cd5393f37986465499acad625fa54a383ebe5ee56cc 9583 ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.buildinfo
+ 3df816d99ef9f3de11f6f48b65dc52ef78ab36214169f76dbb126eeaa70890af 10572 ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.deb
+Files:
+ 52952383b16d599e395ec7e18d6a0837 9583 misc optional ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.buildinfo
+ e71256d0ebfd3c1e69881bea334d8004 10572 misc optional ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.deb

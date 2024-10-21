@@ -1,0 +1,9 @@
+ament_cmake_core:
+  ubuntu:
+  - ros-humble-ament-cmake-core
+ament_cmake:
+  ubuntu:
+  - ros-humble-ament-cmake
+ament_cmake_auto:
+  ubuntu:
+  - ros-humble-ament-cmake-auto

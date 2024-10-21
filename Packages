@@ -1,0 +1,49 @@
+Package: ros-humble-ament-cmake-auto
+Architecture: amd64
+Version: 0-2024.10.21.15.45
+Priority: optional
+Section: misc
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Installed-Size: 67
+Depends: ros-humble-ament-cmake, ros-humble-ament-cmake-gmock, ros-humble-ament-cmake-gtest
+Filename: ./ros-humble-ament-cmake-auto_0-2024.10.21.15.45_amd64.deb
+Size: 10572
+MD5sum: e71256d0ebfd3c1e69881bea334d8004
+SHA1: 8d7246f59376d6a2e98d580a8e709203376fe10b
+SHA256: 3df816d99ef9f3de11f6f48b65dc52ef78ab36214169f76dbb126eeaa70890af
+SHA512: bf9faf0b1a1081790444870eaed8692a61d76736584ff40ea4c64e0931364cad7079bd27ac08cbcf18669f84db8c915099db048fda75638ce1dad8cbed8e4109
+Description: The auto-magic functions for ease to use of the ament buildsystem in CMake.
+
+Package: ros-humble-ament-cmake-core
+Architecture: amd64
+Version: 0-2024.10.21.15.44
+Priority: optional
+Section: misc
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Installed-Size: 286
+Depends: cmake, python3-catkin-pkg-modules, ros-humble-ament-package
+Filename: ./ros-humble-ament-cmake-core_0-2024.10.21.15.44_amd64.deb
+Size: 40366
+MD5sum: 05f816984584310132d0946f71267184
+SHA1: 8ee75a5481f049c955387a596c4352c21a9a67ea
+SHA256: f68b58f4c7b24c7493692514e17efc9014e19c4337cfd1df4979f7f3a7b9f81c
+SHA512: 1cc1540e481b253ffc8189458f997969896ea83a50e28c3d3f6bec2c97e854d535f00c6acfeb443adb76e6d4ccd6aec92364b041388ff7831b15d860a9cb4332
+Description: The core of the ament buildsystem in CMake.
+ Several subcomponents provide specific funtionalities: * environment: provide prefix-level setup files * environment_hooks: provide package-level setup files and environment hooks * index: store information in an index and retrieve them without crawling * package_templates: templates from the ament_package Python package * symlink_install: use symlinks for CMake install commands
+
+Package: ros-humble-ament-cmake
+Architecture: amd64
+Version: 0-2024.10.21.15.45
+Priority: optional
+Section: misc
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Installed-Size: 47
+Depends: cmake, ros-humble-ament-cmake-core, ros-humble-ament-cmake-export-definitions, ros-humble-ament-cmake-export-dependencies, ros-humble-ament-cmake-export-include-directories, ros-humble-ament-cmake-export-interfaces, ros-humble-ament-cmake-export-libraries, ros-humble-ament-cmake-export-link-flags, ros-humble-ament-cmake-export-targets, ros-humble-ament-cmake-gen-version-h, ros-humble-ament-cmake-libraries, ros-humble-ament-cmake-python, ros-humble-ament-cmake-target-dependencies, ros-humble-ament-cmake-test, ros-humble-ament-cmake-version
+Filename: ./ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.deb
+Size: 7322
+MD5sum: 7efba0d05786cc2949913288ba724ebd
+SHA1: f69f15ae9d1a285e3cf705386fcddea0a5b5276e
+SHA256: 614f496e63c61993a7be2f401c2f11e2a47c046293d347bc197b6a27b1eb594c
+SHA512: c000e67ac296afaaaeb1d13a9619bff6c4d0db849f5669e5cd976aa7654c3ad1f8c7a6dae9795a5658e3f99c8646f5aef30bd52de4cf6f0327d6b696d8409d28
+Description: The entry point package for the ament buildsystem in CMake.
+

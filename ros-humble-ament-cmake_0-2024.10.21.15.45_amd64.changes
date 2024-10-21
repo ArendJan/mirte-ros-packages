@@ -1,0 +1,24 @@
+Format: 1.8
+Date: Fri, 26 Jul 2024 00:00:00 -0000
+Source: ros-humble-ament-cmake
+Binary: ros-humble-ament-cmake
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 0-2024.10.21.15.45
+Distribution: jammy
+Urgency: high
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Changed-By: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Description:
+ ros-humble-ament-cmake - The entry point package for the ament buildsystem in CMake.
+Changes:
+ ros-humble-ament-cmake (0-2024.10.21.15.45) jammy; urgency=high
+Checksums-Sha1:
+ 8176633bb38f54814fc4facd5e56c15237a4069d 8263 ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.buildinfo
+ f69f15ae9d1a285e3cf705386fcddea0a5b5276e 7322 ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.deb
+Checksums-Sha256:
+ ff39439a95ab3d452443f385b6e1ad595f89d472230c6322172e2b08f3ccb6fd 8263 ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.buildinfo
+ 614f496e63c61993a7be2f401c2f11e2a47c046293d347bc197b6a27b1eb594c 7322 ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.deb
+Files:
+ f6e76ec99b3f578599012224bf620c2e 8263 misc optional ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.buildinfo
+ 7efba0d05786cc2949913288ba724ebd 7322 misc optional ros-humble-ament-cmake_0-2024.10.21.15.45_amd64.deb
