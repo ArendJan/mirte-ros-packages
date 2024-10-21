@@ -30,6 +30,8 @@
 import os
 import re
 import sys
+import argparse
+
 try:
     import importlib.resources as importlib_resources
 except ModuleNotFoundError:
