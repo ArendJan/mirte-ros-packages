@@ -12,7 +12,7 @@ jobs:
                 ros_distro: [humble]
                 deb_distro: [jammy]
                 arch: [
-                        amd64, 
+                        # amd64, 
                        armhf
                 ]
         fail-fast: false
@@ -47,6 +47,7 @@ jobs:
           # ROSDEP_SOURCE: yaml file:///home/runner/work/mirte-ros-packages/mirte-ros-packages/rosdep.yaml debian
           REPOS_FILE: ./ros2_sources.repos
           SKIP_CHECKOUT: true
+          PACKAGES_BRANCH: ros_amd64
           # SKIP_ROS_REPOSITORY: true
           
 
