@@ -21,7 +21,7 @@ jobs:
              mkdir srcO # move all packages to srcO(riginal), as the ros-deb-builder-action wants to create a fresh src folder
              mv ./mirte_* ./srcO
              ls -l ./
-      - uses: jspricke/ros-deb-builder-action@main
+      - uses: arendjan/ros-deb-builder-action@main
         with:
           ROS_DISTRO: ${{ matrix.ros_distro }}
           DEB_DISTRO: ${{ matrix.deb_distro }}
@@ -29,5 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOS_FILE: ./sources.repos
           SKIP_CHECKOUT: true
+          PACKAGES_BRANCH: ros_mirte_${{ matrix.ros_distro }}_${{ matrix.deb_distro }}_${{ matrix.arch }}
           
 
