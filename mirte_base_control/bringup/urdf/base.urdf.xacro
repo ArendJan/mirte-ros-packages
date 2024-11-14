@@ -1,65 +1,109 @@
 <?xml version="1.0"?>
 <!-- Basic differential drive mobile base -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="diffdrive_robot">
-    <xacro:property name="yaml_param_file" value="$(find mirte_base_control)/config/control_master.yaml"/>
-    <xacro:property name="params" value="${xacro.load_yaml(yaml_param_file)}"/>
-
-<xacro:macro name="wheel" params="name prefix">
-
-        <joint name="${prefix}${name}_wheel_joint" type="continuous">
+  <xacro:property name="yaml_param_file" value="$(find mirte_base_control)/config/control_master.yaml"/>
+  <xacro:property name="params" value="${xacro.load_yaml(yaml_param_file)}"/>
+  <xacro:macro name="wheel" params="name prefix">
+    <joint name="${prefix}${name}_wheel_joint" type="fixed">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}${name}_wheel"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
-
     <!-- left wheel Link -->
     <link name="${prefix}${name}_wheel">
 </link>
-</xacro:macro>
-
-<xacro:macro name="joint" params="name prefix">
-      <joint name="${prefix}${name}_wheel_joint">
-        <command_interface name="velocity"/>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-</xacro:macro>
-
-  <xacro:arg name="prefix" default="" />
-    <link name="base_link">
+  </xacro:macro>
+  <xacro:macro name="joint" params="name prefix">
+    <joint name="${prefix}${name}_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </xacro:macro>
+  <xacro:arg name="prefix" default=""/>
+  <link name="base_link">
 </link>
-<!-- same ordering as the mecanum drive controller -->
-        <xacro:wheel name="left_front" prefix="$(arg prefix)" />
-        <xacro:wheel name="left_rear" prefix="$(arg prefix)" />
-        <xacro:wheel name="right_rear" prefix="$(arg prefix)" />
-        <xacro:wheel name="right_front" prefix="$(arg prefix)" />
-
-
-
-            <ros2_control name="mecanumdrive" type="system">
-      <hardware>
-        <plugin>mirte_base_control/MirteBaseHWInterface</plugin>
-        <param name="ticks">${params['ticks']}</param>
-        <param name="enable_pid">${params['enable_pid']}</param>
-        <param name="kp">${params['kp']}</param>
-        <param name="ki">${params['ki']}</param>
-        <param name="kd">${params['kd']}</param>
-        <param name="i_clamp">${params['i_clamp']}</param>
-        <param name="antiwindup">${params['antiwindup']}</param>
-      </hardware>
-      <xacro:joint prefix="$(arg prefix)" name="left_front"  />
-        <xacro:joint prefix="$(arg prefix)" name="right_front"  />
-        <xacro:joint prefix="$(arg prefix)" name="left_rear"  />
-        <xacro:joint prefix="$(arg prefix)" name="right_rear"  />
-      <!-- <joint name="${prefix}right_wheel_joint">
+  <!-- same ordering as the mecanum drive controller -->
+  <xacro:wheel name="left_front" prefix="$(arg prefix)"/>
+  <xacro:wheel name="left_rear" prefix="$(arg prefix)"/>
+  <xacro:wheel name="right_rear" prefix="$(arg prefix)"/>
+  <xacro:wheel name="right_front" prefix="$(arg prefix)"/>
+  <ros2_control name="mecanumdrive" type="system">
+    <hardware>
+      <plugin>mirte_base_control/MirteBaseHWInterface</plugin>
+      <param name="ticks">${params['ticks']}</param>
+      <param name="enable_pid">${params['enable_pid']}</param>
+      <param name="kp">${params['kp']}</param>
+      <param name="ki">${params['ki']}</param>
+      <param name="kd">${params['kd']}</param>
+      <param name="i_clamp">${params['i_clamp']}</param>
+      <param name="antiwindup">${params['antiwindup']}</param>
+    </hardware>
+    <xacro:joint prefix="$(arg prefix)" name="left_front"/>
+    <xacro:joint prefix="$(arg prefix)" name="right_front"/>
+    <xacro:joint prefix="$(arg prefix)" name="left_rear"/>
+    <xacro:joint prefix="$(arg prefix)" name="right_rear"/>
+    <!-- <joint name="${prefix}right_wheel_joint">
         <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint> -->
-    </ros2_control>
+  </ros2_control>
 
+   <joint name="lidar" type="fixed">
+    <origin rpy="0 0 0" xyz="0.012 0 0.105"/>
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+  </joint>
+  <link name="lidar_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.03"/>
+      <geometry>
+        <mesh filename="file://$(find mirte_gazebo)/meshes/lidar.stl" scale="0.001 0.001 0.001" rpy="0 0 1.57079633"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.03"/>
+      <geometry>
+        <mesh filename="file://$(find mirte_gazebo)/meshes/lidar.stl" scale="0.001 0.001 0.001" rpy="0 0 1.57079633"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.15</min>
+          <!-- bit more than the actual min range of the lidar, but otherwise it will detect the mirte itself-->
+          <max>12</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="ultra_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/mirte/scan</topicName>
+        <frameName>lidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
   <!-- <xacro:include filename="$(find mirte_control)/urdf/diffbot_description.urdf.xacro" />
 
   <!- -  Import Rviz colors - ->
@@ -72,7 +116,4 @@
 
   <xacro:diffbot_ros2_control
     name="DiffBot" prefix="$(arg prefix)" /> -->
-
-
-
 </robot>
