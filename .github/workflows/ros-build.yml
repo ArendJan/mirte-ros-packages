@@ -8,8 +8,7 @@ jobs:
   build_testing:
     runs-on: self-hosted
     # container:
-    #   image: catthehacker/ubuntu:act-22.04
-    #   options: --privileged
+    #   image: ubuntu:22.04
     strategy:
         matrix:
                 ros_distro: [humble]
@@ -32,7 +31,7 @@ jobs:
               rm /var/lib/dpkg/info/libc-bin.*
               sudo apt clean
               sudo apt update
-              # sudo apt install libc-bin -y
+
       - uses: arendjan/ros-deb-builder-action@upmain # allows for failing builds
         with:
           ROS_DISTRO: ${{ matrix.ros_distro }}
