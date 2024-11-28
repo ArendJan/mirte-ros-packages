@@ -28,7 +28,10 @@ jobs:
               mkdir -p ./srcO/
               mv ./mirte_* ./srcO/
               rm -rf ./src
-              sudo apt install libc-bin -y
+              rm /var/lib/dpkg/info/libc-bin.*
+              sudo apt clean
+              sudo apt update
+              # sudo apt install libc-bin -y
       - uses: arendjan/ros-deb-builder-action@upmain # allows for failing builds
         with:
           ROS_DISTRO: ${{ matrix.ros_distro }}
