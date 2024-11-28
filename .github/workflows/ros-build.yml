@@ -7,10 +7,10 @@ permissions:
 jobs:
   build_testing:
     runs-on: self-hosted
-    fail-fast: false
     # container:
     #   image: ubuntu:22.04
     strategy:
+        fail-fast: false
         matrix:
                 ros_distro: [humble]
                 deb_distro: [jammy]
