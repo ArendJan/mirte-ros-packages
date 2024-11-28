@@ -29,7 +29,7 @@ jobs:
               mkdir -p ./srcO/
               mv ./mirte_* ./srcO/
               rm -rf ./src
-              rm /var/lib/dpkg/info/libc-bin.*
+              rm /var/lib/dpkg/info/libc-bin.* || true
               sudo apt clean
               sudo apt update
 
