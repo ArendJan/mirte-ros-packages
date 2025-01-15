@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="diffdrive_robot">
     <xacro:property name="yaml_param_file" value="$(find mirte_base_control)/config/control_master.yaml"/>
     <xacro:property name="params" value="${xacro.load_yaml(yaml_param_file)}"/>
- <link
+ <!-- <link
         name="arm_Rot">
         <inertial>
             <origin
@@ -587,13 +587,13 @@
             upper="0"
             effort="0"
             velocity="0" />
-    </joint>
+    </joint>-->
     <xacro:macro name="joint" params="name prefix">
       <joint name="arm_${prefix}${name}_joint">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <!-- <state_interface name="velocity"/> -->
-      </joint>
+      </joint> 
 </xacro:macro>
   <xacro:arg name="prefix" default="" />
     <link name="frame_link">
@@ -610,10 +610,10 @@
         <param name="i_clamp">${params['i_clamp']}</param>
         <param name="antiwindup">${params['antiwindup']}</param> -->
       </hardware>
-      <xacro:joint prefix="$(arg prefix)" name="rotate"  />
-        <xacro:joint prefix="$(arg prefix)" name="shoulder"  />
-        <xacro:joint prefix="$(arg prefix)" name="elbow"  />
-        <xacro:joint prefix="$(arg prefix)" name="wrist"  />
+      <xacro:joint prefix="$(arg prefix)" name="Rot"  />
+        <xacro:joint prefix="$(arg prefix)" name="Shoulder"  />
+        <xacro:joint prefix="$(arg prefix)" name="Elbow"  />
+        <xacro:joint prefix="$(arg prefix)" name="Wrist"  />
       <!-- <joint name="${prefix}right_wheel_joint">
         <command_interface name="velocity"/>
         <state_interface name="position"/>

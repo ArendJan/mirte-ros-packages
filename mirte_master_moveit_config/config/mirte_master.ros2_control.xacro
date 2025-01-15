@@ -6,7 +6,7 @@
         <ros2_control name="${name}" type="system">
             <hardware>
                 <!-- By default, set up controllers for simulation. This won't work on real hardware -->
-                <plugin>mock_components/GenericSystem</plugin>
+                <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
             </hardware>
             <joint name="arm_Rot_joint">
                 <command_interface name="position"/>
@@ -32,12 +32,12 @@
                   <param name="initial_value">${initial_positions['arm_Wrist_joint']}</param>
                 </state_interface>
             </joint>
-            <joint name="Gripper_joint">
+            <!-- <joint name="Gripper_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['Gripper_joint']}</param>
                 </state_interface>
-            </joint>
+            </joint> -->
 
         </ros2_control>
     </xacro:macro>

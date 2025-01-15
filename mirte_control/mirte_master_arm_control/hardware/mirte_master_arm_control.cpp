@@ -8,6 +8,13 @@ namespace mirte_master_arm_control {
 hardware_interface::return_type
 MirteMasterArmHWInterface::write(const rclcpp::Time &time,
                             const rclcpp::Duration &period) {
+                              if(!(cmd[0] == 0 && cmd[1] == 0 && cmd[2] == 0 && cmd[3] == 0)) {
+                              std::cout << "write hwi ";
+                              for(auto i = 0; i < cmd.size(); i++) {
+                                std::cout << cmd[i] << " ";
+                              }
+                              std::cout << std::endl;
+                              }
   if (running_) {
     // make sure the clients don't get overwritten while calling them
     const std::lock_guard<std::mutex> lock(this->service_clients_mutex);
@@ -108,66 +115,54 @@ MirteMasterArmHWInterface::read(const rclcpp::Time &time,
 using namespace std::chrono_literals;
 
 void MirteMasterArmHWInterface::init_service_clients() {
-  if (!this->use_single_client) {
+  
 
-    for (auto joint : this->joints) {
-      auto service = (boost::format(service_format) % joint).str();
-      //     RCLCPP_INFO_STREAM("Waiting for service " << service); // todo
-      //     print rclcpp::service::waitForService(service, -1); // TODO: wait
-      //     after creating service
-    }
+    // for (auto joint : this->joints) {
+    //   auto service = (boost::format(service_format) % joint).str();
+    //   //     RCLCPP_INFO_STREAM("Waiting for service " << service); // todo
+    //   //     print rclcpp::service::waitForService(service, -1); // TODO: wait
+    //   //     after creating service
+    //         std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
+    // }
     {
+            std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
       const std::lock_guard<std::mutex> lock(this->service_clients_mutex);
       service_clients.clear();
+            std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
       service_requests.clear();
+      std::cout << "init_service_clients: " << __LINE__ << std::endl;
       for (size_t i = 0; i < NUM_JOINTS; i++) {
-        auto client = nh->create_client<mirte_msgs::srv::SetMotorSpeed>(
-            (boost::format(service_format) % this->joints[i])
-                .str()); // TODO: add persistent connection
+              std::cout << "init_service_clients: " << __LINE__ << std::endl;
+        auto service = (boost::format(service_format) % this->joints[i]).str();
+              std::cout << "init_service_clients: " << service << std::endl;
+        auto client = nh->create_client<mirte_msgs::srv::SetServoAngle>(service); // TODO: add persistent connection
         while (!client->wait_for_service(1s)) {
           if (!rclcpp::ok()) {
             RCLCPP_ERROR(rclcpp::get_logger("rclcpp"),
                          "Interrupted while waiting for the service. Exiting.");
+                               std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
             return;
           }
+                std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
           RCLCPP_INFO(rclcpp::get_logger("rclcpp"),
-                      "service not available, waiting again...");
+                      "service %s not available, waiting again...", service.c_str());
         }
+              std::cout << "init_service_clients: " << __LINE__ << std::endl;
+
         service_clients.push_back(client);
         service_requests.push_back(
-            std::make_shared<mirte_msgs::srv::SetMotorSpeed::Request>());
+            std::make_shared<mirte_msgs::srv::SetServoAngle::Request>());
       }
-    }
+            std::cout << "init_service_clients: " << __LINE__ << std::endl;
 
-  } else {
-    service_clients.clear();
-    service_requests.clear();
-    this->set_speed_multiple_client =
-        nh->create_client<mirte_msgs::srv::SetSpeedMultiple>(
-            "io/motor/motorservocontroller/set_multiple_speeds");
-    while (!this->set_speed_multiple_client->wait_for_service(1s)) {
-      if (!rclcpp::ok()) {
-        RCLCPP_ERROR(rclcpp::get_logger("rclcpp"),
-                     "Interrupted while waiting for the service. Exiting.");
-        return;
-        // return hardware_interface::CallbackReturn::ERROR;
-      }
     }
+          std::cout << "init_service_clients: " << __LINE__ << std::endl;
 
-    this->set_speed_multiple_request =
-        std::make_shared<mirte_msgs::srv::SetSpeedMultiple::Request>();
-    this->set_speed_multiple_request->speeds.resize(NUM_JOINTS);
-    for (size_t i = 0;
-         i <
-         std::min((size_t)NUM_JOINTS,
-                  (size_t)this->set_speed_multiple_request->speeds.max_size());
-         i++) {
-      this->set_speed_multiple_request->speeds[i].speed = 0;
-      this->set_speed_multiple_request->speeds[i].name = this->joints[i];
-    }
-    this->set_speed_multiple_client->async_send_request(
-        this->set_speed_multiple_request);
-  }
 }
 
 
@@ -209,14 +204,14 @@ hardware_interface::CallbackReturn MirteMasterArmHWInterface::on_deactivate(
     const rclcpp_lifecycle::State & /*previous_state*/) {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to
   // your production code
-  // RCLCPP_INFO(rclcpp::get_logger("MirteBaseSystemHardware"), "Deactivating
+  // RCLCPP_INFO(rclcpp::get_logger("MirteMasterArmHWInterface"), "Deactivating
   // ...please wait...");
 
   // for (auto i = 0; i < 2; i++)
   // {
   //   rclcpp::sleep_for(std::chrono::seconds(1));
   //   RCLCPP_INFO(
-  //     rclcpp::get_logger("MirteBaseSystemHardware"), "%.1f seconds left...",
+  //     rclcpp::get_logger("MirteMasterArmHWInterface"), "%.1f seconds left...",
   //     2 - i);
   // }
   // END: This part here is for exemplary purposes - Please do not copy to your
@@ -276,19 +271,19 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
   }
   std::cout << "on_init" << __LINE__ << std::endl;
   // Initialize raw data
-  // for (size_t i = 0; i < NUM_JOINTS; i++) {
-  //   _wheel_encoder.push_back(0);
-  //   _wheel_encoder_update_time.push_back(nh->now());
-  //   _last_value.push_back(0);
-  //   _last_wheel_cmd_direction.push_back(0);
-  //   _last_cmd.push_back(0);
-  //   _last_sent_cmd.push_back(0);
+  for (size_t i = 0; i < NUM_JOINTS; i++) {
+    _servo_position.push_back(0);
+    _servo_position_update_time.push_back(nh->now());
+    _last_value.push_back(0);
+    // _last_wheel_cmd_direction.push_back(0);
+    _last_cmd.push_back(0);
+    _last_sent_cmd.push_back(0);
 
-  //   pos.push_back(0);
-  //   vel.push_back(0);
-  //   eff.push_back(0);
-  //   cmd.push_back(0);
-  // }
+    pos.push_back(0);
+    // vel.push_back(0);
+    // eff.push_back(0);
+    cmd.push_back(0);
+  }
   // assert(_wheel_encoder.size() == NUM_JOINTS);
   // assert(_last_value.size() == NUM_JOINTS);
   // assert(_last_wheel_cmd_direction.size() == NUM_JOINTS);
@@ -310,8 +305,23 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
   //           << " joints" << std::endl;
 
   for (const hardware_interface::ComponentInfo &joint : info_.joints) {
+    std::cout << "Joint: " << joint.name << std::endl;
+    if(joint.name == "arm_Rot_joint") {
+      joints.push_back("Rot");
+    } else if(joint.name == "arm_Shoulder_joint") {
+      joints.push_back("Shoulder");
+    } else if(joint.name == "arm_Elbow_joint") {
+      joints.push_back("Elbow");
+    } else if(joint.name == "arm_Wrist_joint") {
+      joints.push_back("Wrist");
+    } else {
+      RCLCPP_FATAL(rclcpp::get_logger("MirteMasterArmHWInterface"),
+                   "Joint '%s' is not a valid joint name.",
+                   joint.name.c_str());
+      return hardware_interface::CallbackReturn::ERROR;
+    }
     if (joint.command_interfaces.size() != 1) {
-      RCLCPP_FATAL(rclcpp::get_logger("MirteBaseSystemHardware"),
+      RCLCPP_FATAL(rclcpp::get_logger("MirteMasterArmHWInterface"),
                    "Joint '%s' has %zu command interfaces found. 1 expected.",
                    joint.name.c_str(), joint.command_interfaces.size());
       return hardware_interface::CallbackReturn::ERROR;
@@ -320,7 +330,7 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
     if (joint.command_interfaces[0].name !=
         hardware_interface::HW_IF_POSITION) {
       RCLCPP_FATAL(
-          rclcpp::get_logger("MirteBaseSystemHardware"),
+          rclcpp::get_logger("MirteMasterArmHWInterface"),
           "Joint '%s' have %s command interfaces found. '%s' expected.",
           joint.name.c_str(), joint.command_interfaces[0].name.c_str(),
           hardware_interface::HW_IF_POSITION);
@@ -328,7 +338,7 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
     }
 
     if (joint.state_interfaces.size() != 1) {
-      RCLCPP_FATAL(rclcpp::get_logger("MirteBaseSystemHardware"),
+      RCLCPP_FATAL(rclcpp::get_logger("MirteMasterArmHWInterface"),
                    "Joint '%s' has %zu state interface. 1 expected.",
                    joint.name.c_str(), joint.state_interfaces.size());
       return hardware_interface::CallbackReturn::ERROR;
@@ -336,7 +346,7 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
 
     if (joint.state_interfaces[0].name != hardware_interface::HW_IF_POSITION) {
       RCLCPP_FATAL(
-          rclcpp::get_logger("MirteBaseSystemHardware"),
+          rclcpp::get_logger("MirteMasterArmHWInterface"),
           "Joint '%s' have '%s' as first state interface. '%s' expected.",
           joint.name.c_str(), joint.state_interfaces[0].name.c_str(),
           hardware_interface::HW_IF_POSITION);
@@ -378,17 +388,17 @@ MirteMasterArmHWInterface::on_init(const hardware_interface::HardwareInfo &info)
   for (size_t i = 0; i < NUM_JOINTS; i++) {
     auto encoder_topic =
         (boost::format(encoder_format) % this->joints[i]).str();
-    std::cout << "add encoder topic: " << encoder_topic << std::endl;
-    wheel_encoder_subs_.push_back(
-        nh->create_subscription<mirte_msgs::msg::Encoder>(
+    std::cout << "add servo topic: " << encoder_topic << std::endl;
+    servo_pos_subs_.push_back(
+        nh->create_subscription<mirte_msgs::msg::ServoPosition>(
             encoder_topic, 1,
-            [this, i](std::shared_ptr<mirte_msgs::msg::Encoder> msg) {
-              // std::cout << "Encoder callback: " << msg->value << std::endl;
-              this->WheelEncoderCallback(msg, i);
+            [this, i](std::shared_ptr<mirte_msgs::msg::ServoPosition> msg) {
+              this->ServoPositionCallback(msg, i);
             }));
   }
   assert(joints.size() == NUM_JOINTS);
   this->init_service_clients();
+  std::cout << "on_init" << __LINE__ << std::endl;
   // assert(service_requests.size() == NUM_JOINTS);
 
   // assert(service_clients.size() == NUM_JOINTS);

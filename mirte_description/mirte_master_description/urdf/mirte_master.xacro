@@ -13,6 +13,7 @@
   <xacro:arg name="depth_camera_enable" default="False" />
   <xacro:arg name="imu_enable" default="False" />
 
+  <xacro:arg name="use_gazebo" default="False" />
   <xacro:arg name="use_namespace" default="False"/>
   <xacro:arg name="namespace_name" default="" />
   <xacro:if value="$(arg use_namespace)" >

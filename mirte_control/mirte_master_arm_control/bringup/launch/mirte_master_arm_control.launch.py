@@ -11,9 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import platform
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, RegisterEventHandler, GroupAction
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import (
@@ -23,20 +24,35 @@ from launch.substitutions import (
     PathJoinSubstitution,
     TextSubstitution,
 )
-from launch_ros.actions import Node
+from launch_ros.actions import Node, PushRosNamespace
 from launch_ros.parameter_descriptions import ParameterFile
 from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
     # Declare arguments
-    declared_arguments = [
-        DeclareLaunchArgument(
-            "frame_prefix",
-            default_value="",
-            description="An arbitrary prefix to add to the published tf2 frames. Defaults to the empty string.",
-        )
-    ]
+    ld = LaunchDescription(
+        [
+            DeclareLaunchArgument(
+                "machine_namespace",
+                default_value=TextSubstitution(
+                    text=platform.node().replace("-", "_").lower()
+                ),
+                description="The namespace containing all Robot specific ROS communication",
+            ),
+            DeclareLaunchArgument(
+                "hardware_namespace",
+                default_value="io",
+                description="The namespace for the Telemetrix Node and the hardware peripherals",
+            ),
+        ],
+    )
+
+    machine_namespace = LaunchConfiguration("machine_namespace")
+
+    frame_prefix = LaunchConfiguration(
+        "_frame_prefix", default=[machine_namespace, "/"]
+    )
 
     robot_description_content = Command(
         [
@@ -54,7 +70,7 @@ def generate_launch_description():
 
     robot_description = {
         "robot_description": robot_description_content,
-        "frame_prefix": LaunchConfiguration("frame_prefix"),
+        "frame_prefix": frame_prefix,
     }
 
     robot_controllers = PathJoinSubstitution(
@@ -93,8 +109,10 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=[
-            "pid_wheels_controller",
-            "mirte_base_controller",
+            # "pid_wheels_controller",
+            # "mirte_master_arm_controller",
+            "joint_follower_controller",
+            # "position_trajectory_controller",
         ],
         # prefix=["xterm -e gdb -ex run --args"],
     )
@@ -118,7 +136,7 @@ def generate_launch_description():
         parameters=[
             {
                 "frame_id": (
-                    LaunchConfiguration("frame_prefix"),
+                    frame_prefix,
                     TextSubstitution(text="base_link"),
                 )
             }
@@ -132,5 +150,21 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         twist_stamper,
     ]
-
-    return LaunchDescription(declared_arguments + nodes)
+    ld.add_action(
+        GroupAction(
+            [
+                # PushRosNamespace(machine_namespace),
+                control_node,
+                robot_state_pub_node,
+                robot_controller_spawner,
+                joint_state_broadcaster_spawner,
+                # twist_stamper,
+            ],
+            launch_configurations={
+                arg.name: LaunchConfiguration(arg.name)
+                for arg in ld.get_launch_arguments()
+            },
+            forwarding=False,
+        )
+    )
+    return ld

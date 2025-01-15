@@ -40,8 +40,8 @@
 #include <mutex>
 #include <thread>
 // const unsigned int NUM_JOINTS = 4;
-// const auto service_format = "io/motor/%s/set_speed";
-// const auto encoder_format = "io/encoder/%s";
+const auto service_format = "io/servo/hiwonder/servo%s/set_angle";
+const auto encoder_format = "io/servo/hiwonder/servo%s/position";
 // const auto max_speed = 100; // Quick fix hopefully for power dip.
 
 namespace mirte_master_arm_control {
