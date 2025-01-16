@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Martin Klomp
     author_email: m.klomp@tudelft.nl
-    generated_timestamp: 1736851663
+    generated_timestamp: 1736955776
   control_xacro:
     command:
       - position
