@@ -26,7 +26,7 @@ jobs:
           which /opt/acttoolcache/node/20.18.1/x64/bin/node
           /opt/acttoolcache/node/20.18.1/x64/bin/node --version
           # link node to /__e/node20/bin/node
-          ln -s /__e/node20/bin/node /opt/acttoolcache/node/20.18.1/x64/bin/node
+          ln -s /opt/acttoolcache/node/20.18.1/x64/bin/node /__e/node20/bin/node 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
