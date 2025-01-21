@@ -26,7 +26,7 @@ jobs:
           which /opt/acttoolcache/node/20.18.1/x64/bin/node
           /opt/acttoolcache/node/20.18.1/x64/bin/node --version
           # link node to /__e/node20/bin/node
-          mkdir -p /__e/node20/bin
+          sudo mkdir -p /__e/node20/bin
           ln -s /opt/acttoolcache/node/20.18.1/x64/bin/node /__e/node20/bin/node 
       - uses: actions/setup-node@v4
         with:
