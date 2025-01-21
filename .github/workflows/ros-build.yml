@@ -18,7 +18,7 @@ jobs:
                     ]
         fail-fast: false
     container:
-      image: ghcr.io/catthehacker/ubuntu:full-22.04
+      image: ghcr.io/catthehacker/ubuntu:js-22.04
     steps:
       - uses: actions/checkout@v4
         with:
