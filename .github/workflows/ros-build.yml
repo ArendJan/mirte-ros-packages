@@ -20,6 +20,11 @@ jobs:
     container:
       image: ghcr.io/catthehacker/ubuntu:js-22.04
     steps:
+      - run: |
+          which node
+          node --version
+          # link node to /__e/node20/bin/node
+          ln -s /__e/node20/bin/node /usr/bin/node
       - uses: actions/setup-node@v4
         with:
           node-version: 20
