@@ -6,7 +6,7 @@ permissions:
   contents: write
 jobs:
   build_testing:
-    runs-on: example-name
+    runs-on: self-hosted
     strategy:
         matrix:
                 ros_distro: [humble]
