@@ -21,11 +21,12 @@ jobs:
       image: ghcr.io/catthehacker/ubuntu:js-22.04
     steps:
       - run: |
-          PATH="/opt/acttoolcache/node/20.18.0/x64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-          which node
-          node --version
+          set -xe
+          # PATH="/opt/acttoolcache/node/20.18.0/x64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+          which /opt/acttoolcache/node/20.18.0/x64/bin/node
+          /opt/acttoolcache/node/20.18.0/x64/bin/node --version
           # link node to /__e/node20/bin/node
-          ln -s /__e/node20/bin/node $(which node)
+          ln -s /__e/node20/bin/node /opt/acttoolcache/node/20.18.0/x64/bin/node
       - uses: actions/setup-node@v4
         with:
           node-version: 20
