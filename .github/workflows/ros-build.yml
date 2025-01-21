@@ -17,8 +17,8 @@ jobs:
                     # armhf
                     ]
         fail-fast: false
-    # container:
-    #   image: ghcr.io/catthehacker/ubuntu:js-22.04
+    container:
+      image: ghcr.io/catthehacker/ubuntu:js-22.04
     steps:
       - uses: actions/setup-node@v4
         with:
