@@ -17,6 +17,8 @@ jobs:
                     # armhf
                     ]
         fail-fast: false
+    container:
+      image: catthehacker/ubuntu:act-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,7 +28,7 @@ jobs:
               mkdir -p ./srcO/
               mv ./mirte_* ./srcO/
               rm -rf ./src
-      - uses: arendjan/ros-deb-builder-action@upmain # allows for failing builds
+      - uses: arendjan/ros-deb-builder-action@test_self2 # allows for failing builds
         with:
           ROS_DISTRO: ${{ matrix.ros_distro }}
           DEB_DISTRO: ${{ matrix.deb_distro }}
