@@ -151,6 +151,8 @@ public:
    * Reading encoder values and setting position and velocity of encoders
    */
   void read_single(int joint, const ros::Duration &period) {
+    const std::lock_guard<std::mutex> lock(this->encoder_read_mutex);
+
     auto diff_ticks = _wheel_encoder[joint] - _last_value[joint];
     _last_value[joint] = _wheel_encoder[joint];
     double radPerEncoderTick = rad_per_enc_tick();
@@ -164,7 +166,12 @@ public:
                      _last_wheel_cmd_direction[joint] * 1.0;
     }
     pos[joint] += distance_rad;
+    if(period.toSec() < 0.0001) {
+      ROS_WARN_STREAM("Period too small: " << period.toSec());
+      return;
+    }
     vel[joint] = distance_rad / period.toSec(); // WHY: was this turned off?
+
   }
 
   /**
@@ -228,6 +235,8 @@ private:
 
   void WheelEncoderCallback(const mirte_msgs::Encoder::ConstPtr &msg,
                             int joint) {
+    const std::lock_guard<std::mutex> lock(this->encoder_read_mutex);
+
     if (msg->value < 0) {
       bidirectional = true;
     }
@@ -241,8 +250,8 @@ private:
   void init_service_clients();
   void start_reconnect();
   std::mutex service_clients_mutex;
-
-  bool bidirectional = false; // assume it is one direction, when receiving any
+  std::mutex encoder_read_mutex;
+  bool bidirectional = true; // assume it is one direction, when receiving any
                               // negative value, it will be set to true
   unsigned int NUM_JOINTS = 2;
 }; // class
