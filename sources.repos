@@ -19,3 +19,7 @@ repositories:
     type: git
     url: https://github.com/ArendJan/usb_cam.git # for lazy publishing
     version: main
+  ros2_system_monitor:
+    type: git
+    url: https://github.com/kei1107/ros2-system-monitor
+    version: master
