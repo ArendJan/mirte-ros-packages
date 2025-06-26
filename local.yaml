@@ -1,0 +1,3 @@
+ros2_system_monitor:
+  ubuntu:
+  - ros-humble-ros2-system-monitor

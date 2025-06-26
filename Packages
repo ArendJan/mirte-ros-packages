@@ -1,0 +1,16 @@
+Package: ros-humble-ros2-system-monitor
+Architecture: arm64
+Version: 0.2.2-7-gd7b9e15-2025.06.26.11.33
+Priority: optional
+Section: misc
+Maintainer: kei1107 <clavis1107@gmail.com>
+Installed-Size: 161
+Depends: ifstat, lm-sensors, ntpdate, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclpy, ros-humble-std-msgs, sysstat
+Filename: ./ros-humble-ros2-system-monitor_0.2.2-7-gd7b9e15-2025.06.26.11.33_arm64.deb
+Size: 15176
+MD5sum: 1103b1837cfbd31ec92937ff5c14ad26
+SHA1: 5310545eb3b27be63f6045ee92b4531961e69980
+SHA256: 34a035c1f026313d042bfe40633cfea1f603ba83bb26b091bef71754e26feb6b
+SHA512: 891838554c4a5223c70bc67badaee6c3cb8b8f274a8627a6ea237be5d0a41bc3b1274009dd91945b5803649c1507913914d007c38943ffb130ba27f7f4316045
+Description: System monitoring tools for ROS2
+
