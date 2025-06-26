@@ -1,5 +1,0 @@
-# Get the board characteristics
----
-uint16 max_adc
-uint16 max_pwm
-float64 max_voltage

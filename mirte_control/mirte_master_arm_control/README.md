@@ -1,2 +1,0 @@
-# MIRTE master arm control
-
