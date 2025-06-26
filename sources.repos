@@ -1,0 +1,5 @@
+repositories:
+  ros2_system_monitor:
+    type: git
+    url: https://github.com/kei1107/ros2-system-monitor
+    version: d7b9e154a10ee4b51c0923ca7439257c2ef154b7
