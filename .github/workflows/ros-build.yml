@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOS_FILE: ./sources.repos
           SKIP_CHECKOUT: true
-          PACKAGES_BRANCH: ros_mirte_${{ matrix.ros_distro }}_${{ matrix.deb_distro }}_${{ matrix.arch }}${{ github.ref == 'refs/heads/develop' && '_develop' || ( github.ref != 'refs/heads/extra_packages' && '_extra_packages' || '' ) }}
+          PACKAGES_BRANCH: ros_mirte_${{ matrix.ros_distro }}_${{ matrix.deb_distro }}_${{ matrix.arch }}${{ github.ref == 'refs/heads/develop' && '_develop' || ( github.ref == 'refs/heads/extra_packages' && '_extra_packages' || '' ) }}
 
         #   SBUILD_CONF: "$enable_network = 1;"
         #   Skip pushing to repo when not on main branch
