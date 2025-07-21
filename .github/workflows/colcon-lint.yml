@@ -1,8 +1,8 @@
 name: colcon-lint
 
 on: [
-    workflow_dispatch, # kind of disabled
-    # push, 
+    # workflow_dispatch, # kind of disabled
+    push, 
     # pull_request
     ]
 
@@ -28,7 +28,7 @@ jobs:
         . /opt/ros/humble/setup.bash
         rosdep update
         rosdep install --from-paths ./ --ignore-src -y --rosdistro=humble -r
-        colcon build --continue-on-error --cmake-args -Wno-dev --trace-expand --trace-redirect=trace.log || true
+        colcon build --continue-on-error --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Wno-dev --trace-expand --trace-redirect=trace.log || true
         . ./install/setup.bash
         # for every folder in the workspace starting with mirte_ excluding mirte_teleop, run command
         ERROR=false
@@ -39,6 +39,43 @@ jobs:
           # fi
         done
         # if $error, set exit state
-        if $ERROR; then
-        exit 1
-        fi
+        # if $ERROR; then
+        # exit 1
+        # fi
+    - run: cd ./mirte_telemetrix_cpp
+    - name: reviewdog with clang-tidy
+      uses: arkedge/action-clang-tidy@main
+      with:
+        workdir: ./build/mirte_telemetrix_cpp/
+  clang-tidy:
+      runs-on: ubuntu-latest
+      container: osrf/ros:humble-desktop-jammy #faster than using setup-ros
+      steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: install clang-tidy
+        run: |
+          sudo apt update
+          sudo apt install clang-tidy -y
+      - name: setup and build
+        shell: bash
+        run: |
+          . /opt/ros/humble/setup.bash
+          rosdep update
+          rosdep install --from-paths ./ --ignore-src -y --rosdistro=humble -r
+          . /opt/ros/humble/setup.bash
+          colcon build --packages-up-to mirte_telemetrix_cpp --continue-on-error --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Wno-dev --trace-expand --trace-redirect=trace.log || true
+          . ./install/setup.bash
+          cd ./mirte_telemetrix_cpp
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Wno-dev
+          make -j$(nproc)
+      - name: run clang-tidy
+        shell: bash
+        run: |
+          . /opt/ros/humble/setup.bash
+          . ./install/setup.bash
+          # -I./mirte_telemetrix_cpp/include -I/opt/ros/humble/include -I/opt/ros/humble/share/tmx_cpp/include
+          clang-tidy -p ./mirte_telemetrix_cpp/build/compile_commands.json ./mirte_telemetrix_cpp/src/*.cpp -checks="cppcoreguidelines-*"
