@@ -40,9 +40,10 @@ find_package(sensor_msgs REQUIRED)
 find_package(color_util REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(backward_ros REQUIRED)
-
+find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
+find_package(PythonLibs ${PY_VERSION} REQUIRED)
 find_package(OpenCV REQUIRED COMPONENTS core imgcodecs)
-find_package(Boost REQUIRED COMPONENTS system thread)
+find_package(Boost REQUIRED COMPONENTS system thread python)
 # ##############################################################################
 # Build ##
 # ##############################################################################
@@ -65,10 +66,8 @@ include_directories(
 
 # endif()
 
-add_executable(
-  ${PROJECT_NAME}_node
+set(MIRTE_TELEMETRIX_CPP_NODE_SOURCES
   src/util.cpp
-  src/mirte-telemetrix.cpp
   src/mirte-board.cpp
   src/boards/atmega328.cpp
   src/boards/pico.cpp
@@ -121,7 +120,15 @@ add_executable(
   src/modules/pca/pca_motor.cpp
   src/modules/pca/pca_servo.cpp
   src/modules/ssd1306_module.cpp
-  src/modules/veml6040_module.cpp)
+  src/modules/veml6040_module.cpp
+)
+
+add_executable(
+  ${PROJECT_NAME}_node
+    src/mirte-telemetrix.cpp
+
+  ${MIRTE_TELEMETRIX_CPP_NODE_SOURCES}
+)
 ament_target_dependencies(
   ${PROJECT_NAME}_node
   std_msgs
@@ -135,6 +142,50 @@ ament_target_dependencies(
   backward_ros
   # system_lib
 )
+
+add_executable(${PROJECT_NAME}_test
+  src/test.cpp
+  ${MIRTE_TELEMETRIX_CPP_NODE_SOURCES}
+)
+target_link_libraries(${PROJECT_NAME}_test
+  Boost::system Boost::thread Boost::python tmx_cpp
+  ${MIRTE_EXTRA_LIBS} ${OpenCV_LIBS} ${Python3_LIBRARIES})
+ament_target_dependencies(
+  ${PROJECT_NAME}_test
+  std_msgs
+  std_srvs
+  mirte_msgs
+  rclcpp
+  rcpputils
+  sensor_msgs
+  color_util
+  cv_bridge # DEPENDS
+  backward_ros
+  # system_lib
+)
+target_include_directories(
+  ${PROJECT_NAME}_test
+  PRIVATE
+  include/
+  libs/tmx-cpp/include/
+  libs/tmx-cpp/libs/async_serial/include/
+  ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
+  ${Python3_INCLUDE_DIRS}
+)
+set(CMAKE_SHARED_MODULE_PREFIX "")
+
+add_library(hello_world SHARED src/hello_world.cpp)
+
+target_link_libraries(hello_world Boost::python ${Boost_LIBRARIES} ${Python3_LIBRARIES})
+target_include_directories(hello_world PRIVATE ${Boost_INCLUDE_DIRS} ${Python3_INCLUDE_DIRS})
+# Copy the __init__.py file
+# configure_file(__init__.py ${CMAKE_CURRENT_BINARY_DIR}/src/__init__.py COPYONLY)
+
+# Suppress prefix "lib" because Python does not allow this prefix
+set_target_properties(hello_world PROPERTIES PREFIX "")
+
+install(TARGETS hello_world DESTINATION "${PYTHON_INSTALL_PATH}")
 
 if(0) # extra strict errors
   target_compile_options(
@@ -156,7 +207,7 @@ if(0) # extra strict errors
 endif()
 
 # Specify libraries to link a library or executable target against
-target_link_libraries(${PROJECT_NAME}_node Boost::system Boost::thread tmx_cpp
+target_link_libraries(${PROJECT_NAME}_node Boost::system Boost::thread Boost::python tmx_cpp
                       ${MIRTE_EXTRA_LIBS} ${OpenCV_LIBS})
 
 # if(supported) if(CMAKE_BUILD_TYPE STREQUAL "Release") message(STATUS "IPO LTO
