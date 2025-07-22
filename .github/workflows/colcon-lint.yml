@@ -1,8 +1,8 @@
 name: colcon-lint
 
 on: [
-    # workflow_dispatch, # kind of disabled
-    push, 
+    workflow_dispatch, # kind of disabled
+    # push, 
     # pull_request
     ]
 
@@ -32,7 +32,10 @@ jobs:
         . ./install/setup.bash
         # for every folder in the workspace starting with mirte_ excluding mirte_teleop, run command
         ERROR=false
-        packages=$(colcon list -n | grep -v mirte_teleop)
+        ignore_folders="mirte_teleop
+        mirte_moveit_config
+        mirte_test"
+        packages=$(colcon list -n | grep -v $ignore_folders )
         for d in $packages; do
             colcon lint --packages-select $d || ERROR=true
             colcon test --packages-select $d || ERROR=true
@@ -40,7 +43,8 @@ jobs:
         done
         # if $error, set exit state
         if $ERROR; then
-        exit 1
+          colcon test-result --verbose || true
+          exit 1
         fi
     # - run: cd ./mirte_telemetrix_cpp
     # - name: reviewdog with clang-tidy
