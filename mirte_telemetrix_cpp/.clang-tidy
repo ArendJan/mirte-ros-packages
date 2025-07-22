@@ -1,5 +1,5 @@
 ---
-Checks: "cppcoreguidelines-*
+Checks: "cppcoreguidelines-*, misc-*, modernize-*, readability-*, bugprone-*, performance-*,
         -abseil-*,
         -altera-*,
         -android-*,
@@ -16,6 +16,7 @@ Checks: "cppcoreguidelines-*
         -cppcoreguidelines-avoid-magic-numbers,
         -readability-magic-numbers
 "
+# Checks: "*"
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 FormatStyle:     none

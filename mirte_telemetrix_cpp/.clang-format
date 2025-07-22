@@ -19,7 +19,7 @@ BasedOnStyle: LLVM
 # PointerAlignment: Middle
 # ReflowComments: false
 # IncludeBlocks: Regroup
-InsertBraces: true
+# InsertBraces: true
 # IncludeCategories:
 #   # - Regex: '^<.*/(msg|srv|action)/.*\.hpp>'
 #   #   Priority:  3

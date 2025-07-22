@@ -39,14 +39,14 @@ jobs:
           # fi
         done
         # if $error, set exit state
-        # if $ERROR; then
-        # exit 1
-        # fi
-    - run: cd ./mirte_telemetrix_cpp
-    - name: reviewdog with clang-tidy
-      uses: arkedge/action-clang-tidy@main
-      with:
-        workdir: ./build/mirte_telemetrix_cpp/
+        if $ERROR; then
+        exit 1
+        fi
+    # - run: cd ./mirte_telemetrix_cpp
+    # - name: reviewdog with clang-tidy
+    #   uses: arkedge/action-clang-tidy@main
+    #   with:
+    #     workdir: ./build/mirte_telemetrix_cpp/
   clang-tidy:
       runs-on: ubuntu-latest
       container: osrf/ros:humble-desktop-jammy #faster than using setup-ros
@@ -61,6 +61,7 @@ jobs:
       - name: setup and build
         shell: bash
         run: |
+          pwd
           . /opt/ros/humble/setup.bash
           rosdep update
           rosdep install --from-paths ./ --ignore-src -y --rosdistro=humble -r
@@ -75,7 +76,8 @@ jobs:
       - name: run clang-tidy
         shell: bash
         run: |
+          current_dir=$(pwd)
           . /opt/ros/humble/setup.bash
           . ./install/setup.bash
           # -I./mirte_telemetrix_cpp/include -I/opt/ros/humble/include -I/opt/ros/humble/share/tmx_cpp/include
-          clang-tidy -p ./mirte_telemetrix_cpp/build/compile_commands.json ./mirte_telemetrix_cpp/src/*.cpp -checks="cppcoreguidelines-*"
+          clang-tidy -p $current_dir/mirte_telemetrix_cpp/build/compile_commands.json --config-file $current_dir/mirte_telemetrix_cpp/.clang-tidy $current_dir/mirte_telemetrix_cpp/src/*.cpp
