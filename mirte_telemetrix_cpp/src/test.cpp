@@ -39,13 +39,33 @@ int main() {
   std::cout << "Python exec result: " << extract<int>(main_namespace["result"]) << std::endl;
   World x = extract<World>(main_namespace["x"]);
   std::cout << "Python object x: " << x.greet() << std::endl;
-  object loop = main_namespace["loop"];
-  for(int i = 0; i < 10000; i) {
-    auto out = eval("loop()", main_namespace);
-    std::cout << "Python loop output: " << extract<int>(out) << std::endl;
-    // std::cout << "Python loop iteration: " << i << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-  }
+  // object loop = main_namespace["loop"];
+  std::thread xthread([&]() {
+    try {
+      // object loop = main_namespace["loop"];
+      while (true) {
+        std::cout << "Python thread running..." << std::endl;
+        auto out = eval("loop()", main_namespace);
+        std::cout << "Python loop done" << std::endl;
+        // std::cout << "Python loop output: " << extract<int>(out) << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      }
+    } catch (error_already_set &) {
+      PyErr_Print();
+      std::cerr << "Error executing Python code in thread" << std::endl;
+    }
+  });
+  // for(int i = 0; i < 10000; i) {
+  //   auto out = eval("loop()", main_namespace);
+  //   std::cout << "Python loop output: " << extract<int>(out) << std::endl;
+  //   // std::cout << "Python loop iteration: " << i << std::endl;
+  //   std::this_thread::sleep_for(std::chrono::milliseconds(10));
+  // }
+  std::this_thread::sleep_for(std::chrono::seconds(4));
+  // auto out = eval("upd(3)", main_namespace);
+  // std::cout << "Python upd output: " << extract<int>(out) << std::endl;
+  std::this_thread::sleep_for(std::chrono::seconds(100));
+  std::cout << "done!" << std::endl;
   // std::cout << "Python object x: " << x << std::endl;
 } catch (error_already_set &) {
     PyErr_Print();
