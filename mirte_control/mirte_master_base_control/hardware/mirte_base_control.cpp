@@ -178,11 +178,12 @@ MirteBaseHWInterface::read(const rclcpp::Time &time,
 using namespace std::chrono_literals;
 
 bool MirteBaseHWInterface::init_service_clients() {
+  std::cout << "single" << (int)this->use_single_client << std::endl;
   if (!this->use_single_client) {
 
     for (auto joint : this->joints) {
       auto service = (boost::format(service_format) % joint).str();
-      //     RCLCPP_INFO_STREAM("Waiting for service " << service); // todo
+          // RCLCPP_INFO_STREAM("Waiting for service " << service); // todo
       //     print rclcpp::service::waitForService(service, -1); // TODO: wait
       //     after creating service
     }

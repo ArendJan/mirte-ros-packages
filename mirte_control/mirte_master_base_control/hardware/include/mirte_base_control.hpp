@@ -142,7 +142,7 @@ private:
   std::shared_ptr<rclcpp::Service<std_srvs::srv::Empty>> start_srv_;
   std::shared_ptr<rclcpp::Service<std_srvs::srv::Empty>> stop_srv_;
 
-  bool use_single_client = true;
+  bool use_single_client = false;
   std::vector<std::shared_ptr<rclcpp::Client<mirte_msgs::srv::SetMotorSpeed>>>
       service_clients;
   std::vector<std::shared_ptr<mirte_msgs::srv::SetMotorSpeed::Request>>

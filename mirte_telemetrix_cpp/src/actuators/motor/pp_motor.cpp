@@ -34,13 +34,10 @@ std::tuple<uint32_t, uint32_t> PPMotor::calc_pwm_speed(int speed) {
 
 void PPMotor::set_speed(int speed) {
   auto [speedA, speedB] = calc_pwm_speed(speed);
-
+  if(speed == 0) { // for braking set both to max, depends on h-bridge chip
+    speedA = this->max_pwm;
+    speedB = this->max_pwm;
+  }
   tmx->pwmWrite(this->pwmA_pin, speedA);
   tmx->pwmWrite(this->pwmB_pin, speedB);
-
-  std::cout << "1:" << std::dec << speedA << std::endl;
-  std::cout << "2:" << std::dec << speedB << std::endl;
-  std::cout << "Setting speed to " << std::dec << speed << std::endl;
-
-  std::cout << "PP Setting speed to " << std::dec << speed << std::endl;
 }
