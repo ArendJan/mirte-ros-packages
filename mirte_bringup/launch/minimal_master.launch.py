@@ -239,15 +239,28 @@ def generate_launch_description():
             [
                 PushRosNamespace(machine_namespace),
                 telemetrix,
-                ros2_control,
-                state_publishers,
-                cameras,
-                web_video_server,
-                lidar,
-                depth_cam,
-                arm_control,
-                mecanum_drive_control,
-                rosbridge,
+                # Node( # telegreen
+                #     package="telegreen_interface",
+                #     executable="controller_direct",
+                #     name="telegreen_controller",
+                #     output="screen",
+                #     # parameters=[
+                #     #     {
+                #     #         "hardware_namespace": hardware_namespace,
+                #     #         "frame_prefix": frame_prefix,
+                #     #         "use_base_pid_control": use_base_pid_control,
+                #     #     }
+                #     # ],
+                # ),
+                # ros2_control,
+                # state_publishers,
+                # cameras,
+                # web_video_server,
+                # lidar,
+                # depth_cam,
+                # arm_control,
+                # mecanum_drive_control,
+                # rosbridge,
             ],
             launch_configurations={
                 arg.name: LaunchConfiguration(arg.name)

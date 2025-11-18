@@ -380,7 +380,9 @@ MirteBaseHWInterface::on_init(const hardware_interface::HardwareInfo &info) {
   //  std::cout << "on_init" << __LINE__ << std::endl;
   if(info.hardware_parameters.find("single_client") != info.hardware_parameters.end()) {
     this->use_single_client = std::stod(info.hardware_parameters.at("single_client"));
+    std::cout << "single client" << this->use_single_client << std::endl;
   } 
+  std::cout << "on_init" << __LINE__ << std::endl;
 
   this->NUM_JOINTS = info.joints.size();
   if (this->NUM_JOINTS > 2) {

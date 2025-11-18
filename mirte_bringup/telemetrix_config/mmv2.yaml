@@ -5,7 +5,7 @@
         type: pcb
         version: 0.6
         max_frequency: 50
-    modules:
+    # modules:
       # motorservocontroller:
       #   device: mirte
       #   type: PCA9685
@@ -25,57 +25,54 @@
       #     front_right:
       #       pin_A: 1
       #       pin_B: 0
-      servo_controller:
-        device: mirte
-        type: Hiwonder_Servo
-        pins:
-          rx: 0
-          tx: 1
-        servos:
-          shoulder_pan:
-            id: 2
-            home_out: 12000
-            min_angle_out: 3400
-            max_angle_out: 21000
-            invert: false
-          shoulder_lift:
-            id: 3
-            home_out: 11450
-            min_angle_out: 2832
-            max_angle_out: 20000
-            invert: false
-          elbow:
-            id: 4
-            home_out: 11750
-            min_angle_out: 120
-            max_angle_out: 21000
-            invert: false
-          wrist:
-            id: 5
-            home_out: 12200
-            min_angle_out: 1128
-            max_angle_out: 21000
-            invert: false
-          gripper:
-            id: 6
-            home_out: 10524
-            min_angle_out: 6168
-            max_angle_out: 14224
-            invert: false
-    power:
-      power_watcher:
-        device: mirte
-        type: INA226
-        pins:
-          scl: 15
-          sda: 14
-        addr: 0x40
-        min_voltage: 11.1
-        max_current: 5
-        max_voltage: 15
-        turn_off_time: 10
-        power_low_time: 20.0
-        percentage_led_pin: GPIO4_B4 # 12 = B4, left-most led on usb switcher pcb
+      # servo_controller:
+      #   device: mirte
+      #   type: Hiwonder_Servo
+      #   pins:
+      #     rx: 0
+      #     tx: 1
+      #   servos:
+      #     shoulder_pan:
+      #       id: 2
+      #       home_out: 12000
+      #       min_angle_out: 3400
+      #       max_angle_out: 21000
+      #       invert: false
+      #     shoulder_lift:
+      #       id: 3
+      #       home_out: 11450
+      #       min_angle_out: 2832
+      #       max_angle_out: 20000
+      #       invert: false
+      #     elbow:
+      #       id: 4
+      #       home_out: 11750
+      #       min_angle_out: 120
+      #       max_angle_out: 21000
+      #       invert: false
+      #     wrist:
+      #       id: 5
+      #       home_out: 12200
+      #       min_angle_out: 1128
+      #       max_angle_out: 21000
+      #       invert: false
+      #     gripper:
+      #       id: 6
+      #       home_out: 10524
+      #       min_angle_out: 6168
+      #       max_angle_out: 14224
+      #       invert: false
+      # power_watcher:
+      #   device: mirte
+      #   type: INA226
+      #   connector: I2C1
+      #   addr: 0x40
+      #   min_voltage: 11.1
+      #   max_current: 5
+      #   max_voltage: 15
+      #   turn_off_time: 10
+      #   power_low_time: 20
+      #   percentage_led_pin: GPIO4_B4 # 12 = B4, left-most led on usb switcher pcb
       # movement:
       #   device: mirte
       #   type: MPU9250

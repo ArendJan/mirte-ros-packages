@@ -43,7 +43,7 @@
     </xacro:sensor_orbbec_astra_pro_plus>
   </xacro:if>
 
-  <xacro:if value="$(arg imu_enable)">
+  <!-- <xacro:if value="$(arg imu_enable)">
     <link name="imu_link" />
 
     <joint name="imu_joint" type="fixed">
@@ -51,7 +51,7 @@
       <parent link="base_link" />
       <child link="imu_link" />
     </joint>
-  </xacro:if>
+  </xacro:if> -->
 
   <link name="base_link" />
   <gazebo reference="base_link">

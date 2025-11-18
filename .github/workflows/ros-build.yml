@@ -6,7 +6,7 @@ permissions:
   contents: write
 jobs:
   build_testing:
-    runs-on: ${{ matrix.arch == 'amd64' && 'ubuntu-22.04' || 'ubuntu-22.04-arm' }}
+    runs-on: ${{ matrix.arch == 'amd64' && 'ubuntu-22.04' || 'ubuntu-22.04' }}
     strategy:
         matrix:
                 ros_distro: [humble, 
@@ -16,7 +16,7 @@ jobs:
                   # noble
                   ]
                 arch: [
-                    amd64, 
+                    # amd64, 
                     arm64, 
                     # armhf
                     ]
@@ -42,7 +42,7 @@ jobs:
               rm -rf ./src
               
               # if not on develop or main, only build the packages from the last 2 commits
-              if [[ "${{ github.ref }}" != "refs/heads/main" && "${{ github.ref }}" != "refs/heads/develop" ]]; then
+              if [[ "${{ github.ref }}" != "refs/heads/main" && "${{ github.ref }}" != "refs/heads/develop" || ${{ env.ACT }} ]]; then
                 rm ./sources.repos
                 # for all packages in list, check if they are in the last 2 commits
                 packages=("mirte_telemetrix_cpp" "mirte_bringup" "mirte_teleop" "mirte_description" "mirte_moveit_config" "mirte_master_arm_control" "mirte_master_base_control" "mirte_pioneer_control")
@@ -93,4 +93,4 @@ jobs:
         #   Skip pushing to repo when not on main branch
           SKIP_PUSH: true
           UPLOAD_ARTIFACTS: true
-          CONTINUE_ON_ERROR: true
+          CONTINUE_ON_ERROR: false
