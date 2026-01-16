@@ -94,9 +94,9 @@ def generate_launch_description():
             [
                 PushRosNamespace(machine_namespace),
                 telemetrix,
-                diff_drive_control,
-                rosbridge,
-                usb_cam,
+                # diff_drive_control,
+                # rosbridge,
+                # usb_cam,
             ],
             launch_configurations={
                 arg.name: LaunchConfiguration(arg.name)
