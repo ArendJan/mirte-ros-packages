@@ -5,7 +5,7 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 moveit_simple_controller_manager:
   controller_names:
     - mirte_master_arm_controller
-    - mirte_master_gripper_controller
+    # - mirte_master_gripper_controller
 
   mirte_master_arm_controller:
     type: FollowJointTrajectory
@@ -18,9 +18,9 @@ moveit_simple_controller_manager:
       - wrist_joint
     action_ns: follow_joint_trajectory
     default: true
-  mirte_master_gripper_controller:
-    type: GripperCommand
-    joints:
-      - gripper_joint
-    action_ns: gripper_cmd
-    default: true
+  # mirte_master_gripper_controller:
+  #   type: GripperCommand
+  #   joints:
+  #     - gripper_joint
+  #   action_ns: gripper_cmd
+  #   default: true

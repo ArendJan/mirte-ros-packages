@@ -44,24 +44,28 @@
             min_angle_out: 2832
             max_angle_out: 20000
             invert: false
+            set_range: false
           elbow:
             id: 4
             home_out: 11750
             min_angle_out: 120
             max_angle_out: 21000
             invert: false
+            set_range: false
           wrist:
             id: 5
             home_out: 12200
             min_angle_out: 1128
             max_angle_out: 21000
             invert: false
+            set_range: false
           gripper:
             id: 6
             home_out: 10524
             min_angle_out: 6168
             max_angle_out: 14224
             invert: false
+            set_range: false
       power_watcher:
         device: mirte
         type: INA226

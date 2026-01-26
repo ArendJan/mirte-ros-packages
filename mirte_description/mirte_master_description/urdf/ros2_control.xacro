@@ -85,7 +85,7 @@
 </ros2_control>
 
 
-<ros2_control name="ros2_gripper_control" type="system">
+<!-- <ros2_control name="ros2_gripper_control" type="system">
      <hardware>
         <xacro:if value="$(arg sim)">
           <plugin>gazebo_ros2_control/GazeboSystem</plugin>
@@ -129,7 +129,7 @@
 
     </xacro:if>
 
-</ros2_control>
+</ros2_control> -->
 
 <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
