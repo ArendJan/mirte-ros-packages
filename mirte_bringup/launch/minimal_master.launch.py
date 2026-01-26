@@ -253,7 +253,7 @@ def generate_launch_description():
                     # ],
                 ),
                  # ros2 topic pub /io/servo/hiwonder/shoulder_pan/position mirte_msgs/msg/ServoPosition "{angle: 0.2, raw: 0}"
-                ExecuteProcess(cmd=['ros2', 'topic', 'pub', '/io/servo/hiwonder/shoulder_pan/position', 'mirte_msgs/msg/ServoPosition', '{angle: 0.2, raw: 0}']),
+                # ExecuteProcess(cmd=['ros2', 'topic', 'pub', '/io/servo/hiwonder/shoulder_pan/position', 'mirte_msgs/msg/ServoPosition', '{angle: 0.2, raw: 0}']),
 
                 # ros2_control,
                 # state_publishers,
