@@ -1,0 +1,4 @@
+source;share/mirte_telemetrix_cpp/local_setup.bash
+source;share/mirte_telemetrix_cpp/local_setup.dsv
+source;share/mirte_telemetrix_cpp/local_setup.sh
+source;share/mirte_telemetrix_cpp/local_setup.zsh

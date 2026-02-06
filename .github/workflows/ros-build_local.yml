@@ -1,0 +1,59 @@
+name: ros-ci-local
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        required: true
+jobs:
+  build_testing_local:
+    runs-on: ubuntu-22.04 
+    container: ${{ github.event.inputs.arch == 'x86' && 'testbuild' || 'testbuild_arm' }} # testbuild 
+    steps:
+      - run: |
+          echo "ARCH: ${{ github.event.inputs.arch }}"
+          # exit 1
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0 # fetch all history for the self-checkout step
+      - uses: actions/cache@v4
+        with:
+          path: |
+            mirte_telemetrix_cpp/cache.tar
+          key: build_${{ github.event.inputs.arch }}
+      - name: self-checkout
+        run: |
+              set -ex
+              # sudo rosdep init || true
+              # rosdep update
+              # rosdep install --from-paths . --ignore-src -r -y
+              # echo "deb [trusted=yes] https://github.com/ArendJan/mirte-ros-packages/raw/ros_mirte_humble_jammy_amd64_develop/ ./" | sudo tee /etc/apt/sources.list.d/ArendJan_mirte-ros-packages.list
+              # echo "yaml https://github.com/ArendJan/mirte-ros-packages/raw/ros_mirte_humble_jammy_amd64_develop/local.yaml humble" | sudo tee /etc/ros/rosdep/sources.list.d/1-ArendJan_mirte-ros-packages.list
+              # sudo apt update
+              # sudo apt install "ros-humble-mirte-*" -y || true
+              
+              cd mirte_telemetrix_cpp
+              # remove any lines with mirte_msgs in package.xml
+              sed -i '/mirte_msgs/d' package.xml
+
+              # if cache.tar exists, unzip here
+              if [ -f cache.tar ]; then
+                tar -xf cache.tar
+              fi
+              bloom-generate rosdebian -d --os-name ubuntu --os-version jammy --ros-distro humble
+              ls
+              # cd mirte_telemetrix_cpp
+              fakeroot debian/rules binary
+              ls -lart ../*.deb || true
+              ls -lart *.deb || true
+      - name: Cache build artifacts
+        run: |
+          cd mirte_telemetrix_cpp
+          tar -cf cache.tar .obj-* || true
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: |
+            mirte_telemetrix_cpp/*.deb
+            *.deb

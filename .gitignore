@@ -4,4 +4,6 @@ COLCON_IGNORE
 mirte_control/mirte_master_base_control/old/
 .obj-x86_64-linux-gnu/
 debian/
-.deb
+*.deb
+*.ddeb
+.obj-aarch64-linux-gnu/

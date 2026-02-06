@@ -1,0 +1,12 @@
+Source: ros-humble-mirte-telemetrix-cpp
+Section: misc
+Priority: optional
+Maintainer: Arend-Jan van Hilten <tmxcpp@arend-jan.com>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libgpiod-dev, libopencv-dev, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-cppcheck <!nocheck>, ros-humble-ament-cmake-pycodestyle <!nocheck>, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-backward-ros, ros-humble-color-util, ros-humble-cv-bridge, ros-humble-rclcpp, ros-humble-rcpputils, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-mirte-telemetrix-cpp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libgpiod-dev, libopencv-dev, ros-humble-ament-index-cpp, ros-humble-backward-ros, ros-humble-color-util, ros-humble-cv-bridge, ros-humble-launch, ros-humble-launch-ros, ros-humble-rclcpp, ros-humble-rcpputils, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs
+Description: Telemetrix cpp implementation

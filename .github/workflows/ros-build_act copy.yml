@@ -1,0 +1,102 @@
+name: ros-ci2
+on:
+  workflow_dispatch:
+    inputs:
+      pkg_name:
+        description: "A random input name for the workflow"
+        type: string
+
+permissions:
+  contents: write
+jobs:
+  build_testing_act2:
+    runs-on: ubuntu-22.04 # ${{ matrix.arch == 'amd64' && '' || 'ubuntu-24.04' }}
+    container: ros@sha256:f14906d4a3ca82fa13ec7f8c79d237a04f6a14d47b69564f25eac6903d319d91
+    # strategy:
+    #     matrix:
+    #             ros_distro: [humble, 
+    #               # jazzy
+    #               ]
+    #             deb_distro: [jammy, 
+    #               # noble
+    #               ]
+    #             arch: [
+    #                 # amd64, 
+    #                 arm64, 
+    #                 # armhf
+    #                 ]
+    #             exclude:
+    #               - ros_distro: humble
+    #                 deb_distro: noble
+    #                 # arch: arm64
+    #               - ros_distro: jazzy
+    #                 deb_distro: jammy
+    #                 # arch: arm64
+
+    #     fail-fast: false
+    steps:
+      - run: |
+          apt update
+          # apt install -y /
+          # install nodejs
+          apt install -y curl
+          curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+          apt install -y nodejs python3-bloom python3-rosdep fakeroot
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0 # fetch all history for the self-checkout step
+      - uses: actions/cache@v4
+        with:
+          path: |
+            /root/.cache/sbuild/jammy-arm64.tar
+          key: build
+      - name: self-checkout
+        run: |
+              set -ex
+              sudo rosdep init || true
+              rosdep update
+              rosdep install --from-paths . --ignore-src -r -y
+              echo "deb [trusted=yes] https://github.com/ArendJan/mirte-ros-packages/raw/ros_mirte_humble_jammy_amd64_develop/ ./" | sudo tee /etc/apt/sources.list.d/ArendJan_mirte-ros-packages.list
+              echo "yaml https://github.com/ArendJan/mirte-ros-packages/raw/ros_mirte_humble_jammy_amd64_develop/local.yaml humble" | sudo tee /etc/ros/rosdep/sources.list.d/1-ArendJan_mirte-ros-packages.list
+              sudo apt update
+              sudo apt install "ros-humble-mirte-*" -y || true
+              
+              # cd mirte_telemetrix_cpp
+              bloom-generate rosdebian --os-name ubuntu --os-version jammy --ros-distro humble mirte_telemetrix_cpp
+              fakeroot mirte_telemetrix_cpp/debian/rules binary
+              ls -lart ../*.deb
+              ls -lart *.deb
+        
+      # - uses: arendjan/ros-deb-builder-action@upmain # allows for failing builds
+      #   if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
+      #   with:
+      #     ROS_DISTRO: ${{ matrix.ros_distro }}
+      #     DEB_DISTRO: ${{ matrix.deb_distro }}
+      #     DEB_ARCH: ${{ matrix.arch }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     # REPOS_FILE: ./sources.repos
+      #     SKIP_CHECKOUT: true
+      #     PACKAGES_BRANCH: ros_mirte_${{ matrix.ros_distro }}_${{ matrix.deb_distro }}_${{ matrix.arch }}${{ github.ref == 'refs/heads/develop' && '_develop' || '' }}
+
+      #   #   SBUILD_CONF: "$enable_network = 1;"
+      #   #   Skip pushing to repo when not on main branch
+      #     SKIP_PUSH: false
+      #     UPLOAD_ARTIFACTS: false
+      #     CONTINUE_ON_ERROR: false
+      # - uses: arendjan/ros-deb-builder-action@upmain # allows for failing builds
+      #   # if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
+      #   with:
+      #     ROS_DISTRO: ${{ matrix.ros_distro }}
+      #     DEB_DISTRO: ${{ matrix.deb_distro }}
+      #     DEB_ARCH: ${{ matrix.arch }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     # REPOS_FILE: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}./sources.repos
+      #     # if not on develop or main, only build the packages from the last 2 commits
+      #     # SKIP_PACKAGES: ${{ env.SKIP_PACKAGES || '' }}
+      #     SKIP_CHECKOUT: true
+      #     PACKAGES_BRANCH: ros_mirte_${{ matrix.ros_distro }}_${{ matrix.deb_distro }}_${{ matrix.arch }}${{ github.ref == 'refs/heads/develop' && '_develop' || '' }}
+      #   #   Skip pushing to repo when not on main branch
+      #     SKIP_PUSH: true
+      #     UPLOAD_ARTIFACTS: true
+      #     CONTINUE_ON_ERROR: true

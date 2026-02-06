@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
   executor.spin();
   rclcpp::shutdown();
 
-  return 0;
+  return 1;
 }
 
 rclcpp::node_interfaces::NodeBaseInterface::SharedPtr

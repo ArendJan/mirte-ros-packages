@@ -1,0 +1,13 @@
+Package: ros-humble-mirte-telemetrix-cpp-dbgsym
+Package-Type: ddeb
+Source: ros-humble-mirte-telemetrix-cpp
+Version: 0.0.1-0jammy
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Arend-Jan van Hilten <tmxcpp@arend-jan.com>
+Installed-Size: 60421
+Depends: ros-humble-mirte-telemetrix-cpp (= 0.0.1-0jammy)
+Section: debug
+Priority: optional
+Description: debug symbols for ros-humble-mirte-telemetrix-cpp
+Build-Ids: f5d7bd2a9c39519429eb4b29347c7e3e352118d5 2fea4825ddc5d5984dda9eda19e43ceaedd7d688

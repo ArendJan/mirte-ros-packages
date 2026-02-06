@@ -1,0 +1,1 @@
+rclcpp;rcpputils;boost;std_msgs;sensor_msgs;libopencv-dev;cv_bridge;backward_ros;ament_index_cpp;color_util;std_srvs;libgpiod-dev;launch;launch_ros;ament_lint_auto;ament_cmake_clang_format;ament_cmake_cppcheck;ament_cmake_pycodestyle
