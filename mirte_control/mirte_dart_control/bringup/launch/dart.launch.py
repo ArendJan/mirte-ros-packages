@@ -25,24 +25,24 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     # Declare arguments
     declared_arguments = []
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "gui",
-            default_value="true",
-            description="Start RViz2 automatically with this launch file.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "remap_odometry_tf",
-            default_value="false",
-            description="Remap odometry TF from the steering controller to the TF tree.",
-        )
-    )
+    # declared_arguments.append(
+    #     DeclareLaunchArgument(
+    #         "gui",
+    #         default_value="true",
+    #         description="Start RViz2 automatically with this launch file.",
+    #     )
+    # )
+    # declared_arguments.append(
+    #     DeclareLaunchArgument(
+    #         "remap_odometry_tf",
+    #         default_value="false",
+    #         description="Remap odometry TF from the steering controller to the TF tree.",
+    #     )
+    # )
 
-    # Initialize Arguments
-    gui = LaunchConfiguration("gui")
-    remap_odometry_tf = LaunchConfiguration("remap_odometry_tf")
+    # # Initialize Arguments
+    # gui = LaunchConfiguration("gui")
+    # remap_odometry_tf = LaunchConfiguration("remap_odometry_tf")
 
     # Get URDF via xacro
     robot_description_content = Command(
@@ -109,14 +109,14 @@ def generate_launch_description():
             "--controller-ros-args",
             "-r /bicycle_steering_controller/tf_odometry:=/tf",
         ],
-        condition=IfCondition(remap_odometry_tf),
+        # condition=IfCondition(remap_odometry_tf),
     )
 
     robot_bicycle_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["bicycle_steering_controller", "--param-file", robot_controllers],
-        condition=UnlessCondition(remap_odometry_tf),
+        # condition=UnlessCondition(remap_odometry_tf),
     )
 
     # Delay rviz start after `joint_state_broadcaster`
