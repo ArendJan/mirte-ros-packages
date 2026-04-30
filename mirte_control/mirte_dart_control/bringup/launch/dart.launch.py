@@ -21,7 +21,6 @@ from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-#Test voor pushen met fine-grained personal token
 
 def generate_launch_description():
     # Declare arguments
