@@ -20,6 +20,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <mirte_msgs/srv/set_servo_angle.hpp>
 
 #include "hardware_interface/handle.hpp"
 #include "hardware_interface/hardware_info.hpp"
@@ -31,6 +32,7 @@
 #include "rclcpp/time.hpp"
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
+
 
 namespace mirte_dart_control
 {
@@ -84,6 +86,14 @@ public:
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
+
+// Service clients
+  rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr steering_client_;
+  rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr throttle_client_;
+
+  // Store last sent commands to avoid flooding the bus
+  int last_cmd_steering_;
+  int last_cmd_throttle_;
   // Parameters for the CarlikeBot simulation
   double hw_start_sec_;
   double hw_stop_sec_;

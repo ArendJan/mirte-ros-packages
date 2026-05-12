@@ -2,11 +2,13 @@ cmake_minimum_required(VERSION 3.16)
 project(mirte_dart_control LANGUAGES CXX)
 
 find_package(ros2_control_cmake REQUIRED)
+find_package(mirte_msgs REQUIRED)
 set_compiler_options()
 export_windows_symbols()
 
 # find dependencies
 set(THIS_PACKAGE_INCLUDE_DEPENDS
+  mirte_msgs
   hardware_interface
   pluginlib
   rclcpp
@@ -37,6 +39,7 @@ add_library(
 target_include_directories(mirte_dart_control PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/hardware/include>
 $<INSTALL_INTERFACE:include/mirte_dart_control>
+
 )
 target_link_libraries(mirte_dart_control PUBLIC
   hardware_interface::hardware_interface
