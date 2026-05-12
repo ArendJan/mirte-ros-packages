@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "mirte_dart_control.hpp"
+#include "mirte_control/mirte_dart_control.hpp"
 
 #include <chrono>
 #include <cmath>
@@ -28,6 +28,7 @@
 
 namespace mirte_dart_control
 {
+
 hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
   const hardware_interface::HardwareInfo & info)
 {
@@ -46,9 +47,11 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
 
   //Define service client paths
   auto steering_service = "io/servo/stuur/set_angle";
+  auto throttle_service = "io/servo/gas/set_angle";
+
   steering_client_ =
       node->create_client<mirte_msgs::srv::SetServoAngle>(steering_service);
-  auto throttle_service = "io/servo/gas/set_angle";
+  
   throttle_client_ =
       node->create_client<mirte_msgs::srv::SetServoAngle>(throttle_service);
  
@@ -308,7 +311,7 @@ hardware_interface::return_type MirteDartHWInterface::read(
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
+hardware_interface::return_type MirteDartHWInterface::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
@@ -332,8 +335,10 @@ hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
   // BEGIN: Code written for MIRTE-on-DART
   auto steering_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
+  double position = steering_pos_cmd_;
+
   int steering_angle =
-      std::max(std::min(int(hardware_interface::HW_IF_POSITION) + 90, 180), 0);
+      std::max(std::min(int(position) + 90, 180), 0);
   if (steering_angle != last_cmd_steering_) {
     steering_request->angle = float(steering_angle);
     auto result = steering_client_->async_send_request(steering_request);
@@ -342,9 +347,11 @@ hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
  
   auto throttle_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
+  double velocity = traction_vel_cmd_;
   float velocity_factor = 1.0f;
+
   int throttle_angle =
-      std::max(std::min(int(float(hardware_interface::HW_IF_VELOCITY) * velocity_factor) + 90 , 180), 0);
+    std::clamp(int(velocity * velocity_factor + 90), 0, 180);
   if (throttle_angle != last_cmd_throttle_) {
     throttle_request->angle = float(throttle_angle);
     auto result = throttle_client_->async_send_request(throttle_request);

@@ -2,10 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(mirte_dart_control LANGUAGES CXX)
 
 find_package(ros2_control_cmake REQUIRED)
-find_package(mirte_msgs REQUIRED)
 set_compiler_options()
 export_windows_symbols()
-
+ 
 # find dependencies
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   mirte_msgs
@@ -47,6 +46,11 @@ target_link_libraries(mirte_dart_control PUBLIC
   rclcpp::rclcpp
   rclcpp_lifecycle::rclcpp_lifecycle
 )
+
+find_package(mirte_msgs REQUIRED)
+ament_target_dependencies(${PROJECT_NAME} PUBLIC
+                          ${THIS_PACKAGE_INCLUDE_DEPENDS})
+
 
 # Export hardware plugins
 pluginlib_export_plugin_description_file(hardware_interface mirte_dart_control.xml)
