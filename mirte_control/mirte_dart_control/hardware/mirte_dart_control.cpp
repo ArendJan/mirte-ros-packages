@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "mirte_dart_control/hardware/include/mirte_dart_control.hpp"
+#include "mirte_dart_control.hpp"
 
 #include <chrono>
 #include <cmath>
@@ -29,20 +29,51 @@
 namespace mirte_dart_control
 {
 hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
-  const hardware_interface::HardwareComponentInterfaceParams & params)
+  const hardware_interface::HardwareInfo & info)
 {
   if (
-    hardware_interface::SystemInterface::on_init(params) !=
+    hardware_interface::SystemInterface::on_init(info) !=
     hardware_interface::CallbackReturn::SUCCESS)
   {
     return hardware_interface::CallbackReturn::ERROR;
+  }
+
+  //Define service client paths
+  auto steering_service = "io/servo/stuur/set_angle";
+  steering_client_ =
+      node->create_client<mirte_msgs::srv::SetServoAngle>(steering_service);
+  auto throttle_service = "io/servo/gas/set_angle";
+  throttle_client_ =
+      node->create_client<mirte_msgs::srv::SetServoAngle>(throttle_service);
+ 
+  while (!steering_client_->wait_for_service(std::chrono::seconds(1))) {
+    if (!rclcpp::ok()) {
+      RCLCPP_ERROR(logger_.value(),
+                   "Interrupted while waiting for the service. Exiting.");
+      return hardware_interface::CallbackReturn::ERROR;
+    }
+    RCLCPP_INFO(
+        logger_.value(),
+        "service io/servo/stuur/set_angle not available, waiting again...");
+  }
+ 
+  // TODO: conbine with above
+  while (!throttle_client_->wait_for_service(std::chrono::seconds(1))) {
+    if (!rclcpp::ok()) {
+      RCLCPP_ERROR(logger_.value(),
+                   "Interrupted while waiting for the service. Exiting.");
+      return hardware_interface::CallbackReturn::ERROR;
+    }
+    RCLCPP_INFO(
+        logger_.value(),
+        "service io/servo/gas/set_angle not available, waiting again...");
   }
 
   // Check if the number of joints is correct based on the mode of operation
   if (info_.joints.size() != 2)
   {
     RCLCPP_ERROR(
-      get_logger(),
+      rclcpp::get_logger("MirteDartHWInterface"),
       "MirteDartHWInterface::on_init() - Failed to initialize, "
       "because the number of joints %ld is not 2.",
       info_.joints.size());
@@ -57,12 +88,12 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
     if (joint_is_steering)
     {
       steering_joint_ = joint.name;
-      RCLCPP_INFO(get_logger(), "Joint '%s' is a steering joint.", joint.name.c_str());
+      RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' is a steering joint.", joint.name.c_str());
 
       if (joint.command_interfaces.size() != 1)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %zu command interfaces found. 1 expected.",
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %zu command interfaces found. 1 expected.",
           joint.name.c_str(), joint.command_interfaces.size());
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -70,7 +101,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.command_interfaces[0].name != hardware_interface::HW_IF_POSITION)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %s command interface. '%s' expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %s command interface. '%s' expected.", joint.name.c_str(),
           joint.command_interfaces[0].name.c_str(), hardware_interface::HW_IF_POSITION);
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -78,7 +109,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.state_interfaces.size() != 1)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %zu state interface. 1 expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %zu state interface. 1 expected.", joint.name.c_str(),
           joint.state_interfaces.size());
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -86,21 +117,21 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.state_interfaces[0].name != hardware_interface::HW_IF_POSITION)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
           joint.state_interfaces[0].name.c_str(), hardware_interface::HW_IF_POSITION);
         return hardware_interface::CallbackReturn::ERROR;
       }
     }
     else
     {
-      RCLCPP_INFO(get_logger(), "Joint '%s' is a drive joint.", joint.name.c_str());
+      RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' is a drive joint.", joint.name.c_str());
       traction_joint_ = joint.name;
 
       // Drive joints have a velocity command interface and a velocity state interface
       if (joint.command_interfaces.size() != 1)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %zu command interfaces found. 1 expected.",
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %zu command interfaces found. 1 expected.",
           joint.name.c_str(), joint.command_interfaces.size());
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -108,7 +139,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.command_interfaces[0].name != hardware_interface::HW_IF_VELOCITY)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %s command interface. '%s' expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %s command interface. '%s' expected.", joint.name.c_str(),
           joint.command_interfaces[0].name.c_str(), hardware_interface::HW_IF_VELOCITY);
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -116,7 +147,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.state_interfaces.size() != 2)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %zu state interface. 2 expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %zu state interface. 2 expected.", joint.name.c_str(),
           joint.state_interfaces.size());
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -124,7 +155,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.state_interfaces[0].name != hardware_interface::HW_IF_VELOCITY)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
           joint.state_interfaces[1].name.c_str(), hardware_interface::HW_IF_VELOCITY);
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -132,7 +163,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
       if (joint.state_interfaces[1].name != hardware_interface::HW_IF_POSITION)
       {
         RCLCPP_FATAL(
-          get_logger(), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
+          rclcpp::get_logger("MirteDartHWInterface"), "Joint '%s' has %s state interface. '%s' expected.", joint.name.c_str(),
           joint.state_interfaces[1].name.c_str(), hardware_interface::HW_IF_POSITION);
         return hardware_interface::CallbackReturn::ERROR;
       }
@@ -148,28 +179,56 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 
+// Newly added for Humble
+std::vector<hardware_interface::StateInterface> MirteDartHWInterface::export_state_interfaces()
+{
+  std::vector<hardware_interface::StateInterface> state_interfaces;
+
+  state_interfaces.emplace_back(hardware_interface::StateInterface(
+    steering_joint_, hardware_interface::HW_IF_POSITION, &steering_pos_state_));
+
+  state_interfaces.emplace_back(hardware_interface::StateInterface(
+    traction_joint_, hardware_interface::HW_IF_POSITION, &traction_pos_state_));
+    
+  state_interfaces.emplace_back(hardware_interface::StateInterface(
+    traction_joint_, hardware_interface::HW_IF_VELOCITY, &traction_vel_state_));
+
+  return state_interfaces;
+}
+
+std::vector<hardware_interface::CommandInterface> MirteDartHWInterface::export_command_interfaces()
+{
+  std::vector<hardware_interface::CommandInterface> command_interfaces;
+
+  command_interfaces.emplace_back(hardware_interface::CommandInterface(
+    steering_joint_, hardware_interface::HW_IF_POSITION, &steering_pos_cmd_));
+
+  command_interfaces.emplace_back(hardware_interface::CommandInterface(
+    traction_joint_, hardware_interface::HW_IF_VELOCITY, &traction_vel_cmd_));
+
+  return command_interfaces;
+}
+//Newly added for Humble
+
 hardware_interface::CallbackReturn MirteDartHWInterface::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
-  RCLCPP_INFO(get_logger(), "Configuring ...please wait...");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Configuring ...please wait...");
 
   for (auto i = 0; i < hw_start_sec_; i++)
   {
     rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(get_logger(), "%.1f seconds left...", hw_start_sec_ - i);
+    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
   }
 
   // reset values always when configuring hardware
-  for (const auto & [name, descr] : joint_state_interfaces_)
-  {
-    set_state(name, 0.0);
-  }
-  for (const auto & [name, descr] : joint_command_interfaces_)
-  {
-    set_command(name, 0.0);
-  }
+  steering_pos_state_ = 0.0;
+  steering_pos_cmd_ = 0.0;
+  traction_vel_state_ = 0.0;
+  traction_vel_cmd_ = 0.0;
+  traction_pos_state_ = 0.0;
 
-  RCLCPP_INFO(get_logger(), "Successfully configured!");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Successfully configured!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -177,21 +236,19 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_configure(
 hardware_interface::CallbackReturn MirteDartHWInterface::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
-  RCLCPP_INFO(get_logger(), "Activating ...please wait...");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Activating ...please wait...");
 
   for (auto i = 0; i < hw_start_sec_; i++)
   {
     rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(get_logger(), "%.1f seconds left...", hw_start_sec_ - i);
+    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
   }
 
   // command and state should be equal when starting
-  for (const auto & [name, descr] : joint_command_interfaces_)
-  {
-    set_command(name, get_state(name));
-  }
+  steering_pos_cmd_ = steering_pos_state_;
+  traction_vel_cmd_ = traction_vel_state_;
 
-  RCLCPP_INFO(get_logger(), "Successfully activated!");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Successfully activated!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -200,15 +257,15 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_deactivate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
-  RCLCPP_INFO(get_logger(), "Deactivating ...please wait...");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Deactivating ...please wait...");
 
   for (auto i = 0; i < hw_stop_sec_; i++)
   {
     rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(get_logger(), "%.1f seconds left...", hw_stop_sec_ - i);
+    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_stop_sec_ - i);
   }
   // END: This part here is for exemplary purposes - Please do not copy to your production code
-  RCLCPP_INFO(get_logger(), "Successfully deactivated!");
+  RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Successfully deactivated!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -218,62 +275,83 @@ hardware_interface::return_type MirteDartHWInterface::read(
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   // update states from commands and integrate velocity to position
-  set_state(
-    steering_joint_ + "/" + hardware_interface::HW_IF_POSITION,
-    get_command(steering_joint_ + "/" + hardware_interface::HW_IF_POSITION));
+  steering_pos_state_ = steering_pos_cmd_;
 
-  set_state(
-    traction_joint_ + "/" + hardware_interface::HW_IF_VELOCITY,
-    get_command(traction_joint_ + "/" + hardware_interface::HW_IF_VELOCITY));
-  set_state(
-    traction_joint_ + "/" + hardware_interface::HW_IF_POSITION,
-    get_state(traction_joint_ + "/" + hardware_interface::HW_IF_POSITION) +
-      get_command(traction_joint_ + "/" + hardware_interface::HW_IF_VELOCITY) * period.seconds());
+  traction_vel_state_ = traction_vel_cmd_;
+
+  traction_pos_state_ += traction_vel_state_ * period.seconds();
 
   std::stringstream ss;
-  ss << "Reading states:";
+  ss << "Reading states:" << std::fixed << std::setprecision(2) << std::endl
 
-  ss << std::fixed << std::setprecision(2) << std::endl
-     << "\t"
-     << "position: " << get_state(steering_joint_ + "/" + hardware_interface::HW_IF_POSITION)
-     << " for joint '" << steering_joint_ << "'" << std::endl
-     << "\t"
-     << "position: " << get_state(traction_joint_ + "/" + hardware_interface::HW_IF_POSITION)
-     << " for joint '" << traction_joint_ << "'" << std::endl
-     << "\t"
-     << "velocity: " << get_state(traction_joint_ + "/" + hardware_interface::HW_IF_VELOCITY)
-     << " for joint '" << traction_joint_ << "'";
+     << "\t" << "Steering Pos: " << steering_pos_state_ << " rad" << std::endl
+     << "\t" << "Traction Pos: " << traction_pos_state_ << " m" << std::endl
+     << "\t" << "Traction Vel: " << traction_vel_state_ << " m/s";
 
-  RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 500, "%s", ss.str().c_str());
+  static rclcpp::Clock steady_clock(RCL_STEADY_TIME);
 
+  RCLCPP_INFO_THROTTLE(
+    rclcpp::get_logger("MirteDartHWInterface"), 
+    steady_clock, 
+    500, 
+    "%s", 
+    ss.str().c_str()
+  );
   // END: This part here is for exemplary purposes - Please do not copy to your production code
 
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type ros2_control_demo_example_11 ::MirteDartHWInterface::write(
+hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   std::stringstream ss;
-  ss << "Writing commands:";
 
-  ss << std::fixed << std::setprecision(2) << std::endl
-     << "\t"
-     << "position: " << get_command(steering_joint_ + "/" + hardware_interface::HW_IF_POSITION)
-     << " for joint '" << steering_joint_ << "'" << std::endl
-     << "\t"
-     << "velocity: " << get_command(traction_joint_ + "/" + hardware_interface::HW_IF_VELOCITY)
-     << " for joint '" << traction_joint_ << "'";
+  ss << "Writing commands:" << std::fixed << std::setprecision(2) << std::endl
+     << "\t" << "Steering Cmd (Pos): " << steering_pos_cmd_ << std::endl
+     << "\t" << "Traction Cmd (Vel): " << traction_vel_cmd_;
 
-  RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 500, "%s", ss.str().c_str());
+  static rclcpp::Clock steady_clock(RCL_STEADY_TIME);
+
+  RCLCPP_INFO_THROTTLE(
+    rclcpp::get_logger("MirteDartHWInterface"), 
+    steady_clock, 
+    500, 
+    "%s", 
+    ss.str().c_str()
+  );
   // END: This part here is for exemplary purposes - Please do not copy to your production code
+
+  // BEGIN: Code written for MIRTE-on-DART
+  auto steering_request =
+      std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
+  int steering_angle =
+      std::max(std::min(int(hardware_interface::HW_IF_POSITION) + 90, 180), 0);
+  if (steering_angle != last_cmd_steering_) {
+    steering_request->angle = steering_angle;
+    auto result = steering_client_->async_send_request(steering_request);
+    last_cmd_steering_ = steering_angle;
+  }
+ 
+  auto throttle_request =
+      std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
+  float velocity_factor = 1.0f;
+  int throttle_angle =
+      std::max(std::min(int(hardware_interface::HW_IF_VELOCITY * velocity_factor) + 90 , 180), 0);
+  if (throttle_angle != last_cmd_throttle_) {
+    throttle_request->angle = throttle_angle;
+    auto result = throttle_client_->async_send_request(throttle_request);
+    last_cmd_throttle_ = throttle_angle;
+  }
+ 
+  // END: Code written for MIRTE-on-DART
 
   return hardware_interface::return_type::OK;
 }
 
-}  // namespace ros2_control_demo_example_11
+}  // namespace mirte_dart_control
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(
-  ros2_control_demo_example_11::MirteDartHWInterface, hardware_interface::SystemInterface)
+  mirte_dart_control::MirteDartHWInterface, hardware_interface::SystemInterface)

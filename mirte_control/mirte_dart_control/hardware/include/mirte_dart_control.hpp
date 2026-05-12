@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef ROS2_CONTROL_DEMO_EXAMPLE_11__CARLIKEBOT_SYSTEM_HPP_
-#define ROS2_CONTROL_DEMO_EXAMPLE_11__CARLIKEBOT_SYSTEM_HPP_
+#ifndef MIRTE_DART_CONTROL__HARDWARE_INTERFACE_HPP_
+#define MIRTE_DART_CONTROL__HARDWARE_INTERFACE_HPP_
 
 #include <map>
 #include <memory>
@@ -32,7 +32,7 @@
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 
-namespace ros2_control_demo_example_11
+namespace mirte_dart_control
 {
 struct JointValue
 {
@@ -58,10 +58,15 @@ struct Joint
 class MirteDartHWInterface : public hardware_interface::SystemInterface
 {
 public:
-  RCLCPP_SHARED_PTR_DEFINITIONS(MirteDartHWInterface);
+  RCLCPP_SHARED_PTR_DEFINITIONS(MirteDartHWInterface)
 
   hardware_interface::CallbackReturn on_init(
-    const hardware_interface::HardwareComponentInterfaceParams & params) override;
+    const hardware_interface::HardwareInfo & info) override;
+
+  // Newly added for Humble
+  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
+  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+  // ----------------------
 
   hardware_interface::CallbackReturn on_configure(
     const rclcpp_lifecycle::State & previous_state) override;
@@ -86,8 +91,16 @@ private:
   // joint names
   std::string steering_joint_;
   std::string traction_joint_;
+
+  //Newly added for Humble
+  double steering_pos_cmd_ = 0.0;
+  double steering_pos_state_ = 0.0;
+  double traction_vel_cmd_ = 0.0;
+  double traction_vel_state_ = 0.0;
+  double traction_pos_state_ = 0.0;
+  //Newly added for Humble
 };
 
-}  // namespace ros2_control_demo_example_11
+}  // namespace mirte_dart_control
 
-#endif  // ROS2_CONTROL_DEMO_EXAMPLE_11__CARLIKEBOT_SYSTEM_HPP_
+#endif  // MIRTE_DART_CONTROL__HARDWARE_INTERFACE_HPP_

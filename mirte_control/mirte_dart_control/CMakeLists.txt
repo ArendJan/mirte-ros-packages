@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(ros2_control_demo_example_11 LANGUAGES CXX)
+project(mirte_dart_control LANGUAGES CXX)
 
 find_package(ros2_control_cmake REQUIRED)
 set_compiler_options()
@@ -14,7 +14,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 )
 
 # Specify the required version of ros2_control
-find_package(controller_manager 4.0.0)
+find_package(controller_manager REQUIRED)
 # Handle the case where the required version is not found
 if(NOT controller_manager_FOUND)
   message(FATAL_ERROR "ros2_control version 4.0.0 or higher is required. "
