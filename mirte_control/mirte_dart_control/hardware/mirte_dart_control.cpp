@@ -38,6 +38,12 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
     return hardware_interface::CallbackReturn::ERROR;
   }
 
+  std::shared_ptr<rclcpp::Node> node =
+      rclcpp::Node::make_shared(convert_to_snake_case(get_name()));
+  auto logger_name = std::string(node->get_namespace()).substr(1) + "." +
+                     std::string(node->get_name());
+  logger_ = rclcpp::get_logger(logger_name);
+
   //Define service client paths
   auto steering_service = "io/servo/stuur/set_angle";
   steering_client_ =
@@ -329,7 +335,7 @@ hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
   int steering_angle =
       std::max(std::min(int(hardware_interface::HW_IF_POSITION) + 90, 180), 0);
   if (steering_angle != last_cmd_steering_) {
-    steering_request->angle = steering_angle;
+    steering_request->angle = float(steering_angle);
     auto result = steering_client_->async_send_request(steering_request);
     last_cmd_steering_ = steering_angle;
   }
@@ -338,9 +344,9 @@ hardware_interface::return_type mirte_dart_control::MirteDartHWInterface::write(
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
   float velocity_factor = 1.0f;
   int throttle_angle =
-      std::max(std::min(int(hardware_interface::HW_IF_VELOCITY * velocity_factor) + 90 , 180), 0);
+      std::max(std::min(int(float(hardware_interface::HW_IF_VELOCITY) * velocity_factor) + 90 , 180), 0);
   if (throttle_angle != last_cmd_throttle_) {
-    throttle_request->angle = throttle_angle;
+    throttle_request->angle = float(throttle_angle);
     auto result = throttle_client_->async_send_request(throttle_request);
     last_cmd_throttle_ = throttle_angle;
   }

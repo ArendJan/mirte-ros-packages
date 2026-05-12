@@ -99,6 +99,9 @@ private:
   double traction_vel_state_ = 0.0;
   double traction_pos_state_ = 0.0;
   //Newly added for Humble
+
+  rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr steering_client_;
+  rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr throttle_client_;
 };
 
 }  // namespace mirte_dart_control
