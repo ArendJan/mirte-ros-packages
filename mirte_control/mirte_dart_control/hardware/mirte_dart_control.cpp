@@ -26,8 +26,20 @@
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
 #include "rclcpp/rclcpp.hpp"
 
-namespace mirte_dart_control
-{
+namespace mirte_dart_control {
+
+  std::string convert_to_snake_case(const std::string &input) {
+  std::string result = "";
+
+  for (auto it = input.cbegin(); it != input.cend(); ++it) {
+    if (std::isupper(*it) && !result.empty()) {
+      result.push_back('_');
+    }
+    result.push_back(std::tolower(*it));
+  }
+
+  return result;
+}
 
 hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
   const hardware_interface::HardwareInfo & info)

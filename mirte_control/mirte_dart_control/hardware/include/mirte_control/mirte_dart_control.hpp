@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-#error USING THE CORRECT HEADER
+// #error USING THE CORRECT HEADER
 
 #ifndef MIRTE_DART_CONTROL__HARDWARE_INTERFACE_HPP_
 #define MIRTE_DART_CONTROL__HARDWARE_INTERFACE_HPP_
