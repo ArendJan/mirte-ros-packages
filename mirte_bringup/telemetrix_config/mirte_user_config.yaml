@@ -7,6 +7,10 @@
         board: pico
         max_frequency: 50
     modules:
+      movement:
+        device: mirte
+        type: BNO055
+        connector: I2C1
       motorservocontroller:
         device: mirte
         type: PCA9685

@@ -5,7 +5,7 @@
 #include <mirte_telemetrix_cpp/modules/as5600_module.hpp>
 #include <mirte_telemetrix_cpp/modules/hiwonder_module.hpp>
 #include <mirte_telemetrix_cpp/modules/ina226_module.hpp>
-#include <mirte_telemetrix_cpp/modules/mpu9250_module.hpp>
+#include <mirte_telemetrix_cpp/modules/bno055_module.hpp>
 #include <mirte_telemetrix_cpp/modules/pca_module.hpp>
 #include <mirte_telemetrix_cpp/modules/ssd1306_module.hpp>
 #include <mirte_telemetrix_cpp/modules/veml6040_module.hpp>
@@ -47,10 +47,10 @@ void Mirte_modules::start() {
   this->modules.insert(this->modules.end(), as5600_mods.begin(),
                        as5600_mods.end());
 
-  RCLCPP_INFO(nh->get_logger(), "Adding MPU9250 Modules");
-  auto mpu_mods =
-      MPU9250_sensor::get_mpu_modules(node_data, parser, this->sensor_sys);
-  this->modules.insert(this->modules.end(), mpu_mods.begin(), mpu_mods.end());
+  RCLCPP_INFO(nh->get_logger(), "Adding BNO055 Modules");
+  auto bno_mods =
+      BNO055_sensor::get_bno_modules(node_data, parser, this->sensor_sys);
+  this->modules.insert(this->modules.end(), bno_mods.begin(), bno_mods.end());
 
   RCLCPP_INFO(nh->get_logger(), "Adding ADXL345 Modules");
   auto adxl_mods =

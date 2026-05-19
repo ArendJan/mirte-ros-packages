@@ -105,7 +105,7 @@ add_executable(
   src/parsers/modules/pca/pca_motor_data.cpp
   src/parsers/modules/pca/pca_servo_data.cpp
   src/parsers/modules/ssd1306_data.cpp
-  src/parsers/modules/mpu9250_data.cpp
+  src/parsers/modules/bno055_data.cpp
   src/parsers/modules/veml6040_data.cpp
   src/sensors/base_sensor.cpp
   src/sensors/encoder_monitor.cpp
@@ -117,7 +117,7 @@ add_executable(
   src/modules/hiwonder_module.cpp
   src/modules/hiwonder/hiwonder_servo.cpp
   src/modules/ina226_module.cpp
-  src/modules/mpu9250_module.cpp
+  src/modules/bno055_module.cpp
   src/modules/pca_module.cpp
   src/modules/pca/pca_motor.cpp
   src/modules/pca/pca_servo.cpp
