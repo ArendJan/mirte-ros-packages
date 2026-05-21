@@ -25,13 +25,13 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     # Declare arguments
     declared_arguments = []
-    # declared_arguments.append(
-    #     DeclareLaunchArgument(
-    #         "gui",
-    #         default_value="true",
-    #         description="Start RViz2 automatically with this launch file.",
-    #     )
-    # )
+    declared_arguments.append(
+         DeclareLaunchArgument(
+             "gui",
+             default_value="true",
+             description="Start RViz2 automatically with this launch file.",
+         )
+     )
     # declared_arguments.append(
     #     DeclareLaunchArgument(
     #         "remap_odometry_tf",
@@ -41,31 +41,31 @@ def generate_launch_description():
     # )
 
     # # Initialize Arguments
-    # gui = LaunchConfiguration("gui")
-    # remap_odometry_tf = LaunchConfiguration("remap_odometry_tf")
+    gui = LaunchConfiguration("gui")
+    remap_odometry_tf = LaunchConfiguration("remap_odometry_tf")
 
     # Get URDF via xacro
-    robot_description_content = Command(
-        [
-            PathJoinSubstitution([FindExecutable(name="xacro")]),
-            " ",
-            PathJoinSubstitution(
-                [FindPackageShare("mirte_control"), "urdf", "mirte_dart.urdf.xacro"]
-            ),
-        ]
-    )
-    robot_description = {"robot_description": robot_description_content}
+    #robot_description_content = Command(
+    #    [
+    #        PathJoinSubstitution([FindExecutable(name="xacro")]),
+    #        " ",
+    #        PathJoinSubstitution(
+    #            [FindPackageShare("mirte_dart_control"), "urdf", "mirte_dart.urdf.xacro"]
+    #        ),
+    #    ]
+    #)
+    #robot_description = {"robot_description": robot_description_content}
 
     robot_controllers = PathJoinSubstitution(
         [
-            FindPackageShare("mirte_control"),
+            FindPackageShare("mirte_dart_control"),
             "config",
             "mirte_dart_controllers.yaml",
         ]
     )
     rviz_config_file = PathJoinSubstitution(
         [
-            FindPackageShare("mirte_control"),
+            FindPackageShare("mirte_dart_control"),
             "carlikebot/rviz",
             "carlikebot.rviz",
         ]
@@ -81,7 +81,7 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[robot_description],
+    #    parameters=[robot_description],
     )
     rviz_node = Node(
         package="rviz2",

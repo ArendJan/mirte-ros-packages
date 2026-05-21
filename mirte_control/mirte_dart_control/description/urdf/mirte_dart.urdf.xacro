@@ -3,13 +3,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="carlikebot_robot">
   <xacro:arg name="prefix" default="" />
 
-  <xacro:include filename="$(find mirte_control)/urdf/carlikebot_description.urdf.xacro" />
+  <xacro:include filename="$(find mirte_dart_control)/urdf/carlikebot_description.urdf.xacro" />
 
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find mirte_control)/urdf/carlikebot.materials.xacro" />
+  <xacro:include filename="$(find mirte_dart_control)/urdf/carlikebot.materials.xacro" />
 
   <!-- Import carlikebot ros2_control description -->
-  <xacro:include filename="$(find mirte_control)/ros2_control/mirte_dart_control.ros2_control.xacro" />
+  <xacro:include filename="$(find mirte_dart_control)/ros2_control/mirte_dart_control.ros2_control.xacro" />
 
   <xacro:carlikebot prefix="$(arg prefix)" />
 

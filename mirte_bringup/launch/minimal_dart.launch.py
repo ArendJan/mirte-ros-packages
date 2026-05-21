@@ -65,7 +65,7 @@ def generate_launch_description():
             ),
             IncludeLaunchDescription(
                 PathJoinSubstitution(
-                    [FindPackageShare("mirte_control"), "launch", "dart.launch.py"]
+                    [FindPackageShare("mirte_dart_control"), "launch", "dart.launch.py"]
                 ),
                 launch_arguments={"frame_prefix": frame_prefix}.items(),
             ),
@@ -77,7 +77,6 @@ def generate_launch_description():
             [FindPackageShare("mirte_bringup"), "launch", "camera.launch.py"]
         ),
     )
-
     lidar = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [
@@ -87,7 +86,6 @@ def generate_launch_description():
             ]
         )
     )
-
     rosbridge = IncludeLaunchDescription(
         PathJoinSubstitution(
             [
@@ -105,6 +103,7 @@ def generate_launch_description():
                 PushRosNamespace(machine_namespace),
                 telemetrix,
                 bicycle_control,
+                lidar,
                 rosbridge,
                 usb_cam,
             ],
