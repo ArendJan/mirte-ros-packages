@@ -9,7 +9,7 @@ from launch.substitutions import (
 )
 from launch_ros.actions import PushRosNamespace, SetRemap
 from launch_ros.substitutions import FindPackageShare
-
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
     ld = LaunchDescription(
@@ -76,6 +76,16 @@ def generate_launch_description():
         PathJoinSubstitution(
             [FindPackageShare("mirte_bringup"), "launch", "camera.launch.py"]
         ),
+    )
+
+    lidar = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [
+                PathJoinSubstitution(
+                    [FindPackageShare("rplidar_ros"), "launch", "rplidar_c1_launch.py"]
+                )
+            ]
+        )
     )
 
     rosbridge = IncludeLaunchDescription(
