@@ -1,171 +1,34 @@
 /**:
   ros__parameters:
-    test: true
     device:
       mirte:
         type: pcb
         version: 0.8
         board: pico
         max_frequency: 50
-    distance:
-      left:
-        name: left
-        device: mirte
-        max_distance: 2
-        pins:
-          trigger: GP9
-          echo: GP8
-      right:
-        name: right
-        device: mirte
-        pins:
-          trigger: GP7
-          echo: GP6
-   
-    intensity:
-      left:
-        name: left
-        device: mirte
-        pins:
-          analog: GP27
-          digital: GP17
-      right:
-        name: right
-        device: mirte
-        pins:
-          analog: GP26
-          digital: GP16
-    # module_names:
-    #   - t
-    a:
-      t:
-        test2: false
-      x:
-        test3: 123
-      
     modules:
-      x: 3
-      asdf:
-        type: neopixel
-        pins:
-          data: 1
-        num_pixels: 6
-        default_color:
-          r: 255
-          g: 0
-          b: 1
-      b:
-        test: 3
-      t:
-        name: t
+      movement:
         device: mirte
-        type: test_module
-      ina226_1:
-        name: ina226_1
-        device: mirte
-        type: INA226
+        type: BNO055
         connector: I2C1
-      z: 
-        pins:
-          sda: GP2
-          scl: GP3
+      motorservocontroller:
+        device: mirte
+        type: PCA9685
         addr: 0x40
-        port: I2C1
-        min_voltage: 7.0
-        power_low_time: 1.0
-        use_percentage_led: true
-        device: mirte
-      encoders:
-        type: AS5600
         connector: I2C1
-        addr: 0x36
-        encoders:
-          wheel1:
-              mux: 3
-          wheel2:
-              mux: 4
-          wheel3:
-              mux: 5
-          wheel4:
-            mux: 6
-    oled:
-      left:
-        name: left
-        device: mirte
-        pins:
-          sda: GP10
-          scl: GP11
-      right:
-        name: right
-        device: mirte
-        pins:
-          sda: GP4
-          scl: GP5
-    servo:
-      left:
-        name: left
-        device: mirte
-        pins:
-          pin: GP14
-      right:
-        name: right
-        device: mirte
-        pins:
-          pin: GP15
-      # These servo's have the same pins as the ObjectDetectors. So as
-      # soon as they are implemented, these should be commented out
-      gripper:
-        name: gripper
-        device: mirte
-        pins:
-          pin: GP12
-      arm:
-        name: arm
-        device: mirte
-        pins:
-          pin: GP13
-    keypad:
-      yellow:
-        name: yellow
-        device: mirte
-        pins:
-          pin: GP28
-    motor:
-      left:
-        name: left
-        device: mirte
-        type: pp
-        pins:
-          p1: GP18
-          p2: GP19
-      right:
-        name: right
-        device: mirte
-        type: pp
-        pins:
-          p1: GP20
-          p2: GP21
-    # oled:
-    #   oled:
-    #     device: mirte
-    #     connector: I2C1
-    encoder:
-      left:
-        name: left
-        device: mirte
-        pins:
-          A: 15.0
-          B: 16
-      right:
-        name: right
-        device: mirte
-        pins:
-          A: 17
-
-        type: SSD1306 # Optional must be 'SSD1306'
-        # default_screen_script can be a path or package URI (pkg://PACKAGE_NAME/FOLEDRS) to a image or an executable script which provides text.
-        # By default it points to "pkg://mirte_telemetrix_cpp/scripts/default_screen.sh"
-        # default_screen_script: "/home/jap/mirte/mirte-oled-images/images/mirte_logo_inv.png"
-    color:
-      asdf:
-        connector: I2C2
+        frequency: 50
+        servos: # TODO: No Idea which motor configuration is correct. Test
+          gas:
+            pin: 1 #0
+          stuur:
+            pin: 0 #1
+            # pin_B: 7 #1
+          # front_left:
+          #   pin_A: 2
+          #   pin_B: 3
+          # rear_right:
+          #   pin_A: 5
+          #   pin_B: 4
+          # front_right:
+          #   pin_A: 1
+          #   pin_B: 0
