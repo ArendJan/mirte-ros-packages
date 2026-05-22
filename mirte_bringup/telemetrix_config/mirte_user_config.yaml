@@ -6,12 +6,19 @@
         version: 0.8
         board: pico
         max_frequency: 50
+    encoder:
+      main:
+        name: main
+        device: mirte
+        pins:
+          pin: GP10          # pin needs interrupt support
+        ticks_per_wheel: 20
     modules:
       movement:
         device: mirte
         type: BNO055
         connector: I2C1
-      motorservocontroller:
+      motorserrvocontroller:
         device: mirte
         type: PCA9685
         addr: 0x40
@@ -22,13 +29,4 @@
             pin: 1 #0
           stuur:
             pin: 0 #1
-            # pin_B: 7 #1
-          # front_left:
-          #   pin_A: 2
-          #   pin_B: 3
-          # rear_right:
-          #   pin_A: 5
-          #   pin_B: 4
-          # front_right:
-          #   pin_A: 1
-          #   pin_B: 0
+ 
