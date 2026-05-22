@@ -350,7 +350,7 @@ hardware_interface::return_type MirteDartHWInterface::write(
   double position = steering_pos_cmd_;
 
   int steering_angle =
-      std::max(std::min(int(position) + 90, 180), 0);
+      std::max(std::min(int(position) + 92, 180), 0); // from tests it became clear that 92 is approximately straight
   if (steering_angle != last_cmd_steering_) {
     steering_request->angle = float(steering_angle);
     auto result = steering_client_->async_send_request(steering_request);
@@ -360,10 +360,23 @@ hardware_interface::return_type MirteDartHWInterface::write(
   auto throttle_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
   double velocity = traction_vel_cmd_;
-  float velocity_factor = 1.0f;
+  float velocity_factor_forward = (1.0/5.14)f; //this factor was deduced from tests
+  float velocity_factor_forward = (1.0/4.8)f; //this factor was deduced from tests
 
-  int throttle_angle =
-    std::clamp(int(velocity * velocity_factor + 90), 0, 180);
+  if (velocity>0) { //forward drive
+    int throttle_angle =
+    std::clamp(int(velocity * velocity_factor + 92.59), 0, 180); // value deduced from tests
+  }
+  if (velocity<0) { //backward drive
+    int throttle_angle =
+    std::clamp(int(velocity * velocity_factor + 80), 0, 180); //value deduced from tests
+  }
+  if (velocity=0) {
+    int throttle_angle=90 // value deduced from tests
+  }
+
+  //int throttle_angle =
+  //  std::clamp(int(velocity * velocity_factor + 90), 0, 180);
   if (throttle_angle != last_cmd_throttle_) {
     throttle_request->angle = float(throttle_angle);
     auto result = throttle_client_->async_send_request(throttle_request);
