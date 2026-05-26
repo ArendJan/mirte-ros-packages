@@ -78,7 +78,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
         "service io/servo/stuur/set_angle not available, waiting again...");
   }
  
-  // TODO: conbine with above
+  // TODO: combine with above
   while (!throttle_client_->wait_for_service(std::chrono::seconds(1))) {
     if (!rclcpp::ok()) {
       RCLCPP_ERROR(logger_.value(),
@@ -360,19 +360,21 @@ hardware_interface::return_type MirteDartHWInterface::write(
   auto throttle_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
   double velocity = traction_vel_cmd_;
-  float velocity_factor_forward = (1.0/5.14)f; //this factor was deduced from tests
-  float velocity_factor_forward = (1.0/4.8)f; //this factor was deduced from tests
+  float velocity_factor_forward = 5.14f; //this factor was deduced from tests
+  float velocity_factor_backward = 4.8f; //this factor was deduced from tests
+
+  int throttle_angle = 90;//anders bestaat throttle_angle alleen binnen de {} hieronder
 
   if (velocity>0) { //forward drive
-    int throttle_angle =
-    std::clamp(int(velocity * velocity_factor + 92.59), 0, 180); // value deduced from tests
+    throttle_angle =
+    std::clamp(int(velocity / velocity_factor_forward + 92.59), 0, 180); // value deduced from tests
   }
   if (velocity<0) { //backward drive
-    int throttle_angle =
-    std::clamp(int(velocity * velocity_factor + 80), 0, 180); //value deduced from tests
+    throttle_angle =
+    std::clamp(int(velocity / velocity_factor_backward + 80), 0, 180); //value deduced from tests
   }
-  if (velocity=0) {
-    int throttle_angle=90 // value deduced from tests
+  if (velocity==0) {
+    throttle_angle=92; // value deduced from tests
   }
 
   //int throttle_angle =
