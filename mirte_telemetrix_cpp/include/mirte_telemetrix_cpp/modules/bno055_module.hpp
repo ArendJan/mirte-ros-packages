@@ -15,16 +15,17 @@
 class BNO055_sensor : public Mirte_module {
 public:
   BNO055_sensor(NodeData node_data, BNO055Data imu_data,
-                 std::shared_ptr<tmx_cpp::Sensors> sensors);
+                std::shared_ptr<tmx_cpp::Sensors> sensors);
 
   BNO055Data data;
-  std::shared_ptr<tmx_cpp::BNO055_module> bno055;
+  std::shared_ptr<tmx_cpp::BNO055_module> BNO055;
 
   virtual void update() override;
-  void data_callback(std::array<float, 3> acceleration,
-                     std::array<float, 3> gyro,
-                     std::array<float, 3> magnetic_field,
-                     std::array<float, 4> quaternion);
+  void data_callback(const tmx_cpp::BNO055_MOD_data &data);
+  // std::array<float, 3> acceleration,
+  //                  std::array<float, 3> gyro,
+  //                  std::array<float, 3> magnetic_field,
+  //                  std::array<float, 4> quaternion);
 
   static std::vector<std::shared_ptr<BNO055_sensor>>
   get_bno_modules(NodeData node_data, std::shared_ptr<Parser> parser,

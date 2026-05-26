@@ -3,7 +3,7 @@ project(mirte_telemetrix_cpp)
 
 # Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++20)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 # set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native")
 
 include(CheckIncludeFileCXX)
@@ -16,6 +16,12 @@ if(HAVE_GPIOD_HPP)
   list(APPEND MIRTE_EXTRA_LIBS gpiodcxx)
   add_compile_definitions(WITH_GPIO)
   add_compile_options(-lgpiodcxx)
+endif()
+
+# if x86, dont shutdown the robot, just print a message. This is for testing on
+# x86 machines without a shutdown relay.
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64|i386|i686")
+  add_compile_definitions(MIRTE_TESTING_ON_X86)
 endif()
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # for iwyu, use iwyu_tool.py -p . -j 8
@@ -40,6 +46,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(color_util REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(backward_ros REQUIRED)
+find_package(generate_parameter_library REQUIRED)
 
 find_package(OpenCV REQUIRED COMPONENTS core imgcodecs)
 find_package(Boost REQUIRED COMPONENTS system thread)
@@ -49,10 +56,36 @@ find_package(Boost REQUIRED COMPONENTS system thread)
 
 # Specify additional locations of header files Your package locations should be
 # listed before other locations
-add_subdirectory(libs/tmx-cpp EXCLUDE_FROM_ALL) 
+add_subdirectory(libs/tmx-cpp EXCLUDE_FROM_ALL)
 include_directories(
   include/ libs/tmx-cpp/include/ libs/tmx-cpp/libs/async_serial/include/
   ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+
+set(config_files
+    ina226
+    pca
+    pca_motor
+    pca_servo
+    hiwonder
+    hiwonder_servo
+    mpu9250
+    bno055
+    adxl345
+    as5600
+    as5600_sensor
+    neopixel
+    mpu6050
+    telemetrix)
+set(param_libs "")
+foreach(config_file IN LISTS config_files)
+  generate_parameter_library(
+    ${config_file}_parameters # cmake target name for the parameter library
+    src/parsers/configs/${config_file}_parameters.yaml # path to input yaml file
+  )
+  list(APPEND param_libs ${config_file}_parameters)
+endforeach()
+# generate_parameter_library( telemetrix_parameters # cmake target name for the
+# parameter library src/telemetrix_parameters.yaml # path to input yaml file )
 
 # include(CheckIPOSupported) check_ipo_supported(RESULT supported OUTPUT error)
 
@@ -85,6 +118,7 @@ add_executable(
   src/actuators/motor/ddp_motor.cpp
   src/actuators/motor/dp_motor.cpp
   src/actuators/motor/pp_motor.cpp
+  src/actuators/neopixel.cpp
   src/parsers/parsers.cpp
   src/parsers/device_data.cpp
   src/parsers/actuators/motor_data.cpp
@@ -106,7 +140,9 @@ add_executable(
   src/parsers/modules/pca/pca_servo_data.cpp
   src/parsers/modules/ssd1306_data.cpp
   src/parsers/modules/mpu9250_data.cpp
+  src/parsers/modules/mpu6050_data.cpp
   src/parsers/modules/veml6040_data.cpp
+  src/parsers/modules/bno055_data.cpp
   src/sensors/base_sensor.cpp
   src/sensors/encoder_monitor.cpp
   src/sensors/intensity_monitor.cpp
@@ -123,7 +159,9 @@ add_executable(
   src/modules/pca/pca_servo.cpp
   src/modules/ssd1306_module.cpp
   src/modules/as5600_module.cpp
-  src/modules/veml6040_module.cpp)
+  src/modules/veml6040_module.cpp
+  src/modules/mpu6050_module.cpp
+  src/modules/bno055_module.cpp)
 ament_target_dependencies(
   ${PROJECT_NAME}_node
   std_msgs
@@ -137,6 +175,11 @@ ament_target_dependencies(
   backward_ros
   # system_lib
 )
+
+add_executable(${PROJECT_NAME}_test src/test.cpp src/parsers/parsers.cpp
+                                    libs/tmx-cpp/src/serialization.cpp)
+ament_target_dependencies(${PROJECT_NAME}_test rclcpp rcpputils mirte_msgs
+                          backward_ros)
 
 if(0) # extra strict errors
   target_compile_options(
@@ -158,20 +201,31 @@ if(0) # extra strict errors
 endif()
 
 # Specify libraries to link a library or executable target against
-target_link_libraries(${PROJECT_NAME}_node Boost::system Boost::thread tmx_cpp
-                      ${MIRTE_EXTRA_LIBS} ${OpenCV_LIBS})
+target_link_libraries(
+  ${PROJECT_NAME}_node
+  Boost::system
+  Boost::thread
+  tmx_cpp
+  ${param_libs}
+  ${MIRTE_EXTRA_LIBS}
+  ${OpenCV_LIBS})
 
+target_link_libraries(${PROJECT_NAME}_test ${param_libs})
 # if(supported) if(CMAKE_BUILD_TYPE STREQUAL "Release") message(STATUS "IPO LTO
 # enabled") set_property(TARGET ${PROJECT_NAME}_node PROPERTY
 # INTERPROCEDURAL_OPTIMIZATION TRUE) endif() else() message(STATUS "IPO  / LTO
 # not supported: <${error}>") endif()
 
 install(
-  TARGETS ${PROJECT_NAME}_node
+  TARGETS ${PROJECT_NAME}_node ${PROJECT_NAME}_test
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
-install(TARGETS ${PROJECT_NAME}_node DESTINATION lib/${PROJECT_NAME})
+install(TARGETS ${PROJECT_NAME}_node ${PROJECT_NAME}_test
+        DESTINATION lib/${PROJECT_NAME})
+install(TARGETS ${PROJECT_NAME}_node ${PROJECT_NAME}_test ${param_libs}
+        EXPORT ${PROJECT_NAME}Targets)
+ament_export_targets(${PROJECT_NAME}Targets HAS_LIBRARY_TARGET)
 
 # EXPORTS ament_export_targets( ${PROJECT_NAME}_node HAS_LIBRARY_TARGET)
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})

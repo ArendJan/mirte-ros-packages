@@ -1,10 +1,10 @@
 #include <mirte_telemetrix_cpp/parsers/modules/bno055_data.hpp>
 
 // Use the default frame_id `imu_link` as specified in REP0145
-BNO055Data::BNO055Data(
-    std::shared_ptr<Parser> parser, std::shared_ptr<Mirte_Board> board,
-    std::string name, std::map<std::string, rclcpp::ParameterValue> parameters,
-    std::set<std::string> &unused_keys)
+BNO055Data::BNO055Data(std::shared_ptr<Parser> parser,
+                       std::shared_ptr<Mirte_Board> board, std::string name,
+                       std::map<std::string, rclcpp::ParameterValue> parameters,
+                       std::set<std::string> &unused_keys)
     : I2CModuleData(parser, board, name, insert_default_frame_id(parameters),
                     insert_default_frame_id(unused_keys), get_module_type()) {
   // Set default for address
