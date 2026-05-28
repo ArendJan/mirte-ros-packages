@@ -8,6 +8,7 @@ class MirteController(Node):
         super().__init__('mirte_timed_controller')
         self.steer_client = self.create_client(SetServoAngle, '/io/servo/stuur/set_angle')
         self.gas_client = self.create_client(SetServoAngle, '/io/servo/gas/set_angle')
+        self
 
         # Wait for services
         while not self.steer_client.wait_for_service(timeout_sec=1.0):
@@ -35,7 +36,7 @@ def main(args=None):
 
     node.send_command(90, 90)
     time.sleep(3.0)
-    node.send_command(117, 90)
+    node.send_command(117, 110)
     time.sleep(3.0)
     node.send_command(125, 90)
     time.sleep(3.0)

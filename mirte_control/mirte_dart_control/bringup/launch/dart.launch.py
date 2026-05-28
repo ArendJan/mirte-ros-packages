@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from launch_ros.parameter_descriptions import ParameterFile
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler
@@ -45,16 +46,16 @@ def generate_launch_description():
     remap_odometry_tf = LaunchConfiguration("remap_odometry_tf")
 
     # Get URDF via xacro
-    #robot_description_content = Command(
-    #    [
-    #        PathJoinSubstitution([FindExecutable(name="xacro")]),
-    #        " ",
-    #        PathJoinSubstitution(
-    #            [FindPackageShare("mirte_dart_control"), "urdf", "mirte_dart.urdf.xacro"]
-    #        ),
-    #    ]
-    #)
-    #robot_description = {"robot_description": robot_description_content}
+    robot_description_content = Command(
+       [
+           PathJoinSubstitution([FindExecutable(name="xacro")]),
+           " ",
+           PathJoinSubstitution(
+               [FindPackageShare("mirte_dart_control"), "urdf", "mirte_dart.urdf.xacro"]
+           ),
+       ]
+    )
+    robot_description = {"robot_description": robot_description_content}
 
     robot_controllers = PathJoinSubstitution(
         [
@@ -71,17 +72,41 @@ def generate_launch_description():
         ]
     )
 
+    # control_node = Node(
+    # package="controller_manager",
+    # executable="ros2_control_node",
+    # # parameters=[
+    # #     {"robot_description": robot_description},
+    # #     robot_controllers,
+    # # ],
+    # parameters=[ParameterFile(robot_controllers, allow_substs=True)],
+    # remappings=[
+    #     ("~/robot_description", "robot_description"),
+    #     ("~/tf_odometry", "/tf"),
+    # ],
+
+    # output="both",
+    # )
+
     control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[robot_controllers],
+        parameters=[
+            {"robot_description": robot_description},                     # 1. De robot URDF/XACRO string
+            ParameterFile(robot_controllers, allow_substs=True)           # 2. Jouw YAML bestand met substituties
+        ],
+        remappings=[
+            ("~/robot_description", "robot_description"),
+            ("~/tf_odometry", "/tf"),
+        ],
         output="both",
     )
+    
     robot_state_pub_bicycle_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-    #    parameters=[robot_description],
+        parameters=[robot_description],
     )
     rviz_node = Node(
         package="rviz2",
@@ -139,7 +164,7 @@ def generate_launch_description():
         control_node,
         robot_state_pub_bicycle_node,
         joint_state_broadcaster_spawner,
-        delay_rviz_after_joint_state_broadcaster_spawner,
+        # delay_rviz_after_joint_state_broadcaster_spawner,
         delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
     ]
 

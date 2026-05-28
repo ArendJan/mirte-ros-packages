@@ -42,7 +42,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "gui",
-            default_value="true",
+            default_value="false",
             description="Start Rviz2 and Joint State Publisher gui automatically \
         with this launch file.",
         )
@@ -69,7 +69,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("ros2_control_demo_example_11"), "urdf", description_file]
+                [FindPackageShare("mirte_dart_control"), "urdf", description_file]
             ),
             " ",
             "prefix:=",

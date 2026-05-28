@@ -193,8 +193,8 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
 
   // // BEGIN: This part here is for exemplary purposes - Please do not copy to your production
   // code
-  hw_start_sec_ = std::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
-  hw_stop_sec_ = std::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
+  // hw_start_sec_ = std::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
+  // hw_stop_sec_ = std::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
   // // END: This part here is for exemplary purposes - Please do not copy to your production code
 
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -236,11 +236,11 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_configure(
 {
   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Configuring ...please wait...");
 
-  for (auto i = 0; i < hw_start_sec_; i++)
-  {
-    rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
-  }
+  // for (auto i = 0; i < hw_start_sec_; i++)
+  // {
+  //   rclcpp::sleep_for(std::chrono::seconds(1));
+  //   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
+  // }
 
   // reset values always when configuring hardware
   steering_pos_state_ = 0.0;
@@ -259,11 +259,11 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_activate(
 {
   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Activating ...please wait...");
 
-  for (auto i = 0; i < hw_start_sec_; i++)
-  {
-    rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
-  }
+  // for (auto i = 0; i < hw_start_sec_; i++)
+  // {
+  //   rclcpp::sleep_for(std::chrono::seconds(1));
+  //   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_start_sec_ - i);
+  // }
 
   // command and state should be equal when starting
   steering_pos_cmd_ = steering_pos_state_;
@@ -280,11 +280,11 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_deactivate(
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Deactivating ...please wait...");
 
-  for (auto i = 0; i < hw_stop_sec_; i++)
-  {
-    rclcpp::sleep_for(std::chrono::seconds(1));
-    RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_stop_sec_ - i);
-  }
+  // for (auto i = 0; i < hw_stop_sec_; i++)
+  // {
+  //   rclcpp::sleep_for(std::chrono::seconds(1));
+  //   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "%.1f seconds left...", hw_stop_sec_ - i);
+  // }
   // END: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("MirteDartHWInterface"), "Successfully deactivated!");
 
@@ -385,6 +385,8 @@ hardware_interface::return_type MirteDartHWInterface::write(
     last_cmd_throttle_ = throttle_angle;
   }
  
+
+  
   // END: Code written for MIRTE-on-DART
 
   return hardware_interface::return_type::OK;
