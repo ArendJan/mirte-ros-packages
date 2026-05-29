@@ -131,8 +131,8 @@ def generate_launch_description():
             "bicycle_steering_controller",
             "--param-file",
             robot_controllers,
-            "--controller-ros-args",
-            "-r /bicycle_steering_controller/tf_odometry:=/tf",
+            #"--controller-ros-args",
+            #"-r /bicycle_steering_controller/tf_odometry:=/tf",
         ],
         # condition=IfCondition(remap_odometry_tf),
     )

@@ -23,13 +23,15 @@ steering_controller:
           interface_name: position
 
 traction_controller:
-          ros__parameters:
-            joints:
-              - rear_wheel_joint
+        ros__parameters:
+          joints:
+            - rear_wheel_joint
+          interface_name: velocity
 
         
-/**: #bicycle_steering_controller:
-      ros__parameters:
+#/**: 
+bicycle_steering_controller:
+        ros__parameters:
           traction_joints_names: ["virtual_rear_wheel_joint"]
           steering_joints_names: ["virtual_front_wheel_joint"]
           wheelbase: 0.325
