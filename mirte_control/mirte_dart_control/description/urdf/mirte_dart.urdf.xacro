@@ -6,7 +6,7 @@
   <xacro:include filename="$(find mirte_dart_control)/urdf/mirte_dart_description.urdf.xacro" />
 
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find mirte_dart_control)/urdf/mirte_dart.materials.xacro" />
+  <!-- <xacro:include filename="$(find mirte_dart_control)/urdf/mirte_dart.materials.xacro" /> -->
 
   <!-- Import mirte_dart ros2_control description -->
   <xacro:include filename="$(find mirte_dart_control)/ros2_control/mirte_dart_control_ros2_control.xacro" />
