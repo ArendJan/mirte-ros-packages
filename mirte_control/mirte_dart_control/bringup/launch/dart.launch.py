@@ -129,20 +129,26 @@ def generate_launch_description():
         executable="spawner",
         arguments=[
             "bicycle_steering_controller",
-            "--param-file",
-            robot_controllers,
+            # "--param-file",
             #"--controller-ros-args",
             #"-r /bicycle_steering_controller/tf_odometry:=/tf",
         ],
+        parameters=[ParameterFile(robot_controllers, allow_substs=True)],
         # condition=IfCondition(remap_odometry_tf),
     )
+    # robot_bicycle_controller_spawner = Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     name="bicycle_steering_controller_spawner",
+    #     arguments=["bicycle_steering_controller", "--controller-manager", "/controller_manager"],
+    # )
 
-    robot_bicycle_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["bicycle_steering_controller", "--param-file", robot_controllers],
-        # condition=UnlessCondition(remap_odometry_tf),
-    )
+    # robot_bicycle_controller_spawner = Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=["bicycle_steering_controller", "--param-file", robot_controllers],
+    #     # condition=UnlessCondition(remap_odometry_tf),
+    # )
 
     # Delay rviz start after `joint_state_broadcaster`
     delay_rviz_after_joint_state_broadcaster_spawner = RegisterEventHandler(
@@ -156,7 +162,7 @@ def generate_launch_description():
     delay_robot_controller_spawner_after_joint_state_broadcaster_spawner = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
-            on_exit=[robot_bicycle_controller_spawner_remapped, robot_bicycle_controller_spawner],
+            on_exit=[robot_bicycle_controller_spawner_remapped], #robot_bicycle_controller_spawner
         )
     )
 
