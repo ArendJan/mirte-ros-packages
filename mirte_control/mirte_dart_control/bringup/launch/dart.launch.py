@@ -130,7 +130,7 @@ def generate_launch_description():
         arguments=[
             "bicycle_steering_controller",
             #"--param-file",
-            robot_controllers,
+            # robot_controllers,
             #"--controller-ros-args",
             #"-r /bicycle_steering_controller/tf_odometry:=/tf",
         ],

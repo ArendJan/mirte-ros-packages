@@ -36,8 +36,8 @@ def main(args=None):
 
     node.send_command(90, 90)
     time.sleep(3.0)
-    node.send_command(117, 110)
-    time.sleep(3.0)
+    node.send_command(105, 100)
+    time.sleep(2.0)
     node.send_command(90, 90)
     time.sleep(3.0)
     
