@@ -33,13 +33,15 @@ def main(args=None):
     # --- ACTION SEQUENCE ---
     # 1. Start Driving (e.g., Steer straight at 90, Gas at 110)
    
+    node.send_command(90, 90)
+    time.sleep(1.0)
 
-    node.send_command(90, 90)
-    time.sleep(3.0)
-    node.send_command(105, 100)
-    time.sleep(2.0)
-    node.send_command(90, 90)
-    time.sleep(3.0)
+    node.send_command(70, 90)
+    time.sleep(1.0)
+    node.send_command(65, 90)
+    time.sleep(1.0)
+    node.send_command(60, 90)
+    time.sleep(1.0)
     
 
     

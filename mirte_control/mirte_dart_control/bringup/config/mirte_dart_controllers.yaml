@@ -6,11 +6,11 @@ controller_manager:
       joint_state_broadcaster:
         type: joint_state_broadcaster/JointStateBroadcaster
 
-      #steering_controller:
-      #  type: forward_command_controller/ForwardCommandController
+      steering_controller:
+        type: forward_command_controller/ForwardCommandController
 
-      #traction_controller:
-      #  type: velocity_controllers/JointGroupVelocityController
+      traction_controller:
+        type: velocity_controllers/JointGroupVelocityController
 
       bicycle_steering_controller:
         type: bicycle_steering_controller/BicycleSteeringController
@@ -50,7 +50,7 @@ traction_controller:
 
 bicycle_steering_controller:
   ros__parameters:
-    wheelbase: 0.175
+    wheelbase: 0.176
     front_wheel_radius: 0.0233
     rear_wheel_radius: 0.0233
     front_steering: true

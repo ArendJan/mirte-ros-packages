@@ -51,7 +51,7 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
     return hardware_interface::CallbackReturn::ERROR;
   }
 
-  std::shared_ptr<rclcpp::Node> node =
+  node =
       rclcpp::Node::make_shared(convert_to_snake_case(get_name()));
   auto logger_name = std::string(node->get_namespace()).substr(1) + "." +
                      std::string(node->get_name());
@@ -60,6 +60,26 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_init(
   //Define service client paths
   auto steering_service = "/io/servo/stuur/set_angle";
   auto throttle_service = "/io/servo/gas/set_angle";
+
+  auto encoder_topic = "io/encoder/main";
+  auto imu_topic = "io/imu/movement/data";
+  
+  // Initialize the Encoder Subscriber
+  encoder_sub_ = node->create_subscription<mirte_msgs::msg::Encoder>(
+    encoder_topic,
+    10, // QoS history depth
+    [this](const mirte_msgs::msg::Encoder::SharedPtr msg) {
+      // This runs instantly in the background whenever a packet arrives
+      this->latest_encoder_ticks_ = static_cast<double>(msg->value); 
+    });
+
+  // Initialize the IMU Subscriber
+  imu_sub_ = node->create_subscription<sensor_msgs::msg::Imu>(
+    imu_topic,
+    10,
+    [this](const sensor_msgs::msg::Imu::SharedPtr msg) {
+      this->latest_imu_yaw_rate_ = msg->angular_velocity.z;
+    });
 
   steering_client_ =
       node->create_client<mirte_msgs::srv::SetServoAngle>(steering_service);
@@ -294,19 +314,71 @@ hardware_interface::CallbackReturn MirteDartHWInterface::on_deactivate(
 hardware_interface::return_type MirteDartHWInterface::read(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & period)
 {
-  // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
-  // update states from commands and integrate velocity to position
-  steering_pos_state_ = steering_pos_cmd_;
+  //1. Process any incoming service responses from the network queue
+  if (node) {
+    rclcpp::spin_some(node);
+  }
 
-  traction_vel_state_ = traction_vel_cmd_;
+  // 2. CLOSED-LOOP MATH (No service requests needed here anymore!)
+  const double TICKS_TO_RAD = 0.17699; 
+  const double TICKS_TO_METERS = 0.00412708;
+  static double last_encoder_ticks = 0.0;
 
-  traction_pos_state_ += traction_vel_state_ * period.seconds();
+  // Handle initialization on the first frame
+  if (last_encoder_ticks == 0.0 && latest_encoder_ticks_ != 0.0) {
+    last_encoder_ticks = latest_encoder_ticks_;
+  }
 
+  // Calculate changes since the last frame
+  double delta_ticks = latest_encoder_ticks_ - last_encoder_ticks;
+  last_encoder_ticks = latest_encoder_ticks_;
+  double delta_distance = delta_ticks * TICKS_TO_RAD;
+
+  // Sync state variables for ros2_control
+  
+  // steering_pos_state_ = steering_pos_cmd_;
+  traction_pos_state_ += delta_distance;
+  double traction_pos_state_meters = traction_pos_state_*TICKS_TO_METERS;
+
+  if (period.seconds() > 0.0) {
+    traction_vel_state_ = delta_distance / period.seconds();
+  } else {
+    traction_vel_state_ = 0.0;
+  }
+  // --- 1. COLLECT SENSOR INPUTS ---
+  const double L = 0.176;              // Your physical wheelbase in meters
+  double imu_yaw_rate = latest_imu_yaw_rate_; // From your IMU subscriber topic
+
+  // Get your linear velocity in meters per second (m/s)
+  // (Assuming traction_vel_state_ is already calculated in rad/s from your encoders)
+  const double WHEEL_RADIUS = 0.0233;
+  double forward_velocity = traction_vel_state_ * WHEEL_RADIUS; 
+
+  // --- 2. THE DIRECT KINEMATIC RECONSTRUCTION ---
+  // We enforce a tiny velocity threshold. If the robot is truly stopped, 
+  // any IMU value is pure noise, so we drop it to zero.
+  if (std::abs(forward_velocity) > 0.02) {
+
+    // Calculate steering angle based entirely on how fast the chassis is rotating
+    double calculated_phi = std::atan2(imu_yaw_rate * L, forward_velocity);
+
+    // Apply a strict physical clamp so noise doesn't spike past your steering limits
+    // 0.52 radians is roughly 30 degrees maximum steering lock
+    const double MAX_STEER_LIMIT = 0.52; 
+    steering_pos_state_ = std::clamp(calculated_phi, -MAX_STEER_LIMIT, MAX_STEER_LIMIT);
+
+  } else {
+    // Standing still fallback: hold the wheel at 0 or trust your last command frame
+    steering_pos_state_ = 0.0; 
+  }
+  
   std::stringstream ss;
   ss << "Reading states:" << std::fixed << std::setprecision(2) << std::endl
 
+     << "\t" << "measured yaw: " << latest_imu_yaw_rate_ << " rad" << std::endl
+     << "\t" << "Encoder measured: " << delta_distance << " m" << std::endl
      << "\t" << "Steering Pos: " << steering_pos_state_ << " rad" << std::endl
-     << "\t" << "Traction Pos: " << traction_pos_state_ << " m" << std::endl
+     << "\t" << "Traction Pos: " << traction_pos_state_meters << " m" << std::endl
      << "\t" << "Traction Vel: " << traction_vel_state_ << " m/s";
 
   static rclcpp::Clock steady_clock(RCL_STEADY_TIME);
@@ -344,60 +416,13 @@ hardware_interface::return_type MirteDartHWInterface::write(
   );
   // END: This part here is for exemplary purposes - Please do not copy to your production code
 
-  // BEGIN: Test whether the code is the problem
-  // auto steering_request =
-  //     std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
-  // double position_degrees = steering_pos_cmd_*180/M_PI;
-
-  // int steering_angle =
-  //     std::max(std::min(int(position_degrees) + 92, 180), 0); // from tests it became clear that 92 is approximately straight
-  // if (steering_angle != last_cmd_steering_) {
-  //   steering_request->angle = float(steering_angle);
-  //   auto result = steering_client_->async_send_request(steering_request);
-  //   last_cmd_steering_ = steering_angle;
-  // }
- 
-  // auto throttle_request =
-  //     std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
-  // double velocity = traction_vel_cmd_;
-  // float velocity_factor_forward = 5.14f; //this factor was deduced from tests
-  // float velocity_factor_backward = 4.8f; //this factor was deduced from tests
-
-  // int throttle_angle = 90;//anders bestaat throttle_angle alleen binnen de {} hieronder
-
-  // if (velocity>0) { //forward drive
-  //   throttle_angle =
-  //   std::clamp(int(velocity / velocity_factor_forward + 92.59), 0, 180); // value deduced from tests
-  // }
-  // if (velocity<0) { //backward drive
-  //   throttle_angle =
-  //   std::clamp(int(velocity / velocity_factor_backward + 80), 0, 180); //value deduced from tests
-  // }
-  // if (velocity==0) {
-  //   throttle_angle=92; // value deduced from tests
-  // }
-
-  // //int throttle_angle =
-  // //  std::clamp(int(velocity * velocity_factor + 90), 0, 180);
-  // if (throttle_angle != last_cmd_throttle_) {
-  //   throttle_request->angle = float(throttle_angle);
-  //   auto result = throttle_client_->async_send_request(throttle_request);
-  //   last_cmd_throttle_ = throttle_angle;
-  // }
- 
-
-  
-  // // END: Test whether the code is the problem
-
-
-
-  // BEGIN: Code written for MIRTE-on-DART
+   // BEGIN: Code written for MIRTE-on-DART
   auto steering_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
   double position_degrees = steering_pos_cmd_*180/M_PI;
 
   int steering_angle =
-      int(std::max(std::min(float(position_degrees) + 92.0, 180.0), 0.0)); // from tests it became clear that 92 is approximately straight
+      int(std::max(std::min(float(position_degrees) + 90.0, 111.0), 69.0)); // from tests it became clear that 92 is approximately straight
   if (steering_angle != last_cmd_steering_) {
     steering_request->angle = float(steering_angle);
     auto result = steering_client_->async_send_request(steering_request);
@@ -406,9 +431,9 @@ hardware_interface::return_type MirteDartHWInterface::write(
  
   auto throttle_request =
       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
-  double velocity = traction_vel_cmd_;
-  float velocity_factor_forward = 0.826f; //this factor was deduced from tests
-  float velocity_factor_backward = 0.100f;//this factor was deduced from tests
+  double velocity = traction_vel_cmd_*0.0233; //radius of the wheels
+  float velocity_factor_forward = 8.26f; //this factor was deduced from tests
+  float velocity_factor_backward = 10.0f;//this factor was deduced from tests
 
   int throttle_angle = 90;//anders bestaat throttle_angle alleen binnen de {} hieronder
 
@@ -435,67 +460,6 @@ hardware_interface::return_type MirteDartHWInterface::write(
 
   
   // END: Code written for MIRTE-on-DART
-
-
-// begin trial 1
-
-// // BEGIN: Code written for MIRTE-on-DART
-//   auto steering_request =
-//       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
-//   double position_degrees = steering_pos_cmd_*180/M_PI;
-
-//   int steering_angle =
-//       int(std::max(std::min(float(position_degrees) + 92.0, 180.0), 0.0)); // from tests it became clear that 92 is approximately straight
-//   if (steering_angle != last_cmd_steering_) {
-//     steering_request->angle = float(steering_angle);
-//     auto result = steering_client_->async_send_request(steering_request);
-//     last_cmd_steering_ = steering_angle;
-//   }
- 
-//   auto throttle_request =
-//       std::make_shared<mirte_msgs::srv::SetServoAngle::Request>();
-//   double velocity = traction_vel_cmd_;
-//   float velocity_factor_forward = 5.14f; //this factor was deduced from tests
-//   float velocity_factor_backward = 4.8f; //this factor was deduced from tests
-
-//   int throttle_angle = 90;//anders bestaat throttle_angle alleen binnen de {} hieronder
-
-//   if (velocity>0) { //forward drive
-//     throttle_angle =
-//     std::clamp(int(velocity / velocity_factor_forward + 92.59), 0, 180); // value deduced from tests
-//   }
-//   if (velocity<0) { //backward drive
-//     throttle_angle =
-//     std::clamp(int(velocity / velocity_factor_backward + 80), 0, 180); //value deduced from tests
-//   }
-//   if (velocity==0) {
-//     throttle_angle=92; // value deduced from tests
-//   }
-
-//   //int throttle_angle =
-//   //  std::clamp(int(velocity * velocity_factor + 90), 0, 180);
-//   if (throttle_angle != last_cmd_throttle_) {
-//     throttle_request->angle = float(throttle_angle);
-//     auto result = throttle_client_->async_send_request(throttle_request);
-//     last_cmd_throttle_ = throttle_angle;
-//   }
- 
-
-  
-  // END: Code written for MIRTE-on-DART
-
-
-
-
-// end trial 1
-
-
-
-
-
-
-
-
 
   return hardware_interface::return_type::OK;
 }

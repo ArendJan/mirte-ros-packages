@@ -22,6 +22,8 @@
 #include <utility>
 #include <vector>
 #include <mirte_msgs/srv/set_servo_angle.hpp>
+#include <mirte_msgs/msg/encoder.hpp>
+#include <sensor_msgs/msg/imu.hpp>
 #include <optional>
 
 #include "hardware_interface/handle.hpp"
@@ -90,10 +92,14 @@ public:
 
 private:
   std::optional<rclcpp::Logger> logger_;
+  std::shared_ptr<rclcpp::Node> node;
 
   // Service clients
   rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr steering_client_;
   rclcpp::Client<mirte_msgs::srv::SetServoAngle>::SharedPtr throttle_client_;
+  
+  rclcpp::Subscription<mirte_msgs::msg::Encoder>::SharedPtr encoder_sub_;
+  rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
 
   // Store last sent commands to avoid flooding the bus
   int last_cmd_steering_;
@@ -106,13 +112,16 @@ private:
   std::string steering_joint_;
   std::string traction_joint_;
 
-  //Newly added for Humble
+  //Newly added for Mirte on Dart
   double steering_pos_cmd_ = 0.0;
   double steering_pos_state_ = 0.0;
   double traction_vel_cmd_ = 0.0;
   double traction_vel_state_ = 0.0;
   double traction_pos_state_ = 0.0;
-  //Newly added for Humble
+
+  double latest_encoder_ticks_ = 0.0;
+  double latest_imu_yaw_rate_ = 0.0;
+  //Newly added for Mirte on DART
 };
 
 }  // namespace mirte_dart_control

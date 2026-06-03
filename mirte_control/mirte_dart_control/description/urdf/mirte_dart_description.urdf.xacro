@@ -9,10 +9,10 @@
   <xacro:property name="base_width" value="0.260" />
   <xacro:property name="base_length" value="0.525" />
   <xacro:property name="base_height" value="0.060" />
-  <xacro:property name="wheelbase" value="0.325" />
+  <xacro:property name="wheelbase" value="0.176" />
   <xacro:property name="wheel_mass" value="0.34055" /> <!-- arbitrary value for wheel mass -->
-  <xacro:property name="wheel_len" value="0.045" />
-  <xacro:property name="wheel_radius" value="0.05" />
+  <xacro:property name="wheel_len" value="0.015" />
+  <xacro:property name="wheel_radius" value="0.0233" />
   <!-- <xacro:property name="wheeltrack" value="" -->
 
   <!-- Base Link -->
