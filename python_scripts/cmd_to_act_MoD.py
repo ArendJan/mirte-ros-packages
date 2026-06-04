@@ -1,174 +1,204 @@
 #!/usr/bin/env python3
 
-import os
 import time
+import threading
 import numpy as np
 
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 
-from std_msgs.msg import Float32, Float32MultiArray
+from geometry_msgs.msg import TwistStamped
+
+from mirte_msgs.msg import Encoder
 
 
 class LatencyMeasurer(Node):
 
-    def __init__(self, car_number):
-        super().__init__('latency_measurer_node')
+    def __init__(self):
+        super().__init__('latency_measurer')
 
-        self.car_number = str(car_number)
+        # Test settings
+        self.test_speed = 1.3
+        self.test_iterations = 10
 
-        # Testinstellingen
-        self.test_speed = 0.2
-        self.test_iterations = 5
-
-        # Timing
+        # Measurement state
         self.cmd_sent_time = None
-        self.waiting_for_echo = False
+        self.waiting_for_motion = False
 
         self.latency_measurements = []
 
-        # Subscribers
-        self.throttle_sub = self.create_subscription(
-            Float32,
-            f'throttle_{self.car_number}',
-            self.throttle_callback,
+        # Encoder tracking
+        self.last_encoder_value = None
+
+        #
+        # Publisher
+        #
+        self.reference_pub = self.create_publisher(
+            TwistStamped,
+            '/bicycle_steering_controller/reference',
             10
         )
 
-        self.encoder_sub = self.create_subscription(
-            Float32MultiArray,
-            f'arduino_data_{self.car_number}',
-            self.arduino_callback,
+        #
+        # Controller reference subscriber
+        #
+        self.create_subscription(
+            TwistStamped,
+            '/bicycle_steering_controller/reference',
+            self.reference_callback,
             10
         )
 
-        # Publishers
-        self.throttle_pub = self.create_publisher(
-            Float32,
-            f'throttle_{self.car_number}',
+        #
+        # Encoder subscriber
+        #
+        self.create_subscription(
+            Encoder,
+            '/io/encoder/main',
+            self.encoder_callback,
             10
         )
 
-        self.safety_pub = self.create_publisher(
-            Float32,
-            'safety_value',
-            10
-        )
+        self.get_logger().info('Latency measurer started')
 
-        self.get_logger().info(
-            f'Latency Measurer gestart voor auto {self.car_number}'
-        )
+    def reference_callback(self, msg):
 
-    def throttle_callback(self, msg):
-        """
-        Wordt aangeroepen zodra een throttlebericht
-        op de topic verschijnt.
-        """
+        throttle = msg.twist.linear.x
 
-        if not self.waiting_for_echo:
+        if not self.waiting_for_motion and throttle > 0.0:
+
             self.cmd_sent_time = self.get_clock().now()
-            self.waiting_for_echo = True
+            self.waiting_for_motion = True
 
-            self.get_logger().debug(
-                'Throttle commando gedetecteerd. Timer gestart.'
+            self.get_logger().info(
+                f'Throttle detected: {throttle:.3f}'
             )
 
-    def arduino_callback(self, msg):
-        """
-        Wordt aangeroepen zodra encoderdata binnenkomt.
-        """
+    def encoder_callback(self, msg):
 
-        if self.waiting_for_echo and self.cmd_sent_time is not None:
+        current_value = msg.value
+
+        # Debug
+        self.get_logger().debug(
+            f'Encoder value: {current_value}'
+        )
+
+        if self.last_encoder_value is None:
+            self.last_encoder_value = current_value
+            return
+
+        if (
+            self.waiting_for_motion
+            and current_value != self.last_encoder_value
+        ):
 
             arrival_time = self.get_clock().now()
 
-            latency_ns = (
+            latency_ms = (
                 arrival_time - self.cmd_sent_time
-            ).nanoseconds
-
-            latency_ms = latency_ns / 1e6
+            ).nanoseconds / 1e6
 
             self.latency_measurements.append(latency_ms)
 
             self.get_logger().info(
-                f'Latency gedetecteerd: {latency_ms:.2f} ms'
+                f'Encoder changed: {self.last_encoder_value} -> {current_value}'
             )
 
-            self.waiting_for_echo = False
+            self.get_logger().info(
+                f'Latency: {latency_ms:.2f} ms'
+            )
+
+            self.waiting_for_motion = False
+
+        self.last_encoder_value = current_value
+
+    def publish_reference(self, throttle):
+
+        msg = TwistStamped()
+
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = 'base_link'
+
+        msg.twist.linear.x = float(throttle)
+        msg.twist.angular.z = 0.0
+
+        self.reference_pub.publish(msg)
+
+    def stop_robot(self):
+        self.publish_reference(0.0)
 
     def run_test(self):
 
-        # Even wachten zodat connecties kunnen opzetten
-        time.sleep(1.0)
+        self.get_logger().info(
+            'Waiting for connections...'
+        )
 
-        self.get_logger().info('Start latency test')
+        time.sleep(2.0)
 
         for i in range(self.test_iterations):
 
             self.get_logger().info(
-                f'Meting {i + 1}/{self.test_iterations}'
+                f'Test {i + 1}/{self.test_iterations}'
             )
 
-            # Safety vrijgeven
-            safety_msg = Float32()
-            safety_msg.data = 1.0
-            self.safety_pub.publish(safety_msg)
-
-            # Throttle aan
-            throttle_msg = Float32()
-            throttle_msg.data = self.test_speed
-            self.throttle_pub.publish(throttle_msg)
+            self.publish_reference(self.test_speed)
 
             time.sleep(0.5)
 
-            # Throttle uit
-            throttle_msg.data = 0.0
-            self.throttle_pub.publish(throttle_msg)
+            self.stop_robot()
 
-            time.sleep(0.5)
+            time.sleep(4.0)
 
-        self.get_logger().info('Test afgerond')
+        print('\n==============================')
+        print('LATENCY RESULTS')
+        print('==============================')
 
-        print("\nLatency resultaten:")
-        print(self.latency_measurements)
+        for i, latency in enumerate(self.latency_measurements):
+            print(
+                f'Measurement {i+1}: {latency:.2f} ms'
+            )
 
         if len(self.latency_measurements) > 0:
-            print(
-                "Gemiddelde latency over {} metingen: {:.2f} ms".format(
-                    len(self.latency_measurements),
-                    np.mean(self.latency_measurements)
-                )
+
+            avg_latency = np.mean(
+                self.latency_measurements
             )
+
+            print(
+                f'\nAverage latency ({len(self.latency_measurements)} measurements): '
+                f'{avg_latency:.2f} ms'
+            )
+
         else:
-            print("Geen latency-metingen ontvangen.")
+            print('No latency measurements recorded.')
+
+        self.stop_robot()
 
 
 def main(args=None):
 
     rclpy.init(args=args)
 
+    node = LatencyMeasurer()
+
+    executor = MultiThreadedExecutor()
+    executor.add_node(node)
+
+    spin_thread = threading.Thread(
+        target=executor.spin,
+        daemon=True
+    )
+    spin_thread.start()
+
     try:
-        car_number = os.environ.get('car_number', '1')
-
-        node = LatencyMeasurer(car_number)
-
-        executor = MultiThreadedExecutor()
-        executor.add_node(node)
-
-        import threading
-
-        spin_thread = threading.Thread(
-            target=executor.spin,
-            daemon=True
-        )
-        spin_thread.start()
-
         node.run_test()
 
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == '__main__':

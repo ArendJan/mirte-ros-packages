@@ -66,14 +66,6 @@ class BicycleBEPTest(Node):
             vicon_qos
         )
 
-        # Vicon Subscription using the correct Best Effort profile
-        self.create_subscription(
-            TwistStamped,
-            '/vrpn_mocap/JetracerMirte1/twist',
-            self.viconspeed_callback,
-            vicon_qos
-        )
-
         # PD controller settings
         self.Kp = 0.2
         self.Kd = 0.5
@@ -136,7 +128,7 @@ class BicycleBEPTest(Node):
         period = 1.0 / rate_hz
 
         # Loop initialization metrics
-        d_target = math.sqrt((c_y - self.viconpos_y)**2 + (c_x - self.viconpos_x)**2)
+        d_target = math.sqrt((c_y - self.y)**2 + (c_x - self.x)**2)
         last_time = time.time()
 
         while d_target > self.r and rclpy.ok():
@@ -148,13 +140,14 @@ class BicycleBEPTest(Node):
                 dt = 0.033
 
             # Recalculate dynamic distance metric and angle errors
-            d_target = math.sqrt((c_y - self.viconpos_y)**2 + (c_x - self.viconpos_x)**2)
-            theta_c = math.atan2((c_y - self.viconpos_y), (c_x - self.viconpos_x))
+            d_target = math.sqrt((c_y - self.y)**2 + (c_x - self.x)**2)
+            theta_c = math.atan2((c_y - self.y), (c_x - self.x))
             d_theta = math.atan2(
-                math.sin(theta_c - self.viconpos_theta),
-                math.cos(theta_c - self.viconpos_theta)
+                math.sin(theta_c - self.theta),
+                math.cos(theta_c - self.theta)
             )
             speed = math.sqrt((self.vx)**2+(self.vy)**2)#speed
+            #print("speed",speed)
 
             print(f"Afstand tot doel: {d_target:.3f} m", end='\r')
 
@@ -172,11 +165,11 @@ class BicycleBEPTest(Node):
                 p_term = 2.5 * d_theta
             else:
                 p_term = self.Kp * d_theta
-            d_term = self.Kd * self.angz
+
             target_angular_z = p_term #- d_term
             target_angular_z = max(-1.0, min(target_angular_z, 1.0)) # Kept within your working limits
             omega = calculated_speed * math.tan(target_angular_z)/self.L
-            #print ("Omega:", omega)
+            print ("hoek:", self.theta)
 
 
             # Build and send the TwistStamped command
@@ -222,6 +215,8 @@ class BicycleBEPTest(Node):
     def odom_callback(self, msg):
         self.x = msg.pose.pose.position.x
         self.y = msg.pose.pose.position.y
+        self.vx = msg.twist.twist.linear.x
+        self.vy = msg.twist.twist.linear.y
 
         q = [
             msg.pose.pose.orientation.x,
@@ -253,9 +248,9 @@ class BicycleBEPTest(Node):
             self.viconpos_received = True
 
             # Offset target arrays relative to local home origins
-            for i in range(len(self.c_relative)):
-                self.c[i][0] = self.c_relative[i][0] + self.first_vicon_x
-                self.c[i][1] = self.c_relative[i][1] + self.first_vicon_y
+            # for i in range(len(self.c_relative)):
+            #     self.c[i][0] = self.c_relative[i][0] + self.first_vicon_x
+            #     self.c[i][1] = self.c_relative[i][1] + self.first_vicon_y
             
             self.last_vicon_msg_received = time_now
 
@@ -263,11 +258,6 @@ class BicycleBEPTest(Node):
         self.viconpos_y = y
         self.viconpos_theta = yaw
 
-    def viconspeed_callback(self, msg):
-            # Geen try-except hacks meer nodig; dit is de officiële ROS 2 TwistStamped structuur
-            self.vx = msg.twist.linear.x
-            self.vy = msg.twist.linear.y
-            self.angz = msg.twist.angular.z
 
        
 
