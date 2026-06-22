@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Thu, 07 May 2026 00:00:00 -0000
+Source: ros-humble-web-video-server
+Binary: ros-humble-web-video-server
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 3.1.1-2026.06.22.12.03
+Distribution: jammy
+Urgency: high
+Maintainer: Błażej Sowa <blazej@fictionlab.pl>
+Changed-By: Błażej Sowa <blazej@fictionlab.pl>
+Description:
+ ros-humble-web-video-server - HTTP Streaming of ROS Image Topics in Multiple Formats
+Changes:
+ ros-humble-web-video-server (3.1.1-2026.06.22.12.03) jammy; urgency=high
+ .
+   * fix: Don't link against Boost::system (#200)
+   * Contributors: Błażej Sowa
+Checksums-Sha1:
+ 4f760f1a760212013b324476ead7c4bff70e0f3b 6375790 ros-humble-web-video-server-dbgsym_3.1.1-2026.06.22.12.03_amd64.ddeb
+ 70afed19b90088a9d97ee0e5d3bcf9d3f021f149 35687 ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.buildinfo
+ 0bab54775b732f1cf6353309cdb1c4f65eb6b01b 287682 ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.deb
+Checksums-Sha256:
+ 3cfc434845510ee6dead310828f7f52d9eade0b286038c59e3df79bb17dae407 6375790 ros-humble-web-video-server-dbgsym_3.1.1-2026.06.22.12.03_amd64.ddeb
+ d0bda28d4024c30ab3b45cad670549b6c889b389e3c38a9c3269cfbf6a56ad50 35687 ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.buildinfo
+ 34d8d1a1c12a5dde117992e4b9ab16c709286a2c3e6c034a1388e09078f86385 287682 ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.deb
+Files:
+ bf0ef15a4e44191c2337150bcf846031 6375790 debug optional ros-humble-web-video-server-dbgsym_3.1.1-2026.06.22.12.03_amd64.ddeb
+ 96e3f4762709573ef1639429c09cef75 35687 misc optional ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.buildinfo
+ d1deb46bfffa131d81fff7bb4c05df5e 287682 misc optional ros-humble-web-video-server_3.1.1-2026.06.22.12.03_amd64.deb
