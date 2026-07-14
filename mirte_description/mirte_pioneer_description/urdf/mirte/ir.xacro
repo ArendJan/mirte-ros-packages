@@ -29,7 +29,29 @@
       </inertial>
     </link>
     <gazebo reference="base_ir_${name}">
-      <sensor type="camera" name="camera_ir_${name}">
+    <sensor name="camera_ir_${name}" type="camera">
+  <always_on>true</always_on>
+  <visualize>true</visualize>
+  <update_rate>30</update_rate>
+        <topic>camera_${name}/image_raw</topic>
+  <gz_frame_id>base_ir_${name}</gz_frame_id>
+    <camera name="head">    <camera_info_topic>camera_${name}/cam_info</camera_info_topic>
+
+          <horizontal_fov>1.2</horizontal_fov>
+          <image>
+            <width>1</width>
+            <height>1</height>
+            <format>L8</format>
+          </image>
+          <clip>
+            <near>0.0001</near>
+            <far>1</far>
+          </clip>
+        
+  </camera>
+</sensor>
+
+      <!-- <sensor type="camera" name="camera_ir_${name}">
         <update_rate>50</update_rate>
         <always_on>true</always_on>
         <visualize>false</visualize>
@@ -37,8 +59,8 @@
         <ros>
           <imageTopicName>camera_${name}/image_raw</imageTopicName>
           <cameraInfoTopicName>camera_${name}/cam_info</cameraInfoTopicName>
-          <!-- <depthImageTopicName>[your depth image topic]</depthImageTopicName>
-        <pointCloudTopicName>[your point cloud topic]</pointCloudTopicName> -->
+          <!- - <depthImageTopicName>[your depth image topic]</depthImageTopicName>
+        <pointCloudTopicName>[your point cloud topic]</pointCloudTopicName> - ->
         </ros>
         <camera name="head">
           <horizontal_fov>1.2</horizontal_fov>
@@ -58,7 +80,7 @@
           <frameName>base_ir_${name}</frameName>
           <cameraName>camera_ir_${name}</cameraName>
         </plugin>
-      </sensor>
+      </sensor> -->
     </gazebo>
   </xacro:macro>
 </robot>
