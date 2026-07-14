@@ -6,17 +6,38 @@
 #include <mirte_telemetrix_cpp/sensors/sonar_monitor.hpp>
 
 #include <mirte_msgs/srv/get_range.hpp>
+#include <ranges>
 #include <sensor_msgs/msg/range.hpp>
-
 std::vector<std::shared_ptr<SonarMonitor>>
 SonarMonitor::get_sonar_monitors(NodeData node_data,
                                  std::shared_ptr<Parser> parser) {
   std::vector<std::shared_ptr<SonarMonitor>> sensors;
-  auto sonars = parse_all<SonarData>(parser, node_data.board);
-  for (auto sonar : sonars) {
-    sensors.push_back(std::make_shared<SonarMonitor>(node_data, sonar));
-    // std::cout << "Add Sonar: " << sonar.name << std::endl;
-  }
+  auto sonars = parser->params_object.distance.distances_map |
+                std::views::transform([&](const auto &pair) {
+                  const auto &name = pair.first;
+                  const auto &map_distance = pair.second;
+                  std::map<std::string, rclcpp::ParameterValue> parameters;
+                  parameters["max_distance"] =
+                      rclcpp::ParameterValue(map_distance.max_distance);
+                  parameters["min_distance"] =
+                      rclcpp::ParameterValue(map_distance.min_distance);
+                  parameters["frame_id"] =
+                      rclcpp::ParameterValue(map_distance.frame_id);
+                  parameters["connector"] =
+                      rclcpp::ParameterValue(map_distance.connector);
+                  parameters["pins.trigger"] =
+                      rclcpp::ParameterValue(map_distance.pins.trigger);
+                  parameters["pins.echo"] =
+                      rclcpp::ParameterValue(map_distance.pins.echo);
+                  std::set<std::string> unused_keys = get_keys(parameters);
+
+                  return SonarData(parser, node_data.board, name, parameters,
+                                   unused_keys, map_distance);
+                }) |
+                std::views::transform([&](const auto &data) {
+                  return std::make_shared<SonarMonitor>(node_data, data);
+                });
+  sensors.assign(sonars.begin(), sonars.end());
   return sensors;
 }
 
@@ -26,7 +47,17 @@ SonarMonitor::SonarMonitor(NodeData node_data, SonarData sonar_data)
       sonar_data(sonar_data) {
   this->logger = this->logger.get_child(sonar_data.get_device_class())
                      .get_child(sonar_data.name);
-
+  this->min_range = sonar_data.min_distance;
+  this->max_range = sonar_data.max_distance;
+  this->range =
+      sensor_msgs::build<sensor_msgs::msg::Range>()
+          .header(this->get_header())
+          .radiation_type(sensor_msgs::msg::Range::ULTRASOUND)
+          .field_of_view(M_PI /
+                         12.0) // 15 degrees, according to the HC-SR04 datasheet
+          .min_range(this->min_range)
+          .max_range(this->max_range)
+          .range(this->distance);
   // Use default QOS for sensor publishers as specified in REP2003
   sonar_pub = nh->create_publisher<sensor_msgs::msg::Range>(
       "distance/" + sonar_data.name, rclcpp::SystemDefaultsQoS());
@@ -39,32 +70,33 @@ SonarMonitor::SonarMonitor(NodeData node_data, SonarData sonar_data)
 
   tmx->attach_sonar(
       sonar_data.trigger, sonar_data.echo,
-      [this](auto pin, auto value) { this->data_callback(value); });
+      [this](auto pins, auto value) { this->data_callback(value); });
 }
 
 void SonarMonitor::data_callback(uint16_t value) {
-  this->device_timer->call();
+  // TODO: add locking
+  // this->device_timer->call();
   // Report Errors as specified in REP0117
   if (value == 0xFFFF) {
     // Should not occure
     this->distance = NAN;
-    RCLCPP_DEBUG(logger, "Some weird error which shouldn't occure or no new "
-                         "data was generated?");
+    // RCLCPP_DEBUG(logger, "Some weird error which shouldn't occure or no new "
+    //   "data was generated?");
   } else if (value == 0xFFFE) {
     // Too long since trigger, resulting in invalid reading
     this->distance = NAN;
-    RCLCPP_DEBUG(logger, "Too long since trigger");
+    // RCLCPP_DEBUG(logger, "Too long since trigger");
   } else if (value == 0xFFFD) {
     // Timeout, so detection is out of range
     this->distance = INFINITY;
-    RCLCPP_DEBUG(logger, "Object outside of range");
+    // RCLCPP_DEBUG(logger, "Object outside of range");
   } else if (value == 0xFFFC) {
     this->distance = NAN;
-    RCLCPP_DEBUG(logger, "No new distance measurement was created in time");
+    // RCLCPP_DEBUG(logger, "No new distance measurement was created in time");
   } else {
     // The reading is possibly valid.
     auto raw_distance = value / 100.0;
-    RCLCPP_DEBUG(logger, "%d", value);
+    // RCLCPP_DEBUG(logger, "%d", value);
 
     if (raw_distance < min_range) {
       this->distance = -INFINITY;
@@ -74,29 +106,23 @@ void SonarMonitor::data_callback(uint16_t value) {
       this->distance = raw_distance;
     }
   }
-  this->update();
-  this->device_timer->reset();
 }
 
 void SonarMonitor::update() {
-  auto msg =
-      sensor_msgs::build<sensor_msgs::msg::Range>()
-          .header(this->get_header())
-          .radiation_type(sensor_msgs::msg::Range::ULTRASOUND)
-          .field_of_view(M_PI /
-                         12.0) // 15 degrees, according to the HC-SR04 datasheet
-          .min_range(this->min_range)
-          .max_range(this->max_range)
-          .range(this->distance);
 
-  this->sonar_pub->publish(msg);
   const std::lock_guard<std::mutex> lock(msg_mutex);
-  this->range = msg;
+  if (this->sonar_pub->get_subscription_count() > 0) {
+    this->range.set__header(this->get_header());
+    this->range.set__range(this->distance);
+    this->sonar_pub->publish(this->range);
+  }
 }
 
 void SonarMonitor::service_callback(
     const mirte_msgs::srv::GetRange::Request::ConstSharedPtr req,
     mirte_msgs::srv::GetRange::Response::SharedPtr res) {
   const std::lock_guard<std::mutex> lock(msg_mutex);
+  res->range.header = this->get_header();
+  res->range.set__range(this->distance);
   res->range = this->range;
 }

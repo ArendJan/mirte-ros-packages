@@ -10,7 +10,7 @@
 #include <tmx_cpp/tmx.hpp>
 
 #include <mirte_telemetrix_cpp/modules/veml6040_module.hpp>
-
+#include <ranges>
 VEML6040_sensor::VEML6040_sensor(NodeData node_data, VEML6040Data veml_data,
                                  std::shared_ptr<tmx_cpp::Sensors> modules)
     : Mirte_module(node_data, {veml_data.scl, veml_data.sda},
@@ -51,7 +51,12 @@ void VEML6040_sensor::update() {
   using mirte_msgs::msg::ColorHSLStamped;
   using mirte_msgs::msg::ColorRGBAStamped;
   using mirte_msgs::msg::ColorRGBWStamped;
-
+  if (this->rgbw_pub->get_subscription_count() == 0 &&
+      this->rgba_pub->get_subscription_count() == 0 &&
+      this->hsl_pub->get_subscription_count() == 0) {
+    // No subscribers, so no need to publish
+    return;
+  }
   if (msg_mutex.try_lock_shared()) {
     const std::shared_lock lock{msg_mutex, std::adopt_lock};
     auto header = get_header();
@@ -72,7 +77,7 @@ void VEML6040_sensor::data_callback(uint16_t red, uint16_t green, uint16_t blue,
   using mirte_msgs::msg::ColorRGBWStamped;
 
   const std::unique_lock<std::shared_mutex> lock(msg_mutex);
-  this->device_timer->reset();
+  // this->device_timer->reset();
   // To get to HSI/HSV/HSL we need to set a max to the intensity (setting). This
   // could be 2^16, but to get more resolution, you could also cap this to a
   // lower value.
@@ -112,17 +117,10 @@ void VEML6040_sensor::data_callback(uint16_t red, uint16_t green, uint16_t blue,
   last_rgbw.b = b;
   last_rgbw.w = w;
 
-  rgbw_pub->publish(
-      mirte_msgs::build<ColorRGBWStamped>().header(header).color(last_rgbw));
-
   last_rgba.r = r;
   last_rgba.g = g;
   last_rgba.b = b;
   last_rgba.a = 1;
-
-  rgba_pub->publish(
-      mirte_msgs::build<ColorRGBAStamped>().header(header).color(last_rgba));
-  ;
 
   auto color_hsva = color_util::changeColorspace(color_util::ColorRGBA(
       last_rgba.r, last_rgba.g, last_rgba.b, last_rgba.a));
@@ -136,9 +134,6 @@ void VEML6040_sensor::data_callback(uint16_t red, uint16_t green, uint16_t blue,
 
   last_hsl.l = l;
   last_hsl.s = (l >= 1.0 or l <= 0.0) ? 0.0 : ((v - l) / std::min(l, 1 - l));
-
-  hsl_pub->publish(
-      mirte_msgs::build<ColorHSLStamped>().header(header).color(last_hsl));
 }
 
 void VEML6040_sensor::get_rgbw_service_callback(
@@ -167,7 +162,22 @@ VEML6040_sensor::get_veml6040_modules(
     NodeData node_data, std::shared_ptr<Parser> parser,
     std::shared_ptr<tmx_cpp::Sensors> sensors) {
   std::vector<std::shared_ptr<VEML6040_sensor>> new_modules;
-  auto datas = parse_all<VEML6040Data>(parser, node_data.board);
+  // auto datas = parse_all<VEML6040Data>(parser, node_data.board);
+  auto datas =
+      parser->params_object.color.colors_map |
+      std::views::transform([&](const auto &pair) {
+        const auto &name = pair.first;
+        const auto &map_veml = pair.second;
+        std::map<std::string, rclcpp::ParameterValue> parameters;
+
+        parameters["connector"] = rclcpp::ParameterValue(map_veml.connector);
+        parameters["pins.scl"] = rclcpp::ParameterValue(map_veml.pins.scl);
+        parameters["pins.sda"] = rclcpp::ParameterValue(map_veml.pins.sda);
+        parameters["addr"] = rclcpp::ParameterValue(map_veml.addr);
+        std::set<std::string> unused_keys = get_keys(parameters);
+        return VEML6040Data(parser, node_data.board, name, parameters,
+                            unused_keys);
+      });
   for (auto data : datas) {
     auto module = std::make_shared<VEML6040_sensor>(node_data, data, sensors);
     new_modules.push_back(module);

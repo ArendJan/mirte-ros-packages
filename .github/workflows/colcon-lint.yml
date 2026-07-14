@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container: osrf/ros:humble-desktop-jammy #faster than using setup-ros
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'recursive'
     # - uses: ros-tooling/setup-ros@master
@@ -32,10 +32,10 @@ jobs:
         . ./install/setup.bash
         # for every folder in the workspace starting with mirte_ excluding mirte_teleop, run command
         ERROR=false
-        for d in mirte_*; do
-          if [ "$d" != "mirte_teleop" ]; then
+        packages=$(colcon list -n | grep -v mirte_teleop)
+        for d in $packages; do
             colcon lint --packages-select $d || ERROR=true
-          fi
+            colcon test --packages-select $d || ERROR=true
         done
         # if $error, set exit state
         if $ERROR; then

@@ -21,6 +21,7 @@
 #include <mirte_msgs/srv/set_servo_angle.hpp>
 #include <mirte_msgs/srv/set_servo_angle_with_speed.hpp>
 #include <mirte_msgs/srv/set_servo_offset.hpp>
+#include <mirte_msgs/srv/set_servo_voltage_range.hpp>
 #include <std_msgs/msg/header.hpp>
 #include <std_srvs/srv/set_bool.hpp>
 
@@ -43,13 +44,14 @@ public:
   float calc_angle_in(uint16_t angle_out);
 
   std_msgs::msg::Header get_header();
-
+  bool set_angle(float angle, const bool radians = true,
+                 const float rate = NAN);
   void update();
 
 private:
   std::shared_ptr<rclcpp::Node> nh;
 
-  rclcpp::TimerBase::SharedPtr servo_timer;
+  //   rclcpp::TimerBase::SharedPtr servo_timer;
 
   std::atomic<float> last_angle = 0.0;
   std::atomic<uint16_t> last_raw = 0;
@@ -73,6 +75,8 @@ private:
   rclcpp::Service<mirte_msgs::srv::SetServoOffset>::SharedPtr
       set_offset_service;
 
+  rclcpp::Service<mirte_msgs::srv::SetServoVoltageRange>::SharedPtr
+      voltage_range_service;
   void enable_service_callback(
       const std_srvs::srv::SetBool::Request::ConstSharedPtr req,
       std_srvs::srv::SetBool::Response::SharedPtr res);
