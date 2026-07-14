@@ -29,61 +29,41 @@
       </inertial>
     </link>
     <gazebo reference="base_sonar_${name}">
-      <sensor type="ray" name="range_sensor_${name}">
-        <visualize>false</visualize>
-        <ray>
-          <scan>
-            <horizontal>
-              <!-- for some reason 1 does not work, we neex 2x2 -->
-              <samples>4</samples>
-              <resolution>1</resolution>
+    <sensor name='range_sensor_${name}' type='gpu_lidar'>
+    <!-- disable realsense if you want to get meaningful data -->
+  <topic>/mirte/scanSonar${name}</topic>
+  <frame>base_sonar_${name}</frame>
+  <update_rate>10</update_rate>
+  <ray>
+    <scan>
+      <horizontal>
+        <samples>5</samples> 
               <min_angle>${-sonar_angle_max/2}</min_angle>
               <max_angle>${sonar_angle_max/2}</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>4</samples>
-              <resolution>1</resolution>
-              <min_angle>0</min_angle>
-              <!-- Don't look at the floor-->
-              <max_angle>${sonar_angle_max/4}</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.01</min>
-            <max>5</max>
-            <resolution>0.01</resolution>
-          </range>
-          <!-- Using gazebo's noise instead of plugin's -->
-          <noise>
+      </horizontal>
+      <vertical>
+        <samples>5</samples> 
+        <!-- sonar would otherwise touch the ground -->
+        <min_angle>0</min_angle> 
+        <max_angle>${sonar_angle_max/2}</max_angle>
+      </vertical>
+    </scan>
+    <range>
+      <min>0.01</min>
+      <max>5.0</max>
+      <!-- you'll get 6m if there is no obstacle, not really ros rep117 okay -->
+      <resolution>0.01</resolution>
+      <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
             <stddev>0.01</stddev>
           </noise>
-        </ray>
-        <!-- Using gazebo's update rate instead of plugin's -->
-        <update_rate>30</update_rate>
-        <plugin name="laser_controller_sonar${name}" filename="libgazebo_ros_laser.so">
-          <topicName>/mirte/scanSonar${name}</topicName>
-          <output_type>sensor_msgs/Range</output_type>
-          <radiation_type>ultrasound</radiation_type>
-          <frameName>base_sonar_${name}</frameName>
-        </plugin>
-        <!--         <plugin name="gazebo_ros_head_hokuyo_controlle" filename="libgazebo_ros_range_sensor.so" >
-  <ros>
-    <remapping>~/out:=/jemoeder</remapping>                                                               
-  </ros>
-   <output_type>sensor_msgs/LaserScan</output_type> 
-</plugin> 
--->
-        <!-- <plugin name="ultrasonic_sensor_1" filename="libgazebo_ros_ray_sensor.so">
-    <ros>
-        <remapping>~/out:=ultrasonic_sensor_1</remapping>
-      </ros>
-      <output_type>sensor_msgs/Range</output_type>
-      <radiation_type>ultrasound</radiation_type>
-      <frame_name>ultrasonic_1_link</frame_name> 
-    </plugin>  -->
-      </sensor>
+    </range>
+  </ray>
+  <always_on>1</always_on>
+  <visualize>true</visualize>
+</sensor>
+      
     </gazebo>
   </xacro:macro>
 </robot>
