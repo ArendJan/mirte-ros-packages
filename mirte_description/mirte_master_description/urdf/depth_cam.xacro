@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
-<robot name="sensor_orbbec_astra_pro_plus" xmlns:xacro="http://ros.org/wiki/xacro">
 
-     <xacro:property name="orbbec_astra_pro_plus_scale" value="1.0" />
+<!-- uses new type depth cam, not astra pro plus, but astra mini pro. No stl for the camera as it's hidden in base frame -->
+<robot name="sensor_orbbec_astra_mini_pro" xmlns:xacro="http://ros.org/wiki/xacro">
+
+     <xacro:property name="orbbec_astra_mini_pro_scale" value="1.0" />
      <!-- RGB sensor - cam -->
      <!-- THESE MIGHT NEED TO CHANGE IF THE RESOLUTION IS NOT 640x480 -->
-     <xacro:property name="orbbec_astra_pro_plus_rel_rgb_px" value="0.0" />
-     <xacro:property name="orbbec_astra_pro_plus_rel_rgb_py" value="-0.0125" />
-     <xacro:property name="orbbec_astra_pro_plus_rel_rgb_pz" value="-0.0150" />
+     <xacro:property name="orbbec_astra_mini_pro_rel_rgb_px" value="0.0" />
+     <xacro:property name="orbbec_astra_mini_pro_rel_rgb_py" value="-0.0125" />
+     <xacro:property name="orbbec_astra_mini_pro_rel_rgb_pz" value="-0.0150" />
 
 
      <!-- IR sensor - depth -->
-     <xacro:property name="orbbec_astra_pro_plus_depth_rel_rgb_px" value="0.0" />
-     <xacro:property name="orbbec_astra_pro_plus_depth_rel_rgb_py" value="0.0250" />
-     <xacro:property name="orbbec_astra_pro_plus_depth_rel_rgb_pz" value="0.0" />
+     <xacro:property name="orbbec_astra_mini_pro_depth_rel_rgb_px" value="0.0" />
+     <xacro:property name="orbbec_astra_mini_pro_depth_rel_rgb_py" value="0.0250" />
+     <xacro:property name="orbbec_astra_mini_pro_depth_rel_rgb_pz" value="0.0" />
      <xacro:property name="M_PI" value="3.1415926535897931" />
 
-     <xacro:macro name="sensor_orbbec_astra_pro_plus"
+     <xacro:macro name="sensor_orbbec_astra_mini_pro"
           params="name parent *origin color rgb_w:=640 rgb_h:=480 stddev:=0.5">
 
           <joint name="${name}_rgb_joint" type="fixed">
@@ -48,7 +50,7 @@
 
           <joint name="${name}_joint" type="fixed">
                <origin
-                    xyz="${orbbec_astra_pro_plus_rel_rgb_px} ${orbbec_astra_pro_plus_rel_rgb_py} ${orbbec_astra_pro_plus_rel_rgb_pz}"
+                    xyz="${orbbec_astra_mini_pro_rel_rgb_px} ${orbbec_astra_mini_pro_rel_rgb_py} ${orbbec_astra_mini_pro_rel_rgb_pz}"
                     rpy="0.0 0 0" />
                <parent link="${name}_rgb_frame" />
                <child link="${name}_link" />
@@ -79,7 +81,7 @@
 
           <joint name="${name}_depth_joint" type="fixed">
                <origin
-                    xyz="${orbbec_astra_pro_plus_depth_rel_rgb_px} ${orbbec_astra_pro_plus_depth_rel_rgb_py} ${orbbec_astra_pro_plus_depth_rel_rgb_pz}"
+                    xyz="${orbbec_astra_mini_pro_depth_rel_rgb_px} ${orbbec_astra_mini_pro_depth_rel_rgb_py} ${orbbec_astra_mini_pro_depth_rel_rgb_pz}"
                     rpy="0 0 0" />
                <parent link="${name}_rgb_frame" />
                <child link="${name}_depth_frame" />
@@ -108,7 +110,7 @@
           </link>
 
           <!-- RGBD sensor for simulation, same as Kinect -->
-          <xacro:sensor_orbbec_astra_pro_plus_gazebo />
+          <xacro:sensor_orbbec_astra_mini_pro_gazebo />
 
      </xacro:macro>
 
@@ -116,7 +118,7 @@
                            Gazebo
      ========================================================= -->
 
-     <xacro:macro name="sensor_orbbec_astra_pro_plus_gazebo">
+     <xacro:macro name="sensor_orbbec_astra_mini_pro_gazebo">
           <gazebo reference="${name}_link">
              <sensor name="${name}" type="depth">
                 <visualize>true</visualize>

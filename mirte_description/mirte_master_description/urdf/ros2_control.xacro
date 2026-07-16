@@ -107,7 +107,7 @@
 
     <xacro:if value="$(arg sim)">
 
-      <joint name="_Gripper_joint_r">
+      <!-- <joint name="_Gripper_joint_r">
         <param name="mimic">gripper_joint</param>
         <param name="multiplier">-1</param>
         <command_interface name="position"/>
@@ -129,7 +129,7 @@
         <command_interface name="position"/>
         <state_interface name="position" />
         <state_interface name="velocity" />
-      </joint>
+      </joint> -->
 
     </xacro:if>
 

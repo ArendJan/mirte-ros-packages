@@ -3,15 +3,14 @@
 <robot
   name="mirte_master" xmlns:xacro="http://ros.org/wiki/xacro">
 
-
-  <xacro:arg name="flag_enable" default="False" />
   <xacro:arg name="arm_enable" default="True" />
-  <xacro:arg name="screen_enable" default="False" />
   <xacro:arg name="front_camera_enable" default="False" />
   <xacro:arg name="sonar_enable" default="True" />
   <xacro:arg name="lidar_enable" default="True" />
   <xacro:arg name="depth_camera_enable" default="True" />
   <xacro:arg name="imu_enable" default="True" />
+  <xacro:arg name="gripper_camera" default="True" />
+  <xacro:arg name="wheels_enable" default="True" />
   <xacro:arg name="sim" default="False" />
 
   <xacro:property name="camera_name" value="camera" lazy_eval="False"/>
@@ -37,10 +36,10 @@
   <xacro:include filename="$(find mirte_master_description)/urdf/mirte_master_base.gazebo.xacro" />
 
   <xacro:if value="$(arg depth_camera_enable)">
-    <xacro:include filename="$(find mirte_master_description)/urdf/orbbec_astra_plus_pro.xacro" />
-    <xacro:sensor_orbbec_astra_pro_plus name="${camera_name}" parent="frame_link" color="blue">
+    <xacro:include filename="$(find mirte_master_description)/urdf/depth_cam.xacro" />
+    <xacro:sensor_orbbec_astra_mini_pro name="${camera_name}" parent="frame_link" color="blue">
       <origin xyz="0.01 -0.146658788505756 0.0427" rpy="0 0 ${radians(-90)}" />
-    </xacro:sensor_orbbec_astra_pro_plus>
+    </xacro:sensor_orbbec_astra_mini_pro>
   </xacro:if>
 
   <xacro:if value="$(arg imu_enable)">
@@ -59,7 +58,7 @@
   </gazebo>
 
   <joint name="frame_base_joint" type="fixed">
-    <origin xyz="0 0 0.10" rpy="0 0 ${radians(90)}" />
+    <origin xyz="0 0 0.10" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="frame_link" />
   </joint>
@@ -67,19 +66,29 @@
 
   <link
     name="frame_link">
-    <inertial>
-      <origin xyz="-0.00024285 0.0082178 ${-0.0037661 - 0.04}" />
-      <mass value="${base_mass}" />
+    <!-- <inertial> -->
+      <!-- <origin xyz="0.0344310118221643 -0.0286648891259541 -0.0113871267936065"/> -->
+      <!-- <mass value="${base_mass}" /> -->
+     <inertial>
+      <origin
+        xyz="0.0560559787388138 -0.046464113006352 -0.0107223863938312"
+        rpy="0 0 0" />
+      <mass
+        value="2.87187694310402" />
       <inertia
-        ixx="${base_mass * (0.06**2 + 0.28**2) / 12}"
-        iyy="${base_mass * (0.19**2 + 0.06**2) / 12}"
-        izz="${base_mass * (0.19**2 + 0.28**2) / 12}"
-        ixy="0" ixz="0" iyz="0" />
+        ixx="0.00268778032094885"
+        ixy="5.35777394513109E-05"
+        ixz="-1.34925830248996E-06"
+        iyy="0.006197833679705"
+        iyz="3.08873367085267E-06"
+        izz="0.00472317803422592" />
     </inertial>
-    <visual>
+    <visual> <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mirte_master_description/meshes/frame_link.STL" />
+          filename="package://mirte_master_description/meshes/Base.STL" />
       </geometry>
       <material name="">
         <color rgba="0.52941 0.54902 0.54902 1" />
@@ -87,8 +96,9 @@
     </visual>
 
     <collision>
-      <origin xyz="0 0 -0.03" />
-      <geometry>
+  <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />      <geometry>
         <box size="0.19 0.28 0.06" />
       </geometry>
     </collision>
@@ -99,7 +109,7 @@
         <box size="0.18 0.16 0.05" />
       </geometry>
     </collision>
-
+<!-- 
     <collision>
       <origin xyz="-0.062156 -0.002558 0.0125" rpy="0 0 ${radians(32.5)}" />
       <geometry>
@@ -112,7 +122,7 @@
       <geometry>
         <box size="0.013 0.04 0.025" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
 
@@ -231,66 +241,6 @@
 
   <xacro:if value="$(arg lidar_enable)">
     <xacro:include filename="$(find mirte_master_description)/urdf/lidar.xacro" />
-  </xacro:if>
-
-  <xacro:if value="$(arg screen_enable)">
-    <link
-      name="screen">
-      <inertial>
-        <origin
-          xyz="-1.24638847975239E-07 0.0013371323974908 0.00160606068028191"
-          rpy="0 0 0" />
-        <mass
-          value="0.00357270774970056" />
-        <inertia
-          ixx="1.29976980207027E-07"
-          ixy="-1.78182996362165E-11"
-          ixz="-4.24689246841474E-13"
-          iyy="2.09902246549457E-07"
-          iyz="1.92672613573332E-09"
-          izz="3.37075734369407E-07" />
-      </inertial>
-      <visual>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="package://mirte_master_description/meshes/screen.STL" />
-        </geometry>
-        <material
-          name="">
-          <color
-            rgba="0.768627450980392 0.768627450980392 0.768627450980392 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="package://mirte_master_description/meshes/screen.STL" />
-        </geometry>
-      </collision>
-    </link>
-    <joint
-      name="screen_joint"
-      type="fixed">
-      <origin
-        xyz="0 0.121521156261136 0.0540000000000046"
-        rpy="1.5707963267949 0 -3.14159265358979" />
-      <parent
-        link="frame_link" />
-      <child
-        link="screen" />
-      <axis
-        xyz="0 0 0" />
-    </joint>
-  </xacro:if>
-
-  <xacro:if value="$(arg flag_enable)">
-    <xacro:include filename="$(find mirte_master_description)/urdf/flag.xacro" />
   </xacro:if>
 
   <xacro:if value="$(arg arm_enable)">
