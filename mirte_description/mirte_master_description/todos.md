@@ -1,0 +1,18 @@
+# mm description todos
+- [ ] arm
+  - [ ] joints
+  - [x] camera
+  - [ ] gripper
+  - [ ] gripper grasp
+  - [ ] contacts
+- [ ] wheels
+  - [ ] separation
+  - [ ] joints
+  - [ ] cmd vel
+  - [ ] optioneel zonder wielen
+- [ ] sonar
+- [ ] depth cam
+- [ ] imu
+- [ ] collisions beter (geen/block)
+- [ ] base frame stl
+- [ ] 

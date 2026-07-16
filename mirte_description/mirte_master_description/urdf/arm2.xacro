@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- <xacro:macro name="arm_macro" params="enable_arm_collisions"> -->
+    <link
+    name="Arm">
+    <inertial>
+      <origin
+        xyz="0.199878078588349 -0.00452321557552078 0.245475596940599"
+        rpy="0 0 0" />
+      <mass
+        value="0.438578226451647" />
+      <inertia
+        ixx="0.000220377694326858"
+        ixy="-1.48489357771068E-06"
+        ixz="-5.53821777263242E-05"
+        iyy="0.000249243731826793"
+        iyz="-3.26836277134958E-06"
+        izz="0.000214737746366638" />
+    </inertial>
+    <!-- <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Arm.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="Arm_joint"
+    type="fixed">
+    <origin
+      xyz="0.00012036 -0.01012 -0.0024812"
+      rpy="1.5708 0 0" />
+    <parent
+      link="MIRTE_Master" />
+    <child
+      link="Arm" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shoulder_pan">
+    <inertial>
+      <origin
+        xyz="-0.00543776553160195 -0.000509501501145752 0.0285808246077279"
+        rpy="0 0 0" />
+      <mass
+        value="0.0526781402686753" />
+      <inertia
+        ixx="1.27936978119511E-05"
+        ixy="2.24649358664918E-07"
+        ixz="3.24570783940582E-07"
+        iyy="9.0108967812021E-06"
+        iyz="3.19125827976664E-08"
+        izz="1.70619631994108E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/z-Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/z-Rotation.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="shoulder_pan_joint"
+    type="revolute">
+    <origin
+      xyz="0.121551322610448 -0.00891627722041789 0.110848128389983"
+      rpy="0 2.66843023091516E-05 0" />
+    <parent
+      link="Arm" />
+    <child
+      link="shoulder_pan" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+            lower="${pi/-2}"
+            upper="${pi/2}"
+            effort="2.0"
+            velocity="2.0"
+        />
+  </joint>
+  <link
+    name="shoulder_lift">
+    <inertial>
+      <origin
+        xyz="0.0243247540835085 -0.0302970421840243 0.0844721417436619"
+        rpy="0 0 0" />
+      <mass
+        value="0.102325054139096" />
+      <inertia
+        ixx="0.000110625274617278"
+        ixy="8.06428564589689E-07"
+        ixz="-2.1315067607945E-05"
+        iyy="9.74019221425693E-05"
+        iyz="-1.18220607812138E-06"
+        izz="3.61861144527713E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Upperarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Upperarm.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="shoulder_lift_joint"
+    type="revolute">
+    <origin
+      xyz="0.00380301601043069 0.0313794450114005 0.0332500000000377"
+      rpy="0 -2.66843023091516E-05 0" />
+    <parent
+      link="shoulder_pan" />
+    <child
+      link="shoulder_lift" />
+    <axis
+      xyz="-0.0590713107277822 0.998253765455667 0" />
+  <limit
+            lower="${pi/-2}"
+            upper="${pi/2}"
+            effort="2.0"
+            velocity="2.0"
+        />
+  </joint>
+  <link
+    name="elbow">
+    <inertial>
+      <origin
+        xyz="0.0706772608618316 -0.027444951764167 0.0395073033756355"
+        rpy="0 0 0" />
+      <mass
+        value="0.0911215389802598" />
+      <inertia
+        ixx="4.06272465991904E-05"
+        ixy="-2.95497241375996E-06"
+        ixz="-3.39941318616991E-05"
+        iyy="9.04576214125665E-05"
+        iyz="-2.00928077391389E-06"
+        izz="8.03522239189564E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Forearm.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0.036437928080887 0.00180537281653873 0.137006236814825"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_lift" />
+    <child
+      link="elbow" />
+    <axis
+      xyz="-0.0590713107275747 0.998253765455679 0" />
+    <limit
+            lower="${pi/-2}"
+            upper="${pi/2}"
+            effort="2.0"
+            velocity="2.0"
+        />
+  </joint>
+  <link
+    name="wrist">
+    <inertial>
+      <origin
+        xyz="0.030457565932454 -0.0213199330141271 0.0246561263482211"
+        rpy="0 0 0" />
+      <mass
+        value="0.0631657082718983" />
+      <inertia
+        ixx="1.94207147453815E-05"
+        ixy="3.79658302272387E-07"
+        ixz="9.22730385151376E-07"
+        iyy="1.35649196766237E-05"
+        iyz="6.81817829335488E-08"
+        izz="1.75049753123464E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Wrist.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0.124425999226755 0.000550856546668227 0.0712063710175444"
+      rpy="0 0 0" />
+    <parent
+      link="elbow" />
+    <child
+      link="wrist" />
+    <axis
+      xyz="-0.0590713107276118 0.998253765455677 0" />
+      <limit
+            lower="${pi/-2}"
+            upper="${pi/2}"
+            effort="2.0"
+            velocity="2.0"
+        />
+  </joint>
+  <link
+    name="gripper">
+    <inertial>
+      <origin
+        xyz="0.0260104638193439 0.0194222325489568 0.0221346361100294"
+        rpy="0 0 0" />
+      <mass
+        value="0.0189805948365668" />
+      <inertia
+        ixx="2.34101098127276E-06"
+        ixy="3.22622491333076E-07"
+        ixz="-8.17376363293455E-07"
+        iyy="2.49216095826188E-06"
+        iyz="1.86856580622951E-07"
+        izz="3.84236227432968E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Gripper_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Gripper_Left.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="Left_gripper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0505382985096727 -0.00913040976600391 0.006318005818223"
+      rpy="0 0 0" />
+    <parent
+      link="wrist" />
+    <child
+      link="gripper" />
+    <axis
+      xyz="-0.384044127181366 -0.0226909681284593 0.923035875978229" />
+   <limit
+            lower="-.20"
+            upper="0.25"
+            effort="2.0"
+            velocity="2.0"
+        />
+  </joint>
+  <link
+    name="Gripper_Right">
+    <inertial>
+      <origin
+        xyz="0.0251469938866446 -0.0152950047655913 0.0215607980324168"
+        rpy="0 0 0" />
+      <mass
+        value="0.020696726381591" />
+      <inertia
+        ixx="2.64854872929009E-06"
+        ixy="-2.65371466970767E-07"
+        ixz="-7.63828524600313E-07"
+        iyy="2.57591088627407E-06"
+        iyz="-3.63820979056845E-07"
+        izz="4.07757485928383E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Gripper_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <xacro:if value="$(arg enable_arm_collisions)">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Gripper_Right.STL" />
+      </geometry>
+    </collision>
+    </xacro:if>
+  </link>
+  <joint
+    name="right_gripper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0519556772271228 -0.0330885198123082 0.00631876771813183"
+      rpy="0 0 0" />
+    <parent
+      link="wrist" />
+    <child
+      link="Gripper_Right" />
+    <axis
+      xyz="-0.384044127181366 -0.0226909681284593 0.923035875978229" />
+   <limit
+            lower="-.20"
+            upper="0.25"
+            effort="2.0"
+            velocity="2.0"
+        />
+  
+  <!-- <mimic
+      joint="Left_gripper_joint"
+      multiplier="-1"
+      offset="0" /> -->
+  </joint>
+  <link
+    name="Arm_camera">
+    <inertial>
+      <origin
+        xyz="-0.0058011133283864 -1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00146668134870463" />
+      <inertia
+        ixx="3.95627642766835E-08"
+        ixy="1.54888862881183E-23"
+        ixz="-3.22600438895681E-23"
+        iyy="3.26290734955815E-08"
+        iyz="5.90860604542883E-24"
+        izz="3.26290734955815E-08" />
+    </inertial>
+    <!-- <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual> 
+    <!- - <xacro:if value="$(arg enable_arm_collisions)"> - ->
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/FR.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+<!-- <sensor name="camera1" type="camera">  
+     
+                    <frame_id>base_camera</frame_id>
+        <topic>/test/integration/CameraPlugin_imagesWithBuiltinSDF</topic>
+
+        <camera>
+            <horizontal_fov>1.3962634015954636</horizontal_fov>
+            <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+            </image>
+            <clip>
+            <near>0.1</near>
+            <far>100</far>
+            </clip>
+
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+        </sensor>         -->
+        <gazebo reference="Arm_camera">
+        <sensor name="Arm_camera" type="camera">
+        <update_rate>10</update_rate>
+        <gz_frame_id>Arm_camera</gz_frame_id>
+        <topic>/gripper_camera/image</topic>
+        <camera>
+          <horizontal_fov>1.05</horizontal_fov>
+          <image>
+            <width>256</width>
+            <height>256</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>10.0</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+      </sensor>
+      </gazebo>
+  <joint
+    name="Arm_camera_joint"
+    type="revolute">
+    <origin
+      xyz="0.00808405147922392 -0.0236577575521872 0.0749676192971127"
+      rpy="-7.04933984956096E-05 -0.394897827073442 0.0591050619044624" />
+    <parent
+      link="wrist" />
+    <child
+      link="Arm_camera" />
+      <limit
+            lower="${pi/-2}"
+            upper="${pi/2}"
+            effort="2.0"
+            velocity="2.0"
+        />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+<!-- TODO: fix grasp fix things -->
+<!-- <gazebo>
+    <plugin filename="libgazebo_grasp_fix.so" name="gazebo_grasp_fix">
+       <arm>
+          <arm_name>finger_gripper</arm_name>
+          <palm_link>wrist</palm_link>
+          <gripper_link>gripper</gripper_link>
+          <gripper_link>_Gripper_r</gripper_link>
+          <gripper_link>_gripper_link_l</gripper_link>
+          <gripper_link>gripper_finger_l</gripper_link>
+          <gripper_link>_gripper_link_r</gripper_link>
+          <gripper_link>gripper_finger_r</gripper_link>
+       </arm>
+       <forces_angle_tolerance>100</forces_angle_tolerance>
+       <update_rate>4</update_rate>
+       <grip_count_threshold>4</grip_count_threshold>
+       <max_grip_count>8</max_grip_count>
+       <release_tolerance>0.005</release_tolerance>
+       <disable_collisions_on_attach>false</disable_collisions_on_attach>
+    </plugin>
+
+</gazebo> -->
+
+<!-- </xacro:macro> -->
+</robot>
