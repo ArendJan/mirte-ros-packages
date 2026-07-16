@@ -110,20 +110,17 @@
   </xacro:if>
   <xacro:include filename="$(find mirte_pioneer_description)/urdf/mirte/diffdrive.xacro"/>
   <gazebo>
-    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
-      <ros>
-        <!-- Add namespace and remap the default topic -->
-        <namespace>/mirte</namespace>
-        <remapping>odom:=pos</remapping>
-      </ros>
-      <!-- Replace camelCase elements with camel_case ones -->
-      <body_name>base_footprint</body_name>
-      <frame_name>world</frame_name>
-      <update_rate>1</update_rate>
-      <xyz_offset>0 0 0</xyz_offset>
-      <rpy_offset>0.0 0.0 0.0</rpy_offset>
-      <gaussian_noise>0.01</gaussian_noise>
-    </plugin>
+  <plugin
+    filename="gz-sim-pose-publisher-system"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>false</publish_link_pose>
+    <publish_collision_pose>false</publish_collision_pose>
+    <publish_visual_pose>false</publish_visual_pose>
+    <publish_nested_model_pose>false</publish_nested_model_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <update_frequency>1</update_frequency>
+  </plugin>
+
   </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_state_publisher">
