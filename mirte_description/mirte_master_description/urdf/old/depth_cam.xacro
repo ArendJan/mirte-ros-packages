@@ -1,42 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-   <link
-    name="Depth_camera">
-    <inertial>
-      <origin
-        xyz="-0.139364988710438 -0.0173680519512047 0.02215464323049"
-        rpy="0 0 0" />
-      <mass
-        value="2.88121038233162" />
-      <inertia
-        ixx="0.0585330875030336"
-        ixy="-0.00149512396123631"
-        ixz="-0.0193738145471712"
-        iyy="0.0651097389054094"
-        iyz="-0.00303065037585006"
-        izz="0.0625793114760086" />
-    </inertial>
-  <!-- <visual>
-  <geometry>
-                         <box size="0.1 .1 0.1" />
-                    </geometry>
-  </visual> -->
-  </link>
-  <joint
-    name="Depth_camera_joint"
-    type="fixed">
-    <origin
-      xyz="0.194919101935334 -0.0242159015133965 -0.00814738065306653"
-      rpy="0 0 2.66843002436935E-05" />
-    <parent
-      link="Base" />
-    <child
-      link="Depth_camera" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+<?xml version="1.0"?>
 
-
+<!-- uses new type depth cam, not astra pro plus, but astra mini pro. No stl for the camera as it's hidden in base frame -->
+<robot name="sensor_orbbec_astra_mini_pro" xmlns:xacro="http://ros.org/wiki/xacro">
 
      <xacro:property name="orbbec_astra_mini_pro_scale" value="1.0" />
      <!-- RGB sensor - cam -->
@@ -70,8 +35,7 @@
           </link>
 
           <joint name="${name}_rgb_optical_joint" type="fixed">
-               <!-- <origin xyz="0.0 0.0 0.0" rpy="${-M_PI/2} 0 ${-M_PI/2}" /> -->
-               <!-- <origin -->
+               <origin xyz="0.0 0.0 0.0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
                <parent link="${name}_rgb_frame" />
                <child link="${name}_rgb_optical_frame" />
           </joint>
@@ -93,14 +57,14 @@
           </joint>
 
           <link name="${name}_link">
-               <!-- <visual>
+               <visual>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
                          <mesh
-                              filename="package://mirte_master_description/meshes/BR.STL" />
+                              filename="package://mirte_master_description/meshes/orbbec_astra.stl" />
                     </geometry>
                     <material name="${color}" />
-               </visual> -->
+               </visual>
                <collision>
                     <origin xyz="-0.0183 0.0 0.0165" rpy="0 0 0" />
                     <geometry>
@@ -132,7 +96,7 @@
           </link>
 
           <joint name="${name}_depth_optical_joint" type="fixed">
-               <!-- <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" /> -->
+               <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
                <parent link="${name}_depth_frame" />
                <child link="${name}_depth_optical_frame" />
           </joint>
@@ -155,12 +119,10 @@
      ========================================================= -->
 
      <xacro:macro name="sensor_orbbec_astra_mini_pro_gazebo">
-          <gazebo reference="${name}_depth_frame">
-             <sensor name="${name}" type="rgbd_camera">
+          <gazebo reference="${name}_link">
+             <sensor name="${name}" type="depth_camera">
                 <visualize>true</visualize>
-                <update_rate>10.0</update_rate>
-                <topic>/${name}/depth_image</topic>
-                <gz_frame_id>${name}_depth_frame</gz_frame_id>
+                <update_rate>60.0</update_rate>
                 <camera name="RS_D455">
                     <horizontal_fov>${60.0*M_PI/180.0}</horizontal_fov>
                     <image>
@@ -173,31 +135,26 @@
                         <far>10.0</far>
                     </clip>
                 </camera>
+                <!-- <plugin name="${name}_controller" filename="libgazebo_ros_camera.so">
+                    <baseline>0.1</baseline>
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>30</updateRate>
+                    <frame_name>${name}_depth_optical_frame</frame_name>
+                    <pointCloudCutoff>0.6</pointCloudCutoff>
+                    <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
+                    <distortionK1>0</distortionK1>
+                    <distortionK2>0</distortionK2>
+                    <distortionK3>0</distortionK3>
+                    <distortionT1>0</distortionT1>
+                    <distortionT2>0</distortionT2>
+                    <CxPrime>0</CxPrime>
+                    <Cx>0</Cx>
+                    <Cy>0</Cy>
+                    <focalLength>0</focalLength>
+                    <hackBaseline>0</hackBaseline>
+                </plugin> -->
             </sensor>
-            </gazebo>
-            <!-- <gazebo reference="${name}_rgb_optical_frame">
-            <sensor name="${name}_color" type="camera">
-                <visualize>true</visualize>
-                <update_rate>10.0</update_rate>
-                <topic>/${name}/image_raw</topic>
-                <gz_frame_id>${name}_rgb_optical_frame</gz_frame_id>
-                <camera name="RS_D455">
-                    <horizontal_fov>${60.0*M_PI/180.0}</horizontal_fov>
-                    <image>
-                        <width>${rgb_w}</width>
-                        <height>${rgb_h}</height>
-                        <format>R8G8B8</format>
-                    </image>
-                    <clip>
-                        <near>0.05</near>
-                        <far>10.0</far>
-                    </clip>
-                </camera>
-            </sensor>
-         </gazebo> -->
+         </gazebo>
      </xacro:macro>
-    <xacro:sensor_orbbec_astra_mini_pro name="rgbd_camera" parent="Depth_camera" color="blue">
-      <origin xyz="0.0 -0.0 0.0" rpy="1.570 0 0" />
-    </xacro:sensor_orbbec_astra_mini_pro>
 
-  </robot>
+</robot>

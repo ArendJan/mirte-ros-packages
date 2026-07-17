@@ -4,17 +4,19 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
   name="mirte_master_description">
-    <xacro:arg name="arm_enable" default="True" />
-    <xacro:arg name="enable_arm_collisions" default="True" />
-    <xacro:arg name="arm_camera_enable" default="True" />
+
   <xacro:arg name="front_camera_enable" default="False" />
   <xacro:arg name="sonar_enable" default="True" />
   <xacro:arg name="lidar_enable" default="True" />
-  <xacro:arg name="depth_camera_enable" default="True" />
+  <xacro:arg name="depth_camera_enable" default="False" />
   <xacro:arg name="imu_enable" default="True" />
-  <xacro:arg name="gripper_camera" default="True" />
   <xacro:arg name="wheels_enable" default="True" />
   <xacro:arg name="sim" default="False" />
+
+
+    <xacro:arg name="arm_enable" default="True" />
+    <xacro:arg name="arm_collisions_enable" default="True" />
+    <xacro:arg name="gripper_camera_enable" default="True" />
 
   <link
     name="MIRTE_Master">
@@ -323,7 +325,6 @@
   </joint>
   <xacro:if value="$(arg arm_enable)">
     <xacro:include filename="$(find mirte_master_description)/urdf/arm2.xacro" />
-    <!-- <xacro:arm_macro enable_arm_collisions="True"/> -->
   </xacro:if>
   <link
     name="Base">
@@ -378,59 +379,9 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="Depth_camera">
-    <inertial>
-      <origin
-        xyz="-0.139364988710438 -0.0173680519512047 0.02215464323049"
-        rpy="0 0 0" />
-      <mass
-        value="2.88121038233162" />
-      <inertia
-        ixx="0.0585330875030336"
-        ixy="-0.00149512396123631"
-        ixz="-0.0193738145471712"
-        iyy="0.0651097389054094"
-        iyz="-0.00303065037585006"
-        izz="0.0625793114760086" />
-    </inertial>
-    <!-- <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Depth_camera.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Depth_camera.STL" />
-      </geometry>
-    </collision> -->
-  </link>
-  <joint
-    name="Depth_camera_joint"
-    type="fixed">
-    <origin
-      xyz="0.194919101935334 -0.0242159015133965 -0.00814738065306653"
-      rpy="1.57079632679488 0 2.66843002436935E-05" />
-    <parent
-      link="Base" />
-    <child
-      link="Depth_camera" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+  <xacro:if value="$(arg depth_camera_enable)">
+    <xacro:include filename="$(find mirte_master_description)/urdf/depth_cam.xacro" />
+  </xacro:if>
   <link
     name="Sonar_left">
     <inertial>

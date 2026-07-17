@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-<!-- <xacro:macro name="arm_macro" params="enable_arm_collisions"> -->
+<!-- <xacro:macro name="arm_macro" params="arm_collisions_enable"> -->
     <link
     name="Arm">
     <inertial>
@@ -31,7 +31,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -85,7 +85,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -146,7 +146,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -207,7 +207,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -268,7 +268,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -329,7 +329,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -390,7 +390,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <xacro:if value="$(arg enable_arm_collisions)">
+    <xacro:if value="$(arg arm_collisions_enable)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -456,7 +456,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual> 
-    <!- - <xacro:if value="$(arg enable_arm_collisions)"> - ->
+    <!- - <xacro:if value="$(arg arm_collisions_enable)"> - ->
     <collision>
       <origin
         xyz="0 0 0"
@@ -489,6 +489,7 @@
           <update_rate>30</update_rate>
           <visualize>true</visualize>
         </sensor>         -->
+        <xacro:if value="$(arg gripper_camera_enable)">
         <gazebo reference="Arm_camera">
         <sensor name="Arm_camera" type="camera">
         <update_rate>10</update_rate>
@@ -512,9 +513,10 @@
         </camera>
       </sensor>
       </gazebo>
+      </xacro:if>
   <joint
     name="Arm_camera_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.00808405147922392 -0.0236577575521872 0.0749676192971127"
       rpy="-7.04933984956096E-05 -0.394897827073442 0.0591050619044624" />
@@ -522,12 +524,12 @@
       link="wrist" />
     <child
       link="Arm_camera" />
-      <limit
+      <!-- <limit
             lower="${pi/-2}"
             upper="${pi/2}"
             effort="2.0"
             velocity="2.0"
-        />
+        /> -->
     <axis
       xyz="0 0 1" />
   </joint>
