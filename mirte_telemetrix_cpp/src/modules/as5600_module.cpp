@@ -98,9 +98,23 @@ AS5600_sensor::get_as5600_modules(NodeData node_data,
     //                            module_name + ".pca_servo_names",
     //                            [](const std::string &name) { return true; });
   }
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_as5600::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+  mirte_telemetrix_cpp_as5600::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_as5600::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
+
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("as5600"),
+                 "Error while getting AS5600 parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("as5600"),
+                 "Unable to correctly read AS5600 parameters, not adding them. "
+                 "Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/as5600_parameters.yaml");
+    return {};
+  }
   // get modules list from parser
   // loop over items, get one with type==ina226
   // add paramlistener to those with new parameters yaml

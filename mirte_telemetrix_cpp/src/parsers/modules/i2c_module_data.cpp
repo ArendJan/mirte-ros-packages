@@ -10,16 +10,16 @@ I2CModuleData::I2CModuleData(
     std::set<std::string> &unused_keys, std::string module_type,
     std::optional<DeviceDuration> duration)
     : ModuleData(parser, board, name, parameters, unused_keys, duration) {
-  for (const auto &key : unused_keys) {
-    std::cout << "Unused key: " << key << std::endl;
-  }
+  // for (const auto &key : unused_keys) {
+  //   std::cout << "Unused key: " << key << std::endl;
+  // }
   if (unused_keys.erase("connector")) {
     auto connector = get_string(parameters["connector"]);
     auto pins = board->resolveConnector(connector);
     this->scl = pins["scl"];
     this->sda = pins["sda"];
   } else if (unused_keys.erase("pins.scl") && unused_keys.erase("pins.sda")) {
-    std::cout << "I2CModuleData: Using direct pin assignment" << std::endl;
+    // std::cout << "I2CModuleData: Using direct pin assignment" << std::endl;
 
     this->scl = board->resolvePin(get_string(parameters["pins.scl"]));
 

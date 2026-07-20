@@ -94,10 +94,26 @@ MPU9250_sensor::get_mpu_modules(NodeData node_data,
   std::vector<std::shared_ptr<MPU9250_sensor>> mpu_modules;
 
   parser->update_params_list_type("modules", "mpu9250_module_names", "mpu9250");
+  mirte_telemetrix_cpp_mpu9250::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_mpu9250::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
 
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_mpu9250::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("mpu9250"),
+                 "Error while getting MPU9250 parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("mpu9250"),
+                 "Unable to correctly read MPU9250 parameters, not adding "
+                 "them. Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/mpu9250_parameters.yaml");
+    return {};
+  }
+  // auto param_listener =
+  //     std::make_shared<mirte_telemetrix_cpp_mpu9250::ParamListener>(parser->nh);
+  // auto params = param_listener->get_params();
   // get modules list from parser
   // loop over items, get one with type==mpu9250
   // add paramlistener to those with new parameters yaml

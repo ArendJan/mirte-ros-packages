@@ -31,9 +31,26 @@ PCA_Module::get_pca_modules(NodeData node_data, std::shared_ptr<Parser> parser,
                                module_name + ".pca_servo_names",
                                [](const std::string &name) { return true; });
   }
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_pca::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+
+  mirte_telemetrix_cpp_pca::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_pca::ParamListener>(parser->nh);
+    params = param_listener->get_params();
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("pca"),
+                 "Error while getting PCA parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("pca"),
+                 "Unable to correctly read PCA parameters, not adding them. "
+                 "Please fix config file. Parameter config "
+                 "file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/pca_parameters.yaml");
+    return {};
+  }
+  // auto param_listener =
+  //     std::make_shared<mirte_telemetrix_cpp_pca::ParamListener>(parser->nh);
+  // auto params = param_listener->get_params();
   // get modules list from parser
   // loop over items, get one with type==ina226
   // add paramlistener to those with new parameters yaml
@@ -53,77 +70,54 @@ PCA_Module::get_pca_modules(NodeData node_data, std::shared_ptr<Parser> parser,
         parameters["pins.scl"] = rclcpp::ParameterValue(map_ina.pins.scl);
         parameters["addr"] = rclcpp::ParameterValue(map_ina.addr);
         parameters["frequency"] = rclcpp::ParameterValue(map_ina.frequency);
-        auto param_listener_motors =
-            std::make_shared<mirte_telemetrix_cpp_pca_motor::ParamListener>(
-                parser->nh, fmt::format("modules.{}", name));
-        auto params_motors = param_listener_motors->get_params();
+        mirte_telemetrix_cpp_pca_motor::Params params_motors;
         std::vector<std::shared_ptr<PCA_Motor_data>> motor_data;
-        std::cout << "Parsing motors for PCA module: " << name << std::endl;
-        std::cout << "motor number of names: "
-                  << params_motors.pca_motor_names.size() << std::endl;
-        std::cout << "Motor names found: ";
-        for (auto const &motor_name : params_motors.pca_motor_names) {
-          std::cout << "Parsing motor data for motor name: " << motor_name
-                    << std::endl;
-          if (motor_name == "") {
-            continue;
-          }
-          std::shared_ptr<PCA_Motor_data> motor_data_entry =
-              std::make_shared<PCA_Motor_data>();
-          motor_data.push_back(motor_data_entry);
-          auto motor_params =
-              params_motors.motors.pca_motor_names_map.at(motor_name);
-          motor_data_entry->name = motor_name;
-          motor_data_entry->pinA = motor_params.pin_A;
-          motor_data_entry->pinB = motor_params.pin_B;
-          motor_data_entry->invert = motor_params.invert;
-          std::cout << "Parsed motor data for motor " << motor_name
-                    << ": pinA=" << (int)motor_data_entry->pinA
-                    << ", pinB=" << (int)motor_data_entry->pinB
-                    << ", invert=" << motor_data_entry->invert << std::endl;
-        }
-        std::vector<std::shared_ptr<PCA_Servo_data>> servo_data;
-        auto param_listener_servos =
-            std::make_shared<mirte_telemetrix_cpp_pca_servo::ParamListener>(
-                parser->nh, fmt::format("modules.{}", name));
 
-        auto params_servos = param_listener_servos->get_params();
-        std::cout << "Parsing servos for PCA module: " << name << std::endl;
-        std::cout << "servo number of names: "
-                  << params_servos.pca_servo_names.size() << std::endl;
-        std::cout << "Servo names found: ";
-        for (auto const &servo_name : params_servos.pca_servo_names) {
-          std::cout << "Parsing servo data for servo name: " << servo_name
-                    << std::endl;
-          if (servo_name == "") {
-            continue;
-          }
-          std::shared_ptr<PCA_Servo_data> servo_data_entry =
-              std::make_shared<PCA_Servo_data>();
-          servo_data.push_back(servo_data_entry);
-          auto servo_params =
-              params_servos.servos.pca_servo_names_map.at(servo_name);
-          servo_data_entry->name = servo_name;
-          servo_data_entry->pin = servo_params.pin;
-          servo_data_entry->invert = servo_params.invert;
-          servo_data_entry->min_pulse = servo_params.min_pulse;
-          servo_data_entry->max_pulse = servo_params.max_pulse;
-          servo_data_entry->min_angle = servo_params.min_angle;
-          servo_data_entry->max_angle = servo_params.max_angle;
-          servo_data_entry->pin_mode = servo_params.pin_mode;
-          servo_data_entry->min_speed = servo_params.min_speed;
-          servo_data_entry->max_speed = servo_params.max_speed;
-          std::cout << "Parsed servo data for servo " << servo_name
-                    << ": pin=" << (int)servo_data_entry->pin
-                    << ", invert=" << servo_data_entry->invert
-                    << ", min_pulse=" << servo_data_entry->min_pulse
-                    << ", max_pulse=" << servo_data_entry->max_pulse
-                    << ", min_angle=" << servo_data_entry->min_angle
-                    << ", max_angle=" << servo_data_entry->max_angle
-                    << ", pin_mode=" << servo_data_entry->pin_mode
-                    << ", min_speed=" << servo_data_entry->min_speed
-                    << ", max_speed=" << servo_data_entry->max_speed
-                    << std::endl;
+        try {
+          auto param_listener_motors =
+              std::make_shared<mirte_telemetrix_cpp_pca_motor::ParamListener>(
+                  parser->nh, fmt::format("modules.{}", name));
+          params_motors = param_listener_motors->get_params();
+          parse_pca_motors(name, params_motors, motor_data);
+        } catch (const std::exception &e) {
+          RCLCPP_ERROR(parser->nh->get_logger().get_child("pca"),
+                       "Error while getting PCA motor parameters: %s",
+                       e.what());
+          RCLCPP_ERROR(
+              parser->nh->get_logger().get_child("pca"),
+              "Unable to correctly read PCA motor parameters, not adding them. "
+              "Please fix config "
+              "file. Parameter config "
+              "file in "
+              "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/configs/"
+              "pca_motor_parameters.yaml");
+        }
+
+        // auto param_listener_motors =
+        // std::make_shared<mirte_telemetrix_cpp_pca_motor::ParamListener>(
+        //     parser->nh, fmt::format("modules.{}", name));
+        // auto params_motors = param_listener_motors->get_params();
+        std::vector<std::shared_ptr<PCA_Servo_data>> servo_data;
+        mirte_telemetrix_cpp_pca_servo::Params params_servos;
+
+        try {
+          auto param_listener_servos =
+              std::make_shared<mirte_telemetrix_cpp_pca_servo::ParamListener>(
+                  parser->nh, fmt::format("modules.{}", name));
+          params_servos = param_listener_servos->get_params();
+          parse_pca_servos(name, params_servos, servo_data);
+        } catch (const std::exception &e) {
+          RCLCPP_ERROR(parser->nh->get_logger().get_child("pca"),
+                       "Error while getting PCA servo parameters: %s",
+                       e.what());
+          RCLCPP_ERROR(
+              parser->nh->get_logger().get_child("pca"),
+              "Unable to correctly read PCA servo parameters, not adding them. "
+              "Please fix config "
+              "file. Parameter config "
+              "file in "
+              "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/configs/"
+              "pca_servo_parameters.yaml");
         }
 
         std::set<std::string> unused_keys = get_keys(parameters);
@@ -139,7 +133,73 @@ PCA_Module::get_pca_modules(NodeData node_data, std::shared_ptr<Parser> parser,
   return pca_modules;
 }
 
-// NOTE: Each motor has its own callback group since they inherit from the
+void PCA_Module::parse_pca_servos(
+    const auto &name, auto &params_servos,
+    std::vector<std::shared_ptr<PCA_Servo_data>> &servo_data) {
+  std::cout << "Parsing servos for PCA module: " << name << std::endl;
+  std::cout << "servo number of names: " << params_servos.pca_servo_names.size()
+            << std::endl;
+  std::cout << "Servo names found: ";
+  for (auto const &servo_name : params_servos.pca_servo_names) {
+    std::cout << "Parsing servo data for servo name: " << servo_name
+              << std::endl;
+    if (servo_name == "") {
+      continue;
+    }
+    std::shared_ptr<PCA_Servo_data> servo_data_entry =
+        std::make_shared<PCA_Servo_data>();
+    servo_data.push_back(servo_data_entry);
+    auto servo_params = params_servos.servos.pca_servo_names_map.at(servo_name);
+    servo_data_entry->name = servo_name;
+    servo_data_entry->pin = servo_params.pin;
+    servo_data_entry->invert = servo_params.invert;
+    servo_data_entry->min_pulse = servo_params.min_pulse;
+    servo_data_entry->max_pulse = servo_params.max_pulse;
+    servo_data_entry->min_angle = servo_params.min_angle;
+    servo_data_entry->max_angle = servo_params.max_angle;
+    servo_data_entry->pin_mode = servo_params.pin_mode;
+    servo_data_entry->min_speed = servo_params.min_speed;
+    servo_data_entry->max_speed = servo_params.max_speed;
+    std::cout << "Parsed servo data for servo " << servo_name
+              << ": pin=" << (int)servo_data_entry->pin
+              << ", invert=" << servo_data_entry->invert
+              << ", min_pulse=" << servo_data_entry->min_pulse
+              << ", max_pulse=" << servo_data_entry->max_pulse
+              << ", min_angle=" << servo_data_entry->min_angle
+              << ", max_angle=" << servo_data_entry->max_angle
+              << ", pin_mode=" << servo_data_entry->pin_mode
+              << ", min_speed=" << servo_data_entry->min_speed
+              << ", max_speed=" << servo_data_entry->max_speed << std::endl;
+  }
+}
+
+void PCA_Module::parse_pca_motors(
+    const auto &name, auto &params_motors,
+    std::vector<std::shared_ptr<PCA_Motor_data>> &motor_data) {
+  std::cout << "Parsing motors for PCA module: " << name << std::endl;
+  std::cout << "motor number of names: " << params_motors.pca_motor_names.size()
+            << std::endl;
+  std::cout << "Motor names found: ";
+  for (auto const &motor_name : params_motors.pca_motor_names) {
+    std::cout << "Parsing motor data for motor name: " << motor_name
+              << std::endl;
+    if (motor_name == "") {
+      continue;
+    }
+    std::shared_ptr<PCA_Motor_data> motor_data_entry =
+        std::make_shared<PCA_Motor_data>();
+    motor_data.push_back(motor_data_entry);
+    auto motor_params = params_motors.motors.pca_motor_names_map.at(motor_name);
+    motor_data_entry->name = motor_name;
+    motor_data_entry->pinA = motor_params.pin_A;
+    motor_data_entry->pinB = motor_params.pin_B;
+    motor_data_entry->invert = motor_params.invert;
+    std::cout << "Parsed motor data for motor " << motor_name
+              << ": pinA=" << (int)motor_data_entry->pinA
+              << ", pinB=" << (int)motor_data_entry->pinB
+              << ", invert=" << motor_data_entry->invert << std::endl;
+  }
+} // NOTE: Each motor has its own callback group since they inherit from the
 // actuator::Motor
 PCA_Module::PCA_Module(NodeData node_data, PCAData pca_data,
                        std::shared_ptr<tmx_cpp::Modules> modules)

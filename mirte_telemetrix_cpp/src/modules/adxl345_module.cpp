@@ -87,10 +87,23 @@ ADXL345_sensor::get_adxl_modules(NodeData node_data,
       "modules", "adxl345_module_names", "adxl345");
   parser->fix_param_type_str_modules("modules", modules,
                                      {"pins.scl", "pins.sda"});
+  mirte_telemetrix_cpp_adxl345::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_adxl345::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
 
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_adxl345::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("adxl345"),
+                 "Error while getting ADXL345 parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("adxl345"),
+                 "Unable to correctly read ADXL345 parameters, not adding "
+                 "them. Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/adxl345_parameters.yaml");
+    return {};
+  }
   // get modules list from parser
   // loop over items, get one with type==adxl345
   // add paramlistener to those with new parameters yaml

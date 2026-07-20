@@ -140,7 +140,6 @@ HiWonderBus_module::get_hiwonder_modules(
                                      {"pins.rx", "pins.tx"});
 
   for (auto &found_module : found_modules) {
-    std::cout << "found hiwonder module!!!" << std::endl;
     auto module_name = fmt::format("modules.{}", found_module);
     // no need to filter here, just get all names
     auto servo_names = parser->update_params_list(
@@ -149,10 +148,23 @@ HiWonderBus_module::get_hiwonder_modules(
     //  parser->fix_param_type_str_modules("modules."+module_name, servo_names,
     //  {"id", "min_angle_out", "max_angle_out", "home_out", "invert"});
   }
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_hiwonder::ParamListener>(
-          parser->nh);
-  auto params = param_listener->get_params();
+  mirte_telemetrix_cpp_hiwonder::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_hiwonder::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
+
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("hiwonder"),
+                 "Error while getting HiWonder parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("hiwonder"),
+                 "Unable to correctly read HiWonder parameters, not adding "
+                 "them. Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/hiwonder_parameters.yaml");
+    return {};
+  }
   // get modules list from parser
   // loop over items, get one with type==ina226
   // add paramlistener to those with new parameters yaml
@@ -173,13 +185,30 @@ HiWonderBus_module::get_hiwonder_modules(
         parameters["pins.tx"] = rclcpp::ParameterValue(map_ina.pins.tx);
         // parameters["connector"] = rclcpp::ParameterValue(map_ina.connector);
         // parameters["addr"] = rclcpp::ParameterValue(map_ina.addr);
+        mirte_telemetrix_cpp_hiwonder_servo::Params params_motors;
+        try {
+          auto param_listener_motors = std::make_shared<
+              mirte_telemetrix_cpp_hiwonder_servo::ParamListener>(
+              parser->nh, fmt::format("modules.{}", name));
+          params_motors = param_listener_motors->get_params();
 
-        auto param_listener_motors = std::make_shared<
-            mirte_telemetrix_cpp_hiwonder_servo::ParamListener>(
-            parser->nh, fmt::format("modules.{}", name));
-        auto params_motors = param_listener_motors->get_params();
+        } catch (const std::exception &e) {
+          RCLCPP_ERROR(parser->nh->get_logger().get_child("hiwonder_servo"),
+                       "Error while getting HiWonder Servo parameters: %s",
+                       e.what());
+          RCLCPP_ERROR(
+              parser->nh->get_logger().get_child("hiwonder_servo"),
+              "Unable to correctly read HiWonder Servo parameters, not adding "
+              "them. Please fix config file. Parameter config file in "
+              "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/configs/"
+              "hiwonder_servo_parameters.yaml");
+          std::set<std::string> unused_keys = get_keys(parameters);
+
+          return HiWonderBusData(parser, node_data.board, name, parameters,
+                                 unused_keys, {});
+        }
         std::vector<std::shared_ptr<HiWonderServoData>> motor_data;
-        std::cout << "Parsing motors for PCA module: " << name << std::endl;
+        // std::cout << "Parsing motors for PCA module: " << name << std::endl;
 
         for (auto const &servo_name : params_motors.hiwonder_servo_names) {
           auto motor_params =

@@ -87,10 +87,23 @@ Parser::Parser(std::shared_ptr<rclcpp::Node> nh)
                                      found_modules, num_types);
   }
   this->fix_param_type_str("device.mirte.version");
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp::ParamListener>(nh);
-  auto params = param_listener->get_params();
-  this->params_object = params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp::ParamListener>(nh);
+    auto params = param_listener->get_params();
+    this->params_object = params;
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(this->logger, "Error while getting parameters: %s", e.what());
+    RCLCPP_ERROR(this->logger,
+                 "Unable to correctly read parameters, please fix config file. "
+                 "Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/telemetrix_parameters.yaml");
+    throw std::runtime_error("Unable to correctly read parameters, please fix "
+                             "config file. Parameter config file in "
+                             "src/mirte-ros-packages/mirte_telemetrix_cpp/src/"
+                             "parsers/configs/telemetrix_parameters.yaml");
+  }
 }
 
 /**
@@ -219,8 +232,8 @@ std::vector<std::string> Parser::update_params_list(
     std::function<bool(const std::string &name)> filter_func) {
   // __map_xxxxx does not automatically update the list of names, so we need to
   // do it here
-  std::cout << "Updating parameter list for " << list_name << " with prefix "
-            << prefix_ << std::endl;
+  // std::cout << "Updating parameter list for " << list_name << " with prefix "
+  //           << prefix_ << std::endl;
   std::vector<std::string> names = this->nh->get_node_parameters_interface()
                                        ->list_parameters({prefix_}, 10)
                                        .names;
@@ -253,8 +266,8 @@ std::vector<std::string> Parser::update_params_list(
       });
   std::set<std::string> vec_x;
   for (const auto &v : x) {
-    std::cout << "inserting found dynamic parameter module name: " << v
-              << " for " << list_name << std::endl;
+    // std::cout << "inserting found dynamic parameter module name: " << v
+    //           << " for " << list_name << std::endl;
     vec_x.insert(v);
   }
   auto module_names = std::vector<std::string>(vec_x.begin(), vec_x.end());
@@ -301,14 +314,14 @@ Parser::update_params_list_type(std::string const &prefix_,
 
 bool Parser::fix_param_type_str(std::string const &key) {
   if (!this->nh->get_node_parameters_interface()->has_parameter(key)) {
-    RCLCPP_WARN(this->nh->get_logger(), "Parameter %s does not exist",
-                key.c_str());
+    // RCLCPP_WARN(this->nh->get_logger(), "Parameter %s does not exist",
+    //             key.c_str());
     return false;
   }
 
   auto param = this->nh->get_node_parameters_interface()->get_parameter(key);
-  std::cout << "Fixing parameter type for " << key << " from "
-            << param.get_type() << " to string" << std::endl;
+  // std::cout << "Fixing parameter type for " << key << " from "
+  //           << param.get_type() << " to string" << std::endl;
   if (param.get_type() != rclcpp::ParameterType::PARAMETER_STRING) {
     std::string out = "";
     switch (param.get_type()) {
@@ -321,7 +334,8 @@ bool Parser::fix_param_type_str(std::string const &key) {
       break;
     default:
       // dont support arrays
-      std::cout << "  current value: (unsupported type)" << std::endl;
+      std::cout << "fix_param_type_str: Unknown type " << param.get_type()
+                << "  current value: " << param.value_to_string() << std::endl;
     }
     this->nh->get_node_parameters_interface()->set_parameters(
         {rclcpp::Parameter(key, out)});
@@ -348,14 +362,14 @@ void Parser::fix_param_type_str_modules(std::string const &prefix_,
 
 bool Parser::fix_param_type_num(std::string const &key) {
   if (!this->nh->get_node_parameters_interface()->has_parameter(key)) {
-    RCLCPP_WARN(this->nh->get_logger(), "Parameter %s does not exist",
-                key.c_str());
+    // RCLCPP_WARN(this->nh->get_logger(), "Parameter %s does not exist",
+    //             key.c_str());
     return false;
   }
   auto param = this->nh->get_node_parameters_interface()->get_parameter(key);
   if (param.get_type() != rclcpp::ParameterType::PARAMETER_DOUBLE) {
-    std::cout << "Fixing parameter type for " << key << " from "
-              << param.get_type() << " to double" << std::endl;
+    // std::cout << "Fixing parameter type for " << key << " from "
+    //           << param.get_type() << " to double" << std::endl;
     double out = 0.0;
     auto type = param.get_type_name();
     if (type == "integer") {

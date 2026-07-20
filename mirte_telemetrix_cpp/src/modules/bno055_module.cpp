@@ -91,10 +91,23 @@ BNO055_sensor::get_bno_modules(NodeData node_data,
   std::vector<std::shared_ptr<BNO055_sensor>> mpu_modules;
 
   parser->update_params_list_type("modules", "bno055_module_names", "bno055");
+  mirte_telemetrix_cpp_bno055::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_bno055::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
 
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_bno055::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("bno055"),
+                 "Error while getting BNO055 parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("bno055"),
+                 "Unable to correctly read BNO055 parameters, not adding them. "
+                 "Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/bno055_parameters.yaml");
+    return {};
+  }
   // get modules list from parser
   // loop over items, get one with type==BNO055
   // add paramlistener to those with new parameters yaml

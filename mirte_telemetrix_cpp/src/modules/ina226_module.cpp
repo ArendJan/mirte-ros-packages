@@ -268,9 +268,26 @@ INA226_sensor::get_ina_modules(NodeData node_data,
       {"min_voltage", "max_voltage", "max_current", "turn_off_time",
        "power_low_time", "shutdown_switch_time_sec", "shutdown_switch_off_time",
        "turn_off_time"});
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_ina226::ParamListener>(parser->nh);
-  auto params = param_listener->get_params();
+  mirte_telemetrix_cpp_ina226::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_ina226::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
+
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("ina226"),
+                 "Error while getting INA226 parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("ina226"),
+                 "Unable to correctly read INA226 parameters, not adding them. "
+                 "Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/ina226_parameters.yaml");
+    return {};
+  }
+  // auto param_listener =
+  //     std::make_shared<mirte_telemetrix_cpp_ina226::ParamListener>(parser->nh);
+  // auto params = param_listener->get_params();
   // get modules list from parser
   // loop over items, get one with type==ina226
   // add paramlistener to those with new parameters yaml

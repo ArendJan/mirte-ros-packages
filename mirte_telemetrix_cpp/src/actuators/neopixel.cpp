@@ -3,6 +3,7 @@
 
 #include <boost/algorithm/string.hpp>
 #include <rclcpp/callback_group.hpp>
+#include <rclcpp/logger.hpp>
 #include <rclcpp/qos.hpp>
 #include <rclcpp/subscription_options.hpp>
 
@@ -19,10 +20,23 @@ Neopixel::get_neopixels(NodeData node_data, std::shared_ptr<Parser> parser) {
   auto modules = parser->update_params_list_type(
       "modules", "neopixel_module_names", "neopixel");
   parser->fix_param_type_str_modules("modules", modules, {"pins.data"});
-  auto param_listener =
-      std::make_shared<mirte_telemetrix_cpp_neopixel::ParamListener>(
-          parser->nh);
-  auto params = param_listener->get_params();
+  mirte_telemetrix_cpp_neopixel::Params params;
+  try {
+    auto param_listener =
+        std::make_shared<mirte_telemetrix_cpp_neopixel::ParamListener>(
+            parser->nh);
+    params = param_listener->get_params();
+
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("neopixel"),
+                 "Error while getting Neopixel parameters: %s", e.what());
+    RCLCPP_ERROR(parser->nh->get_logger().get_child("neopixel"),
+                 "Unable to correctly read neopixel parameters, not adding "
+                 "them. Please fix config file. Parameter config file in "
+                 "src/mirte-ros-packages/mirte_telemetrix_cpp/src/parsers/"
+                 "configs/neopixel_parameters.yaml");
+    return {};
+  }
   // get modules list from parser
   // loop over items, get one with type==ina226
   // add paramlistener to those with new parameters yaml

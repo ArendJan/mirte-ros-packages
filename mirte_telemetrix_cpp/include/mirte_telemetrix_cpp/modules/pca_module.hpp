@@ -28,6 +28,12 @@ public:
   static std::vector<std::shared_ptr<PCA_Module>>
   get_pca_modules(NodeData node_data, std::shared_ptr<Parser> parser,
                   std::shared_ptr<tmx_cpp::Modules> modules);
+  static void
+  parse_pca_servos(const auto &name, auto &params_servos,
+                   std::vector<std::shared_ptr<PCA_Servo_data>> &servo_data);
+  static void
+  parse_pca_motors(const auto &name, auto &params_motors,
+                   std::vector<std::shared_ptr<PCA_Motor_data>> &motor_data);
   ~PCA_Module() {};
 
 private:
