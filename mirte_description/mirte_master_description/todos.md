@@ -4,14 +4,15 @@
   - [x] camera
   - [ ] gripper
   - [ ] gripper grasp
-  - [ ] contacts
+  - [x] contacts
 - [ ] wheels
   - [ ] separation
   - [ ] joints
   - [ ] cmd vel
   - [ ] optioneel zonder wielen
-- [ ] sonar
-- [ ] depth cam
+- [x] sonar
+  - [ ] todo: check angles
+- [x] depth cam
 - [ ] imu
 - [ ] collisions beter (geen/block)
 - [ ] base frame stl

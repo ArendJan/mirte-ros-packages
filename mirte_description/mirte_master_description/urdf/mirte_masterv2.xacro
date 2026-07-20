@@ -382,112 +382,52 @@
   <xacro:if value="$(arg depth_camera_enable)">
     <xacro:include filename="$(find mirte_master_description)/urdf/depth_cam.xacro" />
   </xacro:if>
-  <link
-    name="Sonar_left">
-    <inertial>
+
+  <xacro:if value="$(arg sonar_enable)">
+    <xacro:include filename="$(find mirte_master_description)/urdf/ultrasonic.xacro" />
+
+
+    <joint name="chassis_base_joint" type="fixed">
+      <parent link="Base" />
+      <child link="link_chassis" />
+    </joint>
+
+
+    <link name="link_chassis" />
+    <!-- <xacro:ultrasonic_sensor name="front_left">
       <origin
-        xyz="-0.00912435116484579 6.97371721982212E-05 0.0128430743123096"
-        rpy="0 0 0" />
-      <mass
-        value="0.00383513951999242" />
-      <inertia
-        ixx="7.68751523460338E-07"
-        ixy="-2.65063614506786E-09"
-        ixz="8.54213890540522E-10"
-        iyy="7.2622124271108E-07"
-        iyz="-3.40126465277456E-09"
-        izz="1.59365535001317E-07" />
-    </inertial>
-    <!-- <visual>
+        xyz="0.05297775289576 -0.120282421780502 -0.031"
+        rpy="0 0 ${-pi/2+0.296705972839036}" />
+    </xacro:ultrasonic_sensor>
+
+    <xacro:ultrasonic_sensor name="front_right">
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Sonar_left.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Sonar_left.STL" />
-      </geometry>
-    </collision> -->
-  </link>
-  <joint
-    name="Sonar_left_joint"
-    type="fixed">
+        xyz="-0.05297775289576 -0.120282421780502 -0.031"
+        rpy="0 0 ${-pi/2-0.296705972839036}" />
+    </xacro:ultrasonic_sensor> -->
+
+    <xacro:ultrasonic_sensor name="rear_left">
     <origin
-      xyz="-0.10657 -0.0059239 0.071178"
+      xyz="-0.10657 -0.0209239 0.071178"
       rpy="-1.5708 -0.54098 -3.1416" />
-    <parent
-      link="Base" />
-    <child
-      link="Sonar_left" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="Sonar_right">
-    <inertial>
-      <origin
-        xyz="-0.00912435116482696 -6.99136580070495E-05 0.0127569266473762"
-        rpy="0 0 0" />
-      <mass
-        value="0.00383513951999247" />
-      <inertia
-        ixx="7.68751523460339E-07"
-        ixy="2.65062440645516E-09"
-        ixz="-8.54250314742505E-10"
-        iyy="7.2622114912563E-07"
-        iyz="-3.40905422018215E-09"
-        izz="1.59365628586768E-07" />
-    </inertial>
-    <!-- <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Sonar_right.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/Sonar_right.STL" />
-      </geometry>
-    </collision> -->
-  </link>
-  <joint
-    name="Sonar_right_joint"
-    type="fixed">
+      <!-- <origin
+        xyz="0.0565606470918482 0.119187021096338 -0.031"
+        rpy="0 0 ${-pi/2 + 2.84488668075076}" /> -->
+    </xacro:ultrasonic_sensor>
+
+
+    <xacro:ultrasonic_sensor name="rear_right">
+    <!-- TODO: check rotation of sonars -->
     <origin
       xyz="-0.10657 -0.0059239 -0.093973"
       rpy="-1.5708 0.54098 -3.1416" />
-    <parent
-      link="Base" />
-    <child
-      link="Sonar_right" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+      <!-- <origin
+        xyz="-0.0565606470918482 0.119187021096338 -0.031"
+        rpy="0 0 ${-pi/2 -2.84488668075076}" /> -->
+    </xacro:ultrasonic_sensor>
+  </xacro:if>
+
+  
   <link
     name="LiDar">
     <inertial>
