@@ -17,6 +17,7 @@
     <xacro:arg name="arm_enable" default="True" />
     <xacro:arg name="arm_collisions_enable" default="True" />
     <xacro:arg name="gripper_camera_enable" default="True" />
+  <!-- <xacro:include filename="$(find mirte_master_description)/urdf/ros2_control.xacro"/>   -->
 
   <link
     name="MIRTE_Master">
@@ -58,6 +59,129 @@
       </geometry>
     </collision> -->
   </link>
+
+<xacro:if value="$(arg wheels_enable)">
+
+  <xacro:property name="wheel_radius" value="0.050" />
+  <xacro:property name="wheel_length" value="0.055" />
+  <xacro:property name="wheel_mass" value="2.15" /> 
+
+  <xacro:property name="wheel_velocity" value="8" />
+  <xacro:property name="wheel_effort" value="5" />
+  <xacro:include filename="$(find mirte_master_description)/urdf/wheel.xacro" />
+   <!-- 0.025   -1 -->
+  <joint
+    name="Wheels_joint"
+    type="fixed">
+    <origin
+      xyz="0.0316698713027512 -0.052970257715017 -0.0113974879084128"
+      rpy="1.5707963267949 0 2.66843002434429E-05" />
+    <parent
+      link="MIRTE_Master" />
+    <child
+      link="Wheels" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+   <link
+    name="Wheels">
+    <inertial>
+      <origin
+        xyz="-1.48511945796681E-10 1.64047594952699E-12 -0.0630000002157284"
+        rpy="0 0 0" />
+      <mass
+        value="1.06645993257182" />
+      <inertia
+        ixx="0.000322183176884843"
+        ixy="-3.32280220325118E-11"
+        ixz="8.60065297084518E-15"
+        iyy="0.000372782415195671"
+        iyz="1.24669808687478E-13"
+        izz="0.000322183176907626" />
+    </inertial>
+    <!-- <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Wheels.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual> -->
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <!-- <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/Wheels.STL" />
+      </geometry> -->
+    </collision>
+  </link>
+  <!-- <joint
+    name="Wheels_joint"
+    type="fixed">
+    <origin
+      xyz="0.0316698713027512 -0.052970257715017 -0.0113974879084128"
+      rpy="1.5707963267949 0 2.66843002434429E-05" />
+    <parent
+      link="MIRTE_Master" />
+    <child
+      link="Wheels" />
+    <axis
+      xyz="0 0 0" />
+  </joint> -->
+    <xacro:mecanum_wheel name="front_left" wheel_type="left" link_origin="0.0">
+      <!-- <origin
+        xyz="${0.153 - 0} -0.085 -0.0455"
+        rpy="1.5708 0 -1.5708" /> -->
+        <!-- 0.080503 0.1575 -0.063 -->
+        <origin
+        
+        xyz="0.080503 0.1075 -0.063"
+        rpy="0 0 0" />
+    </xacro:mecanum_wheel>
+
+   <!-- 0.025   -1 -->
+    <!-- <xacro:mecanum_wheel name="rear_left" wheel_type="right" link_origin="0.025">
+      <origin
+        xyz="-0.080503 0.1075 -0.063"
+        rpy="1.5708 0 -1.5708" />
+    </xacro:mecanum_wheel> -->
+
+   <!-- -0.025   -1 -->
+    <xacro:mecanum_wheel name="front_right" wheel_type="right" link_origin="0">
+            <origin
+        xyz="0.080503 ${-0.1075-0.05} -0.063"
+        rpy="0 0 ${-pi}"/>
+<!-- 
+      <origin
+        xyz="${-0.153 + wheel_length} -0.085 -0.0455"
+        rpy="1.5708 0 -1.5708" /> -->
+    </xacro:mecanum_wheel>
+
+   <!-- -0.025   -1 -->
+    <xacro:mecanum_wheel name="rear_right" wheel_type="left" link_origin="0">
+            <origin
+        xyz="-0.080503 -0.1075 -0.063"
+        rpy="0 0 ${-pi}"/>
+    </xacro:mecanum_wheel>
+    <xacro:mecanum_wheel name="rear_left" wheel_type="right" link_origin="0">
+            <origin
+        xyz="-0.080503 ${0.1075+0.05} -0.063"
+        rpy="0 0 0"/>
+    </xacro:mecanum_wheel>
+    
+</xacro:if>
+
+
+
+  <xacro:if value="false">
   <link
     name="Wheels">
     <inertial>
@@ -323,6 +447,10 @@
     <axis
       xyz="0 -1 0" />
   </joint>
+
+</xacro:if>
+
+
   <xacro:if value="$(arg arm_enable)">
     <xacro:include filename="$(find mirte_master_description)/urdf/arm2.xacro" />
   </xacro:if>
