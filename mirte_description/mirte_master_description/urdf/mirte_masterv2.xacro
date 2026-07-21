@@ -17,7 +17,7 @@
     <xacro:arg name="arm_enable" default="True" />
     <xacro:arg name="arm_collisions_enable" default="True" />
     <xacro:arg name="gripper_camera_enable" default="True" />
-  <!-- <xacro:include filename="$(find mirte_master_description)/urdf/ros2_control.xacro"/>   -->
+  <xacro:include filename="$(find mirte_master_description)/urdf/ros2_control.xacro"/>  
 
   <link
     name="MIRTE_Master">
