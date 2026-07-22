@@ -136,7 +136,7 @@
     <axis
       xyz="0 0 0" />
   </joint> -->
-    <xacro:mecanum_wheel name="front_left" wheel_type="left" link_origin="0.0">
+    <xacro:mecanum_wheel name="front_left" wheel_type="left" link_origin="0.025">
       <!-- <origin
         xyz="${0.153 - 0} -0.085 -0.0455"
         rpy="1.5708 0 -1.5708" /> -->
@@ -155,23 +155,24 @@
     </xacro:mecanum_wheel> -->
 
    <!-- -0.025   -1 -->
-    <xacro:mecanum_wheel name="front_right" wheel_type="right" link_origin="0">
+    <xacro:mecanum_wheel name="front_right" wheel_type="right" link_origin="-0.025">
             <origin
-        xyz="0.080503 ${-0.1075-0.05} -0.063"
-        rpy="0 0 ${-pi}"/>
-<!-- 
+        xyz="0.080503 ${-0.1075} -0.063"
+        rpy="0 0 0"/>
+<!-- pi
       <origin
         xyz="${-0.153 + wheel_length} -0.085 -0.0455"
         rpy="1.5708 0 -1.5708" /> -->
     </xacro:mecanum_wheel>
 
    <!-- -0.025   -1 -->
-    <xacro:mecanum_wheel name="rear_right" wheel_type="left" link_origin="0">
+    <xacro:mecanum_wheel name="rear_right" wheel_type="left" link_origin="0.025">
             <origin
-        xyz="-0.080503 -0.1075 -0.063"
-        rpy="0 0 ${-pi}"/>
+        xyz="-0.080503 ${-0.1075-0.05} -0.063"
+        rpy="0 0 0"/> 
+        <!-- pi -->
     </xacro:mecanum_wheel>
-    <xacro:mecanum_wheel name="rear_left" wheel_type="right" link_origin="0">
+    <xacro:mecanum_wheel name="rear_left" wheel_type="right" link_origin="-0.025">
             <origin
         xyz="-0.080503 ${0.1075+0.05} -0.063"
         rpy="0 0 0"/>

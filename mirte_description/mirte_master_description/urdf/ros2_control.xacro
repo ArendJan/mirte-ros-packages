@@ -152,10 +152,23 @@
           <parameters>$(find mirte_master_arm_control)/config/mirte_master_arm_control.yaml</parameters>
        </xacro:if>
     </plugin>
-    <plugin filename="libgazebo_ros_planar_move.so" name="gazebo_planar_move">
-       <robot_base_frame>base_link</robot_base_frame> 
-    </plugin>
-    <plugin name="libgazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+     <!-- <plugin filename="gz-sim-planar-move-system" name="gz::sim::systems::PlanarMove">
+       <link_name>Base</link_name>
+     </plugin> -->
+     <plugin filename="gz-sim-mecanum-drive-system" name="gz::sim::systems::MecanumDrive">
+       <front_left_joint>front_left_wheel_joint</front_left_joint>
+       <front_right_joint>front_right_wheel_joint</front_right_joint>
+       <back_left_joint>rear_left_wheel_joint</back_left_joint>
+       <back_right_joint>rear_right_wheel_joint</back_right_joint>
+       <wheel_separation>0.28</wheel_separation>
+       <wheelbase>0.28</wheelbase>
+       <wheel_radius>0.05</wheel_radius>
+       <topic>cmd_vel</topic>
+       <odom_topic>odom</odom_topic>
+       <frame_id>odom</frame_id>
+       <child_frame_id>base_link</child_frame_id>
+     </plugin>
+    <!-- <plugin name="libgazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
         <ros>
             <namespace>groundtruth</namespace>
             <remapping>odom:=odom</remapping>
@@ -164,8 +177,20 @@
         <body_name>base_link</body_name>
         <update_rate>200.0</update_rate>
         <gaussian_noise>0.0</gaussian_noise>
-     </plugin>
+     </plugin> -->
+ <!-- <gazebo> -->
+  <plugin
+    filename="gz-sim-pose-publisher-system"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>false</publish_link_pose>
+    <publish_collision_pose>false</publish_collision_pose>
+    <publish_visual_pose>false</publish_visual_pose>
+    <publish_nested_model_pose>false</publish_nested_model_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <update_frequency>1</update_frequency>
+  </plugin>
 
+  <!-- </gazebo> -->
 </gazebo>
 
 </robot>
