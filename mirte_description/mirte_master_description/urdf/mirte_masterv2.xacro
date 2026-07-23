@@ -66,7 +66,7 @@
 
   <xacro:property name="wheel_radius" value="0.050" />
   <xacro:property name="wheel_length" value="0.055" />
-  <xacro:property name="wheel_mass" value="2.15" /> 
+  <xacro:property name="wheel_mass" value="0.15" /> 
 
   <xacro:property name="wheel_velocity" value="8" />
   <xacro:property name="wheel_effort" value="5" />
@@ -75,9 +75,9 @@
   <joint
     name="Wheels_joint"
     type="fixed">
-    <origin
+    <!-- <origin
       xyz="0.0316698713027512 -0.052970257715017 -0.0113974879084128"
-      rpy="1.5707963267949 0 2.66843002434429E-05" />
+      rpy="1.5707963267949 0 2.66843002434429E-05" /> -->
     <parent
       link="MIRTE_Master" />
     <child
@@ -215,7 +215,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -223,7 +223,7 @@
         <mesh
           filename="package://mirte_master_description/meshes/Wheels.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Wheels_joint"
@@ -487,7 +487,7 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -495,7 +495,7 @@
         <mesh
           filename="package://mirte_master_description/meshes/Base.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Base_joint"
