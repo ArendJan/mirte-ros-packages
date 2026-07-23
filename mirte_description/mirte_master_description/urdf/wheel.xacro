@@ -6,6 +6,12 @@
 
   <link
     name="${name}_wheel">
+    <!-- <inertial>
+          <origin xyz="0 0 ${link_origin}" />
+
+          <mass value="2">2</mass
+          </inertia>
+        </inertial> -->
     <inertial>
       <origin xyz="0 0 ${link_origin}" />
       <mass value="${wheel_mass}" />
@@ -33,25 +39,28 @@
     <collision>
       <origin xyz="0 ${link_origin} 0" rpy="${pi/2} 0 0" />
       <geometry>
-        <cylinder radius="${wheel_radius}" length="${wheel_length}" />
+        <sphere radius="${wheel_radius}" />
+        <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}" /> -->
       </geometry>
-      <surface>
+      <!-- <surface>
             <friction>
-              <ode>
-                <mu>1.0</mu>
-                <mu2>0.0</mu2>
+              <!- - <ode> -  ->
+              <!- - sdfa;ladsfkljasfdkjlasfdlkjasfd - ->
+              <mu>1.0</mu>
+                <!- - <mu2>1.0</mu2> - ->
                 <xacro:if value="${wheel_type == 'left'}">
-                  <fdir1 gz:expressed_in="Wheels">-1 -1 0</fdir1>
+                  <fdir1 gz:expressed_in="base_link">1 -1 0</fdir1>
+                                  
+
                 </xacro:if>
                 <xacro:if value="${wheel_type == 'right'}">
-                  <fdir1 gz:expressed_in="Wheels">1 1 0</fdir1>
-                </xacro:if>
-                <!-- <fdir1 gz:expressed_in="Base">1 -1 0</fdir1> -->
-                                <!-- <fdir1 gz:expressed_in="chassis">1 -1 0</fdir1> -->
+                  <fdir1 gz:expressed_in="base_link">1 1 0</fdir1>
 
-              </ode>
+                </xacro:if>
+
+              <!- - </ode> - ->
             </friction>
-          </surface>
+          </surface> -->
     </collision>
   </link>
 

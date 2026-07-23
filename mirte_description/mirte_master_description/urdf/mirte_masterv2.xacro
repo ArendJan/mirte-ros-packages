@@ -2,22 +2,24 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  xmlns:gz="http://gazebosim.org/schema"
   name="mirte_master_description">
 
   <xacro:arg name="front_camera_enable" default="False" />
-  <xacro:arg name="sonar_enable" default="True" />
+  <xacro:arg name="sonar_enable" default="False" />
   <xacro:arg name="lidar_enable" default="True" />
   <xacro:arg name="depth_camera_enable" default="False" />
-  <xacro:arg name="imu_enable" default="True" />
+  <xacro:arg name="imu_enable" default="False" />
   <xacro:arg name="wheels_enable" default="True" />
   <xacro:arg name="sim" default="False" />
 
 
-    <xacro:arg name="arm_enable" default="True" />
+    <xacro:arg name="arm_enable" default="False" />
     <xacro:arg name="arm_collisions_enable" default="True" />
     <xacro:arg name="gripper_camera_enable" default="True" />
-  <xacro:include filename="$(find mirte_master_description)/urdf/ros2_control.xacro"/>  
+  <xacro:include filename="$(find mirte_master_description)/urdf/mirte_master_base.gazebo.xacro" />
+
+  <!-- <xacro:include filename="$(find mirte_master_description)/urdf/ros2_control.xacro"/>   -->
 
   <link
     name="MIRTE_Master">
@@ -113,15 +115,15 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual> -->
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 0" /> -->
       <!-- <geometry>
         <mesh
           filename="package://mirte_master_description/meshes/Wheels.STL" />
       </geometry> -->
-    </collision>
+    <!-- </collision> -->
   </link>
   <!-- <joint
     name="Wheels_joint"
@@ -456,7 +458,7 @@
     <xacro:include filename="$(find mirte_master_description)/urdf/arm2.xacro" />
   </xacro:if>
   <link
-    name="Base">
+    name="base_link">
     <inertial>
       <origin
         xyz="0.0344310118221643 -0.0286648891259541 -0.0113871267936065"
@@ -501,10 +503,10 @@
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
-    <parent
-      link="MIRTE_Master" />
     <child
-      link="Base" />
+      link="MIRTE_Master" />
+    <parent
+      link="base_link" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -517,7 +519,7 @@
 
 
     <joint name="chassis_base_joint" type="fixed">
-      <parent link="Base" />
+      <parent link="base_link" />
       <child link="link_chassis" />
     </joint>
 
@@ -604,7 +606,7 @@
       xyz="0.03167 -0.063182 -0.011397"
       rpy="1.5708 0 0" />
     <parent
-      link="Base" />
+      link="base_link" />
     <child
       link="LiDar" />
     <axis

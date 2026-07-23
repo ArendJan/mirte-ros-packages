@@ -1,12 +1,37 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:macro name="wheel_gazebo" params="id">
-        <gazebo reference="wheel_${id}">
+<robot xmlns:xacro="http://ros.org/wiki/xacro"  xmlns:gz="http://gazebosim.org/schema">
+    <xacro:macro name="wheel_gazebo" params="id wheel_type">
+        <gazebo reference="${id}_wheel">
+        <!-- wheel_${id} -->
             <selfCollide>false</selfCollide>
             <gravity>true</gravity>
-            <mu1>0.0</mu1>
+            <mu1>1.0</mu1>
             <mu2>0.0</mu2>
+<xacro:if value="${wheel_type == 'left'}">
             <material>Gazebo/DarkGrey</material>
+
+                  <fdir1 gz:expressed_in="base_link">1 1 0</fdir1>
+                                  
+
+                </xacro:if>
+                <xacro:if value="${wheel_type == 'right'}">
+                            <material>Gazebo/Purple</material>
+
+                  <fdir1 gz:expressed_in="base_link">-1 1 0</fdir1>
+
+                </xacro:if>
         </gazebo>
     </xacro:macro>
 </robot>
+
+
+<!-- 
+1 0 0 : beide, dan rondjes
+
+0 1 0 : beide, ook rondjes
+
+0 0 1:  beide, originele gebeueren, dan heen en weer
+
+
+z doet weinig
+ -->

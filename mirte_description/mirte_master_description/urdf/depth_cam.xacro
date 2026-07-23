@@ -29,7 +29,7 @@
       xyz="0.194919101935334 -0.0242159015133965 -0.00814738065306653"
       rpy="0 0 2.66843002436935E-05" />
     <parent
-      link="Base" />
+      link="base_link" />
     <child
       link="Depth_camera" />
     <axis
