@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+  
+  <link
+    name="lidar_base">
+    <inertial>
+      <origin
+        xyz="-3.16279539482045E-07 9.54386088163634E-05 -0.0118651639697618"
+        rpy="0 0 0" />
+      <mass
+        value="0.100511981883324" />
+      <inertia
+        ixx="3.39518064050846E-05"
+        ixy="2.51551620720405E-12"
+        ixz="2.11349409641371E-10"
+        iyy="3.4477810166857E-05"
+        iyz="1.18155796489864E-07"
+        izz="4.19358530903682E-05" />
+    </inertial>
+    <!-- <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/LiDar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mirte_master_description/meshes/LiDar.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LiDar_joint"
+    type="fixed">
+    <origin
+      xyz="0.03167 -0.063182 -0.011397"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+<!-- 
   <link name="lidar_base">
     <inertial>
       <origin
@@ -38,8 +100,8 @@
           filename="package://mirte_master_description/meshes/lidar.STL" />
       </geometry>
     </collision>
-  </link>
-  <joint
+  </link> -->
+  <!-- <joint
     name="lidar_base_joint"
     type="fixed">
     <origin
@@ -50,7 +112,7 @@
     <child
       link="lidar_base" />
     <axis xyz="0 0 0" />
-  </joint>
+  </joint> -->
 
   <link name="lidar_link"></link>
 
@@ -61,6 +123,7 @@
     <axis xyz="0 0 0" />
   </joint>
 
+  <xacro:if value="$(arg use_correct_laser_frame)">
     <link name="laser"></link>
 
     <joint name="laser_joint" type="fixed">
@@ -70,11 +133,18 @@
       <axis xyz="0 0 0" />
     </joint>
     <xacro:property name="lidar_sensor_link" value="laser" />
+  </xacro:if>
+  <xacro:unless value="$(arg use_correct_laser_frame)">
+    <xacro:property name="lidar_sensor_link" value="lidar_link" />
+  </xacro:unless>
 
   <gazebo reference="lidar_link">
-        <sensor name="lidar" type="ray">
+        <sensor name="lidar" type="gpu_lidar">
+              <pose relative_to='lidar_link'>0 0 0 0 0 0</pose>
+          <gz_frame_id>lidar_link</gz_frame_id>
+          <topic>/scan</topic>
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>${visualize_sensors}</visualize>
+            <visualize>true</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>
@@ -91,13 +161,6 @@
                     <resolution>0.01</resolution>
                 </range>
             </ray>
-            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
-                <ros>
-                    <remapping>~/out:=scan</remapping>
-                </ros>
-                <output_type>sensor_msgs/LaserScan</output_type>
-                <frame_name>lidar_link</frame_name>
-            </plugin>
         </sensor>
     </gazebo>
 

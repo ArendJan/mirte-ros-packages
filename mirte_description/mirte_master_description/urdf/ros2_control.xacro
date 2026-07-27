@@ -15,7 +15,7 @@
 
 </xacro:macro>
 <xacro:if value="True">
-<ros2_control name="GazeboSimSystem" type="system">
+<ros2_control name="GazeboSimSysteasdfzxcveww3rzdsfem" type="system">
   <!-- <hardware>
     <plugin>gz_ros2_control/GazeboSimSystem</plugin>
   </hardware> -->
@@ -27,7 +27,7 @@
 
         </xacro:if>
         <xacro:unless value="$(arg sim)">
-          <plugin>mirte_base_control/MirteBaseHWInterface</plugin>
+          <plugin>mirte_base_control/MirteBaseHWInterfasdffsadfxzvcwer34ce</plugin>
           <param name="ticks">$(arg ticks)</param>
         <param name="separate_update_format">${params['separate_update_format']}</param>
         <!-- Use %s in format strings to replace with joint names -->
@@ -60,7 +60,7 @@
 <ros2_control name="ros2_arm_control" type="system">
       <hardware>
         <xacro:if value="$(arg sim)">
-          <plugin>gz_ros2_control/GazeboSystem</plugin>
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </xacro:if>
         <xacro:unless value="$(arg sim)">
           <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
@@ -102,7 +102,7 @@
 <ros2_control name="ros2_gripper_control" type="system">
      <hardware>
         <xacro:if value="$(arg sim)">
-          <plugin>gz_ros2_control/GazeboSystem</plugin>
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </xacro:if>
         <xacro:unless value="$(arg sim)">
           <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
@@ -123,17 +123,17 @@
         <command_interface name="position"/>
         <state_interface name="position" />
         <state_interface name="velocity" />
-      </joint>
+      </joint> -->
 
-      <joint name="_gripper_link_joint_l">
+      <!-- <joint name="_gripper_link_joint_l">
         <param name="mimic">gripper_joint</param>
         <param name="multiplier">-1.4</param> 
         <command_interface name="position"/>
         <state_interface name="position" />
         <state_interface name="velocity" />
-      </joint>
+      </joint> -->
 
-      <joint name="_gripper_link_joint_r">
+      <!-- <joint name="_gripper_link_joint_r">
         <param name="mimic">gripper_joint</param>
         <param name="multiplier">1.4</param>  
         <command_interface name="position"/>

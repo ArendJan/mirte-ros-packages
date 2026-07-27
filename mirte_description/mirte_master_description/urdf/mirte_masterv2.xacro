@@ -11,10 +11,11 @@
   <xacro:arg name="depth_camera_enable" default="False" />
   <xacro:arg name="imu_enable" default="False" />
   <xacro:arg name="wheels_enable" default="True" />
-  <xacro:arg name="sim" default="False" />
+  <xacro:arg name="sim" default="True" />
 
+  <xacro:arg name="use_correct_laser_frame" default="True" />
 
-    <xacro:arg name="arm_enable" default="False" />
+    <xacro:arg name="arm_enable" default="True" />
     <xacro:arg name="arm_collisions_enable" default="True" />
     <xacro:arg name="gripper_camera_enable" default="True" />
   <xacro:include filename="$(find mirte_master_description)/urdf/mirte_master_base.gazebo.xacro" />
@@ -558,58 +559,8 @@
     </xacro:ultrasonic_sensor>
   </xacro:if>
 
-  
-  <link
-    name="LiDar">
-    <inertial>
-      <origin
-        xyz="-3.16279539482045E-07 9.54386088163634E-05 -0.0118651639697618"
-        rpy="0 0 0" />
-      <mass
-        value="0.100511981883324" />
-      <inertia
-        ixx="3.39518064050846E-05"
-        ixy="2.51551620720405E-12"
-        ixz="2.11349409641371E-10"
-        iyy="3.4477810166857E-05"
-        iyz="1.18155796489864E-07"
-        izz="4.19358530903682E-05" />
-    </inertial>
-    <!-- <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/LiDar.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mirte_master_description/meshes/LiDar.STL" />
-      </geometry>
-    </collision> -->
-  </link>
-  <joint
-    name="LiDar_joint"
-    type="fixed">
-    <origin
-      xyz="0.03167 -0.063182 -0.011397"
-      rpy="1.5708 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="LiDar" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+  <xacro:if value="$(arg lidar_enable)">
+    <xacro:include filename="$(find mirte_master_description)/urdf/lidarv2.xacro" />
+  </xacro:if>
+
 </robot>
