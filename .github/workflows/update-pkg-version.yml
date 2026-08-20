@@ -19,8 +19,8 @@ jobs:
                 - name: Update package version
                   run: |
                         set -xe
-                        apt update
-                        apt install -y xmlstarlet
+                        sudo apt update
+                        sudo apt install -y xmlstarlet
                         # get the version from the release tag or from the workflow_dispatch input
                         if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
                                 version="${{ github.event.inputs.version }}"
