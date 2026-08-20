@@ -21,6 +21,7 @@ jobs:
                 - name: Update package version
                   run: |
                         set -xe
+                        shopt -s globstar
                         sudo apt update
                         sudo apt install -y xmlstarlet
                         # get the version from the release tag or from the workflow_dispatch input
@@ -29,11 +30,11 @@ jobs:
                         else
                                 version="${GITHUB_REF#refs/tags/}"
                         fi
-                        xmlstarlet ed -P -L -u "/package/version" -v "$version" **/*/package.xml
+                        xmlstarlet ed -P -L -u "/package/version" -v "$version" **/package.xml
                         # git diff
                         git config --global user.name "github-actions[bot]"
                         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                        git add **/package.xml
+                        git add -a
                         git commit -m "Update package versions to $version"
                         git push
                 # - name: Update tag
