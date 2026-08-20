@@ -1,6 +1,8 @@
 # action that updates the version of a package in the package.xml file and commits the change to the repository when a new release is created
 name: Update Package Version
 
+permissions:
+  contents: write
 on:
   release:
     types: [published]
@@ -27,7 +29,7 @@ jobs:
                         else
                                 version="${GITHUB_REF#refs/tags/}"
                         fi
-                        xmlstarlet ed -L -u "/package/version" -v "$version" **/package.xml
+                        xmlstarlet ed -P -L -u "/package/version" -v "$version" **/package.xml
                         # git diff
                         git config --global user.name "github-actions[bot]"
                         git config --global user.email "github-actions[bot]@users.noreply.github.com"
