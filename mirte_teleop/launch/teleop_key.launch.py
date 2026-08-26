@@ -7,8 +7,11 @@
 # subprocess.
 # TODO: Get the lib location in a more generic way
 
+import os
 import sys, subprocess
 import platform
+
+from ament_index_python import get_package_prefix
 
 hostname = platform.node().replace("-", "_").lower()
 
@@ -18,33 +21,19 @@ hostname = platform.node().replace("-", "_").lower()
 sys.exit(
     subprocess.call(
         [
-            "/opt/ros/humble/lib/teleop_twist_keyboard/teleop_twist_keyboard",
+            os.path.join(
+                get_package_prefix("teleop_twist_keyboard"),
+                "lib",
+                "teleop_twist_keyboard",
+                "teleop_twist_keyboard",
+            ),
             "--ros-args",
             "-r",
             f"cmd_vel:=/mirte_base_controller/cmd_vel",
+            # "-p",
+            # "speed:=0.55",
+            # "-p",
+            # "turn:=0.05",
         ]
     )
 )
-
-# from launch import LaunchDescription
-# from launch_ros.actions import Node
-#
-#
-# def generate_launch_description():
-#    ld = LaunchDescription()
-#
-#    # Need to add prefix: https://github.com/ros2/teleop_twist_keyboard/issues/21
-#    node=Node(
-#        package = 'teleop_twist_keyboard',
-#        executable = 'teleop_twist_keyboard',
-#        remappings = [('/cmd_vel', '/diffbot_base_controller/cmd_vel_unstamped')],
-#        parameters = [
-#           { 'speed': 0.55 },
-#           { 'turn':  0.05 }
-#        ],
-#        output = 'screen',
-#        prefix='export DISPLAY=:0; xterm -e'
-#    )
-#
-#    ld.add_action(node)
-#    return ld
