@@ -23,4 +23,8 @@ repositories:
     type: git
     url: https://github.com/orbbec/OrbbecSDK_ROS2.git
     version: main # v2-main requires firmware update for the astra mini pro, not yet decided on how to
+  teleop_twist_keyboard:
+    type: git
+    url: https://github.com/arendjan/teleop_twist_keyboard.git
+    version: add-keyboard-timeout-and-rate-params
   
