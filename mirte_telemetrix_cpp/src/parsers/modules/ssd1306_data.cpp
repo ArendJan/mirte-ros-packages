@@ -16,7 +16,7 @@ SSD1306Data::SSD1306Data(
                                          rclcpp::ParameterValue("ssd1306")),
                     insert_default_param(unused_keys, "type"),
                     get_device_class(),
-                    std::chrono::duration_cast<DeviceDuration>(10s)) {
+                    std::chrono::duration_cast<DeviceDuration>(5s)) {
   // Set default for address
   if ((!parameters.count("addr")) && this->addr == 0xFF) {
     this->addr = 0x3C;
@@ -38,6 +38,14 @@ SSD1306Data::SSD1306Data(
         parameters["default_screen_script"].get<std::string>());
   } else {
     this->set_default_screen_script(default_screen_script);
+  }
+
+  if (unused_keys.erase("default_screen_script_update_time")) {
+    this->default_screen_script_update_time =
+        parameters["default_screen_script_update_time"].get<double>();
+    this->duration = std::chrono::duration_cast<DeviceDuration>(
+        std::chrono::duration<double>(this->default_screen_script_update_time *
+                                      1s));
   }
 }
 

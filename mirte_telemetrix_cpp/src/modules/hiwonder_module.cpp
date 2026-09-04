@@ -46,16 +46,34 @@ HiWonderBus_module::HiWonderBus_module(
   }
 
   std::this_thread::sleep_for(1.20s);
+  std::vector<std::shared_ptr<HiWonderServoData>> servos_to_add;
   for (auto servo_data : this->data.servos) {
-    if (this->bus->verify_id(servo_data->id)) {
-      this->servos.push_back(std::make_shared<Hiwonder_servo>(
-          node_data, servo_data, this->bus, servo_group, bus_data.duration,
-          this->callback_group));
+    servos_to_add.push_back(servo_data);
+  }
+  for (auto i = 0; i < 5; i++) { // 5 tries to detect servos.
+    decltype(servos_to_add) servos_to_add_failed;
+    for (auto servo_data : servos_to_add) {
+      if (this->bus->verify_id(servo_data->id)) {
+        this->servos.push_back(std::make_shared<Hiwonder_servo>(
+            node_data, servo_data, this->bus, servo_group, bus_data.duration,
+            this->callback_group));
+      } else {
+        servos_to_add_failed.push_back(servo_data);
+        RCLCPP_ERROR(this->logger,
+                     "HiWonder Servo '%s' is ignored as its ID [%d] was not "
+                     "found.",
+                     servo_data->name.c_str(), servo_data->id);
+      }
+    }
+    if (servos_to_add_failed.empty()) {
+      break;
     } else {
-      RCLCPP_ERROR(
-          this->logger,
-          "HiWonder Servo '%s' is ignored as its ID [%d] was not found.",
-          servo_data->name.c_str(), servo_data->id);
+      servos_to_add = servos_to_add_failed;
+      std::this_thread::sleep_for(1.20s);
+      RCLCPP_WARN(this->logger,
+                  "Retrying to add %d HiWonder servos that failed to be "
+                  "added.",
+                  (int)servos_to_add.size());
     }
   }
 
@@ -90,6 +108,13 @@ HiWonderBus_module::HiWonderBus_module(
             this->set_angle_multiple_service_callback(req, res);
           },
           options);
+
+  this->get_all_servo_range_service =
+      nh->create_service<mirte_msgs::srv::GetAllServoRange>(
+          "servo/" + servo_group + "get_servo_ranges",
+          std::bind(&HiWonderBus_module::get_all_servo_range_service_callback,
+                    this, _1, _2),
+          rclcpp::ServicesQoS().get_rmw_qos_profile(), this->callback_group);
 }
 
 void HiWonderBus_module::set_angle_multiple_service_callback(
@@ -231,5 +256,19 @@ void HiWonderBus_module::position_cb(
     auto servo = this->servos[idx];
     assert(servo->servo_data->id == p.id);
     servo->position_cb(p);
+  }
+}
+
+void HiWonderBus_module::get_all_servo_range_service_callback(
+    const mirte_msgs::srv::GetAllServoRange::Request::ConstSharedPtr req,
+    mirte_msgs::srv::GetAllServoRange::Response::SharedPtr res) {
+  for (const auto &servo : this->servos) {
+    auto min = servo->servo_data->min_angle_in;
+    auto max = servo->servo_data->max_angle_in;
+    mirte_msgs::msg::ServoRange servo_range_msg;
+    servo_range_msg.name.data = servo->servo_data->name;
+    servo_range_msg.min = min;
+    servo_range_msg.max = max;
+    res->servo_ranges.push_back(servo_range_msg);
   }
 }

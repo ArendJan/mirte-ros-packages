@@ -13,6 +13,7 @@
 #include <mirte_telemetrix_cpp/parsers/modules/hiwonder_data.hpp>
 
 #include <mirte_msgs/msg/set_angle_multiple.hpp>
+#include <mirte_msgs/srv/get_all_servo_range.hpp>
 #include <mirte_msgs/srv/set_angle_multiple.hpp>
 #include <std_srvs/srv/set_bool.hpp>
 
@@ -48,4 +49,10 @@ private:
   void set_angle_multiple_service_callback(
       const mirte_msgs::srv::SetAngleMultiple::Request::ConstSharedPtr req,
       mirte_msgs::srv::SetAngleMultiple::Response::SharedPtr res);
+
+  rclcpp::Service<mirte_msgs::srv::GetAllServoRange>::SharedPtr
+      get_all_servo_range_service;
+  void get_all_servo_range_service_callback(
+      const mirte_msgs::srv::GetAllServoRange::Request::ConstSharedPtr req,
+      mirte_msgs::srv::GetAllServoRange::Response::SharedPtr res);
 };
