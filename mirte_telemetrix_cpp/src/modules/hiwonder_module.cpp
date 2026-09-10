@@ -59,10 +59,6 @@ HiWonderBus_module::HiWonderBus_module(
             this->callback_group));
       } else {
         servos_to_add_failed.push_back(servo_data);
-        RCLCPP_ERROR(this->logger,
-                     "HiWonder Servo '%s' is ignored as its ID [%d] was not "
-                     "found.",
-                     servo_data->name.c_str(), servo_data->id);
       }
     }
     if (servos_to_add_failed.empty()) {
@@ -75,6 +71,17 @@ HiWonderBus_module::HiWonderBus_module(
                   "added.",
                   (int)servos_to_add.size());
     }
+  }
+  if(!servos_to_add.empty()) {
+    RCLCPP_ERROR(this->logger,
+                 "Failed to add %d HiWonder servos after 5 tries.",
+                 (int)servos_to_add.size());
+                 RCLCPP_ERROR(this->logger, "Failed to add the following HiWonder servos:");
+                 for (auto servo_data : servos_to_add) {
+                   RCLCPP_ERROR(this->logger,
+                                "Failed to add HiWonder servo '%s' with ID %d.",
+                                servo_data->name.c_str(), servo_data->id);
+                 }
   }
 
   // Create Bus ROS services
