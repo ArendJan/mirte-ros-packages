@@ -107,10 +107,9 @@ foreach(config_file IN LISTS config_files)
   )
   list(APPEND param_libs ${config_file}_parameters)
 endforeach()
-# generate_parameter_library( telemetrix_parameters # cmake target name for the
-# parameter library src/telemetrix_parameters.yaml # path to input yaml file )
 
-# include(CheckIPOSupported) check_ipo_supported(RESULT supported OUTPUT error)
+include(CheckIPOSupported)
+check_ipo_supported(RESULT supported OUTPUT error)
 
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wswitch-enum -Wall -Werror
 # -Wno-sign-compare") # -Wall -Wextra -Wpedantic -Werror") set(NO_CLANG_TIDY
@@ -236,10 +235,15 @@ target_link_libraries(
   ${OpenCV_LIBS})
 
 target_link_libraries(${PROJECT_NAME}_test ${param_libs})
-# if(supported) if(CMAKE_BUILD_TYPE STREQUAL "Release") message(STATUS "IPO LTO
-# enabled") set_property(TARGET ${PROJECT_NAME}_node PROPERTY
-# INTERPROCEDURAL_OPTIMIZATION TRUE) endif() else() message(STATUS "IPO  / LTO
-# not supported: <${error}>") endif()
+if(supported AND 0)
+  if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    message(STATUS "IPO LTO enabled")
+    set_property(TARGET ${PROJECT_NAME}_node
+                 PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+  endif()
+else()
+  # message(STATUS "IPO  / LTO not supported: <${error}>")
+endif()
 
 install(
   TARGETS ${PROJECT_NAME}_node ${PROJECT_NAME}_test
