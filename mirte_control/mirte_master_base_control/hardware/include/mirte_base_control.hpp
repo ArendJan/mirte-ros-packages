@@ -161,7 +161,7 @@ private:
   // std::vector<rclcpp::Time> _wheel_encoder_update_time;
   std::vector<double> _last_cmd;
   std::vector<double> _last_sent_cmd;
-  std::vector<int> _last_value;
+  std::vector<std::shared_ptr<const mirte_msgs::msg::Encoder>> _last_value;
   std::vector<int> _last_wheel_cmd_direction;
 
   rclcpp::Time curr_update_time, prev_update_time;

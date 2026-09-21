@@ -18,6 +18,7 @@ public:
   std::string default_screen_script =
       "package://mirte_telemetrix_cpp/scripts/default_screen.sh";
 
+  double default_screen_script_update_time = 1.0;
   SSD1306Data(std::shared_ptr<Parser> parser,
               std::shared_ptr<Mirte_Board> board, std::string name,
               std::map<std::string, rclcpp::ParameterValue> parameters,

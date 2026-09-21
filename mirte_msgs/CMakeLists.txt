@@ -21,6 +21,7 @@ set(msg_files
     "msg/IntensityDigital.msg"
     "msg/Keypad.msg"
     "msg/ServoPosition.msg"
+    "msg/ServoRange.msg"
     "msg/SetSpeed.msg"
     "msg/SetSpeedNamed.msg"
     "msg/SetSpeedMultiple.msg"
@@ -42,6 +43,7 @@ set(srv_files
     "srv/GetKeypad.srv"
     "srv/GetRange.srv"
     "srv/GetServoRange.srv"
+    "srv/GetAllServoRange.srv"
     "srv/SetDigitalPinValue.srv"
     "srv/SetLEDValue.srv"
     "srv/SetMotorSpeed.srv"
@@ -61,8 +63,7 @@ set(srv_files
     "srv/SetAngleMultiple.srv"
     "srv/SetServoVoltageRange.srv"
     "srv/SetServoUS.srv"
-    "srv/SetServoPWM.srv"
-    )
+    "srv/SetServoPWM.srv")
 
 rosidl_generate_interfaces(
   ${PROJECT_NAME}
