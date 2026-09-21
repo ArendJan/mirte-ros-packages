@@ -49,15 +49,26 @@ sudo bluetoothctl
         trust <MAC>
         exit
 ```
-The controller should now have a blue bar and there should be a `/dev/js0` file.
+The controller should now have a blue bar and there should be a `/dev/input/js0` file.
 
 
-Sometimes you'll need to restart the bluetooth service after it to auto-connect and show up as `/dev/jsX`
+Sometimes you'll need to restart the bluetooth service after it to auto-connect and show up as `/dev/input/jsX`
 
 ```bash
 sudo systemctl restart bluetooth.service
 ```
 
+## Kernel issue
+If after a reboot the `/dev/input/jsX` file doesn't appear, then it might be that the kernel is missing the driver for it. (Known issue)
+
+```bash
+sudo apt-mark unhold "*" # normally we don't want to upgrade kernel packages
+sudo apt update
+sudo apt upgrade -y # will update kernel packages
+sudo reboot
+```
+
+After rebooting and pressing the Playstation button, it now should appear.
 
 
 ## Autostart on boot
