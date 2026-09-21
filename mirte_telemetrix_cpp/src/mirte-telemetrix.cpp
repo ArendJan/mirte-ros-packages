@@ -54,11 +54,11 @@ TelemetrixNode::TelemetrixNode(const rclcpp::NodeOptions &options)
   }
   std::cout << "timers: " << node_data.timers.size() << std::endl;
   for (const auto &timer : node_data.timers) {
-    std::cout << "Timer: " << timer.first.count() << " ms, "
-              << " ms, " << timer.second.second.size() << " callbacks"
+    std::cout << "Timer: " << timer.duration.count() << " ms, "
+              << " ms, " << timer.callbacks.size() << " callbacks"
               << std::endl;
-    timer.second.first->execute_callback();
-    timer.second.first->reset();
+    timer.timer->execute_callback();
+    timer.timer->reset();
   }
 }
 
@@ -170,31 +170,32 @@ bool TelemetrixNode::start() {
     std::cout << "Adding cb for duration: " << duration.count() << " ms"
               << std::endl;
     for (auto &timer : node_data.timers) {
-      if (timer.first == duration) {
-        timer.second.second.push_back(callback);
+      if (timer.duration == duration) {
+        timer.callbacks.push_back(callback);
         return;
       }
     }
     using namespace std::chrono_literals;
-
+    auto timer_cb_group_ = node_data.nh->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
     auto timer = node_data.nh->create_wall_timer(duration, [duration]() {
       // std::cout << "Timer expired: " << duration.count() << " ms" <<
       // std::endl;
       for (auto &timer : node_data.timers) {
-        if (timer.first == duration) {
-          for (auto &cb : timer.second.second) {
+        if (timer.duration == duration) {
+          for (auto &cb : timer.callbacks) {
             cb();
           }
         }
       }
       // std::cout << "Timer expired: " << duration.count() << " ms done" <<
       // std::endl;
-    });
+    }, timer_cb_group_);
 
     node_data.timers.push_back(
         {duration,
-         {timer,
-          {callback}}}); // add a new timer with the duration and callback
+         timer,
+         timer_cb_group_,
+         {callback}}); // add a new timer with the duration and callback
     std::cout << "Adding timer for duration: " << duration.count() << " ms"
               << std::endl;
   };
