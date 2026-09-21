@@ -55,8 +55,7 @@ TelemetrixNode::TelemetrixNode(const rclcpp::NodeOptions &options)
   std::cout << "timers: " << node_data.timers.size() << std::endl;
   for (const auto &timer : node_data.timers) {
     std::cout << "Timer: " << timer.duration.count() << " ms, "
-              << " ms, " << timer.callbacks.size() << " callbacks"
-              << std::endl;
+              << " ms, " << timer.callbacks.size() << " callbacks" << std::endl;
     timer.timer->execute_callback();
     timer.timer->reset();
   }
@@ -176,20 +175,24 @@ bool TelemetrixNode::start() {
       }
     }
     using namespace std::chrono_literals;
-    auto timer_cb_group_ = node_data.nh->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
-    auto timer = node_data.nh->create_wall_timer(duration, [duration]() {
-      // std::cout << "Timer expired: " << duration.count() << " ms" <<
-      // std::endl;
-      for (auto &timer : node_data.timers) {
-        if (timer.duration == duration) {
-          for (auto &cb : timer.callbacks) {
-            cb();
+    auto timer_cb_group_ = node_data.nh->create_callback_group(
+        rclcpp::CallbackGroupType::MutuallyExclusive);
+    auto timer = node_data.nh->create_wall_timer(
+        duration,
+        [duration]() {
+          // std::cout << "Timer expired: " << duration.count() << " ms" <<
+          // std::endl;
+          for (auto &timer : node_data.timers) {
+            if (timer.duration == duration) {
+              for (auto &cb : timer.callbacks) {
+                cb();
+              }
+            }
           }
-        }
-      }
-      // std::cout << "Timer expired: " << duration.count() << " ms done" <<
-      // std::endl;
-    }, timer_cb_group_);
+          // std::cout << "Timer expired: " << duration.count() << " ms done" <<
+          // std::endl;
+        },
+        timer_cb_group_);
 
     node_data.timers.push_back(
         {duration,
