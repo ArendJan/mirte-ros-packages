@@ -10,10 +10,10 @@
       front_left:
         name: front_left
         device: mirte
-        type: pp 
+        type: pp
         pins:
           p1: 17
-          p2: 16 
+          p2: 16
       rear_right:
         name: rear_right
         device: mirte
