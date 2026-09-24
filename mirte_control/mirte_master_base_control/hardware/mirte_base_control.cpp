@@ -125,7 +125,6 @@ MirteBaseHWInterface::write(const rclcpp::Time &time,
 void MirteBaseHWInterface::read_single(int joint,
                                        const rclcpp::Duration &period) {
   const std::lock_guard<std::mutex> lock(this->encoder_mutex);
-
   // if (_last_value[joint] == 0) {
   //   _last_value[joint] = _wheel_encoder[joint];
   //   // when starting, the encoders dont have to be at 0. Without this, the
@@ -136,28 +135,28 @@ void MirteBaseHWInterface::read_single(int joint,
 
   // _last_value[joint] = _wheel_encoder[joint];
 
-  auto latest_msg = this->latest_msgs_[joint].readFromRT();
-
-  if (latest_msg == nullptr || latest_msg->first == nullptr ||
-      latest_msg->second == nullptr) {
+  if (this->latest_msgs_[joint].readFromRT()->size() < 2) {
     // no message received yet, do nothing
     // diff_ticks = 0;
     return;
   }
+  auto first_msg = this->latest_msgs_[joint].readFromRT()->front();
+  auto last_msg = this->latest_msgs_[joint].readFromRT()->back();
   //   static auto prev_msg_ticks = latest_msg->first->value;
   // static auto prev_msg_stamp = latest_msg->first->header.stamp;
-  if (this->_last_value[joint]->header.stamp.sec == 0 &&
-      this->_last_value[joint]->header.stamp.nanosec == 0) {
-    this->_last_value[joint] = latest_msg->first;
-    return;
-  }
-  auto latest_encoder_val = latest_msg->first->value;
+  // if (this->_last_value[joint]->header.stamp.sec == 0 &&
+  //     this->_last_value[joint]->header.stamp.nanosec == 0) {
+  //   this->_last_value[joint] = latest_msg->first;
+  //   return;
+  // }
 
-  auto diff_ticks = latest_msg->first->value - this->_last_value[joint]->value;
-  auto period_sec = (rclcpp::Time(latest_msg->first->header.stamp) -
-                     rclcpp::Time(this->_last_value[joint]->header.stamp))
+  auto latest_encoder_val = last_msg->value;
+
+  auto diff_ticks = last_msg->value - first_msg->value;
+  auto period_sec = (rclcpp::Time(last_msg->header.stamp) -
+                     rclcpp::Time(first_msg->header.stamp))
                         .seconds();
-  this->_last_value[joint] = latest_msg->first;
+  // this->_last_value[joint] = latest_msg->first;
   // if(joint == 0){
   //   prev_msg_ticks = latest_msg->first->value;
   //   prev_msg_stamp = latest_msg->first->header.stamp;
@@ -190,6 +189,14 @@ void MirteBaseHWInterface::read_single(int joint,
   //   // vel[joint] = 0;
   //   // return;
   // }
+  if (joint == 0) {
+    std::cout << "read_single joint: " << joint << " diff_ticks: " << diff_ticks
+              << " distance_rad: " << distance_rad
+              << " distance_pos_rad: " << distance_pos_rad
+              << " period_sec: " << period_sec
+              << " radPerEncoderTick: " << radPerEncoderTick
+              << " latest_encoder_val: " << latest_encoder_val << std::endl;
+  }
   auto velo = distance_rad / period_sec;
   if (period_sec < 0.01) { // if velocity is way too high, assume error in
                            // encoder. More than 1000rad/s is not possible
@@ -483,10 +490,9 @@ MirteBaseHWInterface::on_init(const hardware_interface::HardwareInfo &info) {
     // _wheel_encoder.push_back(0);
     latest_msgs_.push_back(
         realtime_tools::RealtimeBuffer<
-            std::pair<mirte_msgs::msg::Encoder::ConstSharedPtr,
-                      mirte_msgs::msg::Encoder::ConstSharedPtr>>{});
+            std::deque<std::shared_ptr<mirte_msgs::msg::Encoder>>>{});
     // _wheel_encoder_update_time.push_back(nh->now());
-    _last_value.push_back(std::make_shared<mirte_msgs::msg::Encoder>());
+    // _last_value.push_back(std::make_shared<mirte_msgs::msg::Encoder>());
     _last_wheel_cmd_direction.push_back(0);
     // _last_cmd.push_back(0);
     _last_sent_cmd.push_back(-1000);

@@ -139,7 +139,8 @@ private:
     double cmd_vel_deadzone = 10.0;
     double cmd_vel_update_deadzone = 3.0;
     double max_rot_speed = 6 * M_PI;
-    bool always_send = false; // if true, always send motor commands
+    bool always_send = false;        // if true, always send motor commands
+    int encoder_sub_queue_size = 10; // queue size for encoder subs
   } settings;
 
   void read_settings();
@@ -161,7 +162,7 @@ private:
   // std::vector<rclcpp::Time> _wheel_encoder_update_time;
   std::vector<double> _last_cmd;
   std::vector<double> _last_sent_cmd;
-  std::vector<std::shared_ptr<const mirte_msgs::msg::Encoder>> _last_value;
+  //   std::vector<std::shared_ptr<const mirte_msgs::msg::Encoder>> _last_value;
   std::vector<int> _last_wheel_cmd_direction;
 
   rclcpp::Time curr_update_time, prev_update_time;
@@ -219,10 +220,14 @@ private:
     }
     const std::lock_guard<std::mutex> lock(this->encoder_mutex);
     // std::cout << "Encoder value: " << msg->value << std::endl;
-    // _wheel_encoder[joint] = msg->value;
-    // _wheel_encoder_update_time[joint] = msg->header.stamp;
-    this->latest_msgs_[joint].writeFromNonRT(
-        {msg, this->latest_msgs_[joint].readFromNonRT()->first});
+
+    // remove first element from the buffer if it is full
+    if (this->latest_msgs_[joint].readFromNonRT()->size() >=
+        this->settings.encoder_sub_queue_size) {
+      this->latest_msgs_[joint].readFromNonRT()->pop_front();
+    }
+
+    this->latest_msgs_[joint].readFromNonRT()->push_back(msg);
   }
 
   // Thread and function to restart service clients when the service server has
@@ -233,8 +238,7 @@ private:
   std::mutex service_clients_mutex;
   std::mutex encoder_mutex;
   std::vector<realtime_tools::RealtimeBuffer<
-      std::pair<mirte_msgs::msg::Encoder::ConstSharedPtr,
-                mirte_msgs::msg::Encoder::ConstSharedPtr>>>
+      std::deque<std::shared_ptr<mirte_msgs::msg::Encoder>>>>
       latest_msgs_{};
   // thread for ros spinning
   std::jthread ros_thread;
