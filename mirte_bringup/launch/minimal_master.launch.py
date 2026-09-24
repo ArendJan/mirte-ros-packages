@@ -165,6 +165,20 @@ def generate_launch_description():
             "start_controller_manager": start_controller_manager,
             "start_state_publishers": start_state_publishers,
             "use_pid_control": use_base_pid_control,
+            "hw_config_file": PathJoinSubstitution(
+                [
+                    FindPackageShare("mirte_bringup"),
+                    "config", "control",
+                    "control_master.yaml",
+                ],
+            ),
+            "control_config_file": PathJoinSubstitution(
+                [
+                    FindPackageShare("mirte_bringup"),
+                    "config", "control",
+                    "mirte_base_control.yaml",
+                ]
+            ),
         }.items(),
     )
 
@@ -184,6 +198,13 @@ def generate_launch_description():
             "frame_prefix": frame_prefix,
             "start_controller_manager": start_controller_manager,
             "start_state_publishers": start_state_publishers,
+            "arm_control_config_file": PathJoinSubstitution(
+                [
+                    FindPackageShare("mirte_bringup"),
+                    "config", "control",
+                    "mirte_master_arm_control.yaml",
+                ]
+            ),
         }.items(),
     )
     cameras = IncludeLaunchDescription(
