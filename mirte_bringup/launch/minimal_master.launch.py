@@ -72,7 +72,7 @@ def generate_launch_description():
                 "config_path": PathJoinSubstitution(
                     [
                         FindPackageShare("mirte_bringup"),
-                        "telemetrix_config",
+                        "config", "telemetrix",
                         "mirte_master_config.yaml",
                     ]
                 ),
