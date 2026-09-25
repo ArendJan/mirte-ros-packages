@@ -1,6 +1,7 @@
 /**:
   ros__parameters:
     device:
+      name: test
       mirte:
         type: pcb
         version: 0.8
