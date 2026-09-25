@@ -1,6 +1,6 @@
 # config files need to be kept in sync between mirte_bringup and mirte_telemetrix_cpp. 
 # This workflow checks for differences and updates the files in mirte_telemetrix_cpp if needed.
-
+name: Config Sync
 
 on:
   push:
