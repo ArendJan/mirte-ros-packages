@@ -144,11 +144,29 @@ void MirteBaseHWInterface::read_single(int joint,
     // diff_ticks = 0;
     return;
   }
+  //   static auto prev_msg_ticks = latest_msg->first->value;
+  // static auto prev_msg_stamp = latest_msg->first->header.stamp;
+  if (this->_last_value[joint]->header.stamp.sec == 0 &&
+      this->_last_value[joint]->header.stamp.nanosec == 0) {
+    this->_last_value[joint] = latest_msg->first;
+    return;
+  }
   auto latest_encoder_val = latest_msg->first->value;
-  auto diff_ticks = latest_msg->first->value - latest_msg->second->value;
+
+  auto diff_ticks = latest_msg->first->value - this->_last_value[joint]->value;
   auto period_sec = (rclcpp::Time(latest_msg->first->header.stamp) -
-                     rclcpp::Time(latest_msg->second->header.stamp))
+                     rclcpp::Time(this->_last_value[joint]->header.stamp))
                         .seconds();
+  this->_last_value[joint] = latest_msg->first;
+  // if(joint == 0){
+  //   prev_msg_ticks = latest_msg->first->value;
+  //   prev_msg_stamp = latest_msg->first->header.stamp;
+  // }
+  // if (joint == 0) {
+  //   std::cout << "diff_ticks: " << diff_ticks << " period_sec: " <<
+  //   period_sec
+  //             << "  " << period.seconds() << std::endl;
+  // }
   // velo = diff_ticks
   // _last_value[joint] = latest_msg->first->value;
 
@@ -168,14 +186,14 @@ void MirteBaseHWInterface::read_single(int joint,
   double distance_pos_rad = latest_encoder_val * radPerEncoderTick * 1.0;
 
   pos[joint] = distance_pos_rad; // TODO: fix with last pos
-  if (period_sec < 0.01) {
-    vel[joint] = 0;
-    return;
-  }
+  // if () {
+  //   // vel[joint] = 0;
+  //   // return;
+  // }
   auto velo = distance_rad / period_sec;
-  if (std::abs(velo) > 1000.0) { // if velocity is way too high, assume error in
-                                 // encoder. More than 1000rad/s is not possible
-    vel[joint] = 0;
+  if (period_sec < 0.01) { // if velocity is way too high, assume error in
+                           // encoder. More than 1000rad/s is not possible
+    // vel[joint] = 0;
   } else {
     vel[joint] = velo;
   }
@@ -468,7 +486,7 @@ MirteBaseHWInterface::on_init(const hardware_interface::HardwareInfo &info) {
             std::pair<mirte_msgs::msg::Encoder::ConstSharedPtr,
                       mirte_msgs::msg::Encoder::ConstSharedPtr>>{});
     // _wheel_encoder_update_time.push_back(nh->now());
-    _last_value.push_back(0);
+    _last_value.push_back(std::make_shared<mirte_msgs::msg::Encoder>());
     _last_wheel_cmd_direction.push_back(0);
     // _last_cmd.push_back(0);
     _last_sent_cmd.push_back(-1000);

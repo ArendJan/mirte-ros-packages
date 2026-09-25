@@ -41,7 +41,8 @@ void EncoderMonitor::update() {
     // No subscribers, so no need to publish
     return;
   }
-  msg.set__header(get_header());
+  // Pico always sends the encoder value, so we can just publish it, header is
+  // updated in the data_callback
   encoder_pub->publish(msg);
 }
 

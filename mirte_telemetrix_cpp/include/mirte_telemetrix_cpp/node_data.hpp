@@ -7,6 +7,14 @@
 #include <vector>
 
 class Mirte_Board;
+
+struct TMXTimer {
+  std::chrono::duration<double, std::milli> duration;
+  std::shared_ptr<rclcpp::TimerBase> timer;
+  std::shared_ptr<rclcpp::CallbackGroup> callback_group;
+  std::vector<std::function<void()>> callbacks;
+};
+
 struct NodeData {
   std::shared_ptr<rclcpp::Node> nh;
   std::shared_ptr<tmx_cpp::TMX> tmx;
@@ -16,8 +24,5 @@ struct NodeData {
       add_timer;
   // timers: vector of duration and vector of callback, one ros timer per
   // duration
-  std::vector<std::pair<std::chrono::duration<double, std::milli>,
-                        std::pair<rclcpp::TimerBase::SharedPtr,
-                                  std::vector<std::function<void()>>>>>
-      timers;
+  std::vector<TMXTimer> timers;
 };

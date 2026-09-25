@@ -306,6 +306,10 @@ mirte_telemetrix_cpp:
         type: string
         default_value: ""
         description: "Default screen script for the oled, can be a path or package URI (pkg://PACKAGE_NAME/FOLEDRS) to a image or an executable script which provides text."
+      default_screen_script_update_time:
+        type: double
+        default_value: 5.0
+        description: "Update time for the default screen script in seconds."
       addr:
         type: int
         default_value: 0x3C

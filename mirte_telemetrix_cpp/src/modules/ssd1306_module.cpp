@@ -3,6 +3,7 @@
 #include <functional>
 
 #include <boost/algorithm/string/replace.hpp>
+#include <boost/format.hpp>
 
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/opencv.hpp>
@@ -45,6 +46,8 @@ SSD1306_module::get_ssd1306_modules(NodeData node_data,
             rclcpp::ParameterValue(map_oled.default_screen_script);
         // parameters["legacy"] = rclcpp::ParameterValue(map_oled.legacy);
         parameters["addr"] = rclcpp::ParameterValue(map_oled.addr);
+        parameters["default_screen_script_update_time"] =
+            rclcpp::ParameterValue(map_oled.default_screen_script_update_time);
         // parameters["width"] = rclcpp::ParameterValue(map_oled.width);
         // parameters["height"] = rclcpp::ParameterValue(map_oled.height);
         // parameters["legacy"] = rclcpp::ParameterValue(map_oled.legacy);
@@ -114,7 +117,7 @@ SSD1306_module::SSD1306_module(NodeData node_data, SSD1306Data oled_data,
   /* NOTE: This needs to use the raw send_text, because otherwise the
    * default_screen_timer will be canceled. */
 
-  if (!this->ssd1306->send_text("Booting...", 500ms)) {
+  if (!this->ssd1306->send_text("Starting ROS...", 500ms)) {
     RCLCPP_ERROR(this->logger,
                  "Writing to OLED module '%s' failed, shutting down default "
                  "screen timer.",
@@ -315,10 +318,15 @@ void SSD1306_module::device_timer_callback() {
   }
 
   bool succes;
+
   if ((fs::status(data.default_screen_script).permissions() &
        (fs::perms::owner_exec | fs::perms::group_exec |
         fs::perms::others_exec)) != fs::perms::none) {
-    auto text = exec(data.default_screen_script);
+    auto text = exec((boost::format("%1% %2%") % data.default_screen_script %
+                      default_screen_counter)
+                         .str());
+    this->default_screen_counter++; // Let script do multiple 'pages' of text,
+                                    // if it wants to.
 
     auto escaped_text = boost::algorithm::replace_all_copy(text, "\\n", "\n");
     escaped_text = escaped_text.substr(

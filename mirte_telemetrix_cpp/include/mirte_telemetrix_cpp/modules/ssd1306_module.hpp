@@ -40,6 +40,7 @@ private:
   //   int ok_count = 3;
   int retries = 3;
   bool default_screen = true;
+  int default_screen_counter = 0;
   std::optional<std::string> last_text;
 
   // Only enabled if legacy is enabled in the config
