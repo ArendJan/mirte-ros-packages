@@ -34,6 +34,11 @@ jobs:
                         src=$(echo $path | cut -d':' -f1)
                         dest=$(echo $path | cut -d':' -f2)
                         echo "Syncing $src to $dest"
+                        # if files same, skip
+                        if cmp -s "$src" "$dest"; then
+                                echo "Files are the same, skipping $src to $dest"
+                                continue
+                        fi
                         # print error when git date of dest is newer than src
                         if [ $(git log -1 --format="%ct" -- $dest) -gt $(git log -1 --format="%ct" -- $src) ]; then
                                 echo "Error: $dest is newer than $src. Please update $src first."
