@@ -1,4 +1,6 @@
 import platform
+import os
+from ament_index_python import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, GroupAction
@@ -37,16 +39,34 @@ def generate_launch_description():
             ),
         ],
     )
-    invert_motors = yaml.safe_load(
-        PathJoinSubstitution(
-            [
-                FindPackageShare("mirte_bringup"),
-                "config",
-                "control",
-                "control_master.yaml",
-            ]
-        ).perform({})
-    )["invert_motors"]
+
+    control_master_path = os.path.join(
+        get_package_share_directory("mirte_bringup"),
+        "config",
+        "control",
+        "control_master.yaml",
+    )
+    control_config_file = PathJoinSubstitution(
+        [
+            FindPackageShare("mirte_bringup"),
+            "config",
+            "control",
+            "mirte_base_control.yaml",
+        ]
+    )
+    arm_control_config_file = PathJoinSubstitution(
+        [
+            FindPackageShare("mirte_bringup"),
+            "config",
+            "control",
+            "mirte_master_arm_control.yaml",
+        ]
+    )
+    print(f"Reading config from {control_master_path}")
+    invert_motors = False
+    if os.path.exists(control_master_path):
+        invert_motors = yaml.safe_load(open(control_master_path))["invert_motors"]
+        print(f"Read invert_motors={invert_motors} from {control_master_path}")
     machine_namespace = LaunchConfiguration("machine_namespace")
     hardware_namespace = LaunchConfiguration("hardware_namespace")
     frame_prefix = ""  # LaunchConfiguration( # No frame prefixes as that does not work with moveit/nav2 and the odom topic must be prefixed instead of the frames.
@@ -88,7 +108,7 @@ def generate_launch_description():
                 "overlay_config_path": PathJoinSubstitution(
                     [
                         FindPackageShare("mirte_bringup"),
-                        "telemetrix_config/overlays",
+                        "config/telemetrix/overlays",
                         "invert_wheels.yaml" if invert_motors else "empty_overlay.yaml",
                     ]
                 ),
@@ -111,7 +131,8 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                     "frame_prefix": frame_prefix,
-                    "use_base_pid_control": use_base_pid_control,
+                    "control_config_file": control_config_file,
+                    "arm_control_config_file": arm_control_config_file,
                 }.items(),
             ),
             # IncludeLaunchDescription(
@@ -201,14 +222,7 @@ def generate_launch_description():
             "frame_prefix": frame_prefix,
             "start_controller_manager": start_controller_manager,
             "start_state_publishers": start_state_publishers,
-            "arm_control_config_file": PathJoinSubstitution(
-                [
-                    FindPackageShare("mirte_bringup"),
-                    "config",
-                    "control",
-                    "mirte_master_arm_control.yaml",
-                ]
-            ),
+            "arm_control_config_file": arm_control_config_file,
         }.items(),
     )
     cameras = IncludeLaunchDescription(
