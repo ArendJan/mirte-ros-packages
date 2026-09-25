@@ -61,7 +61,6 @@ def generate_launch_description():
                 ]
             ),
         ),
-
         DeclareLaunchArgument(
             "hw_config_file",
             default_value=PathJoinSubstitution(
@@ -97,15 +96,15 @@ def generate_launch_description():
     robot_controllers = LaunchConfiguration("control_config_file")
     # PathJoinSubstitution(
     #     [
-            # FindPackageShare("mirte_base_control"),
-            # "config",
-            # PythonExpression(
-            #     [
-            #         '"mirte_base_control.yaml" if "',
-            #         use_pid_control,
-            #         '".lower() in ("yes", "true", "t", "1") else "mirte_base_control_no_pid.yaml"',
-            #     ]
-            # ),
+    # FindPackageShare("mirte_base_control"),
+    # "config",
+    # PythonExpression(
+    #     [
+    #         '"mirte_base_control.yaml" if "',
+    #         use_pid_control,
+    #         '".lower() in ("yes", "true", "t", "1") else "mirte_base_control_no_pid.yaml"',
+    #     ]
+    # ),
 
     #     ],
     # )

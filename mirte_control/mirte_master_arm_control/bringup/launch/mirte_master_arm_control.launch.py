@@ -56,7 +56,9 @@ def generate_launch_description():
                     FindPackageShare("mirte_master_arm_control"),
                     "config",
                     "mirte_master_arm_control.yaml",
-                ]))
+                ]
+            ),
+        ),
     ]
 
     robot_description_content = Command(
