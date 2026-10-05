@@ -1,0 +1,184 @@
+Package: ros-humble-mirte-base-control-dbgsym
+Package-Type: ddeb
+Architecture: arm64
+Version: 2-2026.10.05.14.01
+Auto-Built-Package: debug-symbols
+Priority: optional
+Section: debug
+Source: ros-humble-mirte-base-control
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 3864
+Depends: ros-humble-mirte-base-control (= 2-2026.10.05.14.01)
+Filename: ./ros-humble-mirte-base-control-dbgsym_2-2026.10.05.14.01_arm64.ddeb
+Size: 3333006
+MD5sum: 7b95d5712eca4708e1d80f0856201c70
+SHA1: dc9649bf1e39c3f67c593330a15f0cc2921dc86c
+SHA256: 4a78c9ef9053159ccbea1e60fda838e320ff2cb266e550ad1a3cbb39b5060d41
+SHA512: 18e7c0f664f8f014089c7f87f6bee0c9d80453b1185563bc438e315a798dd2a2f451706fed4b23ccdce72d2d437718ed81017f865b35e30a55c4273563bf27c3
+Description: debug symbols for ros-humble-mirte-base-control
+Build-Ids: ecec21e36c72e2768ede021aec22b2d6a415ed24
+
+Package: ros-humble-mirte-base-control
+Architecture: arm64
+Version: 2-2026.10.05.14.01
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 738
+Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 11), ros-humble-backward-ros, ros-humble-clearpath-mecanum-drive-controller, ros-humble-control-toolbox, ros-humble-controller-manager, ros-humble-diff-drive-controller, ros-humble-effort-controllers, ros-humble-filters, ros-humble-forward-command-controller, ros-humble-hardware-interface, ros-humble-joint-state-broadcaster, ros-humble-joint-trajectory-controller, ros-humble-mirte-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-lifecycle, ros-humble-robot-state-publisher, ros-humble-ros2-controllers, ros-humble-ros2controlcli, ros-humble-ros2launch, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-trajectory-msgs, ros-humble-twist-stamper, ros-humble-xacro
+Filename: ./ros-humble-mirte-base-control_2-2026.10.05.14.01_arm64.deb
+Size: 174156
+MD5sum: 45445773b38fa1442f38837ab1829a19
+SHA1: 24d60dc1a69d015750f1d738fac97f2046ad9287
+SHA256: b3f8a99d1bee494c8a034505e2865afaa8786587a7490cc986633f9f605ad177
+SHA512: fe77acba59728e3cb0414032a62f7922265b244d1af8e9e69662d670a4d94bdf1121a15826bf13397b057a41fd4e1c10e4fbd1de3f623379894955596436a8f4
+Description: The mirte_base_control package
+
+Package: ros-humble-mirte-control-dbgsym
+Package-Type: ddeb
+Architecture: arm64
+Version: 2-2026.10.05.14.03
+Auto-Built-Package: debug-symbols
+Priority: optional
+Section: debug
+Source: ros-humble-mirte-control
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 858
+Depends: ros-humble-mirte-control (= 2-2026.10.05.14.03)
+Filename: ./ros-humble-mirte-control-dbgsym_2-2026.10.05.14.03_arm64.ddeb
+Size: 788846
+MD5sum: e5816c3927fa93f371aa49f884300536
+SHA1: e0979f0ad59fb13143ff6011b1b5d144ff6f03ad
+SHA256: 75cdd70dfad879af841e2bf2b714996f7843086470cbaf751b831cc99b2f79bd
+SHA512: 8a941a10bc3ea73368e40e6628b7589abf223d61b709ee6ecfd31c74caad33da5dda6480d25c2f816eb69d421fe35362dcb8cf076906d45bff9af0583733d00b
+Description: debug symbols for ros-humble-mirte-control
+Build-Ids: e2e8334b8b44d8ee92ade8b7ae52b67e37e0f217
+
+Package: ros-humble-mirte-control
+Architecture: arm64
+Version: 2-2026.10.05.14.03
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 222
+Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 11), ros-humble-controller-manager, ros-humble-diff-drive-controller, ros-humble-hardware-interface, ros-humble-joint-state-broadcaster, ros-humble-mirte-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-lifecycle, ros-humble-robot-state-publisher, ros-humble-ros2-controllers-test-nodes, ros-humble-ros2controlcli, ros-humble-twist-stamper
+Filename: ./ros-humble-mirte-control_2-2026.10.05.14.03_arm64.deb
+Size: 56598
+MD5sum: 423e1b00c042d631f7c896673716f555
+SHA1: 48408e881869788d61faa88bc7dd43baa460a6b2
+SHA256: 75db24a685e858bc16f0dd196413625f29ecaf19c00fc5d0a13e8749bd3d434d
+SHA512: b1a74ddb4094dd883c0f6ac8c887258c434084dc8efef1ec89c62349ffe3adb51e2b229b5cd4155adbbb2d4607ffbadfb31c2e4fbe657e072b7a8b7109fe1653
+Description: Mirte Pioneer Hardware interface
+
+Package: ros-humble-mirte-fastdds-discovery-setup
+Architecture: arm64
+Version: 2-2026.10.05.13.58
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 54
+Filename: ./ros-humble-mirte-fastdds-discovery-setup_2-2026.10.05.13.58_arm64.deb
+Size: 6936
+MD5sum: dea18056ac0e42fac446a266c3e67685
+SHA1: 551c5fead8ed9bc2be550ac9279a438f79c1129c
+SHA256: e18f07266d0fda8324810c0840b500a892f634eae9cc9be82cad409029b6c342
+SHA512: 9d942f8271f6c2fb1a150711546422ab7d2828826afac89833002f32671d9d4f57ab83082a68c332fb1fda327d87e23d4fac0fba6842ff7149cb05428b2194f7
+Description: The mirte_fastdds_discovery_setup package
+
+Package: ros-humble-mirte-master-description
+Architecture: arm64
+Version: 2-2026.10.05.13.59
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 32083
+Filename: ./ros-humble-mirte-master-description_2-2026.10.05.13.59_arm64.deb
+Size: 6200786
+MD5sum: 1be0f67974f0255aa5034fed867350af
+SHA1: fde0690d48aa6b8eb54e911cb974f6c5e030b401
+SHA256: 1753ca233f8817acdc0d5b6cc839fc91901a4f7af328d9e59a99c7c7666c51cf
+SHA512: a4b9151d13c75fbb5485fce4c055fe0658cc747c04373c484787704bc2a6d6ba3a939d638cbdfb4dd8e1bb11bd9f07a2a0680e15f803e9da7010deeebfbd962e
+Description: TODO: Package description
+
+Package: ros-humble-mirte-msgs-dbgsym
+Package-Type: ddeb
+Architecture: arm64
+Version: 2-2026.10.05.14.00
+Auto-Built-Package: debug-symbols
+Priority: optional
+Section: debug
+Source: ros-humble-mirte-msgs
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 5471
+Depends: ros-humble-mirte-msgs (= 2-2026.10.05.14.00)
+Filename: ./ros-humble-mirte-msgs-dbgsym_2-2026.10.05.14.00_arm64.ddeb
+Size: 3488814
+MD5sum: f14ff8d02d58d85aa94d5145c3a6589c
+SHA1: 06a15df2aa0db1a9c22a95b98e2d6fba1a07b362
+SHA256: 3416513b11e48429353ddf1729627cfe8246ba10a1df5a8f8dd849d67321fd5e
+SHA512: 9b1d2024a6750a9289ccb45e9c1fe4be044804af9d25249c57dcb8de349e0dfd1f30725352348b77b856f8957b7b4b5df8fc21f203dbb5de4ff2359dfcf4b77c
+Description: debug symbols for ros-humble-mirte-msgs
+Build-Ids: 07b07eaa59587a5ea9829f9db969d85a071483f2 07fda5334bc329541fe4a2d4b2abbef7ce67d131 138db4dfc0d43d68b212dd1cb21c15639e0ec775 33405277e3d7fbde464029b70f0380f56da8850a 4adebf7cc916d5a6d3397c2c575f838eee5bbd21 63fe1198da48797b882e51160f2459d9ad35de7d 6f55e5ef99ca4484369c34d6a7369d52b5bbdb8c 8c7ae49003b4cb6b55f25b633cdb7e12e52c6a84 a446cf20d40484f2b442e560d2d994133c4b397e e5a89703027c09dfcfd030157d1e91fee60b273c ec564ea82ec39da3fd702b0ceb86f9db4382c0ec f782b1d7556708bcb7d0422a83aaec2064eccc85
+
+Package: ros-humble-mirte-msgs
+Architecture: arm64
+Version: 2-2026.10.05.14.00
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 8936
+Depends: libc6 (>= 2.17), libgcc-s1 (>= 3.3.1), libpython3.10 (>= 3.10.0), libstdc++6 (>= 5.2), ros-humble-fastcdr, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-std-msgs
+Filename: ./ros-humble-mirte-msgs_2-2026.10.05.14.00_arm64.deb
+Size: 442958
+MD5sum: a7df4fba58b4f855062a4d409f8e07db
+SHA1: 251ac358b68b3940c9308180306d71a698e169a7
+SHA256: 79b688c04dcb966e4b4958fe5631e21b6a99894ccd4b4591e60b5d079113e655
+SHA512: 86c75b2cbf6ee5a84bfc9766e70afb35ccc6c194204d8918f61437056e2aa12ee4bee267215f67e43ae898facb708a8e9637e555de8a00669b80d47485e3f338
+Description: The mirte_msgs package
+
+Package: ros-humble-mirte-pioneer-description
+Architecture: arm64
+Version: 2-2026.10.05.14.03
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 15631
+Filename: ./ros-humble-mirte-pioneer-description_2-2026.10.05.14.03_arm64.deb
+Size: 2414800
+MD5sum: c6e3a19fa26d1589b8194f7e8f729adc
+SHA1: 70b6956492eeebf6db9e2f0dcb455d37ebd001a8
+SHA256: 37a3e8eca4067358aa9b1afcc40fce63750f83ee91780a4ed98a1ec724845764
+SHA512: cd2d136425cd34b6ce9e5a4e21109b0b987858318dbd6ac0dd404966f301fa1eb139635499774ad55aa3562e24e79bec2b01d27daee11decafa2522ef1ea82bc
+Description: TODO: Package description
+
+Package: ros-humble-mirte-test
+Architecture: arm64
+Version: 2-2026.10.05.14.04
+Priority: optional
+Section: misc
+Maintainer: Arend-Jan van Hilten <a.j.vanhilten@tudelft.nl>
+Installed-Size: 91
+Filename: ./ros-humble-mirte-test_2-2026.10.05.14.04_arm64.deb
+Size: 16482
+MD5sum: ac5fa495627a44918316529de07cf242
+SHA1: 8f9f0eca91e5e616ca554ce726566ac3b60167a7
+SHA256: 37ec6394566104e18f6fdf454e6864ae04b236ede302f7955f15ed3bb0b54fca
+SHA512: 188d4565717c5c0cd806293ed9bcf964214aa1c52c45eb189ffebe914714b66be096804bbfcac6bf239ef21a4eb6f561b56d504726a0336cafea11879e50904d
+Description: TODO: Package description
+
+Package: ros-humble-mirte-zenoh-setup
+Architecture: arm64
+Version: 2-2026.10.05.14.04
+Priority: optional
+Section: misc
+Maintainer: Martin Klomp <m.klomp@tudelft.nl>
+Installed-Size: 136
+Depends: ros-humble-rmw-zenoh-cpp
+Filename: ./ros-humble-mirte-zenoh-setup_2-2026.10.05.14.04_arm64.deb
+Size: 14524
+MD5sum: 21df6ecf1b4632c7818440a0d707dd9a
+SHA1: 1159a1adaa1199d6e4157c6fa7907289c9645725
+SHA256: 1ef9873cbee880fd622850ab8f1705ab7657de6d22de23fb2292c64ca85f11af
+SHA512: 071a911174ffd45474f0f1d8bcbbac7d4f20aed019522866584303e6a478550f628e5b4fa1f22ebc30d524b1c3afa24d20e3daf499240166137bbcfa1416ecff
+Description: The mirte_zenoh_setup package
+
