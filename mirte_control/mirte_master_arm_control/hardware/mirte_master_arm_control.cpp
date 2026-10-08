@@ -164,7 +164,7 @@ bool MirteMasterArmHWInterface::connectServices() {
        (boost::format(enable_format) % info_.name).str(),
       [this](const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
              std::shared_ptr<std_srvs::srv::SetBool::Response> response) {
-        this->enable = request->data;
+        this->enable = request->data; // TODO: enable for gripper and arm separately
         response->success = true;
         response->message =
             this->enable ? "Arm control enabled" : "Arm control disabled";
