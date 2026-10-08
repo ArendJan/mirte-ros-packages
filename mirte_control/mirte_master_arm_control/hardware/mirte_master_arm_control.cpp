@@ -89,7 +89,7 @@ void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
                     << ": " << service_requests[i]->angle
                     << " (diff: " << diff << ") moved: " << (int)servo.moved << " hw command: " << hw_commands_[i] << std::endl;
 
-          // service_clients[i]->async_send_request(service_requests[i]);
+          service_clients[i]->async_send_request(service_requests[i]);
         }
                 servo.moved = false;
         servo.last_request = service_requests[i]->angle;
@@ -117,7 +117,7 @@ void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
         // send the current position as command to prevent damage
         service_requests[i]->angle = servo.data;
         if (this->enable) {
-          //service_clients[i]->async_send_request(service_requests[i]);
+          service_clients[i]->async_send_request(service_requests[i]);
         }
       }
 }
