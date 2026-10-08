@@ -33,14 +33,17 @@ std::map<std::string, int> init_steps;
 // Format of the topics and services
 const auto topic_format = "io/servo/hiwonder/%s/position";
 const auto service_format = "io/servo/hiwonder/%s/set_angle_with_speed";
-const auto enable_format = "enable_arm_control";
+const auto enable_format = "enable_%s_control";
 hardware_interface::return_type
 MirteMasterArmHWInterface::write(const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
+                                  // if(NUM_SERVOS>1) {
+                                  //   std::cout << "second servo angle: " << hw_commands_[1] << std::endl;
+                                  // }
   if (initialized[info_.name]) {
-    for (auto i = 0; i < NUM_SERVOS; i++) {
-      service_requests[i]->angle = hw_commands_[i];
-    }
+    // for (auto i = 0; i < NUM_SERVOS; i++) {
+    //   service_requests[i]->angle = hw_commands_[i];
+    // }
   } else {
     if (std::all_of(std::begin(servo_data[info_.name]),
                     std::end(servo_data[info_.name]),
@@ -68,22 +71,26 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
   return hardware_interface::return_type::OK;
 }
 
+
+// hw_commands should be nan until someone sets a command, then it will be sent to the servo, and the last_request is updated.
+
+
 void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
    auto &servo = servo_data[info_.name][i];
       // Only set the servo when there is a new command or the servo is moved by
       // hand or gravity.
-      auto diff = std::abs(servo.last_request - service_requests[i]->angle);
-
+      auto diff = std::abs(servo.last_request - hw_commands_[i]);
+      if(std::isnan(hw_commands_[i])) {
+        return;
+      }
       if (diff > this->servo_update_dead_band_ || servo.moved ||
-          (std::isnan(servo.last_request) &&
-           !std::isnan(
-               service_requests[i]->angle)) // going from nan to some value
+          (std::isnan(servo.last_request)) // going from nan to some value
       ) {
-        if (std::isnan(service_requests[i]->angle)) {
-          return; // don't send nan commands, wait for a real command to come
-                    // in
-        }
+        service_requests[i]->angle = hw_commands_[i];
+        service_requests[i]->degrees = false;
+        service_requests[i]->rate = NAN; // use default rate (0.1s target time)
+
         if (this->enable) {
           std::cout << "Sending command to servo " << i
                     << ": " << service_requests[i]->angle
@@ -91,11 +98,9 @@ void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
 
           service_clients[i]->async_send_request(service_requests[i]);
         }
-                servo.moved = false;
+        servo.moved = false;
         servo.last_request = service_requests[i]->angle;
         servo.last_command_time = time;
-        service_requests[i]->degrees = false;
-        service_requests[i]->rate = NAN; // use default rate (0.1s target time)
         servo.sent_stuck_command = false;
 
       }
@@ -156,7 +161,7 @@ bool MirteMasterArmHWInterface::connectServices() {
     service_clients.push_back(client);
   }
   this->enable_arm_service = nh->create_service<std_srvs::srv::SetBool>(
-      enable_format,
+       (boost::format(enable_format) % info_.name).str(),
       [this](const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
              std::shared_ptr<std_srvs::srv::SetBool::Response> response) {
         this->enable = request->data;
