@@ -15,8 +15,8 @@ from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node, PushRosNamespace, SetRemap
 from pathlib import Path
 
-ticks = 1321
-invert_motors = False
+ticks = 1320
+invert_motors = True
 
 
 def generate_launch_description():

@@ -168,7 +168,8 @@ private:
   bool connectServices();
 
   void updateParams(Params params);
-
+void set_servo(int i,const rclcpp::Time &time,
+                                 const rclcpp::Duration &period);
 }; // class
 
 } // namespace mirte_master_arm_control

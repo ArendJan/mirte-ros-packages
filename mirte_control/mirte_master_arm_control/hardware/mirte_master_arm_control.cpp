@@ -45,25 +45,32 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
     if (std::all_of(std::begin(servo_data[info_.name]),
                     std::end(servo_data[info_.name]),
                     [](Servo_data &x) { return x.init; })) {
-      for (auto i = 0; i < NUM_SERVOS; i++) {
-        service_requests[i]->angle = servo_data[info_.name][i].data;
-      }
+      // for (auto i = 0; i < NUM_SERVOS; i++) {
+      //   service_requests[i]->angle = servo_data[info_.name][i].data;
+      // }
       ++(init_steps[info_.name]);
       for (auto i = 0; i < NUM_SERVOS; i++) {
-        hw_commands_[i] = servo_data[info_.name][i].data;
+        // hw_states_[i] = servo_data[info_.name][i].data;
       }
       if (init_steps[info_.name] == 50) {
         initialized[info_.name] = true;
       }
     }
+    return hardware_interface::return_type::OK;
   }
-
-  if (std::all_of(std::begin(servo_data[info_.name]),
-                  std::end(servo_data[info_.name]),
-                  [](auto x) { return x.init; })) {
+{
     const std::lock_guard<std::mutex> lock(this->service_clients_mutex);
     for (auto i = 0; i < NUM_SERVOS; i++) {
-      auto &servo = servo_data[info_.name][i];
+     this->set_servo(i, time, period);
+    }
+  }
+
+  return hardware_interface::return_type::OK;
+}
+
+void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
+                                 const rclcpp::Duration &period) {
+   auto &servo = servo_data[info_.name][i];
       // Only set the servo when there is a new command or the servo is moved by
       // hand or gravity.
       auto diff = std::abs(servo.last_request - service_requests[i]->angle);
@@ -74,21 +81,23 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
                service_requests[i]->angle)) // going from nan to some value
       ) {
         if (std::isnan(service_requests[i]->angle)) {
-          continue; // don't send nan commands, wait for a real command to come
+          return; // don't send nan commands, wait for a real command to come
                     // in
         }
-        servo.moved = false;
+        if (this->enable) {
+          std::cout << "Sending command to servo " << i
+                    << ": " << service_requests[i]->angle
+                    << " (diff: " << diff << ") moved: " << (int)servo.moved << " hw command: " << hw_commands_[i] << std::endl;
+
+          // service_clients[i]->async_send_request(service_requests[i]);
+        }
+                servo.moved = false;
         servo.last_request = service_requests[i]->angle;
         servo.last_command_time = time;
         service_requests[i]->degrees = false;
         service_requests[i]->rate = NAN; // use default rate (0.1s target time)
         servo.sent_stuck_command = false;
-        if (this->enable) {
-          // std::cout << "Sending command to servo " << i
-          //           << ": " << service_requests[i]->angle
-          //           << " (diff: " << diff << ")" << std::endl;
-          service_clients[i]->async_send_request(service_requests[i]);
-        }
+
       }
 
       if (servo.last_command_time + rclcpp::Duration(1s) < time &&
@@ -108,14 +117,11 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
         // send the current position as command to prevent damage
         service_requests[i]->angle = servo.data;
         if (this->enable) {
-          service_clients[i]->async_send_request(service_requests[i]);
+          //service_clients[i]->async_send_request(service_requests[i]);
         }
       }
-    }
-  }
-
-  return hardware_interface::return_type::OK;
 }
+
 
 bool MirteMasterArmHWInterface::connectServices() {
   service_clients.clear();
@@ -190,7 +196,7 @@ MirteMasterArmHWInterface::export_state_interfaces() {
     state_interfaces.emplace_back(hardware_interface::StateInterface(
         info_.joints[i].name, hardware_interface::HW_IF_POSITION,
         &hw_states_[i]));
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
+    state_interfaces.emplace_back(hardware_interface::StateInterface( // TODO: these are never set to anything
         info_.joints[i].name, hardware_interface::HW_IF_VELOCITY,
         &hw_states_velocities_[i]));
   }
@@ -217,7 +223,7 @@ MirteMasterArmHWInterface::read(const rclcpp::Time &time,
                                 const rclcpp::Duration &period) {
   for (std::size_t joint_id = 0; joint_id < NUM_SERVOS; ++joint_id) {
     if (servo_data[info_.name][joint_id].init) {
-      hw_states_[joint_id] = servo_data[info_.name][joint_id].data;
+      // hw_states_[joint_id] = servo_data[info_.name][joint_id].data;
     }
   }
 
@@ -231,9 +237,9 @@ void MirteMasterArmHWInterface::init_service_clients() {}
 hardware_interface::CallbackReturn MirteMasterArmHWInterface::on_activate(
     const rclcpp_lifecycle::State & /*previous_state*/) {
   // command and state should be equal when starting
-  for (std::size_t i = 0; i < hw_states_.size(); i++) {
-    hw_commands_[i] = hw_states_[i];
-  }
+  // for (std::size_t i = 0; i < hw_states_.size(); i++) {
+  //   hw_commands_[i] = hw_states_[i];
+  // }
 
   RCLCPP_INFO(get_logger(), "Successfully activated!");
 
