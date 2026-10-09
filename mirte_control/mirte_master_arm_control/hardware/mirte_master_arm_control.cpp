@@ -8,21 +8,21 @@ using namespace std::chrono_literals;
 // Format of the topics and services
 const auto topic_format = "io/servo/hiwonder/%s/position";
 const auto service_format = "io/servo/hiwonder/%s/set_angle_with_speed";
-const auto enable_format = "enable_%s_control";
+const auto enable_format = "enable_%s";
 hardware_interface::return_type
 MirteMasterArmHWInterface::write(const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
+                                  // if(NUM_SERVOS>1) {
+                                    //                                   std::cout << "len init  " << (int)servo_data.size() << std::endl;
+
+                                    // std::cout << "first servo angle: " << hw_commands_[0] << "ifo" << info_.name << std::endl;
+                                    // std::cout << "service len" << service_clients.size() << std::endl;
+                                  // }
   if (!initialized) {
     if (std::all_of(std::begin(servo_data),
                     std::end(servo_data),
                     [](Servo_data &x) { return x.init; })) {
-      // for (auto i = 0; i < NUM_SERVOS; i++) {
-      //   service_requests[i]->angle = servo_data[i].data;
-      // }
-      ++(init_steps);
-      for (auto i = 0; i < NUM_SERVOS; i++) {
-        // hw_states_[i] = servo_data[i].data;
-      }
+      init_steps++;
       if (init_steps == 50) {
         initialized = true;
       }
@@ -40,29 +40,31 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
 }
 
 
-// hw_commands should be nan until someone sets a command, then it will be sent to the servo, and the last_request is updated.
-
+// hw_commands should be nan until someone sets a command(coming from trajectory-controller), then it will be sent to the servo, and the last_request is updated.
+// hw_commands is nan as hw_state is also nan, when control gets a first command, started will be set to true, then hw_state will also be written
+// otherwise hw_commands = hw_state from the first received angle. With telemetrix restarting, servo moving, etc, this might trigger a send command
 
 void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
-   auto &servo = servo_data[i];
+                                     auto &servo = servo_data[i];
+      if(std::isnan(hw_commands_[i])) { 
+            return;
+      }else {
+        servo.started = true;
+      }
       // Only set the servo when there is a new command or the servo is moved by
       // hand or gravity.
       auto diff = std::abs(servo.last_request - hw_commands_[i]);
-      if(std::isnan(hw_commands_[i])) {
-        return;
-      }
-      if (diff > this->servo_update_dead_band_ || servo.moved ||
-          (std::isnan(servo.last_request)) // going from nan to some value
-      ) {
+     
+      if (diff > this->servo_update_dead_band_ || servo.moved) {
         service_requests[i]->angle = hw_commands_[i];
         service_requests[i]->degrees = false;
         service_requests[i]->rate = NAN; // use default rate (0.1s target time)
 
         if (this->enable) {
-          std::cout << "Sending command to servo " << i
-                    << ": " << service_requests[i]->angle
-                    << " (diff: " << diff << ") moved: " << (int)servo.moved << " hw command: " << hw_commands_[i] << std::endl;
+          // std::cout << "Sending command to servo " << i
+          //           << ": " << service_requests[i]->angle
+          //           << " (diff: " << diff << ") moved: " << (int)servo.moved << " hw command: " << hw_commands_[i] << std::endl;
 
           service_clients[i]->async_send_request(service_requests[i]);
         }
@@ -72,10 +74,10 @@ void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
         servo.sent_stuck_command = false;
 
       }
-
-      if (servo.last_command_time + rclcpp::Duration(1s) < time &&
-          std::abs(servo.data - servo.last_request) >
-              (2.0 * this->servo_update_dead_band_) &&
+      bool servo_not_at_target = std::abs(servo.data - servo.last_request) >
+                             (2.0 * this->servo_update_dead_band_);
+      bool sec_since_last_command = (servo.last_command_time + rclcpp::Duration(1s)) < time;
+      if (servo_not_at_target && sec_since_last_command &&
           !servo.sent_stuck_command) {
         // The servo might be stuck, resend the command to prevent damage
         // when the servo is 'moved', then the original command is resent.
@@ -83,6 +85,8 @@ void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
                     "Servo %d might be stuck, resending command. Current: %f "
                     "OriginalTarget: %f",
                     i, servo.data, servo.last_request);
+        
+        // not updating last_request, as we want to resend the original command, not the current position
         servo.last_command_time = time;
         servo.sent_stuck_command = true; // only do this once
         service_requests[i]->degrees = false;
@@ -105,27 +109,6 @@ bool MirteMasterArmHWInterface::connectServices() {
         (boost::format(service_format) % servo_name).str();
     auto client = nh->create_client<mirte_msgs::srv::SetServoAngleWithSpeed>(
         service_name);
-    auto MAX_WAIT_TIME = 10;
-    auto wait_time = 0;
-    // while (!client->wait_for_service(1s) && wait_time < MAX_WAIT_TIME) {
-    //   wait_time++;
-    //   if (!rclcpp::ok()) {
-    //     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"),
-    //                  "Interrupted while waiting for the service. Exiting.");
-    //     return false;
-    //   }
-    //   RCLCPP_INFO(rclcpp::get_logger("rclcpp"),
-    //               (boost::format("service %s not available, waiting
-    //               again...") %
-    //                service_name)
-    //                   .str()
-    //                   .c_str());
-    // }
-    // if (wait_time == MAX_WAIT_TIME) {
-    //   RCLCPP_ERROR(rclcpp::get_logger("rclcpp"),
-    //                "Could not connect to service %s", service_name.c_str());
-    //   return false;
-    // }
     service_clients.push_back(client);
   }
   this->enable_arm_service = nh->create_service<std_srvs::srv::SetBool>(
@@ -150,6 +133,8 @@ void MirteMasterArmHWInterface::ServoPositionCallback(
     return;
   }
   auto &servo = servo_data[joint];
+  // std::cout << "Received servo position for joint " << joint
+  //           << ": " << msg->angle << "name:" << info_.name << std::endl;
   servo.data = msg->angle;
   servo.init = true;
   // The servo should only be written to iff the servo gets a new location or
@@ -195,8 +180,8 @@ hardware_interface::return_type
 MirteMasterArmHWInterface::read(const rclcpp::Time &time,
                                 const rclcpp::Duration &period) {
   for (std::size_t joint_id = 0; joint_id < NUM_SERVOS; ++joint_id) {
-    if (servo_data[joint_id].init) {
-      // hw_states_[joint_id] = servo_data[joint_id].data;
+    if (servo_data[joint_id].init && servo_data[joint_id].started) {
+      hw_states_[joint_id] = servo_data[joint_id].data;
     }
   }
 

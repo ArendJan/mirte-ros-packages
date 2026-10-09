@@ -116,6 +116,8 @@ struct Servo_data {
   rclcpp::Time last_command_time = rclcpp::Time(0, 0, RCL_ROS_TIME);
   bool sent_stuck_command = false; // only send it once to go to the current
                                    // position (cancel original command)
+  double start_angle = NAN; // if hw_command is equal to this, then don't act on it, when a different angle is received, then do something
+  bool started = false;
 };
 
 // Since the plugin itself is loaded once, the member variables
