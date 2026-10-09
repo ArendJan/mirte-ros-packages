@@ -5,31 +5,6 @@
 namespace mirte_master_arm_control {
 using namespace std::chrono_literals;
 
-// The data we store per servo
-struct Servo_data {
-  double data = NAN; // unknown position, so hw_control will also not send 0
-                     // (otherwise default) back.
-  bool init = false;
-  bool moved = false;
-  double last_move_update = -100;
-  double last_request = -100;
-  // timestamp for last commanded position, if it's too old and the position is
-  // different, the servo might be stuck and need to send safe commands to
-  // prevent damage
-  rclcpp::Time last_command_time = rclcpp::Time(0, 0, RCL_ROS_TIME);
-  bool sent_stuck_command = false; // only send it once to go to the current
-                                   // position (cancel original command)
-};
-
-// Since the plugin itself is loaded once, the member variables
-// are shared between all instances of the plugin (ie.
-// the arm and the gripper both use the same variables.
-// There content is therefore stored in a map, with the
-// name as key.
-std::map<std::string, std::vector<Servo_data>> servo_data;
-std::map<std::string, bool> initialized;
-std::map<std::string, int> init_steps;
-
 // Format of the topics and services
 const auto topic_format = "io/servo/hiwonder/%s/position";
 const auto service_format = "io/servo/hiwonder/%s/set_angle_with_speed";
@@ -37,26 +12,19 @@ const auto enable_format = "enable_%s_control";
 hardware_interface::return_type
 MirteMasterArmHWInterface::write(const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
-                                  // if(NUM_SERVOS>1) {
-                                  //   std::cout << "second servo angle: " << hw_commands_[1] << std::endl;
-                                  // }
-  if (initialized[info_.name]) {
-    // for (auto i = 0; i < NUM_SERVOS; i++) {
-    //   service_requests[i]->angle = hw_commands_[i];
-    // }
-  } else {
-    if (std::all_of(std::begin(servo_data[info_.name]),
-                    std::end(servo_data[info_.name]),
+  if (!initialized) {
+    if (std::all_of(std::begin(servo_data),
+                    std::end(servo_data),
                     [](Servo_data &x) { return x.init; })) {
       // for (auto i = 0; i < NUM_SERVOS; i++) {
-      //   service_requests[i]->angle = servo_data[info_.name][i].data;
+      //   service_requests[i]->angle = servo_data[i].data;
       // }
-      ++(init_steps[info_.name]);
+      ++(init_steps);
       for (auto i = 0; i < NUM_SERVOS; i++) {
-        // hw_states_[i] = servo_data[info_.name][i].data;
+        // hw_states_[i] = servo_data[i].data;
       }
-      if (init_steps[info_.name] == 50) {
-        initialized[info_.name] = true;
+      if (init_steps == 50) {
+        initialized = true;
       }
     }
     return hardware_interface::return_type::OK;
@@ -77,7 +45,7 @@ MirteMasterArmHWInterface::write(const rclcpp::Time &time,
 
 void MirteMasterArmHWInterface::set_servo(int i,const rclcpp::Time &time,
                                  const rclcpp::Duration &period) {
-   auto &servo = servo_data[info_.name][i];
+   auto &servo = servo_data[i];
       // Only set the servo when there is a new command or the servo is moved by
       // hand or gravity.
       auto diff = std::abs(servo.last_request - hw_commands_[i]);
@@ -181,7 +149,7 @@ void MirteMasterArmHWInterface::ServoPositionCallback(
     // ignore this
     return;
   }
-  auto &servo = servo_data[info_.name][joint];
+  auto &servo = servo_data[joint];
   servo.data = msg->angle;
   servo.init = true;
   // The servo should only be written to iff the servo gets a new location or
@@ -227,8 +195,8 @@ hardware_interface::return_type
 MirteMasterArmHWInterface::read(const rclcpp::Time &time,
                                 const rclcpp::Duration &period) {
   for (std::size_t joint_id = 0; joint_id < NUM_SERVOS; ++joint_id) {
-    if (servo_data[info_.name][joint_id].init) {
-      // hw_states_[joint_id] = servo_data[info_.name][joint_id].data;
+    if (servo_data[joint_id].init) {
+      // hw_states_[joint_id] = servo_data[joint_id].data;
     }
   }
 
@@ -268,8 +236,9 @@ hardware_interface::CallbackReturn MirteMasterArmHWInterface::on_init(
   }
 
   NUM_SERVOS = info_.joints.size();
-  initialized.insert({info_.name, false});
-  init_steps.insert({info_.name, 0});
+  initialized = false;
+  init_steps = 0;
+  this->enable = true;
 
   // TODO: As far as I know we are not able to get the nodehandle
   // from the plugin, so we need to start one ourselves.
@@ -300,7 +269,7 @@ hardware_interface::CallbackReturn MirteMasterArmHWInterface::on_init(
     service_requests.push_back(
         std::make_shared<mirte_msgs::srv::SetServoAngleWithSpeed::Request>());
   }
-  servo_data.insert({info_.name, sd_vector});
+  servo_data.insert(servo_data.end(), sd_vector.begin(), sd_vector.end());
 
   // ROS2 control interfaces
   hw_states_.resize(info_.joints.size(),
